@@ -29,7 +29,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import static theBrewmaster.DefaultMod.*;
-import static theBrewmaster.characters.TheDefault.Enums.COLOR_GRAY;
+import static theBrewmaster.characters.TheBrewmaster.Enums.COLOR_GRAY;
 
 import java.util.ArrayList;
 
@@ -37,7 +37,7 @@ import java.util.ArrayList;
 //and https://github.com/daviscook477/BaseMod/wiki/Migrating-to-5.0
 //All text (starting description and loadout, anything labeled TEXT[]) can be found in DefaultMod-character-Strings.json in the resources
 
-public class TheDefault extends CustomPlayer {
+public class TheBrewmaster extends CustomPlayer {
     public static final Logger logger = LogManager.getLogger(DefaultMod.class.getName());
 
     // =============== CHARACTER ENUMERATORS =================
@@ -100,7 +100,7 @@ public class TheDefault extends CustomPlayer {
 
     // =============== CHARACTER CLASS START =================
 
-    public TheDefault(String name, PlayerClass setClass) {
+    public TheBrewmaster(String name, PlayerClass setClass) {
         super(name, setClass, orbTextures,
                 "theBrewmasterResources/images/char/defaultCharacter/orb/vfx.png", null,
                 new SpriterAnimation(
@@ -253,7 +253,7 @@ public class TheDefault extends CustomPlayer {
     // Should return a new instance of your character, sending name as its name parameter.
     @Override
     public AbstractPlayer newInstance() {
-        return new TheDefault(name, chosenClass);
+        return new TheBrewmaster(name, chosenClass);
     }
 
     // Should return a Color object to be used to color the miniature card images in run history.

@@ -4,7 +4,7 @@ import basemod.BaseMod;
 import basemod.abstracts.CustomCard;
 import basemod.helpers.BaseModCardTags;
 import theBrewmaster.DefaultMod;
-import theBrewmaster.characters.TheDefault;
+import theBrewmaster.characters.TheBrewmaster;
 
 import static theBrewmaster.DefaultMod.makeCardPath;
 
@@ -56,7 +56,7 @@ public class DefaultCommonAttack extends CustomCard {
     private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
+    public static final CardColor COLOR = TheBrewmaster.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
     private static final int DAMAGE = 6;

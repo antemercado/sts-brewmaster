@@ -3,7 +3,7 @@ package theBrewmaster.cards;
 import basemod.abstracts.CustomCard;
 import basemod.helpers.BaseModCardTags;
 import theBrewmaster.DefaultMod;
-import theBrewmaster.characters.TheDefault;
+import theBrewmaster.characters.TheBrewmaster;
 import theBrewmaster.powers.RarePower;
 
 import static theBrewmaster.DefaultMod.makeCardPath;
@@ -36,7 +36,7 @@ public class DefaultRarePower extends AbstractDynamicCard {
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.POWER;
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
+    public static final CardColor COLOR = TheBrewmaster.Enums.COLOR_GRAY;
 
     private static final int COST = 3;
     private static final int UPGRADE_COST = 2;
