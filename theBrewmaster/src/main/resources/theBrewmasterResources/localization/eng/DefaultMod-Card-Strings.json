@@ -49,5 +49,18 @@
   "theBrewmaster:OrbSkill": {
     "NAME": "Get Orb",
     "DESCRIPTION": "Channel 1 Default Orb."
+  },
+  "theBrewmaster:StrikeBrewmaster": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! damage."
+  },
+  "theBrewmaster:DefendBrewmaster": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! Block."
+  },
+  "theBrewmaster:CelestialBrew": {
+    "NAME": "Celestial Brew",
+    "DESCRIPTION": "Gain 1 Intangible. NL Discard your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain 1 Intangible. NL Exhaust."
   }
 }
