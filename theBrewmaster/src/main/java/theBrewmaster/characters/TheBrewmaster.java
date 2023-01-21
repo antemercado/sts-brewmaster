@@ -168,7 +168,7 @@ public class TheBrewmaster extends CustomPlayer {
         retVal.add(DefendBrewmaster.ID);
 
         retVal.add(CelestialBrew.ID);
-        retVal.add(CelestialBrew.ID);
+        retVal.add(Microbrew.ID);
 
         return retVal;
     }

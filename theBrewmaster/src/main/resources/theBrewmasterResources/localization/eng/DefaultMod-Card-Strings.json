@@ -62,5 +62,9 @@
     "NAME": "Celestial Brew",
     "DESCRIPTION": "Gain 1 Intangible. NL Discard your hand. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Gain 1 Intangible. NL Exhaust."
+  },
+  "theBrewmaster:Microbrew": {
+    "NAME": "Microbrew",
+    "DESCRIPTION": "Gain !M! thebrewmaster:Intoxication."
   }
 }
