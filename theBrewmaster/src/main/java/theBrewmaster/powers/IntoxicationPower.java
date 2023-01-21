@@ -2,6 +2,7 @@ package theBrewmaster.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
 import theBrewmaster.DefaultMod;
+import theBrewmaster.stances.IntoxicatedStance;
 import theBrewmaster.util.TextureLoader;
 
 import static theBrewmaster.DefaultMod.makePowerPath;
@@ -19,7 +20,6 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.DexterityPower;
 
 //Gain 1 dex for the turn for each card played.
 
@@ -68,16 +68,16 @@ public class IntoxicationPower extends AbstractPower{
     public void stackPower(int stackAmount){
         super.stackPower(stackAmount);
         if (this.amount >= 100) {
-            AbstractDungeon.actionManager.addToTop(new ChangeStanceAction("Divinity"));
+            AbstractDungeon.actionManager.addToTop(new ChangeStanceAction("Intoxicated"));
         }
     }
 
     // Update the description when intoxicated.
     @Override
     public void updateDescription() {
-        if (amount < 100) {
+        if (this.amount < 100) {
             description = DESCRIPTIONS[0];
-        } else if (amount >= 100) {
+        } else if (this.amount >= 100) {
             description = DESCRIPTIONS[1];
         }
     }
