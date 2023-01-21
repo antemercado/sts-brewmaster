@@ -1,10 +1,15 @@
 {
-"theBrewmaster:CommonPower": {
-        "NAME": "Placeholder Power",
-        "DESCRIPTIONS": ["You applied #b", " keyword.", " keywords."]
-},
-"theBrewmaster:RarePower": {
-        "NAME": "Placeholder Power",
-        "DESCRIPTIONS": ["At the start of your turn, TOUCH #b", " enemy." , " enemies."]
-}
+  "theBrewmaster:CommonPower": {
+          "NAME": "Placeholder Power",
+          "DESCRIPTIONS": ["You applied #b", " keyword.", " keywords."]
+  },
+  "theBrewmaster:RarePower": {
+          "NAME": "Placeholder Power",
+          "DESCRIPTIONS": ["At the start of your turn, TOUCH #b", " enemy." , " enemies."]
+  },
+  "theBrewmaster:Intoxication": {
+    "NAME": "Intoxication",
+    "DESCRIPTIONS": ["You have had a few drinks.", "You are intoxicated."]
+          
+  }
 }
