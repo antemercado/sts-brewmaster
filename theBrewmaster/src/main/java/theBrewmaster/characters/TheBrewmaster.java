@@ -167,7 +167,7 @@ public class TheBrewmaster extends CustomPlayer {
         retVal.add(DefendBrewmaster.ID);
         retVal.add(DefendBrewmaster.ID);
 
-        retVal.add(CelestialBrew.ID);
+        retVal.add(DrunkenFist.ID);
         retVal.add(Microbrew.ID);
 
         return retVal;
@@ -239,7 +239,7 @@ public class TheBrewmaster extends CustomPlayer {
     //Which card should be obtainable from the Match and Keep event?
     @Override
     public AbstractCard getStartCardForEvent() {
-        return new DefaultCommonAttack();
+        return new Microbrew();
     }
 
     // The class name as it appears next to your player name in-game
@@ -291,7 +291,7 @@ public class TheBrewmaster extends CustomPlayer {
     // the full text that will be displayed as the first screen of the vampires event.
     @Override
     public String getVampireText() {
-        return TEXT[2];
+        return TEXT[0];
     }
 
 }
