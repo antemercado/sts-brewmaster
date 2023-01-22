@@ -66,5 +66,19 @@
   "theBrewmaster:Microbrew": {
     "NAME": "Microbrew",
     "DESCRIPTION": "Gain !M! thebrewmaster:Intoxication."
+  },
+  "theBrewmaster:QuickSip": {
+    "NAME": "Quick Sip",
+    "DESCRIPTION": "Gain !M! thebrewmaster:Intoxication. NL Intoxicated: Gain [E].",
+    "UPGRADE_DESCRIPTION": "Gain !M! thebrewmaster:Intoxication. NL #yIntoxicated: Gain [E]. Draw a card."
+  },
+  "theBrewmaster:PerplexingBrew": {
+    "NAME": "Perplexing Brew",
+    "DESCRIPTION": "Gain 2 Strength, Thorns, or Dexterity, chosen at random when played.",
+    "UPGRADE_DESCRIPTION": "{@@}Gain 2{!Location!|>0,<0= Strength, Thorns, or Dexterity, chosen at random when drawn.|0= }{!M!|@=|0=Strength.|1=Thorns.|2=Dexterity.}"
+  },
+  "theBrewmaster:DoubleFist": {
+    "NAME": "Double Fist",
+    "DESCRIPTION": "This turn, your next Brew card is played twice."
   }
 }

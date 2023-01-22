@@ -10,6 +10,13 @@
   "theBrewmaster:Intoxication": {
     "NAME": "Intoxication",
     "DESCRIPTIONS": ["You have had a few drinks.", "You are intoxicated."]
-          
+  },
+  "theBrewmaster:DoubleFistPower": {
+    "NAME": "Double Fist",
+    "DESCRIPTIONS": [
+      "Your next #yBrew card is played twice this turn.",
+      "Your next ",
+      " #yBrew cards are played twice this turn."
+    ]
   }
 }

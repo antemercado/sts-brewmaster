@@ -4,6 +4,7 @@ import basemod.*;
 import basemod.eventUtil.AddEventParams;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
+import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.DynamicTextBlocks;
 import theBrewmaster.cards.*;
 import theBrewmaster.characters.TheBrewmaster;
 import theBrewmaster.events.IdentityCrisisEvent;
@@ -12,6 +13,7 @@ import theBrewmaster.relics.BottledPlaceholderRelic;
 import theBrewmaster.relics.DefaultClickableRelic;
 import theBrewmaster.relics.PlaceholderRelic;
 import theBrewmaster.relics.PlaceholderRelic2;
+import theBrewmaster.stances.IntoxicatedStance;
 import theBrewmaster.util.IDCheckDontTouchPls;
 import theBrewmaster.util.TextureLoader;
 import theBrewmaster.variables.DefaultCustomVariable;
@@ -26,6 +28,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
@@ -445,6 +448,19 @@ public class DefaultMod implements
         // .setDefaultSeen(true) unlocks the cards
         // This is so that they are all "seen" in the library,
         // for people who like to look at the card list before playing your mod
+
+        // Adding Custom Checks
+        logger.info("Adding CustomChecks");
+
+        // theBrewmaster:intoxicated
+        // returns 1 if in Intoxicated Stance
+        // returns 0 if not
+        DynamicTextBlocks.registerCustomCheck("theBrewmaster:intoxicated", card -> {
+            if (AbstractDungeon.player.stance.ID.equals(IntoxicatedStance.STANCE_ID)){
+                return 1;
+            }
+            return 0;
+        });
 
         logger.info("Done adding cards!");
     }

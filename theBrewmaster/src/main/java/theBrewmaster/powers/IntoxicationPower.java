@@ -60,16 +60,23 @@ public class IntoxicationPower extends AbstractPower{
 
         flash();
         reducePower(this.amount/4);
+        updateDescription();
+    }
 
+    public void reducePower(int reduceAmount){
+        super.reducePower(reduceAmount);
+        if (this.amount < 100){ // && AbstractDungeon.player.stance.ID.equals(IntoxicatedStance.STANCE_ID)
+            AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction("Neutral"));
+        }
     }
 
     // When over 100 stacks, enter Intoxicated
-    @Override
     public void stackPower(int stackAmount){
         super.stackPower(stackAmount);
         if (this.amount >= 100) {
-            AbstractDungeon.actionManager.addToTop(new ChangeStanceAction("Intoxicated"));
+            AbstractDungeon.actionManager.addToTop(new ChangeStanceAction(new IntoxicatedStance()));
         }
+        updateDescription();
     }
 
     // Update the description when intoxicated.

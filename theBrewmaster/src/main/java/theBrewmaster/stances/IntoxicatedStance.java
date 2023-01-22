@@ -15,7 +15,7 @@ public class IntoxicatedStance extends AbstractStance{
     public static final String STANCE_ID = DefaultMod.makeID("Intoxicated");
     private static final StanceStrings stanceString = CardCrawlGame.languagePack.getStanceString(STANCE_ID);
     public static final String NAME = stanceString.NAME;
-    public static final String DESCRIPTIONS[] = stanceString.DESCRIPTION;
+    public static final String[] DESCRIPTIONS = stanceString.DESCRIPTION;
 
     public IntoxicatedStance() {
         ID = STANCE_ID;
@@ -24,11 +24,6 @@ public class IntoxicatedStance extends AbstractStance{
     }
 
     public void onEnterStance() {}
-
-    @Override
-    public void atStartOfTurn(){
-        AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction("Neutral"));
-    }
 
     @Override
     public void updateDescription() {
