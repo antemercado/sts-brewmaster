@@ -69,8 +69,8 @@
   },
   "theBrewmaster:QuickSip": {
     "NAME": "Quick Sip",
-    "DESCRIPTION": "Gain !M! thebrewmaster:Intoxication. NL Intoxicated: Gain [E].",
-    "UPGRADE_DESCRIPTION": "Gain !M! thebrewmaster:Intoxication. NL #yIntoxicated: Gain [E]. Draw a card."
+    "DESCRIPTION": "Gain !M! thebrewmaster:Intoxication. NL [#ffff00]Intoxicated[]: Gain [E].",
+    "UPGRADE_DESCRIPTION": "Gain !M! thebrewmaster:Intoxication. NL [#ffff00]Intoxicated[]: Gain [E]. Draw a card."
   },
   "theBrewmaster:PerplexingBrew": {
     "NAME": "Perplexing Brew",
@@ -83,6 +83,18 @@
   },
   "theBrewmaster:FluidMotion": {
     "NAME": "Fluid Motion",
-    "DESCRIPTION": "At the end of your turn, gain 10% of your Intoxication as Block."
+    "DESCRIPTION": "At the end of your turn, gain 10% of your thebrewmaster:Intoxication as Block."
+  },
+  "theBrewmaster:Chug": {
+    "NAME": "Chug",
+    "DESCRIPTION": "Gain !M! thebrewmaster:Intoxication."
+  },
+  "theBrewmaster:DrunkenFist": {
+    "NAME": "Drunken Fist",
+    "DESCRIPTION": "Deal !D! damage. Gain !M! thebrewmaster:Intoxication."
+  },
+  "theBrewmaster:Homebrew": {
+    "NAME": "Homebrew",
+    "DESCRIPTION": "Gain !M! thebrewmaster:Intoxication. This card gains !theBrewmaster:M2! thebrewmaster:Intoxication when drawn until played."
   }
 }

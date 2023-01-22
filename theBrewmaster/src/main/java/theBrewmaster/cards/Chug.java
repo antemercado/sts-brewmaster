@@ -3,57 +3,55 @@ package theBrewmaster.cards;
 import basemod.AutoAdd;
 import basemod.abstracts.CustomCard;
 import basemod.helpers.BaseModCardTags;
-import theBrewmaster.DefaultMod;
-import theBrewmaster.cards.AbstractDynamicCard;
-import theBrewmaster.characters.TheBrewmaster;
 
+import theBrewmaster.DefaultMod;
+import theBrewmaster.characters.TheBrewmaster;
+import theBrewmaster.powers.IntoxicationPower;
+import theBrewmaster.tags.CustomTags;
 import static theBrewmaster.DefaultMod.makeCardPath;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class StrikeBrewmaster extends AbstractDynamicCard {
+public class Chug extends AbstractDynamicCard {
     // TEXT DECLARATION
-    public static final String ID = DefaultMod.makeID(StrikeBrewmaster.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
+    public static final String ID = DefaultMod.makeID(Chug.class.getSimpleName());
+    public static final String IMG = makeCardPath("Skill.png");
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.BASIC;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
-    private static final CardType TYPE = CardType.ATTACK;
+    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardTarget TARGET = CardTarget.SELF;
+    private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheBrewmaster.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
 
-    private static final int DAMAGE = 6;
-    private static final int UPGRADE_PLUS_DMG = 3;
+    private static final int POWER = 20;
+    private static final int UPGRADE_POWER = 10;
 
-    public StrikeBrewmaster() { 
+    public Chug() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = DAMAGE;
+        this.baseMagicNumber = this.magicNumber = POWER;
 
-        tags.add(CardTags.STRIKE);
-        tags.add(CardTags.STARTER_STRIKE);
+        tags.add(CustomTags.BREW);
     }
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new IntoxicationPower(p, p, magicNumber)));
     }
     // Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DMG);
+            upgradeMagicNumber(UPGRADE_POWER);
             initializeDescription();
         }
     }

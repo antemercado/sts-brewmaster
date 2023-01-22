@@ -6,10 +6,12 @@ import basemod.helpers.BaseModCardTags;
 import theBrewmaster.DefaultMod;
 import theBrewmaster.cards.AbstractDynamicCard;
 import theBrewmaster.characters.TheBrewmaster;
+import theBrewmaster.powers.IntoxicationPower;
 
 import static theBrewmaster.DefaultMod.makeCardPath;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -18,9 +20,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class StrikeBrewmaster extends AbstractDynamicCard {
+public class DrunkenFist extends AbstractDynamicCard {
     // TEXT DECLARATION
-    public static final String ID = DefaultMod.makeID(StrikeBrewmaster.class.getSimpleName());
+    public static final String ID = DefaultMod.makeID(DrunkenFist.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
 
     // STAT DECLARATION
@@ -32,21 +34,23 @@ public class StrikeBrewmaster extends AbstractDynamicCard {
 
     private static final int COST = 1;
 
-    private static final int DAMAGE = 6;
-    private static final int UPGRADE_PLUS_DMG = 3;
+    private static final int DAMAGE = 5;
+    private static final int UPGRADE_PLUS_DMG = 2;
 
-    public StrikeBrewmaster() { 
+    private static final int MAGIC = 5;
+    private static final int UPGRADE_MAGIC = 5;
+
+    public DrunkenFist() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = DAMAGE;
+        this.baseDamage = DAMAGE;
+        this.baseMagicNumber = MAGIC;
 
-        tags.add(CardTags.STRIKE);
-        tags.add(CardTags.STARTER_STRIKE);
     }
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new IntoxicationPower(p, p, magicNumber)));
     }
     // Upgraded stats.
     @Override
@@ -54,6 +58,7 @@ public class StrikeBrewmaster extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
+            upgradeMagicNumber(UPGRADE_MAGIC);
             initializeDescription();
         }
     }
