@@ -8,7 +8,6 @@ import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.DynamicTextBloc
 import theBrewmaster.cards.*;
 import theBrewmaster.characters.TheBrewmaster;
 import theBrewmaster.events.IdentityCrisisEvent;
-import theBrewmaster.potions.PlaceholderPotion;
 import theBrewmaster.relics.BottledPlaceholderRelic;
 import theBrewmaster.relics.DefaultClickableRelic;
 import theBrewmaster.relics.PlaceholderRelic;
@@ -17,7 +16,7 @@ import theBrewmaster.stances.IntoxicatedStance;
 import theBrewmaster.util.IDCheckDontTouchPls;
 import theBrewmaster.util.TextureLoader;
 import theBrewmaster.variables.DefaultCustomVariable;
-import theBrewmaster.variables.DefaultSecondMagicNumber;
+import theBrewmaster.variables.SecondMagicNumber;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
@@ -374,7 +373,6 @@ public class DefaultMod implements
         // Class Specific Potion. If you want your potion to not be class-specific,
         // just remove the player class at the end (in this case the "TheDefaultEnum.THE_DEFAULT".
         // Remember, you can press ctrl+P inside parentheses like addPotions)
-        BaseMod.addPotion(PlaceholderPotion.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, PLACEHOLDER_POTION_SPOTS, PlaceholderPotion.POTION_ID, TheBrewmaster.Enums.THE_DEFAULT);
         
         logger.info("Done editing potions");
     }
@@ -424,7 +422,7 @@ public class DefaultMod implements
         logger.info("Add variables");
         // Add the Custom Dynamic variables
         BaseMod.addDynamicVariable(new DefaultCustomVariable());
-        BaseMod.addDynamicVariable(new DefaultSecondMagicNumber());
+        BaseMod.addDynamicVariable(new SecondMagicNumber());
         
         logger.info("Adding cards");
         // Add the cards
