@@ -80,5 +80,9 @@
   "theBrewmaster:DoubleFist": {
     "NAME": "Double Fist",
     "DESCRIPTION": "This turn, your next Brew card is played twice."
+  },
+  "theBrewmaster:FluidMotion": {
+    "NAME": "Fluid Motion",
+    "DESCRIPTION": "At the end of your turn, gain 10% of your Intoxication as Block."
   }
 }

@@ -18,5 +18,12 @@
       "Your next ",
       " #yBrew cards are played twice this turn."
     ]
+  },
+  "theBrewmaster:FluidMotionPower": {
+    "NAME": "Fluid Motion",
+    "DESCRIPTIONS": [
+      "At the end of your turn, gain ",
+      "% of your Intoxication as Block (Rounded up.)"
+    ]
   }
 }
