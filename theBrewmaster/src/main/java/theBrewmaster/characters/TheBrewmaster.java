@@ -4,9 +4,7 @@ import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpriterAnimation;
 import theBrewmaster.DefaultMod;
 import theBrewmaster.cards.*;
-import theBrewmaster.relics.DefaultClickableRelic;
-import theBrewmaster.relics.PlaceholderRelic;
-import theBrewmaster.relics.PlaceholderRelic2;
+import theBrewmaster.relics.BeerSteinRelic;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -177,11 +175,11 @@ public class TheBrewmaster extends CustomPlayer {
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
 
-        retVal.add(PlaceholderRelic.ID);
+        retVal.add(BeerSteinRelic.ID);
 
         // Mark relics as seen - makes it visible in the compendium immediately
         // If you don't have this it won't be visible in the compendium until you see them in game
-        UnlockTracker.markRelicAsSeen(PlaceholderRelic.ID);
+        UnlockTracker.markRelicAsSeen(BeerSteinRelic.ID);
 
         return retVal;
     }
@@ -204,7 +202,7 @@ public class TheBrewmaster extends CustomPlayer {
     // Ascension 14 or higher. (ironclad loses 5, defect and silent lose 4 hp respectively)
     @Override
     public int getAscensionMaxHPLoss() {
-        return 0;
+        return 5;
     }
 
     // Should return the card color enum to be associated with your character.

@@ -40,7 +40,7 @@ public class PerplexingBrew extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheBrewmaster.Enums.COLOR_GRAY;
 
-    private static final int COST = 2;
+    private static final int COST = 1;
 
     private static final int MAGIC_NUM = -1;
 

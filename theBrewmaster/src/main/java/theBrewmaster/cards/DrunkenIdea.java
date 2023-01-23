@@ -11,9 +11,9 @@ import theBrewmaster.stances.IntoxicatedStance;
 import static theBrewmaster.DefaultMod.makeCardPath;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DiscardAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -21,14 +21,11 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class QuickSip extends AbstractDynamicCard {
+public class DrunkenIdea extends AbstractDynamicCard {
     // TEXT DECLARATION
-    public static final String ID = DefaultMod.makeID(QuickSip.class.getSimpleName());
+    public static final String ID = DefaultMod.makeID(DrunkenIdea.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
 
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    
     // STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.COMMON;
@@ -36,26 +33,26 @@ public class QuickSip extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheBrewmaster.Enums.COLOR_GRAY;
 
-    private static final int COST = 0;
+    private static final int COST = 1;
+    private static final int UPGRADED_COST = 0;
 
-    private static final int POWER = 15;
-    private static final int ENERGY_GAIN = 1;
-    private static final int CARD_DRAW = 1;
+    private static final int MAGIC = 1;
+    private static final int UPGRADE_PLUS_MAGIC = 1;
 
-    public QuickSip() { 
+    public DrunkenIdea() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.baseMagicNumber = this.magicNumber = POWER;
+        this.baseMagicNumber = this.magicNumber = MAGIC;
     }
-    
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new IntoxicationPower(p, p, magicNumber)));
-        if (AbstractDungeon.player.stance.ID.equals(IntoxicatedStance.STANCE_ID)) {
-            AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(ENERGY_GAIN));
-            if (upgraded){
-                AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, CARD_DRAW));
-            }
+        if (p.hasPower(IntoxicationPower.POWER_ID)){
+            AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, magicNumber));
+            AbstractDungeon.actionManager.addToBottom(new DiscardAction(p, p, 1, false));
+        }
+        else {
+            AbstractDungeon.actionManager.addToBottom(new DiscardAction(p, p, 1, false));
+            AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, magicNumber));
         }
     }
 
@@ -72,7 +69,7 @@ public class QuickSip extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            rawDescription = UPGRADE_DESCRIPTION;
+            upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
             initializeDescription();
         }
     }

@@ -69,8 +69,8 @@
   },
   "theBrewmaster:QuickSip": {
     "NAME": "Quick Sip",
-    "DESCRIPTION": "Gain !M! thebrewmaster:Intoxication. NL [#ffff00]Intoxicated[]: Gain [E].",
-    "UPGRADE_DESCRIPTION": "Gain !M! thebrewmaster:Intoxication. NL [#ffff00]Intoxicated[]: Gain [E]. Draw a card."
+    "DESCRIPTION": "Gain !M! thebrewmaster:Intoxication. NL thebrewmaster:Intoxicated: Gain [E].",
+    "UPGRADE_DESCRIPTION": "Gain !M! thebrewmaster:Intoxication. NL thebrewmaster:Intoxicated: Gain [E]. Draw a card."
   },
   "theBrewmaster:PerplexingBrew": {
     "NAME": "Perplexing Brew",
@@ -96,5 +96,30 @@
   "theBrewmaster:Homebrew": {
     "NAME": "Homebrew",
     "DESCRIPTION": "Gain !M! thebrewmaster:Intoxication. This card gains !theBrewmaster:M2! thebrewmaster:Intoxication when drawn until played."
+  },
+  "theBrewmaster:Belch": {
+    "NAME": "Belch",
+    "DESCRIPTION": "{@@}{!theBrewmaster:intoxicated!|0=Apply !M! Weak and Vulnerable. NL thebrewmaster:Intoxicated: Stun an enemy instead.|1=Intoxicated: Stun an enemy.|-1=Apply !M! Weak and Vulnerable. NL thebrewmaster:Intoxicated: Stun an enemy instead.}",
+    "UPGRADE_DESCRIPTION": "{@@}{!theBrewmaster:intoxicated!|0=Stun an enemy.|1=Stun an enemy. Apply !M! Weak and Vulnerable to the rest.|-1=Stun an enemy. NL thebrewmaster:Intoxicated: Apply !M! Weak and !M! Vulnerable to the rest.}"
+  },
+  "theBrewmaster:LeanIn": {
+    "NAME": "Lean In",
+    "DESCRIPTION": "{@@}Consume 10% of your intoxication. Deal {!M!|2=twice }that much damage."
+  },
+  "theBrewmaster:FortifyingBrew": {
+    "NAME": "Fortifying Brew",
+    "DESCRIPTION": "Gain !B! Block. NL thebrewmaster:Intoxicated: Gain double that amount instead."
+  },
+  "theBrewmaster:SoberUp": {
+    "NAME": "Sober Up",
+    "DESCRIPTION": "Consume 100% of your thebrewmaster:Intoxication. Gain [E] for every !M! consumed. NL Exhaust."
+  },
+  "theBrewmaster:DrunkenIdea": {
+    "NAME": "Drunken Idea",
+    "DESCRIPTION": "{@@}Discard 1 card. Draw !M! card{!M!|>1=s}. NL thebrewmaster:Intoxicated: NL Draw !M! card{!M!|>1=s}, discard 1 card instead."
+  },
+  "theBrewmaster:Stagger": {
+    "NAME": "Stagger",
+    "DESCRIPTION": "Deal !D! damage. If the enemy intends to attack, switch their intent."
   }
 }

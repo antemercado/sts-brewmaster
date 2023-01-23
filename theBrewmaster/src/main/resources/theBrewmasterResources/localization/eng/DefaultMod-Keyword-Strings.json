@@ -20,9 +20,18 @@
   {
     "PROPER_NAME": "Intoxication",
     "NAMES": [
+      "Intoxication",
+      "Intoxicated",
       "intoxication",
       "intoxicated"
     ],
-    "DESCRIPTION": "Brewmaster cards have certain bonuses at 100 intoxication. You lose 25% of intoxication each turn."
+    "DESCRIPTION": "Brewmaster cards have certain bonuses at when intoxicated. You lose 25% of intoxication each turn."
+  },
+  {
+    "PROPER_NAME": "Intoxicated",
+    "NAMES": [
+      "intoxicated"
+    ],
+    "DESCRIPTION": "Brewmaster cards have certain bonuses at when intoxicated. You lose 25% of intoxication each turn."
   }
 ]

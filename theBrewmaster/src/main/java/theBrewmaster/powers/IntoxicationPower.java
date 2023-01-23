@@ -20,6 +20,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.stances.AbstractStance;
 
 //Gain 1 dex for the turn for each card played.
 
@@ -30,6 +31,10 @@ public class IntoxicationPower extends AbstractPower{
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
+
+    public static final int INTOX_THRESHOLD = 100;
+    public static final int INTOX_THRESHOLD_RELIC = 75;
+    public static final int INTOX_DECAY_RATE = 5;
 
     // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
     // There's a fallback "missing texture" image, so the game shouldn't crash if you accidentally put a non-existent file.
@@ -54,37 +59,53 @@ public class IntoxicationPower extends AbstractPower{
         updateDescription();
     }
 
-    // At the end of the turn, remove half of intoxication stacks
-    @Override
-    public void atEndOfTurn(final boolean isPlayer) {
-
-        flash();
-        reducePower(this.amount/4);
-        updateDescription();
-    }
-
-    public void reducePower(int reduceAmount){
-        super.reducePower(reduceAmount);
-        if (this.amount < 100){ // && AbstractDungeon.player.stance.ID.equals(IntoxicatedStance.STANCE_ID)
-            AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction("Neutral"));
-        }
-    }
-
-    // When over 100 stacks, enter Intoxicated
+    // Enter Intoxicated when you add enough stacks.
+    // This is intended to pull you out of any Watcher stances you may have put youself into.
     public void stackPower(int stackAmount){
         super.stackPower(stackAmount);
-        if (this.amount >= 100) {
+        if (this.amount >= INTOX_THRESHOLD || stackAmount >= INTOX_THRESHOLD) {
             AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new IntoxicatedStance()));
         }
         updateDescription();
+    }
+    
+    // At the end of the turn, remove intoxication stacks
+    @Override
+    public void atEndOfTurn(final boolean isPlayer) {
+        flash();
+        reducePower(this.amount/INTOX_DECAY_RATE);
+        updateDescription();
+    }
+    
+    //Remove Intoxicated when losing enough stacks
+    public void reducePower(int reduceAmount){
+        super.reducePower(reduceAmount);
+        if (this.amount < INTOX_THRESHOLD && AbstractDungeon.player.stance.ID.equals(IntoxicatedStance.STANCE_ID))
+            AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction("Neutral"));
+        if (this.amount <= 0)
+            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
+    }
+
+    // If entering Neutral stance & has enough stacks, enter intoxication stance.
+    // Useful if you end up entering any of the Watcher stances. When you leave, if you're intoxicated you'll re-enter Intoxicated.
+    public void onChangeStance(AbstractStance oldStance, AbstractStance newStance) {
+        if (newStance.ID.equals("Neutral") && this.amount >= INTOX_THRESHOLD)
+            AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new IntoxicatedStance()));
+    }
+
+    // When starting turn, if have enough stacks and are in Neutral, enter intoxication stance.
+    // This is not meant to pull you out of Watcher stances.
+    public void atStartOfTurn() {
+        if (AbstractDungeon.player.stance.ID.equals("Neutral") && this.amount >= INTOX_THRESHOLD)
+            AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new IntoxicatedStance()));
     }
 
     // Update the description when intoxicated.
     @Override
     public void updateDescription() {
-        if (this.amount < 100) {
+        if (this.amount < INTOX_THRESHOLD) {
             description = DESCRIPTIONS[0];
-        } else if (this.amount >= 100) {
+        } else if (this.amount >= INTOX_THRESHOLD) {
             description = DESCRIPTIONS[1];
         }
     }

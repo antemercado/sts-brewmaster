@@ -36,7 +36,7 @@ public class Homebrew extends AbstractDynamicCard {
     private static final int COST = 1;
 
     // Base Intoxication
-    private static final int MISC = 0;
+    private static final int MISC = 5;
 
     // Intoxication Increase
     private static final int MAGIC2 = 5;
