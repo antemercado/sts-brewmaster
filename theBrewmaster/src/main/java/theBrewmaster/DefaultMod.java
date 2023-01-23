@@ -8,10 +8,7 @@ import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.DynamicTextBloc
 import theBrewmaster.cards.*;
 import theBrewmaster.characters.TheBrewmaster;
 import theBrewmaster.events.IdentityCrisisEvent;
-import theBrewmaster.relics.BottledPlaceholderRelic;
-import theBrewmaster.relics.DefaultClickableRelic;
-import theBrewmaster.relics.PlaceholderRelic;
-import theBrewmaster.relics.PlaceholderRelic2;
+import theBrewmaster.relics.BeerSteinRelic;
 import theBrewmaster.stances.IntoxicatedStance;
 import theBrewmaster.util.IDCheckDontTouchPls;
 import theBrewmaster.util.TextureLoader;
@@ -26,6 +23,7 @@ import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.TheCity;
@@ -394,17 +392,15 @@ public class DefaultMod implements
         // in order to automatically differentiate which pool to add the relic too.
 
         // This adds a character specific relic. Only when you play with the mentioned color, will you get this relic.
-        BaseMod.addRelicToCustomPool(new PlaceholderRelic(), TheBrewmaster.Enums.COLOR_GRAY);
-        BaseMod.addRelicToCustomPool(new BottledPlaceholderRelic(), TheBrewmaster.Enums.COLOR_GRAY);
-        BaseMod.addRelicToCustomPool(new DefaultClickableRelic(), TheBrewmaster.Enums.COLOR_GRAY);
+        BaseMod.addRelicToCustomPool(new BeerSteinRelic(), TheBrewmaster.Enums.COLOR_GRAY);
         
         // This adds a relic to the Shared pool. Every character can find this relic.
-        BaseMod.addRelic(new PlaceholderRelic2(), RelicType.SHARED);
+        //BaseMod.addRelic(new PlaceholderRelic2(), RelicType.SHARED);
         
         // Mark relics as seen - makes it visible in the compendium immediately
         // If you don't have this it won't be visible in the compendium until you see them in game
         // (the others are all starters so they're marked as seen in the character file)
-        UnlockTracker.markRelicAsSeen(BottledPlaceholderRelic.ID);
+        UnlockTracker.markRelicAsSeen(BeerSteinRelic.ID);
         logger.info("Done adding relics!");
     }
     
@@ -453,11 +449,16 @@ public class DefaultMod implements
         // theBrewmaster:intoxicated
         // returns 1 if in Intoxicated Stance
         // returns 0 if not
+        // returns -1 if not in hand or limbo.
         DynamicTextBlocks.registerCustomCheck("theBrewmaster:intoxicated", card -> {
-            if (AbstractDungeon.player.stance.ID.equals(IntoxicatedStance.STANCE_ID)){
-                return 1;
+            if (CardCrawlGame.dungeon != null && AbstractDungeon.player != null){
+                if (AbstractDungeon.player.hand.contains(card) || AbstractDungeon.player.limbo.contains(card)){
+                    if (AbstractDungeon.player.stance.ID.equals(IntoxicatedStance.STANCE_ID))
+                        return 1;
+                    return 0;
+                }
             }
-            return 0;
+            return -1;
         });
 
         logger.info("Done adding cards!");

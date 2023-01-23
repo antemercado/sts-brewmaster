@@ -30,5 +30,12 @@
       ".",
       "Select a card to bottle for "
     ]
+  },
+  "theBrewmaster:BeerSteinRelic": {
+    "NAME": "Beer Stein",
+    "FLAVOR": "I've never heard of one drinks too many.",
+    "DESCRIPTIONS": [
+      "Retain your intoxication level between floors and acts."
+    ]
   }
 }
