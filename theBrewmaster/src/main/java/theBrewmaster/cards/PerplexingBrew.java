@@ -49,8 +49,11 @@ public class PerplexingBrew extends AbstractDynamicCard {
         this.baseMagicNumber = this.magicNumber = MAGIC_NUM;
 
         tags.add(CustomTags.BREW);
+    }
 
-        // Determine brew when created.
+    // (Upgraded) Determine brew when drawn.
+    @Override
+    public void triggerWhenDrawn() {
         this.magicNumber = AbstractDungeon.cardRandomRng.random(2);
     }
     
@@ -71,8 +74,6 @@ public class PerplexingBrew extends AbstractDynamicCard {
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, 1)));
                 break;
         }
-        // Re-randomize brew when played.
-        this.magicNumber = AbstractDungeon.cardRandomRng.random(2);
         
     }
     
