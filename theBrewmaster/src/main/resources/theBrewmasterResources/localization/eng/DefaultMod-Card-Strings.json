@@ -104,7 +104,7 @@
   },
   "theBrewmaster:LeanIn": {
     "NAME": "Lean In",
-    "DESCRIPTION": "{@@}Consume 10% of your intoxication. Deal {!M!|2=twice }that much damage."
+    "DESCRIPTION": "{@@}Consume 10% of your intoxication. Deal {!M!|2=#gtwice }that much damage."
   },
   "theBrewmaster:FortifyingBrew": {
     "NAME": "Fortifying Brew",
