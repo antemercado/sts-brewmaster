@@ -2,6 +2,7 @@ package theBrewmaster.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
 import theBrewmaster.DefaultMod;
+import theBrewmaster.tags.CustomTags;
 import theBrewmaster.util.TextureLoader;
 
 import static theBrewmaster.DefaultMod.makePowerPath;
@@ -9,22 +10,20 @@ import static theBrewmaster.DefaultMod.makePowerPath;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class FluidMotionPower extends AbstractPower{
+public class PocketFlaskPower extends AbstractPower{
     public AbstractCreature source;
 
-    public static final String POWER_ID = DefaultMod.makeID("FluidMotionPower");
+    public static final String POWER_ID = DefaultMod.makeID("PocketFlaskPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
@@ -34,7 +33,9 @@ public class FluidMotionPower extends AbstractPower{
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
 
-    public FluidMotionPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
+    public static final int INTOX = 10;
+
+    public PocketFlaskPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         name = NAME;
         ID = POWER_ID;
 
@@ -57,23 +58,18 @@ public class FluidMotionPower extends AbstractPower{
         updateDescription();
     }
 
-    // Provide block at end of turn
-    public void atEndOfTurnPreEndTurnCards(boolean isPlayer){
-        AbstractPlayer player = AbstractDungeon.player;
-        // if (!player.hasPower(IntoxicationPower.POWER_ID)){
-        //     return;
-        // }
-        AbstractPower intoxicationPower = player.getPower(IntoxicationPower.POWER_ID);
-        float reduction = intoxicationPower.amount * this.amount / 10;
-        flash();
-        addToBot(new ReducePowerAction(player, player, intoxicationPower, (int)Math.ceil(reduction)));
-        addToBot(new GainBlockAction(player, player, (int)Math.ceil(reduction)));
+    public void onUseCard(AbstractCard card, UseCardAction action){
+        if (card.hasTag(CustomTags.BREW) && this.amount > 0){
+            int intoxLevel = (amount * INTOX);
+            flash();
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(source, source, new IntoxicationPower(owner, owner, intoxLevel)));
+        }
     }
-
-    // Update the description when intoxicated.
+    
+    // Update the description
     @Override
     public void updateDescription() {
-        description = DESCRIPTIONS[0] + (amount * 10) + DESCRIPTIONS[1];
+        description = DESCRIPTIONS[0] + (amount * INTOX) + DESCRIPTIONS[1];
     }
 
 }

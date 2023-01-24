@@ -12,6 +12,7 @@ import static theBrewmaster.DefaultMod.makeCardPath;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.unique.AddCardToDeckAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -32,7 +33,7 @@ public class Microbrew extends AbstractDynamicCard {
 
     private static final int COST = 0;
 
-    private static final int POWER = 10;
+    private static final int POWER = 5;
 
     public Microbrew() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

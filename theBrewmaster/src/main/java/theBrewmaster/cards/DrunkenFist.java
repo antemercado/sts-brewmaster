@@ -42,14 +42,14 @@ public class DrunkenFist extends AbstractDynamicCard {
 
     public DrunkenFist() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.baseDamage = DAMAGE;
-        this.baseMagicNumber = MAGIC;
+        this.baseDamage = this.damage = DAMAGE;
+        this.baseMagicNumber = this.magicNumber = MAGIC;
 
     }
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new IntoxicationPower(p, p, magicNumber)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new IntoxicationPower(p, p, magicNumber), magicNumber));
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
     }
     // Upgraded stats.

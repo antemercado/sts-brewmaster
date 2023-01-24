@@ -8,9 +8,9 @@ import theBrewmaster.characters.TheBrewmaster;
 
 import static theBrewmaster.DefaultMod.makeCardPath;
 
-import com.evacipated.cardcrawl.mod.stslib.actions.common.StunMonsterAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -19,10 +19,14 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class Stagger extends AbstractDynamicCard {
+@AutoAdd.Ignore
+public class KSSmash extends AbstractDynamicCard {
     // TEXT DECLARATION
-    public static final String ID = DefaultMod.makeID(Stagger.class.getSimpleName());
+    public static final String ID = DefaultMod.makeID(KSSmashP.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
+
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     // STAT DECLARATION
 
@@ -31,43 +35,41 @@ public class Stagger extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheBrewmaster.Enums.COLOR_GRAY;
 
-    private static final int COST = 1;
+    private static final int COST = 2;
+    private static final int UPGRADED_COST = 1;
 
-    private static final int DAMAGE = 6;
-    private static final int UPGRADE_PLUS_DMG = 3;
+    private static final int DAMAGE = 15;
 
-    public Stagger() { 
+    private AbstractCard preview;
+
+    public KSSmash() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.baseDamage = this.damage = DAMAGE;
+        this.baseDamage = DAMAGE;
+
+        this.exhaust = true;
+
+        this.preview = new KSKegP();
+        this.cardsToPreview = this.preview;
     }
-    
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-        if (!m.isDeadOrEscaped() && m.getIntentBaseDmg() >= 0) {
-            AbstractDungeon.actionManager.addToBottom(new StunMonsterAction(m, p));
-        }
+        
+        AbstractCard keg = new KSKeg();
+        if (upgraded)
+            keg.upgrade();
+        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(keg, 1, false));
     }
-
-    // Glow if enemy intends to attack.
-    public void triggerOnGlowCheck() {
-        this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
-        for (AbstractMonster m: AbstractDungeon.getCurrRoom().monsters.monsters) {
-            if (!m.isDeadOrEscaped() && m.getIntentBaseDmg() >= 0){
-                this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
-                break;
-            }
-        }
-    }
-
     // Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DMG);
+            upgradeBaseCost(UPGRADED_COST);
+            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
+            this.preview.upgrade();
         }
     }
 }

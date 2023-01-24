@@ -120,6 +120,34 @@
   },
   "theBrewmaster:Stagger": {
     "NAME": "Stagger",
-    "DESCRIPTION": "Deal !D! damage. If the enemy intends to attack, switch their intent."
+    "DESCRIPTION": "Deal !D! damage. If the enemy intends to attack, stun them."
+  },
+  "theBrewmaster:PurifyingBrew": {
+    "NAME": "Purifying Brew",
+    "DESCRIPTION": "Reduce all debuffs by !M!."
+  },
+  "theBrewmaster:PocketFlask": {
+    "NAME": "Pocket Flask",
+    "DESCRIPTION": "Whenever you play a Brew, gain 10 thebrewmaster:Intoxication."
+  },
+  "theBrewmaster:KSKeg": {
+    "NAME": "Keg",
+    "DESCRIPTION": "Gain !M! thebrewmaster:Intoxication. NL Add 1 #ySmash to your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain !M! thebrewmaster:Intoxication. NL Add 1 #gSmash+ to your hand. NL Exhaust."
+  },
+  "theBrewmaster:KSKegP": {
+    "NAME": "Keg",
+    "DESCRIPTION": "Gain !M! thebrewmaster:Intoxication. NL Add 1 #ySmash to your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain !M! thebrewmaster:Intoxication. NL Add 1 #gSmash+ to your hand. NL Exhaust."
+  },
+  "theBrewmaster:KSSmash": {
+    "NAME": "Smash",
+    "DESCRIPTION": "Deal !D! damage. NL Add 1 #yKeg to your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Add 1 #gKeg+ to your hand. NL Exhaust."
+  },
+  "theBrewmaster:KSSmashP": {
+    "NAME": "Smash",
+    "DESCRIPTION": "Deal !D! damage. NL Add 1 #yKeg to your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Add 1 #gKeg+ to your hand. NL Exhaust."
   }
 }

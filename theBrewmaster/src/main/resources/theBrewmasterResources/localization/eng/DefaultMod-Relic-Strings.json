@@ -35,7 +35,7 @@
     "NAME": "Beer Stein",
     "FLAVOR": "I've never heard of one drinks too many.",
     "DESCRIPTIONS": [
-      "Retain your intoxication level between floors and acts."
+      "Your intoxication level no longer resets between floors and acts."
     ]
   }
 }

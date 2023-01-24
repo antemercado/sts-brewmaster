@@ -25,5 +25,12 @@
       "At the end of your turn, gain ",
       "% of your Intoxication as Block (Rounded up.)"
     ]
+  },
+  "theBrewmaster:PocketFlaskPower": {
+    "NAME": "Pocket Flask",
+    "DESCRIPTIONS": [
+      "Gain ",
+      " Intoxication whenever you play a brew card."
+    ]
   }
 }

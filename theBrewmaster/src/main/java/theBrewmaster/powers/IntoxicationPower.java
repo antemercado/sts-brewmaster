@@ -73,7 +73,10 @@ public class IntoxicationPower extends AbstractPower{
     @Override
     public void atEndOfTurn(final boolean isPlayer) {
         flash();
-        reducePower(this.amount/INTOX_DECAY_RATE);
+        int reduceAmount = this.amount/INTOX_DECAY_RATE;
+        if (reduceAmount <= 0)
+            reduceAmount = 1;
+        reducePower(reduceAmount);
         updateDescription();
     }
     
