@@ -124,7 +124,8 @@
   },
   "theBrewmaster:PurifyingBrew": {
     "NAME": "Purifying Brew",
-    "DESCRIPTION": "Reduce all debuffs by !M!."
+    "DESCRIPTION": "Discard a card. If it is a Status card, gain !M! thebrewmaster:Intoxication.",
+    "UPGRADED_DESCRIPTION": "Discard a card. If it is a #gStatus #or #Curse card, gain !M! thebrewmaster:Intoxication."
   },
   "theBrewmaster:PocketFlask": {
     "NAME": "Pocket Flask",

@@ -30,10 +30,9 @@ public class PurifyingBrew extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheBrewmaster.Enums.COLOR_GRAY;
 
-    private static final int COST = 2;
-    private static final int UPGRADED_COST = 1;
+    private static final int COST = 1;
 
-    private static final int MAGIC = 1;
+    private static final int MAGIC = 10;
 
     public PurifyingBrew() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -46,14 +45,13 @@ public class PurifyingBrew extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new PurifyingBrewAction(p, magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new PurifyingBrewAction(p, magicNumber, upgraded));
     }
     // Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(UPGRADED_COST);
             initializeDescription();
         }
     }
