@@ -499,8 +499,8 @@ public class DefaultMod implements
                 getModID() + "Resources/localization/eng/DefaultMod-Character-Strings.json");
         
         // OrbStrings
-        BaseMod.loadCustomStringsFile(OrbStrings.class,
-                getModID() + "Resources/localization/eng/DefaultMod-Orb-Strings.json");
+        // BaseMod.loadCustomStringsFile(OrbStrings.class,
+        //         getModID() + "Resources/localization/eng/DefaultMod-Orb-Strings.json");
 
         // StanceStrings
         BaseMod.loadCustomStringsFile(StanceStrings.class,
