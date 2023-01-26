@@ -36,10 +36,10 @@ public class QuickSip extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
 
-    private static final int COST = 0;
+    private static final int COST = 1;
+    private static final int UPGRADED_COST = 0;
 
     private static final int POWER = 15;
-    private static final int ENERGY_GAIN = 1;
     private static final int CARD_DRAW = 1;
 
     public QuickSip() { 
@@ -51,12 +51,8 @@ public class QuickSip extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new IntoxicationPower(p, p, magicNumber)));
-        if (AbstractDungeon.player.stance.ID.equals(IntoxicatedStance.STANCE_ID)) {
-            AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(ENERGY_GAIN));
-            if (upgraded){
-                AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, CARD_DRAW));
-            }
-        }
+        if (AbstractDungeon.player.stance.ID.equals(IntoxicatedStance.STANCE_ID))
+            AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, CARD_DRAW));
     }
 
     // Glow when Intoxicated
@@ -72,7 +68,7 @@ public class QuickSip extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            rawDescription = UPGRADE_DESCRIPTION;
+            upgradeBaseCost(UPGRADED_COST);
             initializeDescription();
         }
     }

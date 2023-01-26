@@ -18,8 +18,7 @@
   },
   "theBrewmaster:QuickSip": {
     "NAME": "Quick Sip",
-    "DESCRIPTION": "Gain !M! thebrewmaster:Intoxication. NL thebrewmaster:Intoxicated: Gain [E].",
-    "UPGRADE_DESCRIPTION": "Gain !M! thebrewmaster:Intoxication. NL thebrewmaster:Intoxicated: Gain [E]. Draw a card."
+    "DESCRIPTION": "Gain !M! thebrewmaster:Intoxication. NL thebrewmaster:Intoxicated: Draw a card."
   },
   "theBrewmaster:PerplexingBrew": {
     "NAME": "Perplexing Brew",
