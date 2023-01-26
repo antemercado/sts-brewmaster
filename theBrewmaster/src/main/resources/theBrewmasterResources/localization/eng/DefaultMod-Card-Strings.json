@@ -38,8 +38,8 @@
     "NAME": "Chug",
     "DESCRIPTION": "Gain !M! thebrewmaster:Intoxication."
   },
-  "theBrewmaster:DrunkenFist": {
-    "NAME": "Drunken Fist",
+  "theBrewmaster:BottleSmash": {
+    "NAME": "Bottle Smash",
     "DESCRIPTION": "Deal !D! damage. Gain !M! thebrewmaster:Intoxication."
   },
   "theBrewmaster:Homebrew": {
@@ -51,8 +51,8 @@
     "DESCRIPTION": "{@@}{!theBrewmaster:intoxicated!|0=Apply !M! Weak and Vulnerable. NL thebrewmaster:Intoxicated: Stun an enemy instead.|1=Intoxicated: Stun an enemy.|-1=Apply !M! Weak and Vulnerable. NL thebrewmaster:Intoxicated: Stun an enemy instead.}",
     "UPGRADE_DESCRIPTION": "{@@}{!theBrewmaster:intoxicated!|0=Stun an enemy.|1=Stun an enemy. Apply !M! Weak and Vulnerable to the rest.|-1=Stun an enemy. NL thebrewmaster:Intoxicated: Apply !M! Weak and !M! Vulnerable to the rest.}"
   },
-  "theBrewmaster:LeanIn": {
-    "NAME": "Lean In",
+  "theBrewmaster:DrunkenFist": {
+    "NAME": "Drunken Fist",
     "DESCRIPTION": "{@@}Consume 10% of your intoxication. Deal {!M!|2=#gtwice }that much damage.",
     "EXTENDED_DESCRIPTION": [
       "Deal"
@@ -102,5 +102,17 @@
     "NAME": "Smash",
     "DESCRIPTION": "Deal !D! damage. NL Add 1 #yKeg to your hand. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Add 1 #gKeg+ to your hand. NL Exhaust."
+  },
+  "theBrewmaster:Binge": {
+    "NAME": "Binge",
+    "DESCRIPTION": "Gain !B! block and !M! thebrewmaster:Intoxication. NL Add a copy of this card with Ethereal and Exhaust to your hand."
+  },
+  "theBrewmaster:HaveLaugh": {
+    "NAME": "Have a Laugh",
+    "DESCRIPTION": "Exhaust a card. Reduce the cost of cards in your hand by 1 this turn."
+  },
+  "theBrewmaster:CrazyBrew": {
+    "NAME": "Crazy Brew",
+    "DESCRIPTION": "Exhaust a card. Add [E]."
   }
 }

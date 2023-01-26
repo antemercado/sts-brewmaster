@@ -33,6 +33,7 @@ public class PurifyingBrewAction extends AbstractGameAction{
                 addToBot(new ApplyPowerAction(target, target, new IntoxicationPower(target, source, amount), amount));
             }
         }
+        this.isDone = true;
     }
     
 }

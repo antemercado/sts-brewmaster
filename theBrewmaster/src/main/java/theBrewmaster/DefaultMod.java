@@ -505,6 +505,10 @@ public class DefaultMod implements
         // StanceStrings
         BaseMod.loadCustomStringsFile(StanceStrings.class,
                 getModID() + "Resources/localization/eng/DefaultMod-Stance-Strings.json");
+
+        // ActionStrings
+        BaseMod.loadCustomStringsFile(UIStrings.class,
+                getModID() + "Resources/localization/eng/DefaultMod-Action-Strings.json");
         
         logger.info("Done edittting strings");
     }
