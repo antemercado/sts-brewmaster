@@ -53,7 +53,7 @@
   },
   "theBrewmaster:DrunkenFist": {
     "NAME": "Drunken Fist",
-    "DESCRIPTION": "{@@}Consume 10% of your intoxication. Deal {!M!|2=#gtwice }that much damage.",
+    "DESCRIPTION": "{@@}Consume 10% of your intoxication. Deal {!M!|2=[#7fff00]twice[] }that much damage.",
     "EXTENDED_DESCRIPTION": [
       "Deal"
     ]
@@ -77,7 +77,7 @@
   "theBrewmaster:PurifyingBrew": {
     "NAME": "Purifying Brew",
     "DESCRIPTION": "Discard a card. If it is a Status card, gain !M! thebrewmaster:Intoxication.",
-    "UPGRADED_DESCRIPTION": "Discard a card. If it is a #gStatus #or #Curse card, gain !M! thebrewmaster:Intoxication."
+    "UPGRADED_DESCRIPTION": "Discard a card. If it is a [#7fff00]Status or Curse[] card, gain !M! thebrewmaster:Intoxication."
   },
   "theBrewmaster:PocketFlask": {
     "NAME": "Pocket Flask",
@@ -85,23 +85,23 @@
   },
   "theBrewmaster:KSKeg": {
     "NAME": "Keg",
-    "DESCRIPTION": "Gain !M! thebrewmaster:Intoxication. NL Add 1 #ySmash to your hand. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! thebrewmaster:Intoxication. NL Add 1 #gSmash+ to your hand. NL Exhaust."
+    "DESCRIPTION": "Gain !M! thebrewmaster:Intoxication. NL Add 1 [#edc651]Smash[] to your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain !M! thebrewmaster:Intoxication. NL Add 1 [#7fff00]Smash+[] to your hand. NL Exhaust."
   },
   "theBrewmaster:KSKegP": {
     "NAME": "Keg",
-    "DESCRIPTION": "Gain !M! thebrewmaster:Intoxication. NL Add 1 #ySmash to your hand. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! thebrewmaster:Intoxication. NL Add 1 #gSmash+ to your hand. NL Exhaust."
+    "DESCRIPTION": "Gain !M! thebrewmaster:Intoxication. NL Add 1 [#edc651]Smash[] to your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain !M! thebrewmaster:Intoxication. NL Add 1 [#7fff00]Smash+[] to your hand. NL Exhaust."
   },
   "theBrewmaster:KSSmash": {
     "NAME": "Smash",
-    "DESCRIPTION": "Deal !D! damage. NL Add 1 #yKeg to your hand. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Add 1 #gKeg+ to your hand. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL Add 1 [#edc651]Keg[] to your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Add 1 [#7fff00]Keg+[] to your hand. NL Exhaust."
   },
   "theBrewmaster:KSSmashP": {
     "NAME": "Smash",
-    "DESCRIPTION": "Deal !D! damage. NL Add 1 #yKeg to your hand. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Add 1 #gKeg+ to your hand. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL Add 1 [#edc651]Keg[] to your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Add 1 [#7fff00]Keg+[] to your hand. NL Exhaust."
   },
   "theBrewmaster:Binge": {
     "NAME": "Binge",
@@ -113,6 +113,7 @@
   },
   "theBrewmaster:CrazyBrew": {
     "NAME": "Crazy Brew",
-    "DESCRIPTION": "Exhaust a card. Add [E]."
+    "DESCRIPTION": "Gain !M! thebrewmaster:Intoxication. NL Next turn gain [E].",
+    "UPGRADE_DESCRIPTION": "Gain !M! thebrewmaster:Intoxication. NL Next turn gain [E] [E]."
   }
 }
