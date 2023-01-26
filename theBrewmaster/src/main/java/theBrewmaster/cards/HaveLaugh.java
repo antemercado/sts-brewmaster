@@ -4,12 +4,12 @@ import basemod.AutoAdd;
 import basemod.abstracts.CustomCard;
 import basemod.helpers.BaseModCardTags;
 import theBrewmaster.BrewmasterMod;
-import theBrewmaster.actions.HaveLaughAction;
 import theBrewmaster.characters.BrewmasterCharacter;
 
 import static theBrewmaster.BrewmasterMod.makeCardPath;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ExhaustAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.ReduceCostAction;
 import com.megacrit.cardcrawl.actions.common.ReduceCostForTurnAction;
@@ -39,11 +39,15 @@ public class HaveLaugh extends AbstractDynamicCard {
 
     public HaveLaugh() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        this.baseMagicNumber = this.magicNumber = MAGIC;
     }
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new HaveLaughAction(MAGIC));        
+        addToBot(new ExhaustAction(1, false));
+        for (AbstractCard c: p.hand.group){
+            addToBot(new ReduceCostForTurnAction(c, magicNumber));
+        }
     }
     
     // Upgraded stats.
