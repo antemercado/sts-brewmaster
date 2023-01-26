@@ -5,6 +5,7 @@ import basemod.abstracts.CustomCard;
 import basemod.helpers.BaseModCardTags;
 import theBrewmaster.BrewmasterMod;
 import theBrewmaster.characters.BrewmasterCharacter;
+import theBrewmaster.tags.CustomTags;
 
 import static theBrewmaster.BrewmasterMod.makeCardPath;
 
@@ -46,7 +47,8 @@ public class HaveLaugh extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ExhaustAction(1, false));
         for (AbstractCard c: p.hand.group){
-            addToBot(new ReduceCostForTurnAction(c, magicNumber));
+            if (c.hasTag(CustomTags.BREW))
+                addToBot(new ReduceCostForTurnAction(c, magicNumber));
         }
     }
     

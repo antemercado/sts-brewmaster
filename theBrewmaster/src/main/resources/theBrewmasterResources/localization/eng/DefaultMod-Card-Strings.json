@@ -110,7 +110,7 @@
   },
   "theBrewmaster:HaveLaugh": {
     "NAME": "Have a Laugh",
-    "DESCRIPTION": "Exhaust a card. Reduce the cost of cards in your hand by 1 this turn."
+    "DESCRIPTION": "Exhaust a card. Reduce the cost of Brew cards in your hand by 1 this turn."
   },
   "theBrewmaster:CrazyBrew": {
     "NAME": "Crazy Brew",
