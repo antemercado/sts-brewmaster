@@ -1,9 +1,12 @@
 package theBrewmaster.cards;
 
 import basemod.AutoAdd;
+import basemod.abstracts.AbstractCardModifier;
 import basemod.abstracts.CustomCard;
 import basemod.helpers.BaseModCardTags;
+import basemod.helpers.CardModifierManager;
 import theBrewmaster.BrewmasterMod;
+import theBrewmaster.cardmodifiers.BingeModifier;
 import theBrewmaster.characters.BrewmasterCharacter;
 import theBrewmaster.powers.IntoxicationPower;
 
@@ -55,10 +58,8 @@ public class Binge extends AbstractDynamicCard {
         AbstractCard tmp = new Binge();
         if (this.upgraded)
             tmp.upgrade();
-        tmp.isEthereal = true;
-        tmp.exhaust = true;
-        tmp.rawDescription = "Ethereal NL " + rawDescription + " NL Exhaust";
-        initializeDescription();
+
+        CardModifierManager.addModifier(tmp, new BingeModifier());
 
         addToBot(new MakeTempCardInHandAction(tmp, 1, false));
     }
