@@ -6,6 +6,7 @@ import basemod.helpers.BaseModCardTags;
 import theBrewmaster.BrewmasterMod;
 import theBrewmaster.characters.BrewmasterCharacter;
 import theBrewmaster.powers.IntoxicationPower;
+import theBrewmaster.tags.CustomTags;
 
 import static theBrewmaster.BrewmasterMod.makeCardPath;
 
@@ -23,6 +24,9 @@ public class CrazyBrew extends AbstractDynamicCard {
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(CrazyBrew.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
+
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     // STAT DECLARATION
 
@@ -43,6 +47,8 @@ public class CrazyBrew extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseMagicNumber = magicNumber = MAGIC;
         this.baseMagicNumber2 = magicNumber2 = MAGIC2;
+
+        tags.add(CustomTags.BREW);
     }
     // Actions the card should do.
     @Override
@@ -57,6 +63,7 @@ public class CrazyBrew extends AbstractDynamicCard {
             upgradeName();
             upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
             upgradeMagicNumber2(UPGRADE_PLUS_MAGIC2);
+            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }
