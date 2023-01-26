@@ -2,7 +2,7 @@ package theBrewmaster.characters;
 
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpriterAnimation;
-import theBrewmaster.DefaultMod;
+import theBrewmaster.BrewmasterMod;
 import theBrewmaster.cards.*;
 import theBrewmaster.relics.BeerSteinRelic;
 
@@ -26,8 +26,8 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import static theBrewmaster.DefaultMod.*;
-import static theBrewmaster.characters.TheBrewmaster.Enums.COLOR_GRAY;
+import static theBrewmaster.BrewmasterMod.*;
+import static theBrewmaster.characters.BrewmasterCharacter.Enums.ORANGE;
 
 import java.util.ArrayList;
 
@@ -35,8 +35,8 @@ import java.util.ArrayList;
 //and https://github.com/daviscook477/BaseMod/wiki/Migrating-to-5.0
 //All text (starting description and loadout, anything labeled TEXT[]) can be found in DefaultMod-character-Strings.json in the resources
 
-public class TheBrewmaster extends CustomPlayer {
-    public static final Logger logger = LogManager.getLogger(DefaultMod.class.getName());
+public class BrewmasterCharacter extends CustomPlayer {
+    public static final Logger logger = LogManager.getLogger(BrewmasterMod.class.getName());
 
     // =============== CHARACTER ENUMERATORS =================
     // These are enums for your Characters color (both general color and for the card library) as well as
@@ -47,10 +47,10 @@ public class TheBrewmaster extends CustomPlayer {
 
     public static class Enums {
         @SpireEnum
-        public static AbstractPlayer.PlayerClass THE_DEFAULT;
-        @SpireEnum(name = "DEFAULT_GRAY_COLOR") // These two HAVE to have the same absolutely identical name.
-        public static AbstractCard.CardColor COLOR_GRAY;
-        @SpireEnum(name = "DEFAULT_GRAY_COLOR") @SuppressWarnings("unused")
+        public static AbstractPlayer.PlayerClass BREWMASTER;
+        @SpireEnum(name = "BREWMASTER_ORANGE") // These two HAVE to have the same absolutely identical name.
+        public static AbstractCard.CardColor ORANGE;
+        @SpireEnum(name = "BREWMASTER_ORANGE") @SuppressWarnings("unused")
         public static CardLibrary.LibraryType LIBRARY_COLOR;
     }
 
@@ -71,7 +71,7 @@ public class TheBrewmaster extends CustomPlayer {
 
     // =============== STRINGS =================
 
-    private static final String ID = makeID("DefaultCharacter");
+    private static final String ID = makeID("BrewmasterCharacter");
     private static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString(ID);
     private static final String[] NAMES = characterStrings.NAMES;
     private static final String[] TEXT = characterStrings.TEXT;
@@ -98,7 +98,7 @@ public class TheBrewmaster extends CustomPlayer {
 
     // =============== CHARACTER CLASS START =================
 
-    public TheBrewmaster(String name, PlayerClass setClass) {
+    public BrewmasterCharacter(String name, PlayerClass setClass) {
         super(name, setClass, orbTextures,
                 "theBrewmasterResources/images/char/defaultCharacter/orb/vfx.png", null,
                 new SpriterAnimation(
@@ -109,9 +109,9 @@ public class TheBrewmaster extends CustomPlayer {
 
         initializeClass(null, // required call to load textures and setup energy/loadout.
                 // I left these in DefaultMod.java (Ctrl+click them to see where they are, Ctrl+hover to see what they read.)
-                THE_DEFAULT_SHOULDER_2, // campfire pose
-                THE_DEFAULT_SHOULDER_1, // another campfire pose
-                THE_DEFAULT_CORPSE, // dead corpse
+                BREWMASTER_SHOULDER_2, // campfire pose
+                BREWMASTER_SHOULDER_1, // another campfire pose
+                BREWMASTER_CORPSE, // dead corpse
                 getLoadout(), 20.0F, -10.0F, 220.0F, 290.0F, new EnergyManager(ENERGY_PER_TURN)); // energy manager
 
         // =============== /TEXTURES, ENERGY, LOADOUT/ =================
@@ -120,8 +120,8 @@ public class TheBrewmaster extends CustomPlayer {
         // =============== ANIMATIONS =================  
 
         loadAnimation(
-                THE_DEFAULT_SKELETON_ATLAS,
-                THE_DEFAULT_SKELETON_JSON,
+                BREWMASTER_SKELETON_ATLAS,
+                BREWMASTER_SKELETON_JSON,
                 1.0f);
         AnimationState.TrackEntry e = state.setAnimation(0, "animation", true);
         e.setTime(e.getEndTime() * MathUtils.random());
@@ -208,13 +208,13 @@ public class TheBrewmaster extends CustomPlayer {
     // Should return the card color enum to be associated with your character.
     @Override
     public AbstractCard.CardColor getCardColor() {
-        return COLOR_GRAY;
+        return ORANGE;
     }
 
     // Should return a color object to be used to color the trail of moving cards
     @Override
     public Color getCardTrailColor() {
-        return theBrewmaster.DefaultMod.DEFAULT_GRAY;
+        return theBrewmaster.BrewmasterMod.BREWMASTER_ORANGE;
     }
 
     // Should return a BitmapFont object that you can use to customize how your
@@ -245,20 +245,20 @@ public class TheBrewmaster extends CustomPlayer {
     // Should return a new instance of your character, sending name as its name parameter.
     @Override
     public AbstractPlayer newInstance() {
-        return new TheBrewmaster(name, chosenClass);
+        return new BrewmasterCharacter(name, chosenClass);
     }
 
     // Should return a Color object to be used to color the miniature card images in run history.
     @Override
     public Color getCardRenderColor() {
-        return theBrewmaster.DefaultMod.DEFAULT_GRAY;
+        return theBrewmaster.BrewmasterMod.BREWMASTER_ORANGE;
     }
 
     // Should return a Color object to be used as screen tint effect when your
     // character attacks the heart.
     @Override
     public Color getSlashAttackColor() {
-        return theBrewmaster.DefaultMod.DEFAULT_GRAY;
+        return theBrewmaster.BrewmasterMod.BREWMASTER_ORANGE;
     }
 
     // Should return an AttackEffect array of any size greater than 0. These effects

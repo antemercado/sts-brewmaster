@@ -3,12 +3,12 @@ package theBrewmaster.cards;
 import basemod.AutoAdd;
 import basemod.abstracts.CustomCard;
 import basemod.helpers.BaseModCardTags;
-import theBrewmaster.DefaultMod;
+import theBrewmaster.BrewmasterMod;
 import theBrewmaster.actions.PurifyingBrewAction;
-import theBrewmaster.characters.TheBrewmaster;
+import theBrewmaster.characters.BrewmasterCharacter;
 import theBrewmaster.tags.CustomTags;
 
-import static theBrewmaster.DefaultMod.makeCardPath;
+import static theBrewmaster.BrewmasterMod.makeCardPath;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -20,7 +20,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class PurifyingBrew extends AbstractDynamicCard {
     // TEXT DECLARATION
-    public static final String ID = DefaultMod.makeID(PurifyingBrew.class.getSimpleName());
+    public static final String ID = BrewmasterMod.makeID(PurifyingBrew.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
 
     // STAT DECLARATION
@@ -28,7 +28,7 @@ public class PurifyingBrew extends AbstractDynamicCard {
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
-    public static final CardColor COLOR = TheBrewmaster.Enums.COLOR_GRAY;
+    public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
 
     private static final int COST = 1;
 

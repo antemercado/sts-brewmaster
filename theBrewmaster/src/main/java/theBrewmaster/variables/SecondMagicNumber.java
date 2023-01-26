@@ -3,7 +3,7 @@ package theBrewmaster.variables;
 import basemod.abstracts.DynamicVariable;
 import theBrewmaster.cards.AbstractDefaultCard;
 
-import static theBrewmaster.DefaultMod.makeID;
+import static theBrewmaster.BrewmasterMod.makeID;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
 

@@ -1,7 +1,7 @@
 package theBrewmaster.powers;
 
-import theBrewmaster.DefaultMod;
-import static theBrewmaster.DefaultMod.makePowerPath;
+import theBrewmaster.BrewmasterMod;
+import static theBrewmaster.BrewmasterMod.makePowerPath;
 import theBrewmaster.util.TextureLoader;
 import theBrewmaster.tags.CustomTags;
 
@@ -26,7 +26,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 public class DoubleFistPower extends AbstractPower{
     public AbstractCreature source;
     
-    public static final String POWER_ID = DefaultMod.makeID("DoubleFistPower");
+    public static final String POWER_ID = BrewmasterMod.makeID("DoubleFistPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;

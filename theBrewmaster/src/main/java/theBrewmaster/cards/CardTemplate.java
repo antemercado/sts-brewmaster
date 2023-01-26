@@ -1,10 +1,10 @@
 package theBrewmaster.cards;
 
 import basemod.AutoAdd;
-import theBrewmaster.DefaultMod;
-import theBrewmaster.characters.TheBrewmaster;
+import theBrewmaster.BrewmasterMod;
+import theBrewmaster.characters.BrewmasterCharacter;
 
-import static theBrewmaster.DefaultMod.makeCardPath;
+import static theBrewmaster.BrewmasterMod.makeCardPath;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -40,7 +40,7 @@ public class CardTemplate extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     // public static final String ID = DefaultMod.makeID(${NAME}.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
-    public static final String ID = DefaultMod.makeID("DefaultCommonAttack"); // DELETE THIS ONE.
+    public static final String ID = BrewmasterMod.makeID("DefaultCommonAttack"); // DELETE THIS ONE.
     public static final String IMG = makeCardPath("Attack.png");// "public static final String IMG = makeCardPath("${NAME}.png");
     // This does mean that you will need to have an image with the same NAME as the card in your image folder for it to run correctly.
 
@@ -53,7 +53,7 @@ public class CardTemplate extends AbstractDynamicCard {
     private static final CardRarity RARITY = CardRarity.COMMON; //  Up to you, I like auto-complete on these
     private static final CardTarget TARGET = CardTarget.ENEMY;  //   since they don't change much.
     private static final CardType TYPE = CardType.ATTACK;       //
-    public static final CardColor COLOR = TheBrewmaster.Enums.COLOR_GRAY;
+    public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
 
     private static final int COST = 1;  // COST = ${COST}
     private static final int UPGRADED_COST = 0; // UPGRADED_COST = ${UPGRADED_COST}

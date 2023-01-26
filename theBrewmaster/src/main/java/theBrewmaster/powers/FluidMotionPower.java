@@ -1,10 +1,10 @@
 package theBrewmaster.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
-import theBrewmaster.DefaultMod;
+import theBrewmaster.BrewmasterMod;
 import theBrewmaster.util.TextureLoader;
 
-import static theBrewmaster.DefaultMod.makePowerPath;
+import static theBrewmaster.BrewmasterMod.makePowerPath;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
@@ -24,7 +24,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 public class FluidMotionPower extends AbstractPower{
     public AbstractCreature source;
 
-    public static final String POWER_ID = DefaultMod.makeID("FluidMotionPower");
+    public static final String POWER_ID = BrewmasterMod.makeID("FluidMotionPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;

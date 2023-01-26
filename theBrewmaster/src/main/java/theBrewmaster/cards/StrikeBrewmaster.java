@@ -3,11 +3,11 @@ package theBrewmaster.cards;
 import basemod.AutoAdd;
 import basemod.abstracts.CustomCard;
 import basemod.helpers.BaseModCardTags;
-import theBrewmaster.DefaultMod;
+import theBrewmaster.BrewmasterMod;
 import theBrewmaster.cards.AbstractDynamicCard;
-import theBrewmaster.characters.TheBrewmaster;
+import theBrewmaster.characters.BrewmasterCharacter;
 
-import static theBrewmaster.DefaultMod.makeCardPath;
+import static theBrewmaster.BrewmasterMod.makeCardPath;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -20,7 +20,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class StrikeBrewmaster extends AbstractDynamicCard {
     // TEXT DECLARATION
-    public static final String ID = DefaultMod.makeID(StrikeBrewmaster.class.getSimpleName());
+    public static final String ID = BrewmasterMod.makeID(StrikeBrewmaster.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
 
     // STAT DECLARATION
@@ -28,7 +28,7 @@ public class StrikeBrewmaster extends AbstractDynamicCard {
     private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
-    public static final CardColor COLOR = TheBrewmaster.Enums.COLOR_GRAY;
+    public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
 
     private static final int COST = 1;
 

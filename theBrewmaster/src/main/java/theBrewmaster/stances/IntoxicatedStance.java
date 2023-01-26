@@ -1,6 +1,6 @@
 package theBrewmaster.stances;
 
-import theBrewmaster.DefaultMod;
+import theBrewmaster.BrewmasterMod;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.stances.AbstractStance;
 
 
 public class IntoxicatedStance extends AbstractStance{
-    public static final String STANCE_ID = DefaultMod.makeID("Intoxicated");
+    public static final String STANCE_ID = BrewmasterMod.makeID("Intoxicated");
     private static final StanceStrings stanceString = CardCrawlGame.languagePack.getStanceString(STANCE_ID);
     public static final String NAME = stanceString.NAME;
     public static final String[] DESCRIPTIONS = stanceString.DESCRIPTION;

@@ -1,12 +1,12 @@
 package theBrewmaster.relics;
 
 import basemod.abstracts.CustomRelic;
-import theBrewmaster.DefaultMod;
+import theBrewmaster.BrewmasterMod;
 import theBrewmaster.powers.IntoxicationPower;
 import theBrewmaster.util.TextureLoader;
 
-import static theBrewmaster.DefaultMod.makeRelicOutlinePath;
-import static theBrewmaster.DefaultMod.makeRelicPath;
+import static theBrewmaster.BrewmasterMod.makeRelicOutlinePath;
+import static theBrewmaster.BrewmasterMod.makeRelicPath;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -15,10 +15,10 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class BeerSteinRelic extends CustomRelic {
 
-    public static final String ID = DefaultMod.makeID("BeerSteinRelic");
+    public static final String ID = BrewmasterMod.makeID("BeerSteinRelic");
 
-    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("placeholder_relic.png"));
-    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic.png"));
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("beer_stein.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("beer_stein.png"));
 
     public BeerSteinRelic() {
         super(ID, IMG, OUTLINE, RelicTier.STARTER, LandingSound.MAGICAL);

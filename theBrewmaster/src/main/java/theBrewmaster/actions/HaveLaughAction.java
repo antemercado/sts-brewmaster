@@ -12,11 +12,11 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 
-import theBrewmaster.DefaultMod;
+import theBrewmaster.BrewmasterMod;
 
 public class HaveLaughAction extends AbstractGameAction{
 
-    public static final String ID = DefaultMod.makeID(HaveLaughAction.class.getSimpleName());
+    public static final String ID = BrewmasterMod.makeID(HaveLaughAction.class.getSimpleName());
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(ID);
     public static final String TEXT[] = uiStrings.TEXT;
 

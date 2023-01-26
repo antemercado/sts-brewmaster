@@ -1,6 +1,6 @@
 package theBrewmaster.events;
 
-import static theBrewmaster.DefaultMod.makeEventPath;
+import static theBrewmaster.BrewmasterMod.makeEventPath;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -16,12 +16,12 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 
-import theBrewmaster.DefaultMod;
+import theBrewmaster.BrewmasterMod;
 
 public class IdentityCrisisEvent extends AbstractImageEvent {
 
 
-    public static final String ID = DefaultMod.makeID("IdentityCrisisEvent");
+    public static final String ID = BrewmasterMod.makeID("IdentityCrisisEvent");
     private static final EventStrings eventStrings = CardCrawlGame.languagePack.getEventString(ID);
 
     private static final String NAME = eventStrings.NAME;

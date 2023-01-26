@@ -2,7 +2,7 @@ package theBrewmaster.variables;
 
 import basemod.abstracts.DynamicVariable;
 
-import static theBrewmaster.DefaultMod.makeID;
+import static theBrewmaster.BrewmasterMod.makeID;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
