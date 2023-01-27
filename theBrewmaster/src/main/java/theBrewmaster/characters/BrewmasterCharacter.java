@@ -13,6 +13,7 @@ import com.esotericsoftware.spine.AnimationState;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
@@ -286,6 +287,26 @@ public class BrewmasterCharacter extends CustomPlayer {
     @Override
     public String getVampireText() {
         return TEXT[0];
+    }
+
+    public static CardGroup getBrews(){
+        
+        CardGroup retVal = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+
+        retVal.addToTop(new CinderBrew());
+        retVal.addToTop(new FortifyingBrew());
+        retVal.addToTop(new Microbrew());
+
+        retVal.addToTop(new CrazyBrew());
+        retVal.addToTop(new Homebrew());
+        retVal.addToTop(new PerplexingBrew());
+        retVal.addToTop(new PurifyingBrew());
+
+        retVal.addToTop(new AdmiralsBrew());
+        retVal.addToTop(new CelestialBrew());
+        retVal.addToTop(new FairyBrew());
+
+        return retVal;
     }
 
 }
