@@ -119,5 +119,9 @@
   "theBrewmaster:AdmiralsBrew": {
     "NAME": "Admiral's Brew",
     "DESCRIPTION": "Prevent all unblocked damage taken by half. Take prevented damage at the end of combat."
+  },
+  "theBrewmaster:BurningBreath": {
+    "NAME": "Burning Breath",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Vulnerable."
   }
 }
