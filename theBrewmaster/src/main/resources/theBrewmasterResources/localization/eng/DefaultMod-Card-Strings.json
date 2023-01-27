@@ -14,7 +14,8 @@
   },
   "theBrewmaster:Microbrew": {
     "NAME": "Microbrew",
-    "DESCRIPTION": "Gain !M! thebrewmaster:Intoxication."
+    "DESCRIPTION": "Gain !M! thebrewmaster:Intoxication.",
+    "UPGRADE_DESCRIPTION": "Permanently transforms into a random common Brew card when upgraded."
   },
   "theBrewmaster:QuickSip": {
     "NAME": "Quick Sip",
@@ -47,7 +48,7 @@
   },
   "theBrewmaster:Belch": {
     "NAME": "Belch",
-    "DESCRIPTION": "Apply !M! Vulnerable and Weak. Exhaust unless thebrewmaster:Intoxicated."
+    "DESCRIPTION": "Apply !M! Vulnerable and Weak. NL Exhaust unless thebrewmaster:Intoxicated."
   },
   "theBrewmaster:DrunkenFist": {
     "NAME": "Drunken Fist",

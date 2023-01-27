@@ -28,9 +28,6 @@ public class Belch extends AbstractDynamicCard {
     public static final String ID = BrewmasterMod.makeID(Belch.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
 
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-
     // STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
@@ -40,7 +37,8 @@ public class Belch extends AbstractDynamicCard {
 
     private static final int COST = 1;
 
-    private static final int MAGIC = 2;
+    private static final int MAGIC = 1;
+    private static final int UPGRADE_PLUS_MAGIC = 1;
 
     public Belch() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -71,7 +69,7 @@ public class Belch extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            rawDescription = UPGRADE_DESCRIPTION;
+            upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
             initializeDescription();
         }
     }

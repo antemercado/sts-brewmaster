@@ -47,7 +47,7 @@ public class BurningBreath extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+        addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
         addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, magicNumber, false)));
     }
     // Upgraded stats.
