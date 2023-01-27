@@ -5,7 +5,7 @@ import basemod.abstracts.CustomCard;
 import basemod.helpers.BaseModCardTags;
 import theBrewmaster.BrewmasterMod;
 import theBrewmaster.characters.BrewmasterCharacter;
-import theBrewmaster.tags.CustomTags;
+import theBrewmaster.enums.CustomTags;
 
 import static theBrewmaster.BrewmasterMod.makeCardPath;
 

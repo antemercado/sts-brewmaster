@@ -1,9 +1,10 @@
 package theBrewmaster.powers;
 
 import theBrewmaster.BrewmasterMod;
+import theBrewmaster.enums.CustomTags;
+
 import static theBrewmaster.BrewmasterMod.makePowerPath;
 import theBrewmaster.util.TextureLoader;
-import theBrewmaster.tags.CustomTags;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;

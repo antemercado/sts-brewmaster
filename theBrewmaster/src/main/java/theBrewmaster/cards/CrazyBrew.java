@@ -5,8 +5,8 @@ import basemod.abstracts.CustomCard;
 import basemod.helpers.BaseModCardTags;
 import theBrewmaster.BrewmasterMod;
 import theBrewmaster.characters.BrewmasterCharacter;
+import theBrewmaster.enums.CustomTags;
 import theBrewmaster.powers.IntoxicationPower;
-import theBrewmaster.tags.CustomTags;
 
 import static theBrewmaster.BrewmasterMod.makeCardPath;
 

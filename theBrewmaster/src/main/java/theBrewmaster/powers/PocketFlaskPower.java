@@ -2,7 +2,7 @@ package theBrewmaster.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
 import theBrewmaster.BrewmasterMod;
-import theBrewmaster.tags.CustomTags;
+import theBrewmaster.enums.CustomTags;
 import theBrewmaster.util.TextureLoader;
 
 import static theBrewmaster.BrewmasterMod.makePowerPath;
