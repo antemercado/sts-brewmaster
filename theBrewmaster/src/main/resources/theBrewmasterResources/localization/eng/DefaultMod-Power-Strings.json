@@ -24,5 +24,12 @@
       "Gain ",
       " Intoxication whenever you play a brew card."
     ]
+  },
+  "theBrewmaster:AdmiralsBrewPower": {
+    "NAME": "Admiral's Brew",
+    "DESCRIPTIONS": [
+      "Reducing unblocked damage by half. Taking ",
+      " damage at the end of combat."
+    ]
   }
 }

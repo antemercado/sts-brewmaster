@@ -115,5 +115,9 @@
     "NAME": "Crazy Brew",
     "DESCRIPTION": "Gain !M! thebrewmaster:Intoxication. NL Next turn gain [E].",
     "UPGRADE_DESCRIPTION": "Gain !M! thebrewmaster:Intoxication. NL Next turn gain [E] [E]."
+  },
+  "theBrewmaster:AdmiralsBrew": {
+    "NAME": "Admiral's Brew",
+    "DESCRIPTION": "Prevent all unblocked damage taken by half. Take prevented damage at the end of combat."
   }
 }
