@@ -47,8 +47,7 @@
   },
   "theBrewmaster:Belch": {
     "NAME": "Belch",
-    "DESCRIPTION": "{@@}{!theBrewmaster:intoxicated!|0=Apply !M! Weak and Vulnerable. NL thebrewmaster:Intoxicated: Stun an enemy instead.|1=Intoxicated: Stun an enemy.|-1=Apply !M! Weak and Vulnerable. NL thebrewmaster:Intoxicated: Stun an enemy instead.}",
-    "UPGRADE_DESCRIPTION": "{@@}{!theBrewmaster:intoxicated!|0=Stun an enemy.|1=Stun an enemy. Apply !M! Weak and Vulnerable to the rest.|-1=Stun an enemy. NL thebrewmaster:Intoxicated: Apply !M! Weak and !M! Vulnerable to the rest.}"
+    "DESCRIPTION": "Apply !M! Vulnerable and Weak. Exhaust unless thebrewmaster:Intoxicated."
   },
   "theBrewmaster:DrunkenFist": {
     "NAME": "Drunken Fist",
@@ -123,5 +122,13 @@
   "theBrewmaster:BurningBreath": {
     "NAME": "Burning Breath",
     "DESCRIPTION": "Deal !D! damage. NL Apply !M! Vulnerable."
+  },
+  "theBrewmaster:CinderBrew": {
+    "NAME": "Cinder Brew",
+    "DESCRIPTION": "Your next attack does !M! additional damage."
+  },
+  "theBrewmaster:FairyBrew": {
+    "NAME": "Fairy Brew",
+    "DESCRIPTION": "Gain !M! Regen. NL thebrewmaster:Intoxicated: Gain !M2! life instead. NL Exhaust."
   }
 }

@@ -5,57 +5,59 @@ import basemod.abstracts.CustomCard;
 import basemod.helpers.BaseModCardTags;
 import theBrewmaster.BrewmasterMod;
 import theBrewmaster.characters.BrewmasterCharacter;
+import theBrewmaster.enums.CustomTags;
 import theBrewmaster.stances.IntoxicatedStance;
 
 import static theBrewmaster.BrewmasterMod.makeCardPath;
 
-import com.evacipated.cardcrawl.mod.stslib.actions.common.StunMonsterAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.utility.UseCardAction;
+import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.VulnerablePower;
-import com.megacrit.cardcrawl.powers.WeakPower;
+import com.megacrit.cardcrawl.powers.RegenPower;
 
-public class Belch extends AbstractDynamicCard {
+public class FairyBrew extends AbstractDynamicCard {
     // TEXT DECLARATION
-    public static final String ID = BrewmasterMod.makeID(Belch.class.getSimpleName());
+    public static final String ID = BrewmasterMod.makeID(FairyBrew.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
-
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
+    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
 
-    private static final int COST = 1;
+    private static final int COST = 2;
+    private static final int UPGRADED_COST = 1;
 
-    private static final int MAGIC = 2;
+    private static final int MAGIC = 3;
+    private static final int MAGIC2 = 6;
 
-    public Belch() { 
+    public FairyBrew() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseMagicNumber = this.magicNumber = MAGIC;
+        this.baseMagicNumber2 = this.magicNumber2 = MAGIC2;
+
+        this.exhaust = true;
+        
+        tags.add(CustomTags.BREW);
     }
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         boolean intoxicated = AbstractDungeon.player.stance.ID.equals(IntoxicatedStance.STANCE_ID);
 
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new WeakPower(m, magicNumber, false)));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, magicNumber, false)));
-        if (!intoxicated){
-            this.exhaust = true;
-        }
+        if (!intoxicated)
+            addToBot(new ApplyPowerAction(p, p, new RegenPower(p, magicNumber)));
+        if (intoxicated)
+            addToBot(new HealAction(p, p, magicNumber2));
     }
 
     // Glow when Intoxicated
@@ -65,13 +67,13 @@ public class Belch extends AbstractDynamicCard {
             this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
         }
     }
-    
+
     // Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            rawDescription = UPGRADE_DESCRIPTION;
+            upgradeBaseCost(UPGRADED_COST);
             initializeDescription();
         }
     }
