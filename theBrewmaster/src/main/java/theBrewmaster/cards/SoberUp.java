@@ -10,6 +10,7 @@ import theBrewmaster.powers.IntoxicationPower;
 import static theBrewmaster.BrewmasterMod.makeCardPath;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
@@ -27,7 +28,7 @@ public class SoberUp extends AbstractDynamicCard {
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
@@ -35,7 +36,7 @@ public class SoberUp extends AbstractDynamicCard {
     private static final int COST = 0;
 
     private static final int MAGIC = 25;
-    private static final int UPGRADE_PLUS_MAGIC = -5;
+    private static final int UPGRADE_MAGIC = 20;
 
     public SoberUp() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -50,6 +51,7 @@ public class SoberUp extends AbstractDynamicCard {
         if (p.hasPower(IntoxicationPower.POWER_ID)){
             AbstractPower intoxication = p.getPower(IntoxicationPower.POWER_ID);
             AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(intoxication.amount / this.magicNumber));
+            AbstractDungeon.actionManager.addToBottom(new DrawCardAction(intoxication.amount / this.magicNumber));
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, intoxication));
         }
     }
@@ -58,7 +60,7 @@ public class SoberUp extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBlock(UPGRADE_PLUS_MAGIC);
+            this.baseMagicNumber = this.magicNumber = UPGRADE_MAGIC;
             initializeDescription();
         }
     }

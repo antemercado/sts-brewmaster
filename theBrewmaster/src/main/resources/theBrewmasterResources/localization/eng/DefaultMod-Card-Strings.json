@@ -62,7 +62,7 @@
   },
   "theBrewmaster:SoberUp": {
     "NAME": "Sober Up",
-    "DESCRIPTION": "Consume 100% of your thebrewmaster:Intoxication. Gain [E] for every !M! consumed. NL Exhaust."
+    "DESCRIPTION": "Consume 100% of your thebrewmaster:Intoxication. Gain [E] and draw 1 card for every !M! consumed. NL Exhaust."
   },
   "theBrewmaster:DrunkenIdea": {
     "NAME": "Drunken Idea",
@@ -130,5 +130,9 @@
   "theBrewmaster:FairyBrew": {
     "NAME": "Fairy Brew",
     "DESCRIPTION": "Gain !M! Regen. NL thebrewmaster:Intoxicated: Gain !M2! life instead. NL Exhaust."
+  },
+  "theBrewmaster:ExplodingKeg": {
+    "NAME": "Exploding Keg",
+    "DESCRIPTION": "Deal !D! damage to an enemy and !M! damage to the rest."
   }
 }
