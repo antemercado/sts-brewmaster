@@ -32,7 +32,7 @@
   },
   "theBrewmaster:FluidMotion": {
     "NAME": "Fluid Motion",
-    "DESCRIPTION": "At the end of your turn, gain 10% of your thebrewmaster:Intoxication as Block."
+    "DESCRIPTION": "At the end of your turn, consume 10% of your thebrewmaster:Intoxication and gain it as Block."
   },
   "theBrewmaster:Chug": {
     "NAME": "Chug",
@@ -135,5 +135,14 @@
   "theBrewmaster:ExplodingKeg": {
     "NAME": "Exploding Keg",
     "DESCRIPTION": "Deal !D! damage to an enemy and !M! damage to the rest."
+  },
+  "theBrewmaster:ThunderClap": {
+    "NAME": "Thunder Clap",
+    "DESCRIPTION": "Deal !D! damage to a random enemy X times."
+  },
+  "theBrewmaster:Vasoimmolation": {
+    "NAME": "Vasoimmolation",
+    "DESCRIPTION": "At the end of your turn, deal !M!% of your thebrewmaster:Intoxication as damage to yourself and all enemies.",
+    "UPGRADED_DESCRIPTION": "At the end of your turn, deal !M!% of your thebrewmaster:Intoxication as damage to [#7fff00]all enemies.[]"
   }
 }

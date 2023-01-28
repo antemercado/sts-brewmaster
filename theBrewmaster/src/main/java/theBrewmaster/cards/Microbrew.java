@@ -64,6 +64,7 @@ public class Microbrew extends AbstractDynamicCard {
     @Override
     public void upgrade() {
         if (!upgraded) {
+            // This still doesnt work properly. Take another look when you can. It works well enough to test tho.
             logger.info("----------------Starting Microbrew Upgrade-----------------");
             upgradeName();
             rawDescription = UPGRADE_DESCRIPTION;
