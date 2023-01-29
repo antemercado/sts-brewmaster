@@ -29,7 +29,8 @@
     "NAME": "Admiral's Brew",
     "DESCRIPTIONS": [
       "Reducing unblocked damage by half. Taking ",
-      " damage at the end of combat."
+      " damage in ",
+      " turns."
     ]
   },
   "theBrewmaster:VasoimmolationPower": {

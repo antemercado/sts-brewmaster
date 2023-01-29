@@ -104,7 +104,7 @@
   },
   "theBrewmaster:Binge": {
     "NAME": "Binge",
-    "DESCRIPTION": "Gain !M! Block and thebrewmaster:Intoxication. Add a copy of this card with Ethereal and Exhaust to your hand.",
+    "DESCRIPTION": "Gain !B! Block and !M! thebrewmaster:Intoxication. Add a copy of this card with Ethereal and Exhaust to your hand.",
     "EXTENDED_DESCRIPTION": ["Gain !M! Block and thebrewmaster:Intoxication. Add a copy of this card to your hand."]
   },
   "theBrewmaster:HaveLaugh": {
@@ -118,7 +118,7 @@
   },
   "theBrewmaster:AdmiralsBrew": {
     "NAME": "Admiral's Brew",
-    "DESCRIPTION": "Prevent all unblocked damage taken by half. Take prevented damage at the end of combat."
+    "DESCRIPTION": "Prevent all unblocked damage taken by half. Take prevented damage at the end of !M! turns."
   },
   "theBrewmaster:BurningBreath": {
     "NAME": "Burning Breath",
@@ -142,7 +142,7 @@
   },
   "theBrewmaster:Vasoimmolation": {
     "NAME": "Vasoimmolation",
-    "DESCRIPTION": "At the end of your turn, deal !M!% of your thebrewmaster:Intoxication as damage to yourself and all enemies.",
-    "UPGRADE_DESCRIPTION": "At the end of your turn, deal !M!% of your thebrewmaster:Intoxication as damage to [#7fff00]all enemies.[]"
+    "DESCRIPTION": "At the end of your turn, deal 20% of your thebrewmaster:Intoxication as damage to yourself and all enemies.",
+    "UPGRADE_DESCRIPTION": "At the end of your turn, deal 20% of your thebrewmaster:Intoxication as damage to [#7fff00]all enemies.[]"
   }
 }
