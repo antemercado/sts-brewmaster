@@ -53,8 +53,8 @@ public class CrazyBrew extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new IntoxicationPower(p, p, this.baseMagicNumber)));
-        addToBot(new ApplyPowerAction(p, p, new EnergizedPower(p, MAGIC2)));
+        addToBot(new ApplyPowerAction(p, p, new IntoxicationPower(p, p, this.magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new EnergizedPower(p, this.magicNumber2)));
     }
     // Upgraded stats.
     @Override
