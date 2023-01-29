@@ -67,7 +67,7 @@
   },
   "theBrewmaster:DrunkenIdea": {
     "NAME": "Drunken Idea",
-    "DESCRIPTION": "{@@}Discard 1 card. Draw !M! card{!M!|>1=s}. NL thebrewmaster:Intoxicated: NL Draw !M! card{!M!|>1=s}, discard 1 card instead."
+    "DESCRIPTION": "Draw !M! card. NL thebrewmaster:Intoxicated: Draw an additional card."
   },
   "theBrewmaster:Stagger": {
     "NAME": "Stagger",
@@ -144,5 +144,10 @@
     "NAME": "Vasoimmolation",
     "DESCRIPTION": "At the end of your turn, deal 20% of your thebrewmaster:Intoxication as damage to yourself and all enemies.",
     "UPGRADE_DESCRIPTION": "At the end of your turn, deal 20% of your thebrewmaster:Intoxication as damage to [#7fff00]all enemies.[]"
+  },
+  "theBrewmaster:Formulation": {
+    "NAME": "Formulation",
+    "DESCRIPTION": "Exhaust a Brew card. Obtain a random potion. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain NL Exhaust a Brew card. Obtain a random potion. NL Exhaust."
   }
 }

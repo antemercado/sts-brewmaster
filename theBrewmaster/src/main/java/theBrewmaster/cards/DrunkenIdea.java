@@ -34,7 +34,6 @@ public class DrunkenIdea extends AbstractDynamicCard {
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
 
     private static final int COST = 1;
-    private static final int UPGRADED_COST = 0;
 
     private static final int MAGIC = 1;
     private static final int UPGRADE_PLUS_MAGIC = 1;
@@ -46,14 +45,13 @@ public class DrunkenIdea extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (p.hasPower(IntoxicationPower.POWER_ID)){
-            AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, magicNumber));
-            AbstractDungeon.actionManager.addToBottom(new DiscardAction(p, p, 1, false));
-        }
-        else {
-            AbstractDungeon.actionManager.addToBottom(new DiscardAction(p, p, 1, false));
-            AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, magicNumber));
-        }
+        
+        int draw = magicNumber;
+        if (p.stance.ID.equals(IntoxicatedStance.STANCE_ID))
+            draw += 1;
+
+        AbstractDungeon.actionManager.addToBottom(new DiscardAction(p, p, 1, false));
+        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, draw));
     }
 
     // Glow when Intoxicated
