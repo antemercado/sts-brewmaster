@@ -40,16 +40,19 @@ public class AdmiralsBrewPower extends AbstractPower{
 
     private AbstractPlayer p = AbstractDungeon.player;
 
-    public AdmiralsBrewPower(final AbstractCreature owner) {
+    private int damage;
+
+    public AdmiralsBrewPower(final AbstractCreature owner, int amount) {
         name = NAME;
         ID = POWER_ID;
 
         this.owner = owner;
         
-        this.amount = 0;
+        this.amount = amount;
+        this.damage = 0;
 
         type = PowerType.BUFF;
-        isTurnBased = false;
+        isTurnBased = true;
 
         // We load those txtures here.
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
@@ -63,24 +66,36 @@ public class AdmiralsBrewPower extends AbstractPower{
         if (info.type.equals(CustomDamageTypes.ADMIRALSBREW))
             return damageAmount;
 
-        int damage = 0;
+        int modifiedDamage = 0;
         
         if (damageAmount > 0) {
             flash();
-            damage = damageAmount / 2;
+            modifiedDamage = damageAmount / 2;
         }
         
-        this.amount += damage;
+        this.damage += damageAmount - modifiedDamage;
         updateDescription();
         
-        return damage;
+        return modifiedDamage;
+    }
+    
+    public void atEndOfRound(){
+        if (this.amount - 1 <= 0){
+            if (this.damage >= this.p.currentHealth)
+                this.damage = this.p.currentHealth - 1;
+            addToBot(new DamageAction(p, new DamageInfo(this.p, this.damage, CustomDamageTypes.ADMIRALSBREW)));
+        }
+        addToBot(new ReducePowerAction(this.owner, this.owner, this, 1));
+    }
+
+    public void atStartOfTurn(){
     }
 
     public void onVictory(){
-        if (this.amount > this.p.currentHealth)
-            this.amount = this.p.currentHealth - 1;
+        if (this.damage >= this.p.currentHealth)
+            this.damage = this.p.currentHealth - 1;
         
-        p.damage(new DamageInfo(source, amount, CustomDamageTypes.ADMIRALSBREW));
+        p.damage(new DamageInfo(source, damage, CustomDamageTypes.ADMIRALSBREW));
     }
 
     // public void onInflictDamage(){
@@ -102,7 +117,7 @@ public class AdmiralsBrewPower extends AbstractPower{
     // Update the description
     @Override
     public void updateDescription() {
-        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+        description = DESCRIPTIONS[0] + damage + DESCRIPTIONS[1] + amount + DESCRIPTIONS[2];
     }
 
 }

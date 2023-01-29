@@ -33,18 +33,23 @@ public class AdmiralsBrew extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
 
-    private static final int COST = 3;
-    private static final int UPGRADED_COST = 2;
+    private static final int COST = 2;
+
+    private static final int MAGIC = 3;
+    private static final int UPGRADE_PLUS_MAGIC = 1;
+
 
     public AdmiralsBrew() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+
+        this.baseMagicNumber = this.magicNumber = MAGIC;
 
         tags.add(CustomTags.BREW);
     }
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new AdmiralsBrewPower(p), 0));
+        addToBot(new ApplyPowerAction(p, p, new AdmiralsBrewPower(p, magicNumber), magicNumber));
     }
 
     // Upgraded stats.
@@ -52,7 +57,7 @@ public class AdmiralsBrew extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(UPGRADED_COST);
+            upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
             initializeDescription();
         }
     }
