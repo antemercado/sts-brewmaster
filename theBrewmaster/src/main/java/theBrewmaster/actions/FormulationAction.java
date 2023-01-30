@@ -26,6 +26,7 @@ public class FormulationAction extends AbstractGameAction{
                 addToBot(new ObtainPotionAction(AbstractDungeon.returnRandomPotion(true)));
             }
         }
+        this.isDone = true;
     }
     
 }
