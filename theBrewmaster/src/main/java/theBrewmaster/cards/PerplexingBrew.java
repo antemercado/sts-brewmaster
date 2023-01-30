@@ -42,7 +42,7 @@ public class PerplexingBrew extends AbstractDynamicCard {
 
     private static final int COST = 1;
 
-    private static final int MAGIC_NUM = -1;
+    private static final int MAGIC_NUM = 1;
 
     public PerplexingBrew() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

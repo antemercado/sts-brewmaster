@@ -35,10 +35,13 @@ public class FairyBrew extends AbstractDynamicCard {
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
 
     private static final int COST = 2;
-    private static final int UPGRADED_COST = 1;
 
     private static final int MAGIC = 3;
+    private static final int UPGRADE_PLUS_MAGIC = 1;
+    
     private static final int MAGIC2 = 6;
+    private static final int UPGRADE_PLUS_MAGIC2 = 4;
+
 
     public FairyBrew() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -48,6 +51,7 @@ public class FairyBrew extends AbstractDynamicCard {
         this.exhaust = true;
         
         tags.add(CustomTags.BREW);
+        tags.add(CardTags.HEALING);
     }
     // Actions the card should do.
     @Override
@@ -73,7 +77,8 @@ public class FairyBrew extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(UPGRADED_COST);
+            upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
+            upgradeMagicNumber2(UPGRADE_PLUS_MAGIC2);
             initializeDescription();
         }
     }

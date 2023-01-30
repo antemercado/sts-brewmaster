@@ -6,6 +6,7 @@ import basemod.helpers.BaseModCardTags;
 import theBrewmaster.BrewmasterMod;
 import theBrewmaster.cards.AbstractDynamicCard;
 import theBrewmaster.characters.BrewmasterCharacter;
+import theBrewmaster.enums.CustomTags;
 
 import static theBrewmaster.BrewmasterMod.makeCardPath;
 
@@ -41,6 +42,8 @@ public class CelestialBrew extends AbstractDynamicCard {
     public CelestialBrew() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.exhaust = true;
+
+        tags.add(CustomTags.BREW);
     }
     // Actions the card should do.
     @Override
