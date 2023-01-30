@@ -67,7 +67,7 @@ public class ThickSkinPower extends AbstractPower{
     // Update the description
     @Override
     public void updateDescription() {
-        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+        description = DESCRIPTIONS[0];
     }
 
 }
