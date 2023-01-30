@@ -9,10 +9,13 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
+import com.sun.tools.javac.code.Attribute.RetentionPolicy;
 
 import basemod.abstracts.AbstractCardModifier;
+import basemod.abstracts.AbstractCardModifier.SaveIgnore;
 import theBrewmaster.cards.Binge;
 
+@SaveIgnore
 public class BingeModifier extends AbstractCardModifier{
     
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(Binge.ID);
