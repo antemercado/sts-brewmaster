@@ -32,7 +32,7 @@
   },
   "theBrewmaster:FluidMotion": {
     "NAME": "Fluid Motion",
-    "DESCRIPTION": "At the end of your turn, consume 10% of your thebrewmaster:Intoxication and gain it as Block."
+    "DESCRIPTION": "Whenever you lose thebrewmaster:Intoxication, gain that much Block."
   },
   "theBrewmaster:Chug": {
     "NAME": "Chug",
@@ -157,5 +157,9 @@
   "theBrewmaster:ThickSkin": {
     "NAME": "Thick Skin",
     "DESCRIPTION": "Gain !B! Block. Gain thebrewmaster:Intoxication equal to remaining block at the start of your next turn."
+  },
+  "theBrewmaster:Temperance": {
+    "NAME": "Temperance",
+    "DESCRIPTION": "If you would gain thebrewmaster:Intoxication, gain !M! Regen instead."
   }
 }

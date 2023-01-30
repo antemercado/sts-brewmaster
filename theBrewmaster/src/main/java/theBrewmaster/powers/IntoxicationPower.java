@@ -10,6 +10,7 @@ import static theBrewmaster.BrewmasterMod.makePowerPath;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
@@ -20,6 +21,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.RegenPower;
 import com.megacrit.cardcrawl.stances.AbstractStance;
 
 //Gain 1 dex for the turn for each card played.
@@ -56,12 +58,24 @@ public class IntoxicationPower extends AbstractPower{
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
 
+        // TODO: Prevent gaining Intoxication if have Temperance.
+
+        // If have enough stacks when gaining power, enter stance
+        if (this.amount > INTOX_THRESHOLD){
+            addToBot(new ChangeStanceAction(new IntoxicatedStance()));
+        }
+
         updateDescription();
     }
 
     // Enter Intoxicated when you add enough stacks.
     // This is intended to pull you out of any Watcher stances you may have put youself into.
     public void stackPower(int stackAmount){
+        // Gain Regen instead if has Temperance Power
+        if (this.owner.hasPower(TemperancePower.POWER_ID)){
+            addToBot(new ApplyPowerAction(owner, owner, new RegenPower(owner, 1)));
+            return;
+        }
         super.stackPower(stackAmount);
         if (this.amount >= INTOX_THRESHOLD || stackAmount >= INTOX_THRESHOLD) {
             AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new IntoxicatedStance()));
@@ -77,11 +91,16 @@ public class IntoxicationPower extends AbstractPower{
         if (reduceAmount <= 0)
             reduceAmount = 1;
         reducePower(reduceAmount);
+
         updateDescription();
     }
     
-    //Remove Intoxicated when losing enough stacks
+    // Remove Intoxicated when losing enough stacks
     public void reducePower(int reduceAmount){
+        // Add block if you have Fluid Motion active
+        if (owner.hasPower(FluidMotionPower.POWER_ID)){
+            addToBot(new GainBlockAction(owner, owner, reduceAmount));
+        }
         super.reducePower(reduceAmount);
         if (this.amount < INTOX_THRESHOLD && AbstractDungeon.player.stance.ID.equals(IntoxicatedStance.STANCE_ID))
             AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction("Neutral"));

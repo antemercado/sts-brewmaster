@@ -14,8 +14,7 @@
   "theBrewmaster:FluidMotionPower": {
     "NAME": "Fluid Motion",
     "DESCRIPTIONS": [
-      "At the end of your turn, gain ",
-      "% of your Intoxication as Block (Rounded up.)"
+      "Whenever you lose Intoxication, gain that much Block."
     ]
   },
   "theBrewmaster:PocketFlaskPower": {
@@ -45,6 +44,12 @@
     "NAME": "Thick Skin",
     "DESCRIPTIONS": [
       "Gain Intoxication equal to your remaining block at the start of your turn."
+    ]
+  },
+  "theBrewmaster:TemperancePower": {
+    "NAME": "Temperance",
+    "DESCRIPTIONS": [
+      "If you would gain Intoxication, gain a stack of Regen instead."
     ]
   }
 }
