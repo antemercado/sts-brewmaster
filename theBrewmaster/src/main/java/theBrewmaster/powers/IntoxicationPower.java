@@ -34,7 +34,7 @@ public class IntoxicationPower extends AbstractPower{
 
     public static final int INTOX_THRESHOLD = 100;
     public static final int INTOX_THRESHOLD_RELIC = 75;
-    public static final int INTOX_DECAY_RATE = 5;
+    public static final int INTOX_DECAY_RATE = 4;
 
     // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
     // There's a fallback "missing texture" image, so the game shouldn't crash if you accidentally put a non-existent file.
