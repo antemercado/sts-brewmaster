@@ -23,8 +23,8 @@
   },
   "theBrewmaster:PerplexingBrew": {
     "NAME": "Perplexing Brew",
-    "DESCRIPTION": "Gain 2 Strength, Thorns, or Dexterity, chosen at random when played.",
-    "UPGRADE_DESCRIPTION": "{@@}Gain 2{!Location!|>0,<0= Strength, Thorns, or Dexterity, chosen at random when drawn.|0= }{!M!|@=|0=Strength.|1=Thorns.|2=Dexterity.}"
+    "DESCRIPTION": "Gain !M! Strength, Thorns, or Dexterity, chosen at random when played.",
+    "UPGRADE_DESCRIPTION": "{@@}Gain !M!{!Location!|>0,<0= Strength, Thorns, or Dexterity, chosen at random when drawn.|0= }{!M!|@=|0=Strength.|1=Thorns.|2=Dexterity.}"
   },
   "theBrewmaster:DoubleFist": {
     "NAME": "Double Fist",
@@ -149,5 +149,13 @@
     "NAME": "Formulation",
     "DESCRIPTION": "Exhaust a Brew card. Obtain a random potion. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Retain NL Exhaust a Brew card. Obtain a random potion. NL Exhaust."
+  },
+  "theBrewmaster:DrunkenFlurry": {
+    "NAME": "Drunken Flurry",
+    "DESCRIPTION": "Deal !D! damage to an enemy. Repeat for each !M! thebrewmaster:Intoxication you have."
+  },
+  "theBrewmaster:ThickSkin": {
+    "NAME": "Thick Skin",
+    "DESCRIPTION": "Gain !B! Block. Gain thebrewmaster:Intoxication equal to remaining block at the start of your next turn."
   }
 }

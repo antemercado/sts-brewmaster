@@ -40,5 +40,11 @@
       "Each enemy takes ",
       "% of you Intoxication as damage at the end of your turn."
     ]
+  },
+  "theBrewmaster:ThickSkinPower": {
+    "NAME": "Thick Skin",
+    "DESCRIPTIONS": [
+      "Gain Intoxication equal to your remaining block at the start of your turn."
+    ]
   }
 }
