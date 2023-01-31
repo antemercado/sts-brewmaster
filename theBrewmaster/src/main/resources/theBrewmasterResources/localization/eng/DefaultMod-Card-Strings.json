@@ -161,5 +161,9 @@
   "theBrewmaster:Temperance": {
     "NAME": "Temperance",
     "DESCRIPTION": "If you would gain thebrewmaster:Intoxication, gain !M! Regen instead."
+  },
+  "theBrewmaster:TwistedBrew": {
+    "NAME": "Twisted Brew",
+    "DESCRIPTION": "Transform a random card in your hand."
   }
 }
