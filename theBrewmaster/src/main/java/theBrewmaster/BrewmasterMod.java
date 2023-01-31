@@ -8,6 +8,7 @@ import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.DynamicTextBloc
 import theBrewmaster.cards.*;
 import theBrewmaster.characters.BrewmasterCharacter;
 import theBrewmaster.events.IdentityCrisisEvent;
+import theBrewmaster.potions.FermentedTea;
 import theBrewmaster.relics.BeerSteinRelic;
 import theBrewmaster.stances.IntoxicatedStance;
 import theBrewmaster.util.IDCheckDontTouchPls;
@@ -23,6 +24,7 @@ import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -371,7 +373,7 @@ public class BrewmasterMod implements
         // Class Specific Potion. If you want your potion to not be class-specific,
         // just remove the player class at the end (in this case the "TheDefaultEnum.THE_DEFAULT".
         // Remember, you can press ctrl+P inside parentheses like addPotions)
-        
+        BaseMod.addPotion(FermentedTea.class, FermentedTea.LIQUID_COLOR, FermentedTea.HYBRID_COLOR, FermentedTea.SPOTS_COLOR, FermentedTea.POTION_ID, BrewmasterCharacter.Enums.BREWMASTER);
         logger.info("Done editing potions");
     }
     

@@ -1,6 +1,6 @@
 {
-"theBrewmaster:PlaceholderPotion": {
-        "NAME": "Placeholder Potion",
-        "DESCRIPTIONS": ["Gain ", " At the end of your turn, lose ", " Strength."]
+"theBrewmaster:FermentedTea": {
+        "NAME": "Fermented Tea",
+        "DESCRIPTIONS": ["Gain ", " Intoxication."]
 }
 }
