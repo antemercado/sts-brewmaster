@@ -21,7 +21,7 @@ public class BeerSteinRelic extends CustomRelic {
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("beer_stein.png"));
 
     public BeerSteinRelic() {
-        super(ID, IMG, OUTLINE, RelicTier.STARTER, LandingSound.MAGICAL);
+        super(ID, IMG, OUTLINE, RelicTier.STARTER, LandingSound.CLINK);
         this.counter = 0;
     }
 
@@ -36,8 +36,10 @@ public class BeerSteinRelic extends CustomRelic {
 
     public void onVictory(){
         AbstractPlayer p = AbstractDungeon.player;
-        if (!p.hasPower(IntoxicationPower.POWER_ID))
+        if (!p.hasPower(IntoxicationPower.POWER_ID)){
+            this.counter = 0;
             return;
+        }
         this.counter = p.getPower(IntoxicationPower.POWER_ID).amount;
     }
 
