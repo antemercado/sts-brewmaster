@@ -37,24 +37,19 @@ public class CrazyBrew extends AbstractDynamicCard {
 
     private static final int COST = 1;
 
-    private static final int MAGIC = 10;
-    private static final int UPGRADE_PLUS_MAGIC = 5;
-
-    private static final int MAGIC2 = 1;
-    private static final int UPGRADE_PLUS_MAGIC2 = 1;
+    private static final int MAGIC = 1;
+    private static final int UPGRADE_PLUS_MAGIC = 1;
 
     public CrazyBrew() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseMagicNumber = magicNumber = MAGIC;
-        this.baseMagicNumber2 = magicNumber2 = MAGIC2;
 
         tags.add(CustomTags.BREW);
     }
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new IntoxicationPower(p, p, this.magicNumber)));
-        addToBot(new ApplyPowerAction(p, p, new EnergizedPower(p, this.magicNumber2)));
+        addToBot(new ApplyPowerAction(p, p, new EnergizedPower(p, this.magicNumber)));
     }
     // Upgraded stats.
     @Override
@@ -62,7 +57,6 @@ public class CrazyBrew extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
-            upgradeMagicNumber2(UPGRADE_PLUS_MAGIC2);
             rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

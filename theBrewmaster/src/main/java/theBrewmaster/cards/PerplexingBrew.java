@@ -42,11 +42,15 @@ public class PerplexingBrew extends AbstractDynamicCard {
 
     private static final int COST = 1;
 
-    private static final int MAGIC_NUM = 1;
+    // Determines Power Type
+    private static final int MAGIC = -1;
+    // Determines Power Amount
+    private static final int MAGIC2 = 1;
 
     public PerplexingBrew() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.baseMagicNumber = this.magicNumber = MAGIC_NUM;
+        this.baseMagicNumber = this.magicNumber = MAGIC;
+        this.baseMagicNumber2 = this.magicNumber2 = MAGIC2;
 
         tags.add(CustomTags.BREW);
     }
@@ -63,15 +67,15 @@ public class PerplexingBrew extends AbstractDynamicCard {
         switch (this.magicNumber){
             // Strength
             case 0:
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, 1)));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, magicNumber2)));
                 break;
             // Thorn
             case 1:
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ThornsPower(p, 1)));            
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ThornsPower(p, magicNumber2)));            
                 break;
             // Dexterity
             case 2:
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, 1)));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, magicNumber2)));
                 break;
         }
         

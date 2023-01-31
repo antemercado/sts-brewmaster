@@ -452,12 +452,24 @@ public class BrewmasterMod implements
         // returns 1 if in Intoxicated Stance
         // returns 0 if not
         // returns -1 if not in hand or limbo.
-        DynamicTextBlocks.registerCustomCheck("theBrewmaster:intoxicated", card -> {
+        DynamicTextBlocks.registerCustomCheck(makeID("intoxicated"), card -> {
             if (CardCrawlGame.dungeon != null && AbstractDungeon.player != null){
                 if (AbstractDungeon.player.hand.contains(card) || AbstractDungeon.player.limbo.contains(card)){
                     if (AbstractDungeon.player.stance.ID.equals(IntoxicatedStance.STANCE_ID))
                         return 1;
                     return 0;
+                }
+            }
+            return -1;
+        });
+
+        // theBrewmaster:perplexing
+        // returns -1 if not in hand or limbo
+        // returns MagicNumber otherwise
+        DynamicTextBlocks.registerCustomCheck(makeID("perplexing"), card ->{
+            if (CardCrawlGame.dungeon != null && AbstractDungeon.player != null){
+                if (AbstractDungeon.player.hand.contains(card) || AbstractDungeon.player.limbo.contains(card)){
+                    return card.magicNumber;
                 }
             }
             return -1;

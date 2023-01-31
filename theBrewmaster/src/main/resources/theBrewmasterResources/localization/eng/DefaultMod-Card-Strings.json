@@ -23,8 +23,8 @@
   },
   "theBrewmaster:PerplexingBrew": {
     "NAME": "Perplexing Brew",
-    "DESCRIPTION": "Gain !M! Strength, Thorns, or Dexterity, chosen at random when played.",
-    "UPGRADE_DESCRIPTION": "{@@}Gain !M!{!Location!|>0,<0= Strength, Thorns, or Dexterity, chosen at random when drawn.|0= }{!M!|@=|0=Strength.|1=Thorns.|2=Dexterity.}"
+    "DESCRIPTION": "Gain !theBrewmaster:M2! Strength, Thorns, or Dexterity, chosen at random when played.",
+    "UPGRADE_DESCRIPTION": "{@@}Gain !theBrewmaster:M2! {!theBrewmaster:perplexing!|@=Strength, Thorns, or Dexterity, chosen at random when drawn.|0=Strength.|1=Thorns.|2=Dexterity.}"
   },
   "theBrewmaster:DoubleFist": {
     "NAME": "Double Fist",
@@ -75,8 +75,8 @@
   },
   "theBrewmaster:PurifyingBrew": {
     "NAME": "Purifying Brew",
-    "DESCRIPTION": "Discard a card. If it is a Status card, gain !M! thebrewmaster:Intoxication.",
-    "UPGRADED_DESCRIPTION": "Discard a card. If it is a [#7fff00]Status or Curse[] card, gain !M! thebrewmaster:Intoxication."
+    "DESCRIPTION": "Discard a card. If it is a Status card, gain !M! Block.",
+    "UPGRADED_DESCRIPTION": "Discard a card. If it is a [#7fff00]Status or Curse[] card, gain !M! Block."
   },
   "theBrewmaster:PocketFlask": {
     "NAME": "Pocket Flask",
@@ -113,8 +113,8 @@
   },
   "theBrewmaster:CrazyBrew": {
     "NAME": "Crazy Brew",
-    "DESCRIPTION": "Gain !M! thebrewmaster:Intoxication. NL Next turn gain [E].",
-    "UPGRADE_DESCRIPTION": "Gain !M! thebrewmaster:Intoxication. NL Next turn gain [E] [E]."
+    "DESCRIPTION": "Next turn gain [E].",
+    "UPGRADE_DESCRIPTION": "Next turn gain [E] [E]."
   },
   "theBrewmaster:AdmiralsBrew": {
     "NAME": "Admiral's Brew",
@@ -165,5 +165,28 @@
   "theBrewmaster:TwistedBrew": {
     "NAME": "Twisted Brew",
     "DESCRIPTION": "Transform a random card in your hand."
+  },
+  "theBrewmaster:StoneBrew": {
+    "NAME": "Stone Brew",
+    "DESCRIPTION": "Double your current block.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Double your current block."
+  },
+  "theBrewmaster:NimbleBrew": {
+    "NAME": "Nimble Brew",
+    "DESCRIPTION": "Gain !M! Dexterity. At the end of your turn, lose !M! Dexterity."
+  },
+  "theBrewmaster:DrunkenLuck": {
+    "NAME": "Drunken Luck",
+    "DESCRIPTION": "Unplayable. Ethereal. NL When this card is exhausted, gain !M! Gold.",
+    "EXTENDED_DESCRIPTION": ["I can't play this card."]
+  },
+  "theBrewmaster:Headbutt": {
+    "NAME": "Headbutt",
+    "DESCRIPTION": "Deal !D! damage to an enemy. NL Become Confused."
+  },
+  "theBrewmaster:DogHair": {
+    "NAME": "Dog Hair",
+    "DESCRIPTION": "Reduce each debuff on you by !M!.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Reduce each debuff on you by !M!."
   }
 }

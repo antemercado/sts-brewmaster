@@ -4,7 +4,6 @@ import basemod.AutoAdd;
 import basemod.abstracts.CustomCard;
 import basemod.helpers.BaseModCardTags;
 import theBrewmaster.BrewmasterMod;
-import theBrewmaster.actions.PurifyingBrewAction;
 import theBrewmaster.characters.BrewmasterCharacter;
 import theBrewmaster.enums.CustomTags;
 
@@ -18,10 +17,13 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class PurifyingBrew extends AbstractDynamicCard {
+public class StoneBrew extends AbstractDynamicCard {
     // TEXT DECLARATION
-    public static final String ID = BrewmasterMod.makeID(PurifyingBrew.class.getSimpleName());
+    public static final String ID = BrewmasterMod.makeID(StoneBrew.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
+
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     // STAT DECLARATION
 
@@ -30,28 +32,30 @@ public class PurifyingBrew extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
 
-    private static final int COST = 1;
+    private static final int COST = 2;
 
-    private static final int MAGIC = 15;
+    private static final int MAGIC = 2;
 
-    public PurifyingBrew() { 
+    public StoneBrew() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-
         this.baseMagicNumber = this.magicNumber = MAGIC;
 
         tags.add(CustomTags.BREW);
-        
+
     }
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new PurifyingBrewAction(p, magicNumber, upgraded));
+        int amount = p.currentBlock * (magicNumber - 1);
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, amount));
     }
     // Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            this.retain = true;
+            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }
