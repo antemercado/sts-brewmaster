@@ -38,6 +38,8 @@ public class AdmiralsBrewPower extends AbstractPower{
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
 
+    private static final boolean END_OF_ROUND_DAMAGE = false;
+
     private AbstractPlayer p = AbstractDungeon.player;
 
     private int damage;
@@ -80,6 +82,9 @@ public class AdmiralsBrewPower extends AbstractPower{
     }
     
     public void atEndOfRound(){
+        if (!END_OF_ROUND_DAMAGE){
+            return;
+        }
         if (this.amount - 1 <= 0){
             if (this.damage >= this.p.currentHealth)
                 this.damage = this.p.currentHealth - 1;
@@ -97,22 +102,6 @@ public class AdmiralsBrewPower extends AbstractPower{
         
         p.damage(new DamageInfo(source, damage, CustomDamageTypes.ADMIRALSBREW));
     }
-
-    // public void onInflictDamage(){
-    //     activate();
-    // }
-
-    // public void atEndOfTurn(){
-    //     activate();
-    // }
-
-    // private void activate() {
-    //     if (AbstractDungeon.getMonsters().areMonstersBasicallyDead()){
-    //         if (this.amount > this.p.currentHealth)
-    //             this.amount = this.p.currentHealth - 1;
-    //         addToTop(new DamageAction(this.owner, new DamageInfo(source, amount, DamageType.HP_LOSS)));
-    //     }
-    // }
 
     // Update the description
     @Override

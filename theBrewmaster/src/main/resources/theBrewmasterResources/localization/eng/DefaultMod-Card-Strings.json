@@ -67,7 +67,7 @@
   },
   "theBrewmaster:DrunkenIdea": {
     "NAME": "Drunken Idea",
-    "DESCRIPTION": "Draw !M! card. NL thebrewmaster:Intoxicated: Draw an additional card."
+    "DESCRIPTION": "{@@}Draw !M! card{!M!|>1=s}. NL thebrewmaster:Intoxicated: Draw two additional cards."
   },
   "theBrewmaster:Stagger": {
     "NAME": "Stagger",
@@ -130,7 +130,7 @@
   },
   "theBrewmaster:FairyBrew": {
     "NAME": "Fairy Brew",
-    "DESCRIPTION": "Gain !M! Regen. NL thebrewmaster:Intoxicated: Gain !M2! life instead. NL Exhaust."
+    "DESCRIPTION": "Gain !M! Regen. NL thebrewmaster:Intoxicated: Gain !theBrewmaster:M2! life instead. NL Exhaust."
   },
   "theBrewmaster:ExplodingKeg": {
     "NAME": "Exploding Keg",

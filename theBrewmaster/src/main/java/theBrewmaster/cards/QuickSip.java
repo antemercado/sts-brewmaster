@@ -39,12 +39,12 @@ public class QuickSip extends AbstractDynamicCard {
     private static final int COST = 1;
     private static final int UPGRADED_COST = 0;
 
-    private static final int POWER = 15;
+    private static final int MAGIC = 15;
     private static final int CARD_DRAW = 1;
 
     public QuickSip() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.baseMagicNumber = this.magicNumber = POWER;
+        this.baseMagicNumber = this.magicNumber = MAGIC;
     }
     
     // Actions the card should do.

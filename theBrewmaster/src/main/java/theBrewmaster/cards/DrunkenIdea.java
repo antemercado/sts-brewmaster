@@ -48,9 +48,8 @@ public class DrunkenIdea extends AbstractDynamicCard {
         
         int draw = magicNumber;
         if (p.stance.ID.equals(IntoxicatedStance.STANCE_ID))
-            draw += 1;
+            draw += 2;
 
-        AbstractDungeon.actionManager.addToBottom(new DiscardAction(p, p, 1, false));
         AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, draw));
     }
 
