@@ -44,7 +44,11 @@ public class IntoxicationPower extends AbstractPower{
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("intoxication84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("intoxication32.png"));
 
-    public IntoxicationPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
+    public IntoxicationPower(final AbstractCreature owner, final AbstractCreature source, final int amount){
+        this(owner,source,amount,false);
+    }
+
+    public IntoxicationPower(final AbstractCreature owner, final AbstractCreature source, final int amount, boolean isBeerStein) {
         name = NAME;
         ID = POWER_ID;
 
@@ -62,7 +66,7 @@ public class IntoxicationPower extends AbstractPower{
         // TODO: Prevent gaining Intoxication if have Temperance.
         
         // Multiply gain if has relic
-        if (AbstractDungeon.player.hasRelic(SpiritHelmetRelic.ID))
+        if (AbstractDungeon.player.hasRelic(SpiritHelmetRelic.ID) && !isBeerStein)
             this.amount *= SpiritHelmetRelic.MULTIPLIER;
 
         // If have enough stacks when gaining power, enter stance

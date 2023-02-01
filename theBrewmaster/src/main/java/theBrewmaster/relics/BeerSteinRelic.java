@@ -31,7 +31,7 @@ public class BeerSteinRelic extends CustomRelic {
             return;
         flash();
         AbstractPlayer p = AbstractDungeon.player;
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new IntoxicationPower(p, p, this.counter)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new IntoxicationPower(p, p, this.counter, true)));
     }
 
     public void onVictory(){
