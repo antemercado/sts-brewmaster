@@ -71,7 +71,7 @@
   },
   "theBrewmaster:Stagger": {
     "NAME": "Stagger",
-    "DESCRIPTION": "Deal !D! damage. If the enemy intends to attack, stun them."
+    "DESCRIPTION": "Deal !D! damage. If the enemy intends to attack, they lose !M! Strength."
   },
   "theBrewmaster:PurifyingBrew": {
     "NAME": "Purifying Brew",
@@ -198,5 +198,9 @@
     "NAME": "Drunken Rage",
     "DESCRIPTION": "Deal !D! damage. NL Can only play if thebrewmaster:Intoxicated",
     "EXTENDED_DESCRIPTION": ["I can't play this card."]
+  },
+  "theBrewmaster:BodySlam": {
+    "NAME": "Body Slam",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Weak."
   }
 }
