@@ -2,6 +2,7 @@ package theBrewmaster.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
 import theBrewmaster.BrewmasterMod;
+import theBrewmaster.relics.SpiritHelmetRelic;
 import theBrewmaster.stances.IntoxicatedStance;
 import theBrewmaster.util.TextureLoader;
 
@@ -50,15 +51,19 @@ public class IntoxicationPower extends AbstractPower{
         this.owner = owner;
         this.amount = amount;
         this.source = source;
-
+        
         type = PowerType.BUFF;
         isTurnBased = false;
-
+        
         // We load those txtures here.
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
-
+        
         // TODO: Prevent gaining Intoxication if have Temperance.
+        
+        // Multiply gain if has relic
+        if (AbstractDungeon.player.hasRelic(SpiritHelmetRelic.ID))
+            this.amount *= SpiritHelmetRelic.MULTIPLIER;
 
         // If have enough stacks when gaining power, enter stance
         if (this.amount > INTOX_THRESHOLD){
@@ -71,13 +76,20 @@ public class IntoxicationPower extends AbstractPower{
     // Enter Intoxicated when you add enough stacks.
     // This is intended to pull you out of any Watcher stances you may have put youself into.
     public void stackPower(int stackAmount){
+
+        // Spirit Helmet Bonus
+        int stack = stackAmount;
+        if (AbstractDungeon.player.hasRelic(SpiritHelmetRelic.ID)){
+            stack *= SpiritHelmetRelic.MULTIPLIER;
+        }
+
         // Gain Regen instead if has Temperance Power
         if (this.owner.hasPower(TemperancePower.POWER_ID)){
             addToBot(new ApplyPowerAction(owner, owner, new RegenPower(owner, 1)));
             return;
         }
-        super.stackPower(stackAmount);
-        if (this.amount >= INTOX_THRESHOLD || stackAmount >= INTOX_THRESHOLD) {
+        super.stackPower(stack);
+        if (this.amount >= INTOX_THRESHOLD || stack >= INTOX_THRESHOLD) {
             AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new IntoxicatedStance()));
         }
         updateDescription();

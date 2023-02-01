@@ -3,7 +3,14 @@
     "NAME": "Beer Stein",
     "FLAVOR": "I've never heard of one drinks too many.",
     "DESCRIPTIONS": [
-      "Your intoxication level no longer resets between floors and acts."
+      "Your Intoxication level doesn't resets between floors and acts."
+    ]
+  },
+  "theBrewmaster:SpiritHelmetRelic": {
+    "NAME": "Spirit Helmet",
+    "FLAVOR": "I've never heard of one drinks too many.",
+    "DESCRIPTIONS": [
+      "If you would gain Intoxication, gain twice that amount instead."
     ]
   }
 }
