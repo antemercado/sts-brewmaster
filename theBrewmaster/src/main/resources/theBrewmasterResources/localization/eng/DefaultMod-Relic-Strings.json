@@ -3,7 +3,14 @@
     "NAME": "Beer Stein",
     "FLAVOR": "I've never heard of one drinks too many.",
     "DESCRIPTIONS": [
-      "Your Intoxication level doesn't resets between floors and acts."
+      "Retain half your Intoxication between floors and acts."
+    ]
+  },
+  "theBrewmaster:GiantKegRelic": {
+    "NAME": "Giant Keg",
+    "FLAVOR": "I've had one drinks too many.",
+    "DESCRIPTIONS": [
+      "Your Intoxication doesn't reset between floors and acts."
     ]
   },
   "theBrewmaster:SpiritHelmetRelic": {

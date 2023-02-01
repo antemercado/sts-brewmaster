@@ -13,18 +13,19 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-public class BeerSteinRelic extends CustomRelic {
+public class GiantKegRelic extends CustomRelic {
 
     public static final String ID = BrewmasterMod.makeID("BeerSteinRelic");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("beer_stein.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("beer_stein.png"));
 
-    private static int DECAY = 2;
-
-    public BeerSteinRelic() {
-        super(ID, IMG, OUTLINE, RelicTier.STARTER, LandingSound.CLINK);
+    public GiantKegRelic() {
+        super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.CLINK);
         this.counter = 0;
+        if (AbstractDungeon.player.hasRelic(BeerSteinRelic.ID)){
+            this.counter = AbstractDungeon.player.getRelic(BeerSteinRelic.ID).counter;
+        }
     }
 
     @Override
@@ -42,7 +43,11 @@ public class BeerSteinRelic extends CustomRelic {
             this.counter = 0;
             return;
         }
-        this.counter = p.getPower(IntoxicationPower.POWER_ID).amount / DECAY;
+        this.counter = p.getPower(IntoxicationPower.POWER_ID).amount;
+    }
+
+    public boolean canSpawn() {
+        return AbstractDungeon.player.hasRelic(BeerSteinRelic.ID);
     }
 
     // Description
