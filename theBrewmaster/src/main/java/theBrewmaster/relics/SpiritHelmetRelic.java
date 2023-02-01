@@ -16,7 +16,7 @@ public class SpiritHelmetRelic extends CustomRelic {
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("spirit_helmet.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("spirit_helmet.png"));
 
-    public static final int MULTIPLIER = 2;
+    public static final float MULTIPLIER = 1.5f;
 
     public SpiritHelmetRelic() {
         super(ID, IMG, OUTLINE, RelicTier.SHOP, LandingSound.CLINK);
