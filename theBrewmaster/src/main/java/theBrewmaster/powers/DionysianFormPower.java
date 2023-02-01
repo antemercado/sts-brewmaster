@@ -56,9 +56,9 @@ public class DionysianFormPower extends AbstractPower{
 
     public void atStartOfTurn() {
         AbstractCard c = BrewmasterCharacter.getBrews().getRandomCard(AbstractDungeon.cardRng).makeCopy();
-        c.costForTurn = 0;
         if (this.upgraded)
             c.upgrade();
+        c.setCostForTurn(0);
         addToBot(new MakeTempCardInHandAction(c));
     }
 
