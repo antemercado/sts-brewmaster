@@ -4,6 +4,8 @@
 
 *.url
 
+*.xlsx
+
 theBrewmaster/src/main/resources/theBrewmasterResources/images/
 
 # IntelliJ
