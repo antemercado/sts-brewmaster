@@ -32,11 +32,10 @@ public class DrunkenFlurry extends AbstractDynamicCard {
 
     private static final int COST = 1;
 
-    private static final int DAMAGE = 4;
+    private static final int DAMAGE = 3;
     private static final int UPGRADE_PLUS_DMG = 1;
 
     public static final int MAGIC = 20;
-    public static final int UPGRADED_MAGIC = 15;
 
     public DrunkenFlurry() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -60,7 +59,6 @@ public class DrunkenFlurry extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
-            this.baseMagicNumber = this.magicNumber = UPGRADED_MAGIC;
             initializeDescription();
         }
     }

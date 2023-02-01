@@ -38,7 +38,7 @@ public class AdmiralsBrewPower extends AbstractPower{
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
 
-    private static final boolean END_OF_ROUND_DAMAGE = false;
+    private static final boolean END_OF_FLOOR_DAMAGE = false;
 
     private AbstractPlayer p = AbstractDungeon.player;
 
@@ -82,9 +82,7 @@ public class AdmiralsBrewPower extends AbstractPower{
     }
     
     public void atEndOfRound(){
-        if (!END_OF_ROUND_DAMAGE){
-            return;
-        }
+        
         if (this.amount - 1 <= 0){
             if (this.damage >= this.p.currentHealth)
                 this.damage = this.p.currentHealth - 1;
@@ -97,6 +95,9 @@ public class AdmiralsBrewPower extends AbstractPower{
     }
 
     public void onVictory(){
+        if (!END_OF_FLOOR_DAMAGE){
+            return;
+        }
         if (this.damage >= this.p.currentHealth)
             this.damage = this.p.currentHealth - 1;
         

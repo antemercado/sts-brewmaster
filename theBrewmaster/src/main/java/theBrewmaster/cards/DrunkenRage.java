@@ -34,9 +34,9 @@ public class DrunkenRage extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
 
-    private static final int COST = 0;
+    private static final int COST = 2;
 
-    private static final int DAMAGE = 45;
+    private static final int DAMAGE = 40;
     private static final int UPGRADE_PLUS_DMG = 15;
 
     public DrunkenRage() { 

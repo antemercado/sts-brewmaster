@@ -38,7 +38,7 @@ public class KSSmash extends AbstractDynamicCard {
     private static final int COST = 2;
 
     private static final int DAMAGE = 10;
-    private static final int UPGRADE_PLUS_DAMAGE = 5;
+    private static final int UPGRADE_PLUS_DAMAGE = 8;
 
     private AbstractCard preview;
 

@@ -32,9 +32,9 @@ public class Headbutt extends AbstractDynamicCard {
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
 
     private static final int COST = 2;
-    private static final int UPGRADED_COST = 1;
 
     private static final int DAMAGE = 20;
+    private static final int UPGRADE_PLUS_DAMAGE = 8;
 
     public Headbutt() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -51,7 +51,7 @@ public class Headbutt extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(UPGRADED_COST);
+            upgradeDamage(UPGRADE_PLUS_DAMAGE);
             initializeDescription();
         }
     }
