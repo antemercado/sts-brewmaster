@@ -40,7 +40,7 @@
   },
   "theBrewmaster:BottleSmash": {
     "NAME": "Bottle Smash",
-    "DESCRIPTION": "Deal !D! damage. Gain !M! thebrewmaster:Intoxication."
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! thebrewmaster:Intoxication."
   },
   "theBrewmaster:Homebrew": {
     "NAME": "Homebrew",
