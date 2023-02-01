@@ -188,5 +188,15 @@
     "NAME": "Dog Hair",
     "DESCRIPTION": "Reduce each debuff on you by !M!.",
     "UPGRADE_DESCRIPTION": "Retain. NL Reduce each debuff on you by !M!."
+  },
+  "theBrewmaster:DionysianForm": {
+    "NAME": "Dionysian Form",
+    "DESCRIPTION": "At the beggining of your turn, add a random Brew card into your hand. It costs 0 this turn.",
+    "UPGRADE_DESCRIPTION": "At the beggining of your turn, add a random upgraded Brew card into your hand. It costs 0 this turn."
+  },
+  "theBrewmaster:DrunkenRage": {
+    "NAME": "Drunken Rage",
+    "DESCRIPTION": "Deal !D! damage. NL Can only play if thebrewmaster:Intoxicated",
+    "EXTENDED_DESCRIPTION": ["I can't play this card."]
   }
 }
