@@ -10,6 +10,7 @@ import theBrewmaster.characters.BrewmasterCharacter;
 import theBrewmaster.events.IdentityCrisisEvent;
 import theBrewmaster.potions.FermentedTea;
 import theBrewmaster.relics.BeerSteinRelic;
+import theBrewmaster.relics.GiantKegRelic;
 import theBrewmaster.relics.SpiritHelmetRelic;
 import theBrewmaster.stances.IntoxicatedStance;
 import theBrewmaster.util.IDCheckDontTouchPls;
@@ -396,6 +397,7 @@ public class BrewmasterMod implements
 
         // This adds a character specific relic. Only when you play with the mentioned color, will you get this relic.
         BaseMod.addRelicToCustomPool(new BeerSteinRelic(), BrewmasterCharacter.Enums.ORANGE);
+        BaseMod.addRelicToCustomPool(new GiantKegRelic(), BrewmasterCharacter.Enums.ORANGE);
         BaseMod.addRelicToCustomPool(new SpiritHelmetRelic(), BrewmasterCharacter.Enums.ORANGE);
         
         // This adds a relic to the Shared pool. Every character can find this relic.

@@ -3,7 +3,7 @@
     "NAME": "Beer Stein",
     "FLAVOR": "I've never heard of one drinks too many.",
     "DESCRIPTIONS": [
-      "Retain half your Intoxication between floors and acts."
+      "Keep half your Intoxication between floors and acts."
     ]
   },
   "theBrewmaster:GiantKegRelic": {
@@ -17,7 +17,7 @@
     "NAME": "Spirit Helmet",
     "FLAVOR": "I've never heard of one drinks too many.",
     "DESCRIPTIONS": [
-      "Whenever you would gain Intoxication, gain 150% that amount instead."
+      "If you would gain Intoxication, gain 150% that amount instead."
     ]
   }
 }

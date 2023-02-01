@@ -11,11 +11,12 @@ import static theBrewmaster.BrewmasterMod.makeRelicPath;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class GiantKegRelic extends CustomRelic {
 
-    public static final String ID = BrewmasterMod.makeID("BeerSteinRelic");
+    public static final String ID = BrewmasterMod.makeID("GiantKegRelic");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("beer_stein.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("beer_stein.png"));
@@ -23,8 +24,10 @@ public class GiantKegRelic extends CustomRelic {
     public GiantKegRelic() {
         super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.CLINK);
         this.counter = 0;
-        if (AbstractDungeon.player.hasRelic(BeerSteinRelic.ID)){
-            this.counter = AbstractDungeon.player.getRelic(BeerSteinRelic.ID).counter;
+        if (CardCrawlGame.dungeon != null && AbstractDungeon.player != null){
+            if (AbstractDungeon.player.hasRelic(BeerSteinRelic.ID)){
+                this.counter = AbstractDungeon.player.getRelic(BeerSteinRelic.ID).counter;
+            }
         }
     }
 
