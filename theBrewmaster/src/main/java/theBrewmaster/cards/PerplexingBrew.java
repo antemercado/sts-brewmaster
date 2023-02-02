@@ -43,7 +43,7 @@ public class PerplexingBrew extends AbstractDynamicCard {
     private static final int COST = 1;
 
     // Determines Power Type
-    private static final int MAGIC = -1;
+    private static final int MAGIC = 1;
     // Determines Power Amount
     private static final int MAGIC2 = 1;
 

@@ -71,7 +71,7 @@
   },
   "theBrewmaster:Stagger": {
     "NAME": "Stagger",
-    "DESCRIPTION": "Deal !D! damage. If the enemy intends to attack, they lose !M! Strength."
+    "DESCRIPTION": "Deal !D! damage. If the enemy intends to attack, it loses !M! Strength this turn."
   },
   "theBrewmaster:PurifyingBrew": {
     "NAME": "Purifying Brew",
@@ -136,8 +136,8 @@
     "NAME": "Exploding Keg",
     "DESCRIPTION": "Deal !D! damage to an enemy and !M! damage to the rest."
   },
-  "theBrewmaster:ThunderClap": {
-    "NAME": "Thunder Clap",
+  "theBrewmaster:StormStomp": {
+    "NAME": "Storm Stomp",
     "DESCRIPTION": "Deal !D! damage to a random enemy X times."
   },
   "theBrewmaster:Vasoimmolation": {
@@ -206,5 +206,18 @@
   "theBrewmaster:TipsyStrike": {
     "NAME": "Tipsy Strike",
     "DESCRIPTION": "Deal !D! damage. NL Shuffle a Void into your discard pile."
+  },
+  "theBrewmaster:StoneSmash": {
+    "NAME": "Stone Smash",
+    "DESCRIPTION": "Deal !D! damage. NL Gain Block equal to unblocked damage dealt."
+  },
+  "theBrewmaster:BarrelThrough": {
+    "NAME": "Barrel Through",
+    "DESCRIPTION": "Deal !D! damage to each enemy. NL Gain !B! Block."
+  },
+  "theBrewmaster:VolatileBrew": {
+    "NAME": "Volatile Brew",
+    "DESCRIPTION": "{@@}Deal {!Location!|@= !D! damage.|>0,<0=8, 12, or 20 damage, chosen at random when drawn.}",
+    "UPGRADE_DESCRIPTION": "{@@}Deal {!Location!|@= !D! damage.|>0,<0=8, 12, 20, or 36 damage, chosen at random when drawn.}"
   }
 }

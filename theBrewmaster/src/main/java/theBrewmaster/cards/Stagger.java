@@ -19,6 +19,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.GainStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
 public class Stagger extends AbstractDynamicCard {
@@ -36,9 +37,9 @@ public class Stagger extends AbstractDynamicCard {
     private static final int COST = 1;
 
     private static final int DAMAGE = 7;
-    private static final int UPGRADE_PLUS_DMG = 2;
+    private static final int UPGRADE_PLUS_DMG = 5;
 
-    private static final int MAGIC = 1;
+    private static final int MAGIC = 5;
 
     public Stagger() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -51,7 +52,10 @@ public class Stagger extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         if (!m.isDeadOrEscaped() && m.getIntentBaseDmg() >= 0) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new StrengthPower(m, magicNumber)));
+            addToBot(new ApplyPowerAction(m, p, new StrengthPower(m, -this.magicNumber), -this.magicNumber));
+            if (m != null && !m.hasPower("Artifact")){
+                addToBot(new ApplyPowerAction(m, p, new GainStrengthPower(m, this.magicNumber), this.magicNumber));
+            }
         }
     }
 
