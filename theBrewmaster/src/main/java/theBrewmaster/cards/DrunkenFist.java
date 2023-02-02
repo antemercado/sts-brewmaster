@@ -11,6 +11,7 @@ import theBrewmaster.stances.IntoxicatedStance;
 import static theBrewmaster.BrewmasterMod.makeCardPath;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -34,8 +35,8 @@ public class DrunkenFist extends AbstractDynamicCard {
 
     private static final int COST = 1;
 
-    private static final int MAGIC = 1;
-    private static final int UPGRADE_PLUS_MAGIC = 1;
+    private static final int MAGIC = 15;
+    private static final int UPGRADE_PLUS_MAGIC = 10;
 
     public DrunkenFist() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -47,10 +48,13 @@ public class DrunkenFist extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (p.hasPower(IntoxicationPower.POWER_ID)){
             AbstractPower intoxication = p.getPower(IntoxicationPower.POWER_ID);
-            this.damage = (int)Math.ceil(intoxication.amount * magicNumber / 10);
+            this.damage = (int)Math.ceil(intoxication.amount * magicNumber / 100);
             intoxication.reducePower(this.damage);
         }
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+        AttackEffect effect = AttackEffect.BLUNT_LIGHT;
+        if (this.damage > 20)
+            effect = AttackEffect.BLUNT_HEAVY;
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), effect));
     }
     // Upgraded stats.
     @Override
