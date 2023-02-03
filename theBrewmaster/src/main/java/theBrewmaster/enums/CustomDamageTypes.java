@@ -5,5 +5,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 
 public class CustomDamageTypes {
     @SpireEnum
-    public static DamageInfo.DamageType ADMIRALSBREW;    
+    public static DamageInfo.DamageType ADMIRALSBREW;
+    @SpireEnum
+    public static DamageInfo.DamageType DRENCHED;
 }

@@ -58,5 +58,19 @@
       "At the beggining of your turn, add a random Brew card into your hand. It costs 0.",
       "At the beggining of your turn, add a random upgraded Brew card into your hand. It costs 0."
     ]
+  },
+  "theBrewmaster:DrenchedPower": {
+    "NAME": "Drenched",
+    "DESCRIPTIONS": [
+      "When damaged, all enemies take ",
+      " damage."
+    ]
+  },
+  "theBrewmaster:EthanolVaporPower": {
+    "NAME": "Ethanol Vapor",
+    "DESCRIPTIONS": [
+      "Whenever you gain Intoxication, apply ",
+      " Drenched to a random enemy."
+    ]
   }
 }

@@ -11,6 +11,7 @@ import static theBrewmaster.BrewmasterMod.makePowerPath;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerToRandomEnemyAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
@@ -21,6 +22,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.RegenPower;
 import com.megacrit.cardcrawl.stances.AbstractStance;
@@ -64,6 +66,14 @@ public class IntoxicationPower extends AbstractPower{
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
         
         // TODO: Prevent gaining Intoxication if have Temperance.
+
+        // Ethanol Vapors
+        if (AbstractDungeon.player.hasPower(EthanolVaporPower.POWER_ID)){
+            int ethanolVaporAmount = AbstractDungeon.player.getPower(EthanolVaporPower.POWER_ID).amount;
+            if (!AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()){
+                addToBot(new ApplyPowerToRandomEnemyAction(this.source, new DrenchedPower(null, this.source, ethanolVaporAmount), ethanolVaporAmount));
+            }
+        }
         
         // Multiply gain if has relic
         if (AbstractDungeon.player.hasRelic(SpiritHelmetRelic.ID) && !isBeerStein)
@@ -85,6 +95,14 @@ public class IntoxicationPower extends AbstractPower{
         int stack = stackAmount;
         if (AbstractDungeon.player.hasRelic(SpiritHelmetRelic.ID)){
             stack *= SpiritHelmetRelic.MULTIPLIER;
+        }
+
+        // Ethanol Vapors
+        if (AbstractDungeon.player.hasPower(EthanolVaporPower.POWER_ID)){
+            int ethanolVaporAmount = AbstractDungeon.player.getPower(EthanolVaporPower.POWER_ID).amount;
+            if (!AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()){
+                addToBot(new ApplyPowerToRandomEnemyAction(this.source, new DrenchedPower(null, this.source, ethanolVaporAmount), ethanolVaporAmount));
+            }
         }
 
         // Gain Regen instead if has Temperance Power

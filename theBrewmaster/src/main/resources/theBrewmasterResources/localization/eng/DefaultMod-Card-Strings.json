@@ -224,5 +224,13 @@
     "NAME": "Imported Brew",
     "DESCRIPTION": "Choose 1 of 3 cards from different colors to add into your hand. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Choose 1 of 3 upgraded cards from different colors to add into your hand. NL Exhaust."
+  },
+  "theBrewmaster:BeerShower": {
+    "NAME": "Beer Shower",
+    "DESCRIPTION": "Apply !M! thebrewmaster:Drenched to each enemy."
+  },
+  "theBrewmaster:EthanolVapors": {
+    "NAME": "Ethanol Vapors",
+    "DESCRIPTION": "Whenever you gain Intoxication, apply !M! thebrewmaster:Drenched to a random enemy."
   }
 }

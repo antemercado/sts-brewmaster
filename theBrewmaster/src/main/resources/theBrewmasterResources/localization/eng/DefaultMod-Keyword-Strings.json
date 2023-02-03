@@ -2,8 +2,6 @@
   {
     "PROPER_NAME": "Intoxication",
     "NAMES": [
-      "Intoxication",
-      "Intoxicated",
       "intoxication",
       "intoxicated"
     ],
@@ -15,5 +13,12 @@
       "intoxicated"
     ],
     "DESCRIPTION": "Brewmaster cards have certain bonuses at when intoxicated. You lose 25% of intoxication each turn."
+  },
+  {
+    "PROPER_NAME": "Drenched",
+    "NAMES": [
+      "drenched"
+    ],
+    "DESCRIPTION": "When Drenched enemies take attack damage, all enemies take bonus damage."
   }
 ]
