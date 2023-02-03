@@ -219,5 +219,10 @@
     "NAME": "Volatile Brew",
     "DESCRIPTION": "{@@}Deal {!Location!|@= !D! damage.|>0,<0=8, 12, or 20 damage, chosen at random when drawn.}",
     "UPGRADE_DESCRIPTION": "{@@}Deal {!Location!|@= !D! damage.|>0,<0=8, 12, 20, or 36 damage, chosen at random when drawn.}"
+  },
+  "theBrewmaster:ImportedBrew": {
+    "NAME": "Imported Brew",
+    "DESCRIPTION": "Choose 1 of 3 cards from different colors to add into your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Choose 1 of 3 upgraded cards from different colors to add into your hand. NL Exhaust."
   }
 }
