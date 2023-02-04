@@ -69,7 +69,7 @@ public class DrenchedPower extends AbstractPower{
             damage *= 2;
             type = CustomDamageTypes.MATCH;
         }
-        addToBot(new DamageAllEnemiesAction(AbstractDungeon.player, damage, type, AttackEffect.FIRE));
+        addToBot(new DamageAllEnemiesAction(null, damage, type, AttackEffect.FIRE));
         return damageAmount;
     }
 

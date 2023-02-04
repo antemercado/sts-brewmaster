@@ -81,7 +81,7 @@ public class IntoxicationPower extends AbstractPower{
             this.amount *= SpiritHelmetRelic.MULTIPLIER;
 
         // If have enough stacks when gaining power, enter stance
-        if (this.amount > INTOX_THRESHOLD || (this.amount > INTOX_THRESHOLD_RELIC && AbstractDungeon.player.hasRelic(LouseLiverRelic.ID))){
+        if (this.amount >= INTOX_THRESHOLD || (this.amount >= INTOX_THRESHOLD_RELIC && AbstractDungeon.player.hasRelic(LouseLiverRelic.ID))){
             addToBot(new ChangeStanceAction(new IntoxicatedStance()));
         }
 
@@ -112,7 +112,7 @@ public class IntoxicationPower extends AbstractPower{
             return;
         }
         super.stackPower(stack);
-        if (this.amount > INTOX_THRESHOLD || (this.amount > INTOX_THRESHOLD_RELIC && AbstractDungeon.player.hasRelic(LouseLiverRelic.ID))) {
+        if (this.amount >= INTOX_THRESHOLD || (this.amount >= INTOX_THRESHOLD_RELIC && AbstractDungeon.player.hasRelic(LouseLiverRelic.ID))) {
             AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new IntoxicatedStance()));
         }
         updateDescription();

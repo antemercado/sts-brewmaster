@@ -52,9 +52,10 @@
   },
   "theBrewmaster:DrunkenFist": {
     "NAME": "Drunken Fist",
-    "DESCRIPTION": "{@@}Consume 10% of your intoxication. Deal {!M!|2=[#7fff00]twice[] }that much damage.",
+    "DESCRIPTION": "Consume !M!% of your intoxication. Deal that much damage.",
     "EXTENDED_DESCRIPTION": [
-      "Deal"
+      "Deal",
+      "damage."
     ]
   },
   "theBrewmaster:FortifyingBrew": {
@@ -65,8 +66,8 @@
     "NAME": "Sober Up",
     "DESCRIPTION": "Consume 100% of your thebrewmaster:Intoxication. Gain [E] and draw 1 card for every !M! consumed. NL Exhaust."
   },
-  "theBrewmaster:DrunkenIdea": {
-    "NAME": "Drunken Idea",
+  "theBrewmaster:VinoVeritas": {
+    "NAME": "Vino Veritas",
     "DESCRIPTION": "{@@}Draw !M! card{!M!|>1=s}. NL thebrewmaster:Intoxicated: Draw two additional cards."
   },
   "theBrewmaster:Stagger": {
@@ -176,8 +177,8 @@
     "DESCRIPTION": "Gain !M! Dexterity. At the end of your turn, lose !M! Dexterity."
   },
   "theBrewmaster:DrunkenLuck": {
-    "NAME": "Drunken Luck",
-    "DESCRIPTION": "Unplayable. Ethereal. NL When this card is exhausted, gain !M! Gold.",
+    "NAME": "Drunkard's Luck",
+    "DESCRIPTION": "Unplayable. NL Ethereal. NL When this card is exhausted, gain !M! Gold.",
     "EXTENDED_DESCRIPTION": ["I can't play this card."]
   },
   "theBrewmaster:Headbutt": {
@@ -239,11 +240,25 @@
   },
   "theBrewmaster:BloodAlcohol": {
     "NAME": "Blood Alcohol",
-    "DESCRIPTION": "Whenever you lose life, gain that much thebrewmaster:intoxication."
+    "DESCRIPTION": "Whenever you lose life, gain that much thebrewmaster:Intoxication."
   },
   "theBrewmaster:Misplace": {
     "NAME": "Misplace",
     "DESCRIPTION": "Shuffle a card from your hand into your draw pile.",
     "UPGRADE_DESCRIPTION": "Shuffle any number of cards from your hand into your draw pile."
+  },
+  "theBrewmaster:GutFermentation": {
+    "NAME": "Gut Fermentation",
+    "DESCRIPTION": "Double your thebrewmaster:Intoxication. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Double your thebrewmaster:Intoxication. NL Exhaust if thebrewmaster:Intoxicated."
+  },
+  "theBrewmaster:Impulse": {
+    "NAME": "Impulsivity",
+    "DESCRIPTION": "Draw !M! cards. They gain Ethereal."
+  },
+  "theBrewmaster:WhiskeyKick": {
+    "NAME": "Whiskey Kick",
+    "DESCRIPTION": "Draw !D! damage. NL thebrewmaster:Intoxicated: Deal twice that amount instead.",
+    "UPGRADE_DESCRIPTION": "Draw !D! damage. NL thebrewmaster:Intoxicated: Deal three times that amount instead."
   }
 }
