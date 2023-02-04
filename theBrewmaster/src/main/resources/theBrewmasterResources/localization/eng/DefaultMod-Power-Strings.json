@@ -72,5 +72,11 @@
       "Whenever you gain Intoxication, apply ",
       " Drenched to a random enemy."
     ]
+  },
+  "theBrewmaster:BloodAlcoholPower": {
+    "NAME": "Blood Alcohol",
+    "DESCRIPTIONS": [
+      "Whenever you lose life, gain that much Intoxication."
+    ]
   }
 }

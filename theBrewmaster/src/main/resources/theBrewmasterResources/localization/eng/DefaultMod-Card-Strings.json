@@ -126,7 +126,7 @@
   },
   "theBrewmaster:CinderBrew": {
     "NAME": "Cinder Brew",
-    "DESCRIPTION": "Your next attack does !M! additional damage."
+    "DESCRIPTION": "Apply !M! thebrewmaster:Drenched."
   },
   "theBrewmaster:FairyBrew": {
     "NAME": "Fairy Brew",
@@ -205,7 +205,7 @@
   },
   "theBrewmaster:TipsyStrike": {
     "NAME": "Tipsy Strike",
-    "DESCRIPTION": "Deal !D! damage. NL Shuffle a Void into your discard pile."
+    "DESCRIPTION": "Deal !D! plus !M!% of your thebrewmaster:Intoxication damage."
   },
   "theBrewmaster:StoneSmash": {
     "NAME": "Stone Smash",
@@ -232,5 +232,18 @@
   "theBrewmaster:EthanolVapors": {
     "NAME": "Ethanol Vapors",
     "DESCRIPTION": "Whenever you gain Intoxication, apply !M! thebrewmaster:Drenched to a random enemy."
+  },
+  "theBrewmaster:Match": {
+    "NAME": "Match",
+    "DESCRIPTION": "Deal !D! damage. Double thebrewmaster:Drenched damage."
+  },
+  "theBrewmaster:BloodAlcohol": {
+    "NAME": "Blood Alcohol",
+    "DESCRIPTION": "Whenever you lose life, gain that much thebrewmaster:intoxication."
+  },
+  "theBrewmaster:Misplace": {
+    "NAME": "Misplace",
+    "DESCRIPTION": "Shuffle a card from your hand into your draw pile.",
+    "UPGRADE_DESCRIPTION": "Shuffle any number of cards from your hand into your draw pile."
   }
 }

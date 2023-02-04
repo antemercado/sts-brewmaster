@@ -7,5 +7,5 @@ public class CustomDamageTypes {
     @SpireEnum
     public static DamageInfo.DamageType ADMIRALSBREW;
     @SpireEnum
-    public static DamageInfo.DamageType DRENCHED;
+    public static DamageInfo.DamageType MATCH;
 }

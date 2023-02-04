@@ -2,33 +2,27 @@ package theBrewmaster.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
 import theBrewmaster.BrewmasterMod;
-import theBrewmaster.enums.CustomDamageTypes;
 import theBrewmaster.util.TextureLoader;
 
 import static theBrewmaster.BrewmasterMod.makePowerPath;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.cards.DamageInfo.DamageType;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class DrenchedPower extends AbstractPower{
+public class BloodAlcoholPower extends AbstractPower{
     public AbstractCreature source;
 
-    public static final String POWER_ID = BrewmasterMod.makeID("DrenchedPower");
+    public static final String POWER_ID = BrewmasterMod.makeID("BloodAlcoholPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
@@ -38,15 +32,14 @@ public class DrenchedPower extends AbstractPower{
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
 
-    public DrenchedPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
+    public BloodAlcoholPower(final AbstractCreature owner) {
         name = NAME;
         ID = POWER_ID;
 
         this.owner = owner;
-        this.amount = amount;
-        this.source = source;
+        this.source = owner;
 
-        type = PowerType.DEBUFF;
+        type = PowerType.BUFF;
         isTurnBased = false;
 
         // We load those txtures here.
@@ -56,27 +49,20 @@ public class DrenchedPower extends AbstractPower{
         updateDescription();
     }
 
+    public int onLoseHp(int damageAmount) {
+        addToBot(new ApplyPowerAction(this.owner, this.owner, new IntoxicationPower(this.owner, this.owner, damageAmount), damageAmount));
+        return damageAmount;
+    }
+
     public void stackPower(int stackAmount){
         super.stackPower(stackAmount);
         updateDescription();
     }
 
-    public int onAttacked(DamageInfo info, int damageAmount) {
-        int damage = this.amount;
-        DamageType type = DamageType.NORMAL;
-        addToTop(new RemoveSpecificPowerAction(owner, info.owner, this));
-        if (info.type.equals(CustomDamageTypes.MATCH)){
-            damage *= 2;
-            type = CustomDamageTypes.MATCH;
-        }
-        addToBot(new DamageAllEnemiesAction(AbstractDungeon.player, damage, type, AttackEffect.FIRE));
-        return damageAmount;
-    }
-
     // Update the description
     @Override
     public void updateDescription() {
-        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+        description = DESCRIPTIONS[0];
     }
 
 }
