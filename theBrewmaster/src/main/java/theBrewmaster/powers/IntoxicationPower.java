@@ -2,6 +2,7 @@ package theBrewmaster.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
 import theBrewmaster.BrewmasterMod;
+import theBrewmaster.relics.LouseLiverRelic;
 import theBrewmaster.relics.SpiritHelmetRelic;
 import theBrewmaster.stances.IntoxicatedStance;
 import theBrewmaster.util.TextureLoader;
@@ -80,7 +81,7 @@ public class IntoxicationPower extends AbstractPower{
             this.amount *= SpiritHelmetRelic.MULTIPLIER;
 
         // If have enough stacks when gaining power, enter stance
-        if (this.amount > INTOX_THRESHOLD){
+        if (this.amount > INTOX_THRESHOLD || (this.amount > INTOX_THRESHOLD_RELIC && AbstractDungeon.player.hasRelic(LouseLiverRelic.ID))){
             addToBot(new ChangeStanceAction(new IntoxicatedStance()));
         }
 
@@ -111,7 +112,7 @@ public class IntoxicationPower extends AbstractPower{
             return;
         }
         super.stackPower(stack);
-        if (this.amount >= INTOX_THRESHOLD || stack >= INTOX_THRESHOLD) {
+        if (this.amount > INTOX_THRESHOLD || (this.amount > INTOX_THRESHOLD_RELIC && AbstractDungeon.player.hasRelic(LouseLiverRelic.ID))) {
             AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new IntoxicatedStance()));
         }
         updateDescription();

@@ -3,7 +3,7 @@
     "NAME": "Beer Stein",
     "FLAVOR": "I've never heard of one drinks too many.",
     "DESCRIPTIONS": [
-      "Keep half your Intoxication between floors and acts."
+      "Keep 75% of your Intoxication between floors and acts."
     ]
   },
   "theBrewmaster:GiantKegRelic": {
@@ -18,6 +18,13 @@
     "FLAVOR": "I've never heard of one drinks too many.",
     "DESCRIPTIONS": [
       "If you would gain Intoxication, gain 150% that amount instead."
+    ]
+  },
+  "theBrewmaster:LouseLiverRelic": {
+    "NAME": "Louse Liver",
+    "FLAVOR": "I've had one drinks too many.",
+    "DESCRIPTIONS": [
+      "You become Intoxicated at 75 Intoxication instead of 100."
     ]
   }
 }

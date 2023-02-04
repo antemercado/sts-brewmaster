@@ -11,6 +11,7 @@ import theBrewmaster.events.IdentityCrisisEvent;
 import theBrewmaster.potions.FermentedTea;
 import theBrewmaster.relics.BeerSteinRelic;
 import theBrewmaster.relics.GiantKegRelic;
+import theBrewmaster.relics.LouseLiverRelic;
 import theBrewmaster.relics.SpiritHelmetRelic;
 import theBrewmaster.stances.IntoxicatedStance;
 import theBrewmaster.util.IDCheckDontTouchPls;
@@ -399,6 +400,7 @@ public class BrewmasterMod implements
         BaseMod.addRelicToCustomPool(new BeerSteinRelic(), BrewmasterCharacter.Enums.ORANGE);
         BaseMod.addRelicToCustomPool(new GiantKegRelic(), BrewmasterCharacter.Enums.ORANGE);
         BaseMod.addRelicToCustomPool(new SpiritHelmetRelic(), BrewmasterCharacter.Enums.ORANGE);
+        BaseMod.addRelicToCustomPool(new LouseLiverRelic(), BrewmasterCharacter.Enums.ORANGE);
         
         // This adds a relic to the Shared pool. Every character can find this relic.
         //BaseMod.addRelic(new PlaceholderRelic2(), RelicType.SHARED);

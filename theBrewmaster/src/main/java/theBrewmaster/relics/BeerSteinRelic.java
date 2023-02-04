@@ -20,7 +20,7 @@ public class BeerSteinRelic extends CustomRelic {
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("beer_stein.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("beer_stein.png"));
 
-    private static int DECAY = 2;
+    private static float RETAIN = 0.75f;
 
     public BeerSteinRelic() {
         super(ID, IMG, OUTLINE, RelicTier.STARTER, LandingSound.CLINK);
@@ -42,7 +42,7 @@ public class BeerSteinRelic extends CustomRelic {
             this.counter = 0;
             return;
         }
-        this.counter = p.getPower(IntoxicationPower.POWER_ID).amount / DECAY;
+        this.counter = (int)Math.ceil(p.getPower(IntoxicationPower.POWER_ID).amount * RETAIN);
     }
 
     // Description
