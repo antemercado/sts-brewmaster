@@ -52,7 +52,7 @@
   },
   "theBrewmaster:DrunkenFist": {
     "NAME": "Drunken Fist",
-    "DESCRIPTION": "Consume !M!% of your intoxication. Deal that much damage.",
+    "DESCRIPTION": "Consume !M! % of your intoxication. Deal that much damage.",
     "EXTENDED_DESCRIPTION": [
       "Deal",
       "damage."
@@ -64,7 +64,7 @@
   },
   "theBrewmaster:SoberUp": {
     "NAME": "Sober Up",
-    "DESCRIPTION": "Consume 100% of your thebrewmaster:Intoxication. Gain [E] and draw 1 card for every !M! consumed. NL Exhaust."
+    "DESCRIPTION": "Consume 100 % of your thebrewmaster:Intoxication. Gain [E] and draw 1 card for every !M! consumed. NL Exhaust."
   },
   "theBrewmaster:VinoVeritas": {
     "NAME": "Vino Veritas",
@@ -143,8 +143,8 @@
   },
   "theBrewmaster:Vasoimmolation": {
     "NAME": "Vasoimmolation",
-    "DESCRIPTION": "At the end of your turn, deal 20% of your thebrewmaster:Intoxication as damage to yourself and all enemies.",
-    "UPGRADE_DESCRIPTION": "At the end of your turn, deal 20% of your thebrewmaster:Intoxication as damage to [#7fff00]all enemies.[]"
+    "DESCRIPTION": "At the end of your turn, deal 20 % of your thebrewmaster:Intoxication as damage to yourself and all enemies.",
+    "UPGRADE_DESCRIPTION": "At the end of your turn, deal 20 % of your thebrewmaster:Intoxication as damage to [#7fff00]all enemies.[]"
   },
   "theBrewmaster:Formulation": {
     "NAME": "Formulation",
@@ -206,7 +206,7 @@
   },
   "theBrewmaster:TipsyStrike": {
     "NAME": "Tipsy Strike",
-    "DESCRIPTION": "Deal !D! plus !M!% of your thebrewmaster:Intoxication damage."
+    "DESCRIPTION": "Deal !D! plus !M! % of your thebrewmaster:Intoxication damage."
   },
   "theBrewmaster:StoneSmash": {
     "NAME": "Stone Smash",
@@ -254,7 +254,7 @@
   },
   "theBrewmaster:Impulse": {
     "NAME": "Impulsivity",
-    "DESCRIPTION": "Draw !M! cards. They gain Ethereal."
+    "DESCRIPTION": "Draw !M! cards. They gain Ethereal this turn."
   },
   "theBrewmaster:WhiskeyKick": {
     "NAME": "Whiskey Kick",

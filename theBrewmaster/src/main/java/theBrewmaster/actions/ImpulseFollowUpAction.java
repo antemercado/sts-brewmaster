@@ -6,6 +6,9 @@ import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
+import basemod.helpers.CardModifierManager;
+import theBrewmaster.cardmodifiers.ImpulseModifier;
+
 public class ImpulseFollowUpAction extends AbstractGameAction{ 
 
     @Override
@@ -14,9 +17,7 @@ public class ImpulseFollowUpAction extends AbstractGameAction{
         tickDuration();
         if (this.isDone){
             for (AbstractCard c : DrawCardAction.drawnCards) {
-                c.isEthereal = true;
-                c.rawDescription = "Ethereal NL " + c.rawDescription;
-                c.initializeDescription();
+                CardModifierManager.addModifier(c, new ImpulseModifier());
             }
         }  
     }

@@ -72,7 +72,8 @@ public class IntoxicationPower extends AbstractPower{
         if (AbstractDungeon.player.hasPower(EthanolVaporPower.POWER_ID)){
             int ethanolVaporAmount = AbstractDungeon.player.getPower(EthanolVaporPower.POWER_ID).amount;
             if (!AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()){
-                addToBot(new ApplyPowerToRandomEnemyAction(this.source, new DrenchedPower(null, this.source, ethanolVaporAmount), ethanolVaporAmount));
+                AbstractDungeon.player.getPower(EthanolVaporPower.POWER_ID).flash();
+                addToBot(new ApplyPowerToRandomEnemyAction(this.source, new DrenchedPower(null, this.source, ethanolVaporAmount)));
             }
         }
         
