@@ -181,8 +181,8 @@
     "DESCRIPTION": "Unplayable. NL Ethereal. NL When this card is exhausted, gain !M! Gold.",
     "EXTENDED_DESCRIPTION": ["I can't play this card."]
   },
-  "theBrewmaster:Headbutt": {
-    "NAME": "Headbutt",
+  "theBrewmaster:CranialBash": {
+    "NAME": "Cranial Bash",
     "DESCRIPTION": "Deal !D! damage to an enemy. NL Become Confused."
   },
   "theBrewmaster:DogHair": {

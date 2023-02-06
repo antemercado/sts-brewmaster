@@ -19,9 +19,9 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.ConfusionPower;
 
-public class Headbutt extends AbstractDynamicCard {
+public class CranialBash extends AbstractDynamicCard {
     // TEXT DECLARATION
-    public static final String ID = BrewmasterMod.makeID(Headbutt.class.getSimpleName());
+    public static final String ID = BrewmasterMod.makeID(CranialBash.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
 
     // STAT DECLARATION
@@ -36,7 +36,7 @@ public class Headbutt extends AbstractDynamicCard {
     private static final int DAMAGE = 20;
     private static final int UPGRADE_PLUS_DAMAGE = 8;
 
-    public Headbutt() { 
+    public CranialBash() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
     }
