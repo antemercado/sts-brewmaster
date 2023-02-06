@@ -73,7 +73,7 @@ public class IntoxicationPower extends AbstractPower{
             int ethanolVaporAmount = AbstractDungeon.player.getPower(EthanolVaporPower.POWER_ID).amount;
             if (!AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()){
                 AbstractDungeon.player.getPower(EthanolVaporPower.POWER_ID).flash();
-                addToBot(new ApplyPowerToRandomEnemyAction(this.source, new DrenchedPower(null, this.source, ethanolVaporAmount)));
+                addToTop(new ApplyPowerToRandomEnemyAction(this.source, new DrenchedPower(null, this.source, ethanolVaporAmount)));
             }
         }
         
@@ -93,25 +93,25 @@ public class IntoxicationPower extends AbstractPower{
     // This is intended to pull you out of any Watcher stances you may have put youself into.
     public void stackPower(int stackAmount){
 
-        // Spirit Helmet Bonus
+        // // Spirit Helmet Bonus
         int stack = stackAmount;
-        if (AbstractDungeon.player.hasRelic(SpiritHelmetRelic.ID)){
-            stack *= SpiritHelmetRelic.MULTIPLIER;
-        }
+        // if (AbstractDungeon.player.hasRelic(SpiritHelmetRelic.ID)){
+        //     stack *= SpiritHelmetRelic.MULTIPLIER;
+        // }
 
-        // Ethanol Vapors
-        if (AbstractDungeon.player.hasPower(EthanolVaporPower.POWER_ID)){
-            int ethanolVaporAmount = AbstractDungeon.player.getPower(EthanolVaporPower.POWER_ID).amount;
-            if (!AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()){
-                addToBot(new ApplyPowerToRandomEnemyAction(this.source, new DrenchedPower(null, this.source, ethanolVaporAmount), ethanolVaporAmount));
-            }
-        }
+        // // Ethanol Vapors
+        // if (AbstractDungeon.player.hasPower(EthanolVaporPower.POWER_ID)){
+        //     int ethanolVaporAmount = AbstractDungeon.player.getPower(EthanolVaporPower.POWER_ID).amount;
+        //     if (!AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()){
+        //         addToBot(new ApplyPowerToRandomEnemyAction(this.source, new DrenchedPower(null, this.source, ethanolVaporAmount), ethanolVaporAmount));
+        //     }
+        // }
 
-        // Gain Regen instead if has Temperance Power
-        if (this.owner.hasPower(TemperancePower.POWER_ID)){
-            addToBot(new ApplyPowerAction(owner, owner, new RegenPower(owner, 1)));
-            return;
-        }
+        // // Gain Regen instead if has Temperance Power
+        // if (this.owner.hasPower(TemperancePower.POWER_ID)){
+        //     addToBot(new ApplyPowerAction(owner, owner, new RegenPower(owner, 1)));
+        //     return;
+        // }
         super.stackPower(stack);
         if (this.amount >= INTOX_THRESHOLD || (this.amount >= INTOX_THRESHOLD_RELIC && AbstractDungeon.player.hasRelic(LouseLiverRelic.ID))) {
             AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new IntoxicatedStance()));

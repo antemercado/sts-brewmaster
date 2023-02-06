@@ -32,8 +32,8 @@ public class ThickSkin extends AbstractDynamicCard {
 
     private static final int COST = 1;
 
-    private static final int BLOCK = 10;
-    private static final int UPGRADE_PLUS_BLOCK = 5;
+    private static final int BLOCK = 8;
+    private static final int UPGRADE_PLUS_BLOCK = 3;
 
     public ThickSkin() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
