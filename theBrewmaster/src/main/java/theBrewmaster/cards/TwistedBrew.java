@@ -43,7 +43,7 @@ public class TwistedBrew extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         int i = AbstractDungeon.cardRng.random(0, p.hand.size() - 2); // -1 for zero-index, -1 because game counts the card thats being played as part of hand size. Need to reduce that by 1.
-        addToBot(new TransformCardInHandAction(i, AbstractDungeon.returnTrulyRandomCard()));
+        addToBot(new TransformCardInHandAction(i, AbstractDungeon.returnTrulyRandomCardInCombat()));
     }
     // Upgraded stats.
     @Override
