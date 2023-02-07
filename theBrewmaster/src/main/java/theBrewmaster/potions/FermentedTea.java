@@ -43,7 +43,7 @@ public class FermentedTea extends AbstractPotion{
     }
     
     public int getPotency(int potency) {
-        return 25;
+        return 50;
     }
     
     public void use(AbstractCreature target) {
