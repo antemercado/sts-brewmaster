@@ -33,7 +33,7 @@ public class ExplodingKeg extends AbstractDynamicCard {
 
     private static final int DAMAGE = 25;
     private static final int MAGIC = 5;
-    private static final int UPGRADE_PLUS_DMG = 5;
+    private static final int UPGRADE_PLUS_DMG = 8;
 
     public ExplodingKeg() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

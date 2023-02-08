@@ -20,9 +20,9 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.EnergizedPower;
 
-public class CrazyBrew extends AbstractDynamicCard {
+public class StimulatingBrew extends AbstractDynamicCard {
     // TEXT DECLARATION
-    public static final String ID = BrewmasterMod.makeID(CrazyBrew.class.getSimpleName());
+    public static final String ID = BrewmasterMod.makeID(StimulatingBrew.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -40,7 +40,7 @@ public class CrazyBrew extends AbstractDynamicCard {
     private static final int MAGIC = 1;
     private static final int UPGRADE_PLUS_MAGIC = 1;
 
-    public CrazyBrew() { 
+    public StimulatingBrew() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseMagicNumber = magicNumber = MAGIC;
 

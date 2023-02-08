@@ -36,24 +36,23 @@ public class VolatileBrew extends AbstractDynamicCard {
 
     private static final int COST = 2;
 
-    public static final int[] DAMAGES = {8,12,20,36};
+    public static final int[] DAMAGES = {8,12,20};
+    public static final int[] UPGRADED_DAMAGES = {12,20,36};
+    private int[] damageArray;
 
     public VolatileBrew() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseDamage = this.damage = 12;
+        this.damageArray = DAMAGES;
         if (CardCrawlGame.dungeon != null && AbstractDungeon.player != null){
-            this.damage = AbstractDungeon.cardRandomRng.random(2);
+            this.baseDamage = this.damage = damageArray[AbstractDungeon.cardRandomRng.random(2)];
         }
         
         tags.add(CustomTags.BREW);
     }
     @Override
     public void triggerWhenDrawn() {
-        int range = 2;
-        if (upgraded){
-            range = 3;
-        }
-        this.baseDamage = this.damage = DAMAGES[AbstractDungeon.cardRandomRng.random(range)];
+        this.baseDamage = this.damage = damageArray[AbstractDungeon.cardRandomRng.random(2)];
     }
     // Actions the card should do.
     @Override
@@ -62,6 +61,7 @@ public class VolatileBrew extends AbstractDynamicCard {
     }
     public AbstractCard makeCopy(){
         AbstractCard ret = new VolatileBrew();
+        ret.baseDamage = this.baseDamage;
         ret.damage = this.damage;
         return ret;
     }
@@ -70,6 +70,7 @@ public class VolatileBrew extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            this.damageArray = UPGRADED_DAMAGES;
             rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

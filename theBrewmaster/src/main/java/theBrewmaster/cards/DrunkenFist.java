@@ -35,8 +35,8 @@ public class DrunkenFist extends AbstractDynamicCard {
 
     private static final int COST = 1;
 
-    private static final int MAGIC = 15;
-    private static final int UPGRADE_PLUS_MAGIC = 10;
+    private static final int MAGIC = 20;
+    private static final int UPGRADE_PLUS_MAGIC = 5;
 
     public DrunkenFist() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

@@ -33,7 +33,7 @@ public class Chug extends AbstractDynamicCard {
 
     private static final int COST = 1;
 
-    private static final int POWER = 20;
+    private static final int POWER = 25;
     private static final int UPGRADE_POWER = 10;
 
     public Chug() { 

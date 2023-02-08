@@ -110,10 +110,10 @@
   },
   "theBrewmaster:HaveLaugh": {
     "NAME": "Have a Laugh",
-    "DESCRIPTION": "Exhaust a card. Reduce the cost of Brew cards in your hand by 1 this turn."
+    "DESCRIPTION": "Reduce the cost of Brew cards in your hand by 1 this turn."
   },
-  "theBrewmaster:CrazyBrew": {
-    "NAME": "Crazy Brew",
+  "theBrewmaster:StimulatingBrew": {
+    "NAME": "Stimulating Brew",
     "DESCRIPTION": "Next turn gain [E].",
     "UPGRADE_DESCRIPTION": "Next turn gain [E] [E]."
   },
@@ -183,7 +183,7 @@
   },
   "theBrewmaster:CranialBash": {
     "NAME": "Cranial Bash",
-    "DESCRIPTION": "Deal !D! damage to an enemy. NL Become Confused."
+    "DESCRIPTION": "Deal !D! damage to an enemy. NL Randomize the costs of all cards in your hand for the rest of the combat."
   },
   "theBrewmaster:DogHair": {
     "NAME": "Dog Hair",
@@ -219,7 +219,7 @@
   "theBrewmaster:VolatileBrew": {
     "NAME": "Volatile Brew",
     "DESCRIPTION": "{@@}Deal {!Location!|@= !D! damage.|>0,<0=8, 12, or 20 damage, chosen at random when drawn.}",
-    "UPGRADE_DESCRIPTION": "{@@}Deal {!Location!|@= !D! damage.|>0,<0=8, 12, 20, or 36 damage, chosen at random when drawn.}"
+    "UPGRADE_DESCRIPTION": "{@@}Deal {!Location!|@= !D! damage.|>0,<0=12, 20, or 36 damage, chosen at random when drawn.}"
   },
   "theBrewmaster:ImportedBrew": {
     "NAME": "Imported Brew",

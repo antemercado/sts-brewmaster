@@ -45,7 +45,6 @@ public class HaveLaugh extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ExhaustAction(1, false));
         for (AbstractCard c: p.hand.group){
             if (c.hasTag(CustomTags.BREW))
                 addToBot(new ReduceCostForTurnAction(c, magicNumber));

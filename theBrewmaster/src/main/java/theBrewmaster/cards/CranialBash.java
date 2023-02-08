@@ -11,6 +11,7 @@ import static theBrewmaster.BrewmasterMod.makeCardPath;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.unique.RandomizeHandCostAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -31,10 +32,10 @@ public class CranialBash extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
 
-    private static final int COST = 2;
+    private static final int COST = 3;
 
-    private static final int DAMAGE = 20;
-    private static final int UPGRADE_PLUS_DAMAGE = 8;
+    private static final int DAMAGE = 25;
+    private static final int UPGRADE_PLUS_DAMAGE = 10;
 
     public CranialBash() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -44,7 +45,7 @@ public class CranialBash extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-        addToBot(new ApplyPowerAction(p, p, new ConfusionPower(p)));
+        addToBot(new RandomizeHandCostAction());
     }
     // Upgraded stats.
     @Override

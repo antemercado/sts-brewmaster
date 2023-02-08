@@ -297,7 +297,7 @@ public class BrewmasterCharacter extends CustomPlayer {
         retVal.addToTop(new FortifyingBrew());
         retVal.addToTop(new Microbrew());
 
-        retVal.addToTop(new CrazyBrew());
+        retVal.addToTop(new StimulatingBrew());
         retVal.addToTop(new Homebrew());
         retVal.addToTop(new PerplexingBrew());
         retVal.addToTop(new PurifyingBrew());

@@ -37,11 +37,11 @@ public class Binge extends AbstractDynamicCard {
 
     private static final int COST = 1;
 
-    private static final int BLOCK = 6;
-    private static final int UPGRADE_PLUS_BLOCK = 3;
+    private static final int BLOCK = 5;
+    private static final int UPGRADE_PLUS_BLOCK = 2;
 
-    private static final int MAGIC = 6;
-    private static final int UPGRADE_PLUS_MAGIC = 3;
+    private static final int MAGIC = 10;
+    private static final int UPGRADE_PLUS_MAGIC = 4;
     
     public Binge() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

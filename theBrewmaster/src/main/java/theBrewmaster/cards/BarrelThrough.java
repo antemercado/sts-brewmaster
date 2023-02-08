@@ -37,7 +37,7 @@ public class BarrelThrough extends AbstractDynamicCard {
     private static final int COST = 2;
 
     private static final int DAMAGE = 13;
-    private static final int UPGRADE_PLUS_DMG = 2;
+    private static final int UPGRADE_PLUS_DMG = 3;
 
     private static final int BLOCK = 7;
     private static final int UPGRADE_PLUS_BLOCK = 3;
