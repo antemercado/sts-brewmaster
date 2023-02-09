@@ -260,5 +260,9 @@
     "NAME": "Whiskey Kick",
     "DESCRIPTION": "Draw !D! damage. NL thebrewmaster:Intoxicated: Deal twice that amount instead.",
     "UPGRADE_DESCRIPTION": "Draw !D! damage. NL thebrewmaster:Intoxicated: Deal three times that amount instead."
+  },
+  "theBrewmaster:DetonatorStrike": {
+    "NAME": "Detonator Strike",
+    "DESCRIPTION": "Draw !M!x amount of thebrewmaster:Drenched as damage."
   }
 }
