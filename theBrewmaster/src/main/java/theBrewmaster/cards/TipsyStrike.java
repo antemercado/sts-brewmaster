@@ -28,7 +28,7 @@ public class TipsyStrike extends AbstractDynamicCard {
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
@@ -44,8 +44,6 @@ public class TipsyStrike extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseDamage = this.damage = DAMAGE;
         this.baseMagicNumber = this.magicNumber = MAGIC;
-
-        this.cardsToPreview = new VoidCard();
 
         this.tags.add(CardTags.STRIKE);
     }

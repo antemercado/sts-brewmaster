@@ -21,9 +21,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class HaveLaugh extends AbstractDynamicCard {
+public class HappyHour extends AbstractDynamicCard {
     // TEXT DECLARATION
-    public static final String ID = BrewmasterMod.makeID(HaveLaugh.class.getSimpleName());
+    public static final String ID = BrewmasterMod.makeID(HappyHour.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
 
     // STAT DECLARATION
@@ -38,7 +38,7 @@ public class HaveLaugh extends AbstractDynamicCard {
 
     private static final int MAGIC = 1;
 
-    public HaveLaugh() { 
+    public HappyHour() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseMagicNumber = this.magicNumber = MAGIC;
     }

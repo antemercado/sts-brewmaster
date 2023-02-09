@@ -69,7 +69,7 @@
   "theBrewmaster:EthanolVaporPower": {
     "NAME": "Ethanol Vapor",
     "DESCRIPTIONS": [
-      "Whenever you gain Intoxication, apply ",
+      "Whenever you play a Brew card, apply ",
       " Drenched to a random enemy."
     ]
   },
@@ -78,5 +78,13 @@
     "DESCRIPTIONS": [
       "Whenever you lose life, gain that much Intoxication."
     ]
+  },
+  "theBrewmaster:DrunkenBrawlerPower": {
+    "NAME": "Drunken Brawler",
+    "DESCRIPTIONS": [
+      "Whenever you play an Attack card, gain ",
+      " Intoxication."
+    ]
+  },
   }
 }

@@ -4,8 +4,10 @@ import basemod.AutoAdd;
 import basemod.abstracts.CustomCard;
 import basemod.helpers.BaseModCardTags;
 import theBrewmaster.BrewmasterMod;
+import theBrewmaster.actions.GutFermentationAction;
 import theBrewmaster.characters.BrewmasterCharacter;
 import theBrewmaster.powers.IntoxicationPower;
+import theBrewmaster.relics.LouseLiverRelic;
 import theBrewmaster.stances.IntoxicatedStance;
 
 import static theBrewmaster.BrewmasterMod.makeCardPath;
@@ -45,12 +47,19 @@ public class GutFermentation extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (p.hasPower(IntoxicationPower.POWER_ID)){
-            int currIntox = p.getPower(IntoxicationPower.POWER_ID).amount;
-            addToBot(new ApplyPowerAction(p, p, new IntoxicationPower(p, p, currIntox), currIntox));
+        addToBot(new GutFermentationAction(this, upgraded));
+    }
+
+    // Glow when Intoxicated
+    public void triggerOnGlowCheck() {
+        this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+        int intoxCheck = 0;
+        if (AbstractDungeon.player.hasPower(IntoxicationPower.POWER_ID)){
+            intoxCheck = AbstractDungeon.player.getPower(IntoxicationPower.POWER_ID).amount * 2;
         }
-        if (p.stance.ID.equals(IntoxicatedStance.STANCE_ID)){
-            p.exhaustPile.moveToExhaustPile(this);
+        if ((intoxCheck >= IntoxicationPower.INTOX_THRESHOLD || 
+        (intoxCheck >= IntoxicationPower.INTOX_THRESHOLD_RELIC && AbstractDungeon.player.hasRelic(LouseLiverRelic.ID)))) {
+            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
         }
     }
 

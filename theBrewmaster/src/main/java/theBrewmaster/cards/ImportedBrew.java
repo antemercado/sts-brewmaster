@@ -51,6 +51,7 @@ public class ImportedBrew extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

@@ -2,7 +2,6 @@ package theBrewmaster.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
 import theBrewmaster.BrewmasterMod;
-import theBrewmaster.enums.CustomTags;
 import theBrewmaster.util.TextureLoader;
 
 import static theBrewmaster.BrewmasterMod.makePowerPath;
@@ -10,11 +9,11 @@ import static theBrewmaster.BrewmasterMod.makePowerPath;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerToRandomEnemyAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.AbstractCard.CardType;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -22,10 +21,10 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class EthanolVaporPower extends AbstractPower{
+public class DrunkenBrawlerPower extends AbstractPower{
     public AbstractCreature source;
 
-    public static final String POWER_ID = BrewmasterMod.makeID("EthanolVaporPower");
+    public static final String POWER_ID = BrewmasterMod.makeID("DrunkenBrawlerPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
@@ -35,7 +34,7 @@ public class EthanolVaporPower extends AbstractPower{
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
 
-    public EthanolVaporPower(final AbstractCreature owner, final int amount) {
+    public DrunkenBrawlerPower(final AbstractCreature owner, final int amount) {
         name = NAME;
         ID = POWER_ID;
 
@@ -53,18 +52,15 @@ public class EthanolVaporPower extends AbstractPower{
         updateDescription();
     }
 
-    public void onPlayCard(AbstractCard card, AbstractMonster m) {
-        if (card.hasTag(CustomTags.BREW)){
-            if (!AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()){
-                flash();
-                addToTop(new ApplyPowerToRandomEnemyAction(this.source, new DrenchedPower(null, this.source, this.amount)));
-            }
-        }
-    }
-
     public void stackPower(int stackAmount){
         super.stackPower(stackAmount);
         updateDescription();
+    }
+
+    public void onPlayCard(AbstractCard card, AbstractMonster m) {
+        if (card.type.equals(CardType.ATTACK)){
+            addToBot(new ApplyPowerAction(this.owner, this.owner, new IntoxicationPower(this.owner, this.owner, amount), amount));
+        }
     }
 
     // Update the description

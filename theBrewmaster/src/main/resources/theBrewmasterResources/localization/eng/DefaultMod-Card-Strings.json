@@ -106,10 +106,10 @@
   "theBrewmaster:Binge": {
     "NAME": "Binge",
     "DESCRIPTION": "Gain !B! Block and !M! thebrewmaster:Intoxication. Add a copy of this card with Ethereal and Exhaust to your hand.",
-    "EXTENDED_DESCRIPTION": ["Gain !M! Block and thebrewmaster:Intoxication. Add a copy of this card to your hand."]
+    "EXTENDED_DESCRIPTION": ["Gain !B! Block and !M! thebrewmaster:Intoxication. Add a copy of this card to your hand."]
   },
-  "theBrewmaster:HaveLaugh": {
-    "NAME": "Have a Laugh",
+  "theBrewmaster:HappyHour": {
+    "NAME": "Happy Hour",
     "DESCRIPTION": "Reduce the cost of Brew cards in your hand by 1 this turn."
   },
   "theBrewmaster:StimulatingBrew": {
@@ -183,12 +183,7 @@
   },
   "theBrewmaster:CranialBash": {
     "NAME": "Cranial Bash",
-    "DESCRIPTION": "Deal !D! damage to an enemy. NL Randomize the costs of all cards in your hand for the rest of the combat."
-  },
-  "theBrewmaster:DogHair": {
-    "NAME": "Dog Hair",
-    "DESCRIPTION": "Reduce each debuff on you by !M!.",
-    "UPGRADE_DESCRIPTION": "Retain. NL Reduce each debuff on you by !M!."
+    "DESCRIPTION": "Deal !D! damage to an enemy. Randomize the costs of all cards in your hand for the rest of the combat."
   },
   "theBrewmaster:DionysianForm": {
     "NAME": "Dionysian Form",
@@ -263,6 +258,10 @@
   },
   "theBrewmaster:DetonatorStrike": {
     "NAME": "Detonator Strike",
-    "DESCRIPTION": "Draw !M!x amount of thebrewmaster:Drenched as damage."
+    "DESCRIPTION": "Deal !M!x amount of thebrewmaster:Drenched as damage."
+  },
+  "theBrewmaster:DrunkenBrawler": {
+    "NAME": "Drunken Brawler",
+    "DESCRIPTION": "Whenever you play an Attack card, gain !M! thebrewmaster:Intoxication."
   }
 }
