@@ -5,6 +5,7 @@ import basemod.abstracts.CustomCard;
 import basemod.helpers.BaseModCardTags;
 
 import theBrewmaster.BrewmasterMod;
+import theBrewmaster.actions.ApplyIntoxicationPower;
 import theBrewmaster.characters.BrewmasterCharacter;
 import theBrewmaster.enums.CustomTags;
 import theBrewmaster.powers.IntoxicationPower;
@@ -54,7 +55,7 @@ public class KSKeg extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new IntoxicationPower(p, p, magicNumber)));
+            AbstractDungeon.actionManager.addToBottom(new ApplyIntoxicationPower(p, p, new IntoxicationPower(p, p, magicNumber)));
 
             AbstractCard smash = new KSSmash();
             if (upgraded)

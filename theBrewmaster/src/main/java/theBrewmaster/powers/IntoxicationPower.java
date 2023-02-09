@@ -26,6 +26,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.RegenPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.stances.AbstractStance;
 
 //Gain 1 dex for the turn for each card played.
@@ -66,17 +67,12 @@ public class IntoxicationPower extends AbstractPower{
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
         
-        // TODO: Prevent gaining Intoxication if have Temperance.
-
-        // Ethanol Vapors
-        if (AbstractDungeon.player.hasPower(EthanolVaporPower.POWER_ID)){
-            int ethanolVaporAmount = AbstractDungeon.player.getPower(EthanolVaporPower.POWER_ID).amount;
-            if (!AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()){
-                AbstractDungeon.player.getPower(EthanolVaporPower.POWER_ID).flash();
-                addToTop(new ApplyPowerToRandomEnemyAction(this.source, new DrenchedPower(null, this.source, ethanolVaporAmount)));
-            }
+        // Temperance.
+        if (this.owner.hasPower(TemperancePower.POWER_ID)){
+            int temperanceAmount = this.owner.getPower(TemperancePower.POWER_ID).amount;
+            addToBot(new ApplyPowerAction(this.owner, this.source, new StrengthPower(this.owner, temperanceAmount), temperanceAmount));
         }
-        
+
         // Multiply gain if has relic
         if (AbstractDungeon.player.hasRelic(SpiritHelmetRelic.ID) && !isBeerStein)
             this.amount *= SpiritHelmetRelic.MULTIPLIER;
@@ -92,27 +88,10 @@ public class IntoxicationPower extends AbstractPower{
     // Enter Intoxicated when you add enough stacks.
     // This is intended to pull you out of any Watcher stances you may have put youself into.
     public void stackPower(int stackAmount){
-
-        // // Spirit Helmet Bonus
-        int stack = stackAmount;
-        // if (AbstractDungeon.player.hasRelic(SpiritHelmetRelic.ID)){
-        //     stack *= SpiritHelmetRelic.MULTIPLIER;
-        // }
-
-        // // Ethanol Vapors
-        // if (AbstractDungeon.player.hasPower(EthanolVaporPower.POWER_ID)){
-        //     int ethanolVaporAmount = AbstractDungeon.player.getPower(EthanolVaporPower.POWER_ID).amount;
-        //     if (!AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()){
-        //         addToBot(new ApplyPowerToRandomEnemyAction(this.source, new DrenchedPower(null, this.source, ethanolVaporAmount), ethanolVaporAmount));
-        //     }
-        // }
-
-        // // Gain Regen instead if has Temperance Power
-        // if (this.owner.hasPower(TemperancePower.POWER_ID)){
-        //     addToBot(new ApplyPowerAction(owner, owner, new RegenPower(owner, 1)));
-        //     return;
-        // }
-        super.stackPower(stack);
+        if (AbstractDungeon.player.hasPower(NoIntoxicationPower.POWER_ID)){
+            return;
+        }
+        super.stackPower(stackAmount);
         if (this.amount >= INTOX_THRESHOLD || (this.amount >= INTOX_THRESHOLD_RELIC && AbstractDungeon.player.hasRelic(LouseLiverRelic.ID))) {
             AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new IntoxicatedStance()));
         }

@@ -2,6 +2,7 @@ package theBrewmaster.relics;
 
 import basemod.abstracts.CustomRelic;
 import theBrewmaster.BrewmasterMod;
+import theBrewmaster.actions.ApplyIntoxicationPower;
 import theBrewmaster.powers.IntoxicationPower;
 import theBrewmaster.util.TextureLoader;
 
@@ -33,7 +34,7 @@ public class BeerSteinRelic extends CustomRelic {
             return;
         flash();
         AbstractPlayer p = AbstractDungeon.player;
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new IntoxicationPower(p, p, this.counter, true)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyIntoxicationPower(p, p, new IntoxicationPower(p, p, this.counter, true)));
     }
 
     public void onVictory(){

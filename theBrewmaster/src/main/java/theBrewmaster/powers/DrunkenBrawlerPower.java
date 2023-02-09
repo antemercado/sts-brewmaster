@@ -2,6 +2,7 @@ package theBrewmaster.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
 import theBrewmaster.BrewmasterMod;
+import theBrewmaster.actions.ApplyIntoxicationPower;
 import theBrewmaster.util.TextureLoader;
 
 import static theBrewmaster.BrewmasterMod.makePowerPath;
@@ -59,7 +60,7 @@ public class DrunkenBrawlerPower extends AbstractPower{
 
     public void onPlayCard(AbstractCard card, AbstractMonster m) {
         if (card.type.equals(CardType.ATTACK)){
-            addToBot(new ApplyPowerAction(this.owner, this.owner, new IntoxicationPower(this.owner, this.owner, amount), amount));
+            addToBot(new ApplyIntoxicationPower(this.owner, this.owner, new IntoxicationPower(this.owner, this.owner, amount), amount));
         }
     }
 

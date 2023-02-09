@@ -2,6 +2,7 @@ package theBrewmaster.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
 import theBrewmaster.BrewmasterMod;
+import theBrewmaster.actions.ApplyIntoxicationPower;
 import theBrewmaster.util.TextureLoader;
 
 import static theBrewmaster.BrewmasterMod.makePowerPath;
@@ -50,7 +51,7 @@ public class BloodAlcoholPower extends AbstractPower{
     }
 
     public int onLoseHp(int damageAmount) {
-        addToBot(new ApplyPowerAction(this.owner, this.owner, new IntoxicationPower(this.owner, this.owner, damageAmount), damageAmount));
+        addToBot(new ApplyIntoxicationPower(this.owner, this.owner, new IntoxicationPower(this.owner, this.owner, damageAmount), damageAmount));
         return damageAmount;
     }
 

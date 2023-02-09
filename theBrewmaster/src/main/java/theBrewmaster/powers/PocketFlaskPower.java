@@ -2,6 +2,7 @@ package theBrewmaster.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
 import theBrewmaster.BrewmasterMod;
+import theBrewmaster.actions.ApplyIntoxicationPower;
 import theBrewmaster.enums.CustomTags;
 import theBrewmaster.util.TextureLoader;
 
@@ -62,7 +63,7 @@ public class PocketFlaskPower extends AbstractPower{
         if (card.hasTag(CustomTags.BREW) && this.amount > 0){
             int intoxLevel = (amount * INTOX);
             flash();
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(source, source, new IntoxicationPower(owner, owner, intoxLevel)));
+            AbstractDungeon.actionManager.addToBottom(new ApplyIntoxicationPower(source, source, new IntoxicationPower(owner, owner, intoxLevel)));
         }
     }
     

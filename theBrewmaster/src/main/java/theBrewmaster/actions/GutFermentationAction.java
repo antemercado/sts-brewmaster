@@ -28,7 +28,7 @@ public class GutFermentationAction extends AbstractGameAction{
         if (this.p.hasPower(IntoxicationPower.POWER_ID)){
             this.intoxPower = p.getPower(IntoxicationPower.POWER_ID);
             int currIntox = this.intoxPower.amount;
-            addToBot(new ApplyPowerAction(p, p, new IntoxicationPower(p, p, currIntox), currIntox));
+            addToBot(new ApplyIntoxicationPower(p, p, new IntoxicationPower(p, p, currIntox), currIntox));
         }
         if (this.intoxPower == null){
             this.isDone = true;

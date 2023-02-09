@@ -4,6 +4,7 @@ import basemod.AutoAdd;
 import basemod.abstracts.CustomCard;
 import basemod.helpers.BaseModCardTags;
 import theBrewmaster.BrewmasterMod;
+import theBrewmaster.actions.ApplyIntoxicationPower;
 import theBrewmaster.characters.BrewmasterCharacter;
 import theBrewmaster.powers.IntoxicationPower;
 import theBrewmaster.stances.IntoxicatedStance;
@@ -50,7 +51,7 @@ public class QuickSip extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new IntoxicationPower(p, p, magicNumber)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyIntoxicationPower(p, p, new IntoxicationPower(p, p, magicNumber)));
         if (AbstractDungeon.player.stance.ID.equals(IntoxicatedStance.STANCE_ID))
             AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, CARD_DRAW));
     }

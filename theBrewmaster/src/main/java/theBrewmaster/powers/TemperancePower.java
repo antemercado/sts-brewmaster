@@ -58,7 +58,7 @@ public class TemperancePower extends AbstractPower{
     // Update the description
     @Override
     public void updateDescription() {
-        description = DESCRIPTIONS[0];
+        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
     }
 
 }

@@ -2,7 +2,6 @@ package theBrewmaster.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
 import theBrewmaster.BrewmasterMod;
-import theBrewmaster.actions.ApplyIntoxicationPower;
 import theBrewmaster.util.TextureLoader;
 
 import static theBrewmaster.BrewmasterMod.makePowerPath;
@@ -20,12 +19,10 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class ThickSkinPower extends AbstractPower{
+public class NoIntoxicationPower extends AbstractPower{
     public AbstractCreature source;
 
-    private AbstractCreature p;
-
-    public static final String POWER_ID = BrewmasterMod.makeID("ThickSkinPower");
+    public static final String POWER_ID = BrewmasterMod.makeID("NoIntoxicationPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
@@ -35,18 +32,15 @@ public class ThickSkinPower extends AbstractPower{
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
 
-    public ThickSkinPower(final AbstractCreature owner, final int amount) {
+    public NoIntoxicationPower(final AbstractCreature owner, final AbstractCreature source) {
         name = NAME;
         ID = POWER_ID;
 
         this.owner = owner;
-        this.source = owner;
-        this.p = owner;
+        this.source = source;
 
-        this.amount = amount;
-
-        type = PowerType.BUFF;
-        isTurnBased = true;
+        type = PowerType.DEBUFF;
+        isTurnBased = false;
 
         // We load those txtures here.
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
@@ -56,13 +50,7 @@ public class ThickSkinPower extends AbstractPower{
     }
 
     public void stackPower(int stackAmount){
-        super.stackPower(stackAmount);
         updateDescription();
-    }
-
-    public void atStartOfTurn(){
-        addToBot(new ApplyIntoxicationPower(p, p, new IntoxicationPower(p, p, p.currentBlock * amount)));
-        addToBot(new RemoveSpecificPowerAction(this.owner, this.source, this));
     }
 
     // Update the description

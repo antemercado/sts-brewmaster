@@ -161,7 +161,7 @@
   },
   "theBrewmaster:Temperance": {
     "NAME": "Temperance",
-    "DESCRIPTION": "If you would gain thebrewmaster:Intoxication, gain !M! Regen instead."
+    "DESCRIPTION": "If you would gain thebrewmaster:Intoxication, gain !M! Strength instead."
   },
   "theBrewmaster:TwistedBrew": {
     "NAME": "Twisted Brew",

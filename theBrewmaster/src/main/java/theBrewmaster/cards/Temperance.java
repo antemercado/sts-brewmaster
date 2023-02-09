@@ -5,6 +5,7 @@ import basemod.abstracts.CustomCard;
 import basemod.helpers.BaseModCardTags;
 import theBrewmaster.BrewmasterMod;
 import theBrewmaster.characters.BrewmasterCharacter;
+import theBrewmaster.powers.NoIntoxicationPower;
 import theBrewmaster.powers.TemperancePower;
 
 import static theBrewmaster.BrewmasterMod.makeCardPath;
@@ -41,13 +42,12 @@ public class Temperance extends AbstractDynamicCard {
     public Temperance() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
-
-        tags.add(CardTags.HEALING);
     }
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new TemperancePower(p, p, magicNumber)));
+        addToTop(new ApplyPowerAction(p, p, new NoIntoxicationPower(p, p)));
+        addToBot(new ApplyPowerAction(p, p, new TemperancePower(p, p, magicNumber), magicNumber));
     }
     // Upgraded stats.
     @Override

@@ -6,6 +6,7 @@ import basemod.abstracts.CustomCard;
 import basemod.helpers.BaseModCardTags;
 import basemod.helpers.CardModifierManager;
 import theBrewmaster.BrewmasterMod;
+import theBrewmaster.actions.ApplyIntoxicationPower;
 import theBrewmaster.cardmodifiers.BingeModifier;
 import theBrewmaster.characters.BrewmasterCharacter;
 import theBrewmaster.powers.IntoxicationPower;
@@ -52,7 +53,7 @@ public class Binge extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new IntoxicationPower(p, p, magicNumber)));
+        addToBot(new ApplyIntoxicationPower(p, p, new IntoxicationPower(p, p, magicNumber)));
         addToBot(new GainBlockAction(p, p, block));
 
         AbstractCard tmp = new Binge();

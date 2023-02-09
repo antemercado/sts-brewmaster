@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.localization.PotionStrings;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 
 import theBrewmaster.BrewmasterMod;
+import theBrewmaster.actions.ApplyIntoxicationPower;
 import theBrewmaster.powers.IntoxicationPower;
 
 public class FermentedTea extends AbstractPotion{
@@ -48,7 +49,7 @@ public class FermentedTea extends AbstractPotion{
     
     public void use(AbstractCreature target) {
         AbstractPlayer p = AbstractDungeon.player;
-        addToBot(new ApplyPowerAction(p, p, new IntoxicationPower(p, p, this.potency)));
+        addToBot(new ApplyIntoxicationPower(p, p, new IntoxicationPower(p, p, this.potency)));
     }
     
     public AbstractPotion makeCopy() {
