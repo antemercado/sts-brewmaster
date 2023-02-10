@@ -275,5 +275,14 @@
   "theBrewmaster:BarrelThump": {
     "NAME": "Barrel Thump",
     "DESCRIPTION": "Deal !D! damage. NL Apply !M! Drenched."
+  },
+  "theBrewmaster:RumRun": {
+    "NAME": "Rum Run",
+    "DESCRIPTION": "Gain !B! Block. Double this card's Block and increase it's cost by 1 this combat."
+  },
+  "theBrewmaster:BelligerentRoar": {
+    "NAME": "Belligerent Roar",
+    "DESCRIPTION": "Stun an enemy. NL thebrewmaster:Intoxicated: Stun each enemy. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Stun an enemy. NL thebrewmaster:Intoxicated: Stun each enemy."
   }
 }
