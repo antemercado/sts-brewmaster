@@ -22,9 +22,16 @@
   },
   "theBrewmaster:LouseLiverRelic": {
     "NAME": "Louse Liver",
-    "FLAVOR": "I've had one drinks too many.",
+    "FLAVOR": "Much more efficient than the stock model.",
     "DESCRIPTIONS": [
       "You become Intoxicated at 75 Intoxication instead of 100."
+    ]
+  },
+  "theBrewmaster:CozyBeerRelic": {
+    "NAME": "Cozy Beer",
+    "FLAVOR": "A little buddy to help lighten the load.",
+    "DESCRIPTIONS": [
+      "You can Relax at Rest Sites. Starting your next combat with an additional 50 Intoxication."
     ]
   }
 }
