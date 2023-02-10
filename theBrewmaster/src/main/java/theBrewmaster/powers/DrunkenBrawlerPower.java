@@ -21,6 +21,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 
 public class DrunkenBrawlerPower extends AbstractPower{
     public AbstractCreature source;
@@ -59,8 +60,12 @@ public class DrunkenBrawlerPower extends AbstractPower{
     }
 
     public void onPlayCard(AbstractCard card, AbstractMonster m) {
+        if (!this.owner.hasPower(IntoxicationPower.POWER_ID)){
+            return;
+        }
         if (card.type.equals(CardType.ATTACK)){
-            addToBot(new ApplyIntoxicationPower(this.owner, this.owner, new IntoxicationPower(this.owner, this.owner, amount), amount));
+            addToBot(new ApplyPowerAction(this.owner, this.owner, new VigorPower(this.owner,
+                this.owner.getPower(IntoxicationPower.POWER_ID).amount * this.amount / 100)));
         }
     }
 

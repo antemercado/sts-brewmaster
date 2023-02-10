@@ -15,6 +15,8 @@ import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.cards.AbstractCard.CardTags;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -25,6 +27,8 @@ public class DionysianFormPower extends AbstractPower{
     public AbstractCreature source;
 
     public boolean upgraded;
+
+    private CardGroup brewList;
 
     public static final String POWER_ID = BrewmasterMod.makeID("DionysianFormPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
@@ -51,11 +55,18 @@ public class DionysianFormPower extends AbstractPower{
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
 
+        this.brewList = BrewmasterCharacter.getBrews();
+        for (AbstractCard c : brewList.group){
+            if (c.hasTag(CardTags.HEALING)){
+                brewList.removeCard(c);
+            }
+        }
+
         updateDescription();
     }
 
     public void atStartOfTurn() {
-        AbstractCard c = BrewmasterCharacter.getBrews().getRandomCard(AbstractDungeon.cardRng).makeCopy();
+        AbstractCard c = brewList.getRandomCard(AbstractDungeon.cardRng).makeCopy();
         if (this.upgraded)
             c.upgrade();
         c.setCostForTurn(0);

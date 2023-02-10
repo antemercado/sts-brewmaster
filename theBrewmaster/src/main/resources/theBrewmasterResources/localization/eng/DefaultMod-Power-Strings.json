@@ -83,8 +83,8 @@
   "theBrewmaster:DrunkenBrawlerPower": {
     "NAME": "Drunken Brawler",
     "DESCRIPTIONS": [
-      "Whenever you play an Attack card, gain ",
-      " Intoxication."
+      "Whenever you play an Attack card, your next attack deals ",
+      "% of your Intoxication as bonus damage."
     ]
   },
   "theBrewmaster:NoIntoxicationPower": {

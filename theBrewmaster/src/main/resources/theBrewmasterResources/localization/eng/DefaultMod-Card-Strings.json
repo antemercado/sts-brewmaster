@@ -262,6 +262,18 @@
   },
   "theBrewmaster:DrunkenBrawler": {
     "NAME": "Drunken Brawler",
-    "DESCRIPTION": "Whenever you play an Attack card, gain !M! thebrewmaster:Intoxication."
+    "DESCRIPTION": "Whenever you play an Attack card, your next Attack does !M! % of your thebrewmaster:Intoxication as bonus damage."
+  },
+  "theBrewmaster:TopsyTurvy": {
+    "NAME": "Topsy Turvy",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Weak to yourself and target enemy."
+  },
+  "theBrewmaster:Pregame": {
+    "NAME": "Pregame",
+    "DESCRIPTION": "Innate. NL Gain !M! thebrewmaster:Intoxication. NL Exhaust."
+  },
+  "theBrewmaster:BarrelThump": {
+    "NAME": "Barrel Thump",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Drenched."
   }
 }

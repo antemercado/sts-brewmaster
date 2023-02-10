@@ -34,9 +34,9 @@ public class DrunkenBrawler extends AbstractDynamicCard {
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
 
     private static final int COST = 2;
-    private static final int UPGRADED_COST = 1;
 
     private static final int MAGIC = 5;
+    private static final int UPGRADE_PLUS_MAGIC = 3;
 
     public DrunkenBrawler() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -52,7 +52,7 @@ public class DrunkenBrawler extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(UPGRADED_COST);
+            upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
             initializeDescription();
         }
     }
