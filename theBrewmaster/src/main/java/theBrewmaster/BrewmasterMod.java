@@ -10,6 +10,7 @@ import theBrewmaster.characters.BrewmasterCharacter;
 import theBrewmaster.events.IdentityCrisisEvent;
 import theBrewmaster.potions.FermentedTea;
 import theBrewmaster.relics.BeerSteinRelic;
+import theBrewmaster.relics.CozyBeerRelic;
 import theBrewmaster.relics.GiantKegRelic;
 import theBrewmaster.relics.LouseLiverRelic;
 import theBrewmaster.relics.SpiritHelmetRelic;
@@ -165,6 +166,10 @@ public class BrewmasterMod implements
     
     public static String makeEventPath(String resourcePath) {
         return getModID() + "Resources/images/events/" + resourcePath;
+    }
+
+    public static String makeUIPath(String resourcePath) {
+        return getModID() + "Resources/images/ui/" + resourcePath;
     }
     
     // =============== /MAKE IMAGE PATHS/ =================
@@ -401,6 +406,7 @@ public class BrewmasterMod implements
         BaseMod.addRelicToCustomPool(new GiantKegRelic(), BrewmasterCharacter.Enums.ORANGE);
         BaseMod.addRelicToCustomPool(new SpiritHelmetRelic(), BrewmasterCharacter.Enums.ORANGE);
         BaseMod.addRelicToCustomPool(new LouseLiverRelic(), BrewmasterCharacter.Enums.ORANGE);
+        BaseMod.addRelicToCustomPool(new CozyBeerRelic(), BrewmasterCharacter.Enums.ORANGE);
         
         // This adds a relic to the Shared pool. Every character can find this relic.
         //BaseMod.addRelic(new PlaceholderRelic2(), RelicType.SHARED);
@@ -526,9 +532,9 @@ public class BrewmasterMod implements
         BaseMod.loadCustomStringsFile(StanceStrings.class,
                 getModID() + "Resources/localization/eng/BrewmasterMod-Stance-Strings.json");
 
-        // ActionStrings
+        // UIStrings
         BaseMod.loadCustomStringsFile(UIStrings.class,
-                getModID() + "Resources/localization/eng/BrewmasterMod-Action-Strings.json");
+                getModID() + "Resources/localization/eng/BrewmasterMod-UI-Strings.json");
         
         logger.info("Done edittting strings");
     }

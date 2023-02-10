@@ -1,0 +1,13 @@
+{
+  "theBrewmaster:RelaxOption": {
+      "TEXT": [
+        "Relax",
+        "Gain 50 Intoxication."
+      ]
+    },
+    "theBrewmaster:FormulationAction": {
+      "TEXT": [
+        " exhaust."
+      ]
+    }
+}
