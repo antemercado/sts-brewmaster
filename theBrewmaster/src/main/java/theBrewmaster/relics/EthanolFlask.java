@@ -9,15 +9,15 @@ import static theBrewmaster.BrewmasterMod.makeRelicPath;
 
 import com.badlogic.gdx.graphics.Texture;
 
-public class LouseLiverRelic extends CustomRelic {
+public class EthanolFlask extends CustomRelic {
 
-    public static final String ID = BrewmasterMod.makeID("LouseLiverRelic");
+    public static final String ID = BrewmasterMod.makeID("EthanolFlask");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("placeholder_relic.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic.png"));
 
-    public LouseLiverRelic() {
-        super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.CLINK);
+    public EthanolFlask() {
+        super(ID, IMG, OUTLINE, RelicTier.STARTER, LandingSound.MAGICAL);
     }
 
     public void atBattleStartPreDraw() {

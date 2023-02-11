@@ -33,5 +33,12 @@
     "DESCRIPTIONS": [
       "You can Relax at Rest Sites. Starting your next combat with an additional 50 Intoxication."
     ]
+  },
+  "theBrewmaster:EthanolFlask": {
+    "NAME": "Ethanol Flask",
+    "FLAVOR": "A lot of bad people made a lot of good money with this stuff.",
+    "DESCRIPTIONS": [
+      "Enemies with Drenched take an additional 10% more damage from attacks per stack."
+    ]
   }
 }
