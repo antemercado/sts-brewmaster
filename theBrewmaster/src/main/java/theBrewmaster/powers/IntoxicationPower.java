@@ -71,15 +71,24 @@ public class IntoxicationPower extends AbstractPower{
         if (this.owner.hasPower(TemperancePower.POWER_ID)){
             int temperanceAmount = this.owner.getPower(TemperancePower.POWER_ID).amount;
             addToBot(new ApplyPowerAction(this.owner, this.source, new StrengthPower(this.owner, temperanceAmount), temperanceAmount));
-        }
+        } else {
 
-        // Multiply gain if has relic
-        if (AbstractDungeon.player.hasRelic(SpiritHelmetRelic.ID) && !isBeerStein)
-            this.amount *= SpiritHelmetRelic.MULTIPLIER;
+            // Ethanol Vapor
+            if (AbstractDungeon.player.hasPower(EthanolVaporPower.POWER_ID)){
+                int ethanolVaporAmount = AbstractDungeon.player.getPower(EthanolVaporPower.POWER_ID).amount;
+                if (!AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()){
+                    addToBot(new ApplyPowerToRandomEnemyAction(this.source, new DrenchedPower(null, this.source, ethanolVaporAmount), ethanolVaporAmount));
+                }
+            }
 
-        // If have enough stacks when gaining power, enter stance
-        if (this.amount >= INTOX_THRESHOLD || (this.amount >= INTOX_THRESHOLD_RELIC && AbstractDungeon.player.hasRelic(LouseLiverRelic.ID))){
-            addToBot(new ChangeStanceAction(new IntoxicatedStance()));
+            // Multiply gain if has relic
+            if (AbstractDungeon.player.hasRelic(SpiritHelmetRelic.ID) && !isBeerStein)
+                this.amount *= SpiritHelmetRelic.MULTIPLIER;
+    
+            // If have enough stacks when gaining power, enter stance
+            if (this.amount >= INTOX_THRESHOLD || (this.amount >= INTOX_THRESHOLD_RELIC && AbstractDungeon.player.hasRelic(LouseLiverRelic.ID))){
+                addToBot(new ChangeStanceAction(new IntoxicatedStance()));
+            }
         }
 
         updateDescription();
