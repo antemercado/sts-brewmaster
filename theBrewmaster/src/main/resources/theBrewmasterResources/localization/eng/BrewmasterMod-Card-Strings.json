@@ -258,7 +258,7 @@
   },
   "theBrewmaster:DetonatorStrike": {
     "NAME": "Detonator Strike",
-    "DESCRIPTION": "Deal !M!x amount of thebrewmaster:Drenched as damage."
+    "DESCRIPTION": "Deal !M! times the amount of thebrewmaster:Drenched as damage."
   },
   "theBrewmaster:DrunkenBrawler": {
     "NAME": "Drunken Brawler",
