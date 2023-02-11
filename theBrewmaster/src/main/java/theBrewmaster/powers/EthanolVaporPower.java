@@ -53,14 +53,14 @@ public class EthanolVaporPower extends AbstractPower{
         updateDescription();
     }
 
-    public void onPlayCard(AbstractCard card, AbstractMonster m) {
-        if (card.hasTag(CustomTags.BREW)){
-            if (!AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()){
-                flash();
-                addToTop(new ApplyPowerToRandomEnemyAction(this.source, new DrenchedPower(null, this.source, this.amount)));
-            }
-        }
-    }
+    // public void onPlayCard(AbstractCard card, AbstractMonster m) {
+    //     if (card.hasTag(CustomTags.BREW)){
+    //         if (!AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()){
+    //             flash();
+    //             addToTop(new ApplyPowerToRandomEnemyAction(this.source, new DrenchedPower(null, this.source, this.amount)));
+    //         }
+    //     }
+    // }
 
     public void stackPower(int stackAmount){
         super.stackPower(stackAmount);
