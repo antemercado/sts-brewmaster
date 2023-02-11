@@ -413,6 +413,7 @@ public class BrewmasterMod implements
         BaseMod.addRelicToCustomPool(new SpiritHelmetRelic(), BrewmasterCharacter.Enums.ORANGE);
         BaseMod.addRelicToCustomPool(new LouseLiverRelic(), BrewmasterCharacter.Enums.ORANGE);
         BaseMod.addRelicToCustomPool(new CozyBeerRelic(), BrewmasterCharacter.Enums.ORANGE);
+        BaseMod.addRelicToCustomPool(new EthanolFlaskRelic(), BrewmasterCharacter.Enums.ORANGE);
         
         // This adds a relic to the Shared pool. Every character can find this relic.
         //BaseMod.addRelic(new PlaceholderRelic2(), RelicType.SHARED);

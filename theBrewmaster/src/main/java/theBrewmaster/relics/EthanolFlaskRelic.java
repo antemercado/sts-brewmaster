@@ -9,14 +9,14 @@ import static theBrewmaster.BrewmasterMod.makeRelicPath;
 
 import com.badlogic.gdx.graphics.Texture;
 
-public class EthanolFlask extends CustomRelic {
+public class EthanolFlaskRelic extends CustomRelic {
 
-    public static final String ID = BrewmasterMod.makeID("EthanolFlask");
+    public static final String ID = BrewmasterMod.makeID("EthanolFlaskRelic");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("placeholder_relic.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic.png"));
 
-    public EthanolFlask() {
+    public EthanolFlaskRelic() {
         super(ID, IMG, OUTLINE, RelicTier.STARTER, LandingSound.MAGICAL);
     }
 

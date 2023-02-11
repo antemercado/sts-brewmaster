@@ -3,7 +3,7 @@ package theBrewmaster.powers;
 import basemod.interfaces.CloneablePowerInterface;
 import theBrewmaster.BrewmasterMod;
 import theBrewmaster.enums.CustomDamageTypes;
-import theBrewmaster.relics.EthanolFlask;
+import theBrewmaster.relics.EthanolFlaskRelic;
 import theBrewmaster.util.TextureLoader;
 
 import static theBrewmaster.BrewmasterMod.makePowerPath;
@@ -76,7 +76,7 @@ public class DrenchedPower extends AbstractPower{
     }
 
     public float atDamageReceive(float damage, DamageType damageType) {
-        if (damageType.equals(DamageType.NORMAL) && AbstractDungeon.player.hasRelic(EthanolFlask.ID)){
+        if (damageType.equals(DamageType.NORMAL) && AbstractDungeon.player.hasRelic(EthanolFlaskRelic.ID)){
             return damage * (1.0f + this.amount * 0.1f);
         }
         return damage;
