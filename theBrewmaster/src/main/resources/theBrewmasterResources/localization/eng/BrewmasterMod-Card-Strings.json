@@ -9,8 +9,8 @@
   },
   "theBrewmaster:CelestialBrew": {
     "NAME": "Celestial Brew",
-    "DESCRIPTION": "Gain 1 Intangible. NL Discard your hand. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain 1 Intangible. NL Exhaust."
+    "DESCRIPTION": "Ethereal. NL Gain !M! Intangible. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain !M! Intangible. NL Exhaust."
   },
   "theBrewmaster:Microbrew": {
     "NAME": "Microbrew",
@@ -183,7 +183,7 @@
   },
   "theBrewmaster:CranialBash": {
     "NAME": "Cranial Bash",
-    "DESCRIPTION": "Deal !D! damage to an enemy. Randomize the costs of all cards in your hand for the rest of the combat."
+    "DESCRIPTION": "Deal !D! damage to an enemy. Randomize the costs of cards in your hand for the rest of the combat."
   },
   "theBrewmaster:DionysianForm": {
     "NAME": "Dionysian Form",

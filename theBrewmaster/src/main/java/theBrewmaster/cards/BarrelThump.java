@@ -33,11 +33,11 @@ public class BarrelThump extends AbstractDynamicCard {
 
     private static final int COST = 1;
 
-    private static final int DAMAGE = 5;
+    private static final int DAMAGE = 7;
     private static final int UPGRADE_PLUS_DMG = 1;
 
     private static final int MAGIC = 3;
-    private static final int UPGRADE_PLUS_MAGIC = 1;
+    private static final int UPGRADE_PLUS_MAGIC = 2;
 
     public BarrelThump() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

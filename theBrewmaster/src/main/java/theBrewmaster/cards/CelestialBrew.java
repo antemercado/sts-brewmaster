@@ -37,18 +37,20 @@ public class CelestialBrew extends AbstractDynamicCard {
 
     private static final int COST = 2;
 
-    private static final int DURATION = 1;
+    private static final int MAGIC = 1;
 
     public CelestialBrew() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        this.baseMagicNumber = this.magicNumber = MAGIC;
         this.exhaust = true;
+        this.isEthereal = true;
 
         tags.add(CustomTags.BREW);
     }
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, DURATION)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, MAGIC)));
 
         // Discard hand if not upgraded.
         if (!upgraded) {
@@ -61,6 +63,7 @@ public class CelestialBrew extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            this.isEthereal = false;
             rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

@@ -34,8 +34,8 @@ public class DoubleFist extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
 
-    private static final int COST = 2;
-    private static final int UPGRADE_COST = 1;
+    private static final int COST = 1;
+    private static final int UPGRADE_COST = 0;
 
     public DoubleFist() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
