@@ -40,8 +40,6 @@ public class Chug extends AbstractDynamicCard {
     public Chug() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseMagicNumber = this.magicNumber = MAGIC;
-
-        tags.add(CustomTags.BREW);
     }
     // Actions the card should do.
     @Override
