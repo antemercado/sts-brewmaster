@@ -1,6 +1,21 @@
 {
-"theBrewmaster:FermentedTea": {
+    "theBrewmaster:FermentedTea": {
         "NAME": "Fermented Tea",
         "DESCRIPTIONS": ["Gain ", " Intoxication."]
-}
+    },
+    "theBrewmaster:InertIncendiary": {
+        "NAME": "Inert Incendiary",
+        "DESCRIPTIONS": ["Apply ", " Drenched."]
+    },
+    "theBrewmaster:ShiftingAle": {
+        "NAME": "Shifting Spirit",
+        "DESCRIPTIONS": [
+            "Apply ",
+            " Strength or Dexterity, chosen at random at the start of each combat.",
+            " Dexterity.",
+            " Strength.",
+            "Shifting",
+            "This potion's effect is chosen at random between Stength and Dexterity at the start of each combat."
+        ]
+    }
 }

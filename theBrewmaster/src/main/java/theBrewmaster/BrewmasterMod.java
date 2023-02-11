@@ -9,6 +9,8 @@ import theBrewmaster.cards.*;
 import theBrewmaster.characters.BrewmasterCharacter;
 import theBrewmaster.events.IdentityCrisisEvent;
 import theBrewmaster.potions.FermentedTea;
+import theBrewmaster.potions.InertIncendiary;
+import theBrewmaster.potions.ShiftingAle;
 import theBrewmaster.relics.BeerSteinRelic;
 import theBrewmaster.relics.CozyBeerRelic;
 import theBrewmaster.relics.GiantKegRelic;
@@ -36,6 +38,7 @@ import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -81,7 +84,8 @@ public class BrewmasterMod implements
         EditStringsSubscriber,
         EditKeywordsSubscriber,
         EditCharactersSubscriber,
-        PostInitializeSubscriber {
+        PostInitializeSubscriber,
+        OnStartBattleSubscriber {
     // Make sure to implement the subscribers *you* are using (read basemod wiki). Editing cards? EditCardsSubscriber.
     // Making relics? EditRelicsSubscriber. etc., etc., for a full list and how to make your own, visit the basemod wiki.
     public static final Logger logger = LogManager.getLogger(BrewmasterMod.class.getName());
@@ -382,6 +386,8 @@ public class BrewmasterMod implements
         // just remove the player class at the end (in this case the "TheDefaultEnum.THE_DEFAULT".
         // Remember, you can press ctrl+P inside parentheses like addPotions)
         BaseMod.addPotion(FermentedTea.class, FermentedTea.LIQUID_COLOR, FermentedTea.HYBRID_COLOR, FermentedTea.SPOTS_COLOR, FermentedTea.POTION_ID, BrewmasterCharacter.Enums.BREWMASTER);
+        BaseMod.addPotion(InertIncendiary.class, InertIncendiary.LIQUID_COLOR, InertIncendiary.HYBRID_COLOR, InertIncendiary.SPOTS_COLOR, InertIncendiary.POTION_ID, BrewmasterCharacter.Enums.BREWMASTER);
+        BaseMod.addPotion(ShiftingAle.class, ShiftingAle.LIQUID_COLOR, ShiftingAle.HYBRID_COLOR, ShiftingAle.SPOTS_COLOR, ShiftingAle.POTION_ID, BrewmasterCharacter.Enums.BREWMASTER);
         logger.info("Done editing potions");
     }
     
@@ -571,5 +577,12 @@ public class BrewmasterMod implements
     // in order to avoid conflicts if any other mod uses the same ID.
     public static String makeID(String idText) {
         return getModID() + ":" + idText;
+    }
+
+    // ================ / Adding Subscriber Hooks/ ===================    
+    @Override
+    public void receiveOnBattleStart(AbstractRoom arg0) {
+        AbstractDungeon.player.potions.stream().filter(p -> p instanceof ShiftingAle).forEach(p -> ((ShiftingAle) p).onBattleStart(arg0));
+        
     }
 }
