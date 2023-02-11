@@ -12,6 +12,7 @@ import theBrewmaster.potions.FermentedTea;
 import theBrewmaster.potions.InertIncendiary;
 import theBrewmaster.potions.ShiftingAle;
 import theBrewmaster.relics.BeerSteinRelic;
+import theBrewmaster.relics.EthanolFlaskRelic;
 import theBrewmaster.relics.CozyBeerRelic;
 import theBrewmaster.relics.GiantKegRelic;
 import theBrewmaster.relics.LouseLiverRelic;
