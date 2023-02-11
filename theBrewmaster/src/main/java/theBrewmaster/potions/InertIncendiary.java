@@ -23,7 +23,7 @@ public class InertIncendiary extends AbstractPotion{
     public static final String[] DESCRIPTIONS = potionStrings.DESCRIPTIONS;
     private static final String NAME = potionStrings.NAME;
 
-    private static final PotionRarity RARITY = PotionRarity.UNCOMMON;
+    private static final PotionRarity RARITY = PotionRarity.COMMON;
     private static final PotionSize SIZE = PotionSize.SPHERE;
     public static final PotionColor COLOR = PotionColor.NONE;
     public static final Color LIQUID_COLOR = CardHelper.getColor(100.0f, 160.0f, 70.0f); //RGB

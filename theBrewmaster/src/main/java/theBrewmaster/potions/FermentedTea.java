@@ -24,7 +24,7 @@ public class FermentedTea extends AbstractPotion{
     public static final String[] DESCRIPTIONS = potionStrings.DESCRIPTIONS;
     private static final String NAME = potionStrings.NAME;
 
-    private static final PotionRarity RARITY = PotionRarity.COMMON;
+    private static final PotionRarity RARITY = PotionRarity.UNCOMMON;
     private static final PotionSize SIZE = PotionSize.BOTTLE;
 
     public static final PotionColor COLOR = PotionColor.NONE;
