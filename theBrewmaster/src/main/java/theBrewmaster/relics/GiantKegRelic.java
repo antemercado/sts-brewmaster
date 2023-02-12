@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 public class GiantKegRelic extends CustomRelic {
 
@@ -29,6 +30,20 @@ public class GiantKegRelic extends CustomRelic {
             if (AbstractDungeon.player.hasRelic(BeerSteinRelic.ID)){
                 this.counter = AbstractDungeon.player.getRelic(BeerSteinRelic.ID).counter;
             }
+        }
+    }
+
+    @Override
+    public void obtain() {
+        if (AbstractDungeon.player.hasRelic(BeerSteinRelic.ID)){
+            for (AbstractRelic r : AbstractDungeon.player.relics){
+                if (r.relicId.equals(BeerSteinRelic.ID)){
+                    instantObtain(AbstractDungeon.player, AbstractDungeon.player.relics.indexOf(r), true);
+                    break;
+                }
+            }
+        } else {
+            super.obtain();
         }
     }
 
