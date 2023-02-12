@@ -284,5 +284,9 @@
     "NAME": "Belligerent Roar",
     "DESCRIPTION": "Stun an enemy. NL thebrewmaster:Intoxicated: Stun each enemy. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Stun an enemy. NL thebrewmaster:Intoxicated: Stun each enemy."
+  },
+  "theBrewmaster:HeavyDrink": {
+    "NAME": "Heavy Drink",
+    "DESCRIPTION": "Deal !D! damage. Gain thebrewmaster:Intoxication equal to twice the unblocked damage dealt."
   }
 }

@@ -11,9 +11,11 @@ import static theBrewmaster.BrewmasterMod.makeCardPath;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -37,7 +39,7 @@ public class WhiskeyKick extends AbstractDynamicCard {
     private static final int DAMAGE = 8;
 
     private static final int MAGIC = 2;
-    private static final int UPGRADE_PLUS_MAGIC = 3;
+    private static final int UPGRADE_PLUS_MAGIC = 1;
 
     public WhiskeyKick() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -51,6 +53,14 @@ public class WhiskeyKick extends AbstractDynamicCard {
             addToBot(new DamageAction(m, new DamageInfo(p, (damage * magicNumber), damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         } else {
             addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+        }
+    }
+
+    // Glow when Intoxicated
+    public void triggerOnGlowCheck() {
+        this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+        if (AbstractDungeon.player.stance.ID.equals(IntoxicatedStance.STANCE_ID)) {
+            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
         }
     }
     // Upgraded stats.

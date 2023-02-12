@@ -5,6 +5,7 @@ import basemod.abstracts.CustomCard;
 import basemod.helpers.BaseModCardTags;
 import theBrewmaster.BrewmasterMod;
 import theBrewmaster.actions.ApplyIntoxicationPower;
+import theBrewmaster.actions.BottleSmashAction;
 import theBrewmaster.cards.AbstractDynamicCard;
 import theBrewmaster.characters.BrewmasterCharacter;
 import theBrewmaster.powers.IntoxicationPower;
@@ -50,8 +51,7 @@ public class BottleSmash extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-        addToBot(new ApplyIntoxicationPower(p, p, new IntoxicationPower(p, p, magicNumber), magicNumber));
+        addToBot(new BottleSmashAction(m, p, new DamageInfo(p, damage, damageTypeForTurn), magicNumber));
     }
     // Upgraded stats.
     @Override

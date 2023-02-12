@@ -4,25 +4,23 @@ import basemod.AutoAdd;
 import basemod.abstracts.CustomCard;
 import basemod.helpers.BaseModCardTags;
 import theBrewmaster.BrewmasterMod;
-import theBrewmaster.actions.StoneSmashAction;
+import theBrewmaster.actions.HeavyDrinkAction;
 import theBrewmaster.characters.BrewmasterCharacter;
 
 import static theBrewmaster.BrewmasterMod.makeCardPath;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.watcher.WallopAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.cards.DamageInfo.DamageType;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class StoneSmash extends AbstractDynamicCard {
+public class HeavyDrink extends AbstractDynamicCard {
     // TEXT DECLARATION
-    public static final String ID = BrewmasterMod.makeID(StoneSmash.class.getSimpleName());
+    public static final String ID = BrewmasterMod.makeID(HeavyDrink.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
 
     // STAT DECLARATION
@@ -33,25 +31,25 @@ public class StoneSmash extends AbstractDynamicCard {
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
 
     private static final int COST = 2;
-    private static final int UPGRADED_COST = 1;
 
     private static final int DAMAGE = 9;
+    private static final int UPGRADE_PLUS_DMG = 3;
 
-    public StoneSmash() { 
+    public HeavyDrink() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseDamage = this.damage = DAMAGE;
     }
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new WallopAction(m, new DamageInfo(p, damage, damageTypeForTurn)));
+        addToBot(new HeavyDrinkAction(p, m, new DamageInfo(p, damage, damageTypeForTurn)));
     }
     // Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(UPGRADED_COST);
+            upgradeDamage(UPGRADE_PLUS_DMG);
             initializeDescription();
         }
     }
