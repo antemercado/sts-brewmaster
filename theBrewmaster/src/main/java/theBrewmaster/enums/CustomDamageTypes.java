@@ -10,4 +10,6 @@ public class CustomDamageTypes {
     public static DamageInfo.DamageType MATCH;
     @SpireEnum
     public static DamageInfo.DamageType DRENCHED;
+    @SpireEnum
+    public static DamageInfo.DamageType VASOIMMOLATION;
 }

@@ -2,6 +2,7 @@ package theBrewmaster.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
 import theBrewmaster.BrewmasterMod;
+import theBrewmaster.enums.CustomDamageTypes;
 import theBrewmaster.util.TextureLoader;
 
 import static theBrewmaster.BrewmasterMod.makePowerPath;
@@ -43,6 +44,9 @@ public class VasoimmolationPower extends AbstractPower{
     private AbstractPlayer p;
     private int NUMERATOR = 20;
 
+
+    private DamageType damageType;
+
     public VasoimmolationPower(final AbstractPlayer p, final int amount, boolean upgraded) {
         name = NAME;
         ID = POWER_ID;
@@ -51,6 +55,7 @@ public class VasoimmolationPower extends AbstractPower{
         this.owner = p;
         this.amount = amount;
         this.upgraded = upgraded;
+        this.damageType = CustomDamageTypes.VASOIMMOLATION;
 
         type = PowerType.BUFF;
         isTurnBased = false;
@@ -69,8 +74,8 @@ public class VasoimmolationPower extends AbstractPower{
         flash();
         float damage = p.getPower(IntoxicationPower.POWER_ID).amount * this.amount * NUMERATOR / 100;
         if (!upgraded)
-            addToBot(new DamageAction(this.p, new DamageInfo(p, (int)damage, DamageType.NORMAL), AttackEffect.FIRE));
-        addToBot(new DamageAllEnemiesAction(this.p, (int)damage, DamageType.NORMAL, AttackEffect.FIRE));
+            addToBot(new DamageAction(this.p, new DamageInfo(p, (int)damage, damageType), AttackEffect.FIRE));
+        addToBot(new DamageAllEnemiesAction(this.p, (int)damage, damageType, AttackEffect.FIRE));
     }
 
     // Update the description
