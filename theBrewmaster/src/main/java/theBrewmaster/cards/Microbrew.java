@@ -46,7 +46,7 @@ public class Microbrew extends AbstractDynamicCard {
 
     private static final int COST = 0;
 
-    private static final int POWER = 5;
+    private static final int POWER = 15;
     public AbstractCard newCard = null;
 
     public Microbrew() { 

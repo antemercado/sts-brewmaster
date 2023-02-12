@@ -39,7 +39,7 @@ public class KSKeg extends AbstractDynamicCard {
 
     private static final int COST = 1;
 
-    private static final int POWER = 15;
+    private static final int POWER = 20;
 
     private AbstractCard preview;
 

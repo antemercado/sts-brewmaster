@@ -42,7 +42,7 @@ public class KSKegP extends AbstractDynamicCard {
 
     private static final int COST = 1;
 
-    private static final int POWER = 15;
+    private static final int POWER = 20;
 
     public KSKegP() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

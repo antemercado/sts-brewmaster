@@ -38,7 +38,7 @@ public class BottleSmash extends AbstractDynamicCard {
     private static final int DAMAGE = 7;
     private static final int UPGRADE_PLUS_DMG = 3;
 
-    private static final int MAGIC = 5;
+    private static final int MAGIC = 10;
     private static final int UPGRADE_MAGIC = 5;
 
     public BottleSmash() { 
