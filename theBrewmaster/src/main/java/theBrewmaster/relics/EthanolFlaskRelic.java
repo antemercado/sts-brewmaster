@@ -13,8 +13,8 @@ public class EthanolFlaskRelic extends CustomRelic {
 
     public static final String ID = BrewmasterMod.makeID("EthanolFlaskRelic");
 
-    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("placeholder_relic.png"));
-    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic.png"));
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("ethanol_flask.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("ethanol_flask.png"));
 
     public EthanolFlaskRelic() {
         super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.MAGICAL);
