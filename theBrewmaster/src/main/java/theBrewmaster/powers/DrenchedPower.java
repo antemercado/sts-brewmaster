@@ -71,7 +71,6 @@ public class DrenchedPower extends AbstractPower{
             type = CustomDamageTypes.MATCH;
         }
         addToBot(new DamageAllEnemiesAction(null, damage, type, AttackEffect.FIRE));
-        info.type = DamageType.NORMAL;
         return damageAmount;
     }
 
