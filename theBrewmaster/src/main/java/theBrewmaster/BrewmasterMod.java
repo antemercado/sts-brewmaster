@@ -7,6 +7,7 @@ import basemod.interfaces.*;
 import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.DynamicTextBlocks;
 import theBrewmaster.cards.*;
 import theBrewmaster.characters.BrewmasterCharacter;
+import theBrewmaster.enums.CustomTags;
 import theBrewmaster.events.IdentityCrisisEvent;
 import theBrewmaster.potions.FermentedTea;
 import theBrewmaster.potions.InertIncendiary;
@@ -31,6 +32,7 @@ import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -56,7 +58,9 @@ public class BrewmasterMod implements
         EditKeywordsSubscriber,
         EditCharactersSubscriber,
         PostInitializeSubscriber,
-        OnStartBattleSubscriber {
+        OnStartBattleSubscriber,
+        OnCardUseSubscriber,
+        OnPlayerTurnStartSubscriber {
     public static final Logger logger = LogManager.getLogger(BrewmasterMod.class.getName());
     private static String modID;
 
@@ -132,6 +136,11 @@ public class BrewmasterMod implements
     public static String makeUIPath(String resourcePath) {
         return getModID() + "Resources/images/ui/" + resourcePath;
     }
+
+    // =============== /SUBSCRIBER VARIABLES/ =================
+
+    public static int brewCardsPlayedThisCombat;
+    public static int brewCardsPlayedThisTurn;
     
     // =============== /INPUT TEXTURE LOCATION/ =================
     
@@ -455,9 +464,25 @@ public class BrewmasterMod implements
         return getModID() + ":" + idText;
     }
 
+    // Implement Subscribers
+
     @Override
-    public void receiveOnBattleStart(AbstractRoom arg0) {
-        AbstractDungeon.player.potions.stream().filter(p -> p instanceof ShiftingAle).forEach(p -> ((ShiftingAle) p).onBattleStart(arg0));
+    public void receiveOnBattleStart(AbstractRoom room) {
+        AbstractDungeon.player.potions.stream().filter(p -> p instanceof ShiftingAle).forEach(p -> ((ShiftingAle) p).onBattleStart(room));
+        this.brewCardsPlayedThisCombat = 0;
+    }
+
+    @Override
+    public void receiveCardUsed(AbstractCard card) {
+        if (card.hasTag(CustomTags.BREW)){
+            this.brewCardsPlayedThisCombat++;
+            this.brewCardsPlayedThisTurn++;
+        }
         
+    }
+
+    @Override
+    public void receiveOnPlayerTurnStart() {
+        this.brewCardsPlayedThisTurn = 0;
     }
 }

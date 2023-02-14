@@ -292,5 +292,14 @@
   "theBrewmaster:HeavyDrink": {
     "NAME": "Heavy Drink",
     "DESCRIPTION": "Deal !D! damage. Gain thebrewmaster:Intoxication equal to twice the unblocked damage dealt."
+  },
+  "theBrewmaster:BarMatShot": {
+    "NAME": "Bar Mat Shot",
+    "DESCRIPTION": "Deal !D! damage. Deals and additional !M! damage for each Brew card you played this combat.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (",
+      " Brews played this combat.)"
+    ]
+
   }
 }
