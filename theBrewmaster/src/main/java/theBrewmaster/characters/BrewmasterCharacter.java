@@ -167,7 +167,7 @@ public class BrewmasterCharacter extends CustomPlayer {
         retVal.add(DefendBrewmaster.ID);
 
         retVal.add(BottleSmash.ID);
-        retVal.add(Microbrew.ID);
+        retVal.add(CozyBrew.ID);
 
         return retVal;
     }
@@ -188,15 +188,14 @@ public class BrewmasterCharacter extends CustomPlayer {
     // character Select screen effect
     @Override
     public void doCharSelectScreenSelectEffect() {
-        CardCrawlGame.sound.playA("ATTACK_DAGGER_1", 1.25f); // Sound Effect
-        CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.LOW, ScreenShake.ShakeDur.SHORT,
-                false); // Screen Effect
+        CardCrawlGame.sound.playA("ATTACK_POISON2", 1.25f); // Sound Effect
+        CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.MED, ScreenShake.ShakeDur.SHORT, false); // Screen Effect
     }
 
     // character Select on-button-press sound effect
     @Override
     public String getCustomModeCharacterButtonSoundKey() {
-        return "ATTACK_DAGGER_1";
+        return "ATTACK_POISON2";
     }
 
     // Should return how much HP your maximum HP reduces by when starting a run at
@@ -269,7 +268,7 @@ public class BrewmasterCharacter extends CustomPlayer {
     public AbstractGameAction.AttackEffect[] getSpireHeartSlashEffect() {
         return new AbstractGameAction.AttackEffect[]{
                 AbstractGameAction.AttackEffect.BLUNT_HEAVY,
-                AbstractGameAction.AttackEffect.BLUNT_HEAVY,
+                AbstractGameAction.AttackEffect.BLUNT_LIGHT,
                 AbstractGameAction.AttackEffect.BLUNT_HEAVY};
     }
 
@@ -286,25 +285,29 @@ public class BrewmasterCharacter extends CustomPlayer {
     // the full text that will be displayed as the first screen of the vampires event.
     @Override
     public String getVampireText() {
-        return TEXT[0];
+        return TEXT[2];
     }
 
     public static CardGroup getBrews(){
         
         CardGroup retVal = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
 
-        retVal.addToTop(new CinderBrew());
-        retVal.addToTop(new FortifyingBrew());
-        retVal.addToTop(new Microbrew());
-
-        retVal.addToTop(new StimulatingBrew());
-        retVal.addToTop(new Homebrew());
-        retVal.addToTop(new PerplexingBrew());
-        retVal.addToTop(new PurifyingBrew());
-
         retVal.addToTop(new AdmiralsBrew());
         retVal.addToTop(new CelestialBrew());
+        retVal.addToTop(new CinderBrew());
+        retVal.addToTop(new CozyBrew());
         retVal.addToTop(new FairyBrew());
+        retVal.addToTop(new FortifyingBrew());
+        retVal.addToTop(new Homebrew());
+        retVal.addToTop(new ImportedBrew());
+        retVal.addToTop(new NimbleBrew());
+        retVal.addToTop(new PerplexingBrew());
+        retVal.addToTop(new PurifyingBrew());
+        retVal.addToTop(new StimulatingBrew());
+        retVal.addToTop(new StoneBrew());
+        retVal.addToTop(new TwistedBrew());
+        retVal.addToTop(new VolatileBrew());
+        // retVal.addToTop(new Microbrew());
 
         return retVal;
     }

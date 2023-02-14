@@ -17,6 +17,10 @@
     "DESCRIPTION": "Gain !M! thebrewmaster:Intoxication.",
     "UPGRADE_DESCRIPTION": "Permanently transforms into a random common Brew card when upgraded."
   },
+  "theBrewmaster:CozyBrew": {
+    "NAME": "Cozy Brew",
+    "DESCRIPTION": "Gain !B! Block and !M! thebrewmaster:Intoxication."
+  },
   "theBrewmaster:QuickSip": {
     "NAME": "Quick Sip",
     "DESCRIPTION": "Gain !M! thebrewmaster:Intoxication. NL thebrewmaster:Intoxicated: Draw a card."
@@ -161,7 +165,8 @@
   },
   "theBrewmaster:Temperance": {
     "NAME": "Temperance",
-    "DESCRIPTION": "If you would gain thebrewmaster:Intoxication, gain !M! Strength instead."
+    "DESCRIPTION": "If you would gain thebrewmaster:Intoxication, gain !M! Strength instead.",
+    "UPGRADE_DESCRIPTION": "Innate. NL If you would gain thebrewmaster:Intoxication, gain !M! Strength instead."
   },
   "theBrewmaster:TwistedBrew": {
     "NAME": "Twisted Brew",

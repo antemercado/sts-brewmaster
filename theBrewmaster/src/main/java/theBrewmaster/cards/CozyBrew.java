@@ -4,57 +4,58 @@ import basemod.AutoAdd;
 import basemod.abstracts.CustomCard;
 import basemod.helpers.BaseModCardTags;
 import theBrewmaster.BrewmasterMod;
+import theBrewmaster.actions.ApplyIntoxicationPower;
 import theBrewmaster.characters.BrewmasterCharacter;
-import theBrewmaster.powers.NoIntoxicationPower;
-import theBrewmaster.powers.TemperancePower;
+import theBrewmaster.enums.CustomTags;
+import theBrewmaster.powers.IntoxicationPower;
 
 import static theBrewmaster.BrewmasterMod.makeCardPath;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.VulnerablePower;
 
-public class Temperance extends AbstractDynamicCard {
+public class CozyBrew extends AbstractDynamicCard {
     // TEXT DECLARATION
-    public static final String ID = BrewmasterMod.makeID(Temperance.class.getSimpleName());
-    public static final String IMG = makeCardPath("Power.png");
-
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+    public static final String ID = BrewmasterMod.makeID(CozyBrew.class.getSimpleName());
+    public static final String IMG = makeCardPath("Skill.png");
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.SELF;
-    private static final CardType TYPE = CardType.POWER;
+    private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
 
-    private static final int COST = 2;
+    private static final int COST = 1;
+    private static final int UPGRADED_COST = 0;
 
-    private static final int MAGIC = 1;
+    private static final int BLOCK = 6;
+    private static final int MAGIC = 10;
 
-    public Temperance() { 
+    public CozyBrew() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = MAGIC;
+        this.baseBlock = this.block = BLOCK;
+        this.baseMagicNumber = this.magicNumber = MAGIC;
+
+        tags.add(CustomTags.BREW);
     }
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToTop(new ApplyPowerAction(p, p, new NoIntoxicationPower(p, p)));
-        addToBot(new ApplyPowerAction(p, p, new TemperancePower(p, p, magicNumber), magicNumber));
+        addToBot(new GainBlockAction(p, p, block));
+        addToBot(new ApplyIntoxicationPower(p, p, new IntoxicationPower(p, p, magicNumber)));
     }
     // Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            rawDescription = UPGRADE_DESCRIPTION;
-            this.isInnate = true;
+            upgradeBaseCost(UPGRADED_COST);
             initializeDescription();
         }
     }
