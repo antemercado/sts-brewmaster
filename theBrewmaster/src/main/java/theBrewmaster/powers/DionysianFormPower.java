@@ -3,6 +3,7 @@ package theBrewmaster.powers;
 import basemod.interfaces.CloneablePowerInterface;
 import theBrewmaster.BrewmasterMod;
 import theBrewmaster.characters.BrewmasterCharacter;
+import theBrewmaster.enums.CustomTags;
 import theBrewmaster.util.TextureLoader;
 
 import static theBrewmaster.BrewmasterMod.makePowerPath;
@@ -16,20 +17,21 @@ import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.cards.CardQueueItem;
 import com.megacrit.cardcrawl.cards.AbstractCard.CardTags;
 import com.megacrit.cardcrawl.cards.CardGroup.CardGroupType;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class DionysianFormPower extends AbstractPower{
     public AbstractCreature source;
 
-    public boolean upgraded;
-
-    private CardGroup brewGroup;
+    private CardGroup copyGroup;
 
     public static final String POWER_ID = BrewmasterMod.makeID("DionysianFormPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
@@ -41,13 +43,13 @@ public class DionysianFormPower extends AbstractPower{
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
 
-    public DionysianFormPower(final AbstractCreature owner, boolean upgraded) {
+    public DionysianFormPower(final AbstractCreature owner, int amount) {
         name = NAME;
         ID = POWER_ID;
 
         this.owner = owner;
         this.source = owner;
-        this.upgraded = upgraded;
+        this.amount = amount;
 
         type = PowerType.BUFF;
         isTurnBased = false;
@@ -56,32 +58,57 @@ public class DionysianFormPower extends AbstractPower{
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
         
-        this.brewGroup = new CardGroup(CardGroupType.UNSPECIFIED);
-        CardGroup tmpGroup = BrewmasterCharacter.getBrews();
+        this.copyGroup = new CardGroup(CardGroupType.UNSPECIFIED);
         
-        for (AbstractCard c : tmpGroup.group){
-            if (!c.hasTag(CardTags.HEALING)){
-                brewGroup.addToBottom(c);
-            }
-        }
-
         updateDescription();
     }
 
-    public void atStartOfTurn() {
-        AbstractCard c = brewGroup.getRandomCard(AbstractDungeon.cardRng).makeCopy();
-        if (this.upgraded)
-            c.upgrade();
-        c.setCostForTurn(0);
-        addToBot(new MakeTempCardInHandAction(c));
+    public void atEndOfTurn(boolean isPlayer) {
+        this.copyGroup.clear();
+    }
+
+    @Override
+    public void onUseCard(AbstractCard card, UseCardAction action) {
+        if (!card.hasTag(CustomTags.BREW) || card.purgeOnUse){
+            return;
+        }
+
+        flash();
+        AbstractMonster m = null;
+        if (action.target != null){
+            m = (AbstractMonster)action.target;
+        } else {
+            m = AbstractDungeon.getRandomMonster();
+        }
+        for (AbstractCard c : this.copyGroup.group){
+            AbstractCard tmp = c.makeSameInstanceOf();
+            AbstractDungeon.player.limbo.addToBottom(tmp);
+            tmp.current_x = card.current_x;
+            tmp.current_y = card.current_y;
+            tmp.target_x = Settings.WIDTH / 2.0F - 300.0F * Settings.scale;
+            tmp.target_y = Settings.HEIGHT / 2.0F;
+
+            if (m != null){
+                tmp.calculateCardDamage(m);
+            }
+
+            tmp.purgeOnUse = true;
+            for (int i = 0; i < this.amount; i++){
+                AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(tmp, m ,card.energyOnUse, true, true), true);
+            }
+        }
+
+        this.copyGroup.addToBottom(card.makeCopy());
+
     }
 
     // Update the description
     @Override
     public void updateDescription() {
-        description = DESCRIPTIONS[0];
-        if (this.upgraded){
-            description = DESCRIPTIONS[1];
+        if (this.amount > 1){
+            description = DESCRIPTIONS[0];
+        } else {
+            description = DESCRIPTIONS[1] + this.amount + DESCRIPTIONS[2];
         }
     }
 

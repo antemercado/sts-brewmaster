@@ -34,6 +34,7 @@ public class DionysianForm extends AbstractDynamicCard {
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
 
     private static final int COST = 3;
+    private static final int UPGRADE_COST = 2;
 
     private static final int MAGIC = 1;
 
@@ -44,19 +45,14 @@ public class DionysianForm extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (!p.hasPower(DionysianFormPower.POWER_ID)){
-            addToBot(new ApplyPowerAction(p, p, new DionysianFormPower(p, upgraded)));
-            return;
-        }
-        addToBot(new RemoveSpecificPowerAction(p, p, p.getPower(DionysianFormPower.POWER_ID)));
-        addToBot(new ApplyPowerAction(p, p, new DionysianFormPower(p, upgraded)));
+        addToBot(new ApplyPowerAction(p, p, new DionysianFormPower(p, 1), 1));
     }
     // Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            rawDescription = UPGRADE_DESCRIPTION;
+            upgradeBaseCost(UPGRADE_COST);
             initializeDescription();
         }
     }

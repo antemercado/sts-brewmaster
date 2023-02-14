@@ -56,8 +56,9 @@
   "theBrewmaster:DionysianFormPower": {
     "NAME": "Dionysian Form",
     "DESCRIPTIONS": [
-      "At the beggining of your turn, add a random Brew card into your hand. It costs 0.",
-      "At the beggining of your turn, add a random upgraded Brew card into your hand. It costs 0."
+      "Whenever you play a Brew card, play a copy of each brew card you played before it this turn.",
+      "Whenever you play a Brew card, play ",
+      " copy of each brew card you played before it this turn."
     ]
   },
   "theBrewmaster:DrenchedPower": {
