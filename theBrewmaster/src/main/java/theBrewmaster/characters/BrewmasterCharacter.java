@@ -188,14 +188,14 @@ public class BrewmasterCharacter extends CustomPlayer {
     // character Select screen effect
     @Override
     public void doCharSelectScreenSelectEffect() {
-        CardCrawlGame.sound.playA("ATTACK_POISON2", 1.25f); // Sound Effect
+        CardCrawlGame.sound.playA("ATTACK_POISON1", 1.25f); // Sound Effect
         CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.MED, ScreenShake.ShakeDur.SHORT, false); // Screen Effect
     }
 
     // character Select on-button-press sound effect
     @Override
     public String getCustomModeCharacterButtonSoundKey() {
-        return "ATTACK_POISON2";
+        return "ATTACK_POISON1";
     }
 
     // Should return how much HP your maximum HP reduces by when starting a run at
@@ -233,7 +233,7 @@ public class BrewmasterCharacter extends CustomPlayer {
     //Which card should be obtainable from the Match and Keep event?
     @Override
     public AbstractCard getStartCardForEvent() {
-        return new Microbrew();
+        return new CozyBrew();
     }
 
     // The class name as it appears next to your player name in-game

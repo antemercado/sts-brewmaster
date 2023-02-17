@@ -42,19 +42,16 @@ public class VasoimmolationPower extends AbstractPower{
     
     public boolean upgraded;
     private AbstractPlayer p;
-    private int NUMERATOR = 20;
-
 
     private DamageType damageType;
 
-    public VasoimmolationPower(final AbstractPlayer p, final int amount, boolean upgraded) {
+    public VasoimmolationPower(final AbstractPlayer p, final int amount) {
         name = NAME;
         ID = POWER_ID;
 
         this.p = p;
         this.owner = p;
         this.amount = amount;
-        this.upgraded = upgraded;
         this.damageType = CustomDamageTypes.VASOIMMOLATION;
 
         type = PowerType.BUFF;
@@ -72,19 +69,14 @@ public class VasoimmolationPower extends AbstractPower{
         if (!p.hasPower(IntoxicationPower.POWER_ID))
             return;
         flash();
-        float damage = p.getPower(IntoxicationPower.POWER_ID).amount * this.amount * NUMERATOR / 100;
-        if (!upgraded)
-            addToBot(new DamageAction(this.p, new DamageInfo(p, (int)damage, damageType), AttackEffect.FIRE));
+        float damage = p.getPower(IntoxicationPower.POWER_ID).amount * this.amount / 100;
         addToBot(new DamageAllEnemiesAction(this.p, (int)damage, damageType, AttackEffect.FIRE));
     }
 
     // Update the description
     @Override
     public void updateDescription() {
-        if (!upgraded)
-        description = DESCRIPTIONS[0] + (amount * NUMERATOR) + DESCRIPTIONS[2];
-        if (upgraded)
-            description = DESCRIPTIONS[1] + (amount * NUMERATOR) + DESCRIPTIONS[2];
+        description = DESCRIPTIONS[0] + (amount) + DESCRIPTIONS[2];
     }
 
 }

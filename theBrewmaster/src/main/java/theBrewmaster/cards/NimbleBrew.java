@@ -34,7 +34,7 @@ public class NimbleBrew extends AbstractDynamicCard {
 
     private static final int COST = 1;
 
-    private static final int MAGIC = 3;
+    private static final int MAGIC = 4;
     private static final int UPGRADE_MAGIC_BLOCK = 2;
 
     public NimbleBrew() { 

@@ -35,7 +35,6 @@
   "theBrewmaster:VasoimmolationPower": {
     "NAME": "Vasoimmolation",
     "DESCRIPTIONS": [
-      "You and each enemy takes ",
       "Each enemy takes ",
       "% of you Intoxication as damage at the end of your turn."
     ]

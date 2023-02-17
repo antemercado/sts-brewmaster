@@ -80,8 +80,7 @@
   },
   "theBrewmaster:PurifyingBrew": {
     "NAME": "Purifying Brew",
-    "DESCRIPTION": "Discard a card. If it is a Status card, gain !M! Block.",
-    "UPGRADED_DESCRIPTION": "Discard a card. If it is a [#7fff00]Status or Curse[] card, gain !M! Block."
+    "DESCRIPTION": "Gain !B! Block. Exhaust each Status card in your draw pile. NL Exhaust."
   },
   "theBrewmaster:PocketFlask": {
     "NAME": "Pocket Flask",
@@ -118,8 +117,8 @@
   },
   "theBrewmaster:StimulatingBrew": {
     "NAME": "Stimulating Brew",
-    "DESCRIPTION": "Next turn gain [E].",
-    "UPGRADE_DESCRIPTION": "Next turn gain [E] [E]."
+    "DESCRIPTION": "Next turn, gain [E] and draw 1 card.",
+    "UPGRADE_DESCRIPTION": "Next turn gain [E] [E] and draw 1 card."
   },
   "theBrewmaster:AdmiralsBrew": {
     "NAME": "Admiral's Brew",
@@ -147,8 +146,7 @@
   },
   "theBrewmaster:Vasoimmolation": {
     "NAME": "Vasoimmolation",
-    "DESCRIPTION": "At the end of your turn, deal 20 % of your thebrewmaster:Intoxication as damage to yourself and all enemies.",
-    "UPGRADE_DESCRIPTION": "At the end of your turn, deal 20 % of your thebrewmaster:Intoxication as damage to [#7fff00]all enemies.[]"
+    "DESCRIPTION": "At the end of your turn, deal !M! % of your thebrewmaster:Intoxication as damage to all enemies."
   },
   "theBrewmaster:Formulation": {
     "NAME": "Formulation",
@@ -192,7 +190,8 @@
   },
   "theBrewmaster:DionysianForm": {
     "NAME": "Dionysian Form",
-    "DESCRIPTION": "Whenever you play a Brew card, play a copy of each brew card you played before it this turn."
+    "DESCRIPTION": "Whenever you play a Brew card, play a copy of each brew card you played before it this turn.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you play a Brew card, play a copy of each brew card you played before it this turn."
   },
   "theBrewmaster:DrunkenRage": {
     "NAME": "Drunken Rage",
@@ -257,8 +256,8 @@
   },
   "theBrewmaster:WhiskeyKick": {
     "NAME": "Whiskey Kick",
-    "DESCRIPTION": "Draw !D! damage. NL thebrewmaster:Intoxicated: Deal twice that amount instead.",
-    "UPGRADE_DESCRIPTION": "Draw !D! damage. NL thebrewmaster:Intoxicated: Deal three times that amount instead."
+    "DESCRIPTION": "Deal !D! damage. NL thebrewmaster:Intoxicated: Deal twice that amount instead.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL thebrewmaster:Intoxicated: Deal three times that amount instead."
   },
   "theBrewmaster:DetonatorStrike": {
     "NAME": "Detonator Strike",
@@ -270,14 +269,14 @@
   },
   "theBrewmaster:TopsyTurvy": {
     "NAME": "Topsy Turvy",
-    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Weak to yourself and target enemy."
+    "DESCRIPTION": "Deal !D! damage. NL Shuffle a Woozy into your discard pile."
   },
   "theBrewmaster:Pregame": {
     "NAME": "Pregame",
     "DESCRIPTION": "Innate. NL Gain !M! thebrewmaster:Intoxication. NL Exhaust."
   },
-  "theBrewmaster:BarrelThump": {
-    "NAME": "Barrel Thump",
+  "theBrewmaster:HeavyPour": {
+    "NAME": "Heavy Pour",
     "DESCRIPTION": "Deal !D! damage. NL Apply !M! Drenched."
   },
   "theBrewmaster:RumRun": {
@@ -293,13 +292,29 @@
     "NAME": "Heavy Drink",
     "DESCRIPTION": "Deal !D! damage. Gain thebrewmaster:Intoxication equal to twice the unblocked damage dealt."
   },
-  "theBrewmaster:BarMatShot": {
-    "NAME": "Bar Mat Shot",
-    "DESCRIPTION": "Deal !D! damage. Deals and additional !M! damage for each Brew card you played this combat.",
+  "theBrewmaster:BarMatSpecial": {
+    "NAME": "Bar Mat Special",
+    "DESCRIPTION": "Deal !D! damage. Deals !M! additional damage for each Brew card played this combat.",
     "EXTENDED_DESCRIPTION": [
       " NL (",
       " Brews played this combat.)"
     ]
-
+  },
+  "theBrewmaster:Blackout": {
+    "NAME": "Blackout",
+    "DESCRIPTION": "Become thebrewmaster:Intoxicated. Shuffle !M! Woozy cards into your discard pile. NL Exhaust."
+  },
+  "theBrewmaster:WoozyStatus": {
+    "NAME": "Woozy",
+    "DESCRIPTION": "Unplayable. NL Ethereal. NL Whenever this card is drawn, gain 1 Weak."
+  },
+  "theBrewmaster:Chaser": {
+    "NAME": "Chaser",
+    "DESCRIPTION": "Costs 1 less [E] for each Brew card played this turn. NL Gain !B! Block."
+  },
+  "theBrewmaster:TrickShot": {
+    "NAME": "Trick Shot",
+    "DESCRIPTION": "Deal !D! damage. Return a card from your discard pile to your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. Return a card from your discard pile to your hand."
   }
 }

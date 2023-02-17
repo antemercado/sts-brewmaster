@@ -11,7 +11,10 @@ import theBrewmaster.enums.CustomTags;
 import static theBrewmaster.BrewmasterMod.makeCardPath;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DiscardAction;
+import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -30,28 +33,35 @@ public class PurifyingBrew extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
 
-    private static final int COST = 1;
+    private static final int COST = 2;
 
-    private static final int MAGIC = 15;
+    private static final int BLOCK = 12;
+    private static final int UPGRADE_PLUS_BLOCK = 4;
 
     public PurifyingBrew() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        this.baseBlock = this.block = BLOCK;
 
-        this.baseMagicNumber = this.magicNumber = MAGIC;
-
-        tags.add(CustomTags.BREW);
+        this.exhaust = true;
         
+        tags.add(CustomTags.BREW);
     }
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new PurifyingBrewAction(p, magicNumber, upgraded));
+
+        for (AbstractCard c: p.drawPile.group){
+            if (c.type.equals(CardType.STATUS)){
+                addToBot(new ExhaustSpecificCardAction(c, p.drawPile));
+            }
+        }
     }
     // Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            upgradeBlock(UPGRADE_PLUS_BLOCK);
             initializeDescription();
         }
     }

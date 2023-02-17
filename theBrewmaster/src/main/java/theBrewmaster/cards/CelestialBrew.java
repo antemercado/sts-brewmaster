@@ -52,11 +52,11 @@ public class CelestialBrew extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, MAGIC)));
 
-        // Discard hand if not upgraded.
-        if (!upgraded) {
-            int handSize = AbstractDungeon.player.hand.size();
-            AbstractDungeon.actionManager.addToBottom(new DiscardAction(p, p, handSize, false));
-        }
+        // // Discard hand if not upgraded.
+        // if (!upgraded) {
+        //     int handSize = AbstractDungeon.player.hand.size();
+        //     AbstractDungeon.actionManager.addToBottom(new DiscardAction(p, p, handSize, false));
+        // }
     }
     // Upgraded stats.
     @Override

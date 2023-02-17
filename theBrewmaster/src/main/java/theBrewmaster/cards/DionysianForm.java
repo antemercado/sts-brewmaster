@@ -34,7 +34,6 @@ public class DionysianForm extends AbstractDynamicCard {
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
 
     private static final int COST = 3;
-    private static final int UPGRADE_COST = 2;
 
     private static final int MAGIC = 1;
 
@@ -52,7 +51,8 @@ public class DionysianForm extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(UPGRADE_COST);
+            rawDescription = UPGRADE_DESCRIPTION;
+            this.isInnate = true;
             initializeDescription();
         }
     }

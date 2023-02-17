@@ -36,7 +36,8 @@ public class Vasoimmolation extends AbstractDynamicCard {
 
     private static final int COST = 2;
 
-    private static final int MAGIC = 1;
+    private static final int MAGIC = 10;
+    private static final int UPGRADE_PLUS_MAGIC = 5;
 
     public Vasoimmolation() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -45,16 +46,14 @@ public class Vasoimmolation extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (p.hasPower(VasoimmolationPower.POWER_ID))
-            addToBot(new RemoveSpecificPowerAction(p, p, VasoimmolationPower.POWER_ID));
-        addToBot(new ApplyPowerAction(p, p, new VasoimmolationPower(p, magicNumber, upgraded)));
+        addToBot(new ApplyPowerAction(p, p, new VasoimmolationPower(p, this.magicNumber)));
     }
     // Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            rawDescription = UPGRADE_DESCRIPTION;
+            upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
             initializeDescription();
         }
     }

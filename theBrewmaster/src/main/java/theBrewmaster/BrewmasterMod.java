@@ -469,20 +469,20 @@ public class BrewmasterMod implements
     @Override
     public void receiveOnBattleStart(AbstractRoom room) {
         AbstractDungeon.player.potions.stream().filter(p -> p instanceof ShiftingAle).forEach(p -> ((ShiftingAle) p).onBattleStart(room));
-        this.brewCardsPlayedThisCombat = 0;
+        BrewmasterMod.brewCardsPlayedThisCombat = 0;
     }
 
     @Override
     public void receiveCardUsed(AbstractCard card) {
         if (card.hasTag(CustomTags.BREW)){
-            this.brewCardsPlayedThisCombat++;
-            this.brewCardsPlayedThisTurn++;
+            BrewmasterMod.brewCardsPlayedThisCombat++;
+            BrewmasterMod.brewCardsPlayedThisTurn++;
         }
         
     }
 
     @Override
     public void receiveOnPlayerTurnStart() {
-        this.brewCardsPlayedThisTurn = 0;
+        BrewmasterMod.brewCardsPlayedThisTurn = 0;
     }
 }

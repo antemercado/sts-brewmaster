@@ -17,6 +17,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+@AutoAdd.Ignore
 public class Misplace extends AbstractDynamicCard {
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(Misplace.class.getSimpleName());
