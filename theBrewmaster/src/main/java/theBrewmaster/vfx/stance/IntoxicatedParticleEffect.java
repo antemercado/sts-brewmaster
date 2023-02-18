@@ -1,5 +1,6 @@
 package theBrewmaster.vfx.stance;
 
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -19,7 +20,6 @@ public class IntoxicatedParticleEffect {
 
     private static AbstractPlayer p = AbstractDungeon.player;
     private static float spawnX = p.hb_w / 2.0f;
-    private static float swayX = p.hb_w / 2.0f;
 
     public static AbstractGameEffect effect() {
         float x = p.hb.cX + (MathUtils.random(-1f,1f) * spawnX);
