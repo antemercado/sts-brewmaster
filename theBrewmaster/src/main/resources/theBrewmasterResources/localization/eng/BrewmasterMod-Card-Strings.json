@@ -122,7 +122,7 @@
   },
   "theBrewmaster:AdmiralsBrew": {
     "NAME": "Admiral's Brew",
-    "DESCRIPTION": "Prevent all unblocked damage taken by half. Take prevented damage at the end of !M! turns."
+    "DESCRIPTION": "Prevent all unblocked damage taken by half. Take prevented damage at the end of !M! turns. NL Exhaust."
   },
   "theBrewmaster:BurningBreath": {
     "NAME": "Burning Breath",

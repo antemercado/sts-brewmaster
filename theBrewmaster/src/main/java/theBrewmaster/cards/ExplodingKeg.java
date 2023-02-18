@@ -10,6 +10,7 @@ import static theBrewmaster.BrewmasterMod.makeCardPath;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.defect.DamageAllButOneEnemyAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -29,11 +30,11 @@ public class ExplodingKeg extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
 
-    private static final int COST = 3;
+    private static final int COST = 2;
 
-    private static final int DAMAGE = 25;
+    private static final int DAMAGE = 20;
     private static final int MAGIC = 5;
-    private static final int UPGRADE_PLUS_DMG = 8;
+    private static final int UPGRADE_PLUS_DMG = 5;
 
     public ExplodingKeg() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

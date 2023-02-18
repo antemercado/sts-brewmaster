@@ -92,5 +92,13 @@
     "DESCRIPTIONS": [
       "You can't gain Intoxication."
     ]
+  },
+  "theBrewmaster:StallPower": {
+    "NAME": "Stall",
+    "DESCRIPTIONS": [
+      "At the start of your turn, gain ",
+      " Stength and lose ",
+      " Dexterity."
+    ]
   }
 }
