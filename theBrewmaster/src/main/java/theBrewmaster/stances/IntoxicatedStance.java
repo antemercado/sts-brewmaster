@@ -49,7 +49,7 @@ public class IntoxicatedStance extends AbstractStance{
         if (!Settings.DISABLE_EFFECTS){
             this.particleTimer -= Gdx.graphics.getDeltaTime();
             if (this.particleTimer < 0.0f){
-                this.particleTimer = 0.05f;
+                this.particleTimer = 0.1f;
                 AbstractDungeon.effectsQueue.add(IntoxicatedParticleEffect.effect());
             }
         }
