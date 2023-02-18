@@ -137,6 +137,10 @@ public class BrewmasterMod implements
         return getModID() + "Resources/images/ui/" + resourcePath;
     }
 
+    public static String makeVFXPath(String resourcePath) {
+        return getModID() + "Resources/images/vfx/" + resourcePath;
+    }
+
     // =============== /SUBSCRIBER VARIABLES/ =================
 
     public static int brewCardsPlayedThisCombat;
