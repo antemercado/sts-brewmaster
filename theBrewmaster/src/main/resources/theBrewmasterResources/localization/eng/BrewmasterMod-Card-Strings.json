@@ -316,5 +316,14 @@
     "NAME": "Trick Shot",
     "DESCRIPTION": "Deal !D! damage. Return a card from your discard pile to your hand. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage. Return a card from your discard pile to your hand."
+  },
+  "theBrewmaster:Stall": {
+    "NAME": "Stall",
+    "DESCRIPTION": "Gain !theBrewmaster:M2! Dexterity and lose !theBrewmaster:M2! Strength. At the start of each turn, gain !M! Strength and lose !M! Dexterity."
+  },
+  "theBrewmaster:TableFlip": {
+    "NAME": "Table Flip",
+    "DESCRIPTION": "Deal damage equal to the total cost of cards in hand times !M!.",
+    "EXTENDED_DESCRIPTION": [" NL (Deals !D! damage.)"]
   }
 }
