@@ -294,7 +294,7 @@
   },
   "theBrewmaster:BarMatSpecial": {
     "NAME": "Bar Mat Special",
-    "DESCRIPTION": "Deal !D! damage. Deals !M! additional damage for each Brew card played this combat.",
+    "DESCRIPTION": "Deal !D! damage plus !M! additional damage for each Brew card played.",
     "EXTENDED_DESCRIPTION": [
       " NL (",
       " Brews played this combat.)"
