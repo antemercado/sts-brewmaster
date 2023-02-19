@@ -55,6 +55,7 @@ public class PurifyingBrew extends AbstractDynamicCard {
                 addToBot(new ExhaustSpecificCardAction(c, p.drawPile));
             }
         }
+        addToBot(new GainBlockAction(p, p, block));
     }
     // Upgraded stats.
     @Override
