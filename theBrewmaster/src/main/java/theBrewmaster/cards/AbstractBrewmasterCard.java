@@ -1,8 +1,14 @@
 package theBrewmaster.cards;
+import java.util.ArrayList;
+import java.util.List;
+
 import basemod.AutoAdd;
 import basemod.abstracts.CustomCard;
+import theBrewmaster.BrewmasterMod;
+import theBrewmaster.enums.CustomTags;
+import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 
-public abstract class AbstractDefaultCard extends CustomCard {
+public abstract class AbstractBrewmasterCard extends CustomCard {
 
     // Custom Abstract Cards can be a bit confusing. While this is a simple base for simply adding a second magic number,
     // if you're new to modding I suggest you skip this file until you know what unique things that aren't provided
@@ -17,17 +23,16 @@ public abstract class AbstractDefaultCard extends CustomCard {
     public boolean upgradedMagicNumber2; // A boolean to check whether the number has been upgraded or not.
     public boolean isMagicNumber2Modified; // A boolean to check whether the number has been modified or not, for coloring purposes. (red/green)
 
-    public AbstractDefaultCard(final String id,
-                               final String name,
+    public AbstractBrewmasterCard(final String id,
                                final String img,
                                final int cost,
-                               final String rawDescription,
                                final CardType type,
                                final CardColor color,
                                final CardRarity rarity,
                                final CardTarget target) {
 
-        super(id, name, img, cost, rawDescription, type, color, rarity, target);
+        // super(id, name, img, cost, rawDescription, type, color, rarity, target);
+        super(id, languagePack.getCardStrings(id).NAME, img, cost, languagePack.getCardStrings(id).DESCRIPTION, type, color, rarity, target);
 
         // Set all the things to their default values.
         isCostModified = false;
@@ -51,5 +56,14 @@ public abstract class AbstractDefaultCard extends CustomCard {
         baseMagicNumber2 += amount; // Upgrade the number by the amount you provide in your card.
         magicNumber2 = baseMagicNumber2; // Set the number to be equal to the base value.
         upgradedMagicNumber2 = true; // Upgraded = true - which does what the above method does.
+    }
+
+    @Override
+    public List<String> getCardDescriptors() {
+        List<String> ret = new ArrayList<String>();
+        if (this.hasTag(CustomTags.BREW)){
+            ret.add(languagePack.getUIString(BrewmasterMod.makeID("BrewDescriptors")).TEXT[0]);
+        }
+        return ret;
     }
 }

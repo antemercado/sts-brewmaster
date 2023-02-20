@@ -17,7 +17,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class TurtleBrew extends AbstractDynamicCard {
+public class TurtleBrew extends AbstractBrewmasterCard {
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(TurtleBrew.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");

@@ -20,7 +20,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.ConfusionPower;
 
-public class CranialBash extends AbstractDynamicCard {
+public class CranialBash extends AbstractBrewmasterCard {
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(CranialBash.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");

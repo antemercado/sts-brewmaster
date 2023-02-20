@@ -18,7 +18,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 
-public class DrunkenBrawler extends AbstractDynamicCard {
+public class DrunkenBrawler extends AbstractBrewmasterCard {
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(DrunkenBrawler.class.getSimpleName());
     public static final String IMG = makeCardPath("Power.png");

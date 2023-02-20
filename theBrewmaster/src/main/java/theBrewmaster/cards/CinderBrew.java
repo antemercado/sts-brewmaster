@@ -20,7 +20,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 
-public class CinderBrew extends AbstractDynamicCard {
+public class CinderBrew extends AbstractBrewmasterCard {
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(CinderBrew.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");

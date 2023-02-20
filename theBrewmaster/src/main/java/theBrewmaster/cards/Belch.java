@@ -23,7 +23,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 
-public class Belch extends AbstractDynamicCard {
+public class Belch extends AbstractBrewmasterCard {
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(Belch.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");

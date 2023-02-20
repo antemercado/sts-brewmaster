@@ -21,7 +21,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DrawCardNextTurnPower;
 import com.megacrit.cardcrawl.powers.EnergizedPower;
 
-public class StimulatingBrew extends AbstractDynamicCard {
+public class StimulatingBrew extends AbstractBrewmasterCard {
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(StimulatingBrew.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");

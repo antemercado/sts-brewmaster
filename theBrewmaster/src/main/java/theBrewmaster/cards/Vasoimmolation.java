@@ -19,7 +19,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 
-public class Vasoimmolation extends AbstractDynamicCard {
+public class Vasoimmolation extends AbstractBrewmasterCard {
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(Vasoimmolation.class.getSimpleName());
     public static final String IMG = makeCardPath("Power.png");

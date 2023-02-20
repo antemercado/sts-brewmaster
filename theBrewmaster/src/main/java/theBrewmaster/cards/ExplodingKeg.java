@@ -18,7 +18,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class ExplodingKeg extends AbstractDynamicCard {
+public class ExplodingKeg extends AbstractBrewmasterCard {
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(ExplodingKeg.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");

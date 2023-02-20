@@ -29,7 +29,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 @AutoAdd.Ignore
-public class Microbrew extends AbstractDynamicCard {
+public class Microbrew extends AbstractBrewmasterCard {
     public static final Logger logger = LogManager.getLogger(Microbrew.class.getName());
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(Microbrew.class.getSimpleName());

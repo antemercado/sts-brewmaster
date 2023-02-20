@@ -25,7 +25,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.ThornsPower;
 import com.megacrit.cardcrawl.random.Random;
 
-public class PerplexingBrew extends AbstractDynamicCard {
+public class PerplexingBrew extends AbstractBrewmasterCard {
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(PerplexingBrew.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");

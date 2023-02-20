@@ -19,7 +19,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 @AutoAdd.Ignore
-public class HeavyDrink extends AbstractDynamicCard {
+public class HeavyDrink extends AbstractBrewmasterCard {
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(HeavyDrink.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");

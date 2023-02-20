@@ -20,7 +20,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class DetonatorStrike extends AbstractDynamicCard {
+public class DetonatorStrike extends AbstractBrewmasterCard {
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(DetonatorStrike.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");

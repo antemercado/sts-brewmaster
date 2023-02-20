@@ -4,7 +4,7 @@ import basemod.AutoAdd;
 import basemod.abstracts.CustomCard;
 import basemod.helpers.BaseModCardTags;
 import theBrewmaster.BrewmasterMod;
-import theBrewmaster.cards.AbstractDynamicCard;
+import theBrewmaster.cards.AbstractBrewmasterCard;
 import theBrewmaster.characters.BrewmasterCharacter;
 
 import static theBrewmaster.BrewmasterMod.makeCardPath;
@@ -18,7 +18,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class StrikeBrewmaster extends AbstractDynamicCard {
+public class StrikeBrewmaster extends AbstractBrewmasterCard {
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(StrikeBrewmaster.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");

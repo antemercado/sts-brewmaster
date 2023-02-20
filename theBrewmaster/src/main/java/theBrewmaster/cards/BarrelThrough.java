@@ -22,7 +22,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class BarrelThrough extends AbstractDynamicCard {
+public class BarrelThrough extends AbstractBrewmasterCard {
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(BarrelThrough.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");

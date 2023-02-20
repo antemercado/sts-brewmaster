@@ -22,7 +22,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class DoubleFist extends AbstractDynamicCard {
+public class DoubleFist extends AbstractBrewmasterCard {
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(DoubleFist.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");

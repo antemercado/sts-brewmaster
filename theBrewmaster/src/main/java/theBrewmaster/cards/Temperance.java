@@ -19,7 +19,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 
-public class Temperance extends AbstractDynamicCard {
+public class Temperance extends AbstractBrewmasterCard {
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(Temperance.class.getSimpleName());
     public static final String IMG = makeCardPath("Power.png");

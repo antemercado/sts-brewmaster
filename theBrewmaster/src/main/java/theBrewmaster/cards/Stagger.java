@@ -22,7 +22,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.GainStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
-public class Stagger extends AbstractDynamicCard {
+public class Stagger extends AbstractBrewmasterCard {
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(Stagger.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");

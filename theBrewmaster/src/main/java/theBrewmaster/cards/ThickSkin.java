@@ -18,7 +18,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class ThickSkin extends AbstractDynamicCard {
+public class ThickSkin extends AbstractBrewmasterCard {
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(ThickSkin.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");

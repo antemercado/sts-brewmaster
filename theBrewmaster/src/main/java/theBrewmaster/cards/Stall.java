@@ -20,7 +20,7 @@ import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 
-public class Stall extends AbstractDynamicCard {
+public class Stall extends AbstractBrewmasterCard {
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(Stall.class.getSimpleName());
     public static final String IMG = makeCardPath("Power.png");

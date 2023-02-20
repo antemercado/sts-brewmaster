@@ -2,7 +2,7 @@ package theBrewmaster.cards.status;
 
 import basemod.AutoAdd;
 import theBrewmaster.BrewmasterMod;
-import theBrewmaster.cards.AbstractDynamicCard;
+import theBrewmaster.cards.AbstractBrewmasterCard;
 import theBrewmaster.characters.BrewmasterCharacter;
 
 import static theBrewmaster.BrewmasterMod.makeCardPath;
@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.WeakPower;
 
-public class WoozyStatus extends AbstractDynamicCard {
+public class WoozyStatus extends AbstractBrewmasterCard {
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(WoozyStatus.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");

@@ -18,7 +18,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 
-public class FluidMotion extends AbstractDynamicCard {
+public class FluidMotion extends AbstractBrewmasterCard {
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(FluidMotion.class.getSimpleName());
     public static final String IMG = makeCardPath("Power.png");

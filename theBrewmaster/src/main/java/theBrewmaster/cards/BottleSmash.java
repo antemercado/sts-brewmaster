@@ -6,7 +6,7 @@ import basemod.helpers.BaseModCardTags;
 import theBrewmaster.BrewmasterMod;
 import theBrewmaster.actions.ApplyIntoxicationPower;
 import theBrewmaster.actions.BottleSmashAction;
-import theBrewmaster.cards.AbstractDynamicCard;
+import theBrewmaster.cards.AbstractBrewmasterCard;
 import theBrewmaster.characters.BrewmasterCharacter;
 import theBrewmaster.powers.IntoxicationPower;
 
@@ -22,7 +22,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class BottleSmash extends AbstractDynamicCard {
+public class BottleSmash extends AbstractBrewmasterCard {
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(BottleSmash.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");

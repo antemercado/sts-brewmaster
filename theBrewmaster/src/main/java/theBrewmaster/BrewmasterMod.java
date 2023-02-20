@@ -352,7 +352,7 @@ public class BrewmasterMod implements
         logger.info("Adding cards");
 
         new AutoAdd("theBrewmaster")
-            .packageFilter(AbstractDefaultCard.class) // filters to any class in the same package as AbstractDefaultCard, nested packages included
+            .packageFilter(AbstractBrewmasterCard.class) // filters to any class in the same package as AbstractDefaultCard, nested packages included
             .setDefaultSeen(true)
             .cards();
 

@@ -22,7 +22,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class QuickSip extends AbstractDynamicCard {
+public class QuickSip extends AbstractBrewmasterCard {
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(QuickSip.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");

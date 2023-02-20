@@ -19,7 +19,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class TopsyTurvy extends AbstractDynamicCard {
+public class TopsyTurvy extends AbstractBrewmasterCard {
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(TopsyTurvy.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");

@@ -18,7 +18,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 @AutoAdd.Ignore
-public class RumRun extends AbstractDynamicCard {
+public class RumRun extends AbstractBrewmasterCard {
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(RumRun.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");

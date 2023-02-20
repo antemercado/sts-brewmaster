@@ -21,7 +21,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 @AutoAdd.Ignore
-public class KSSmashP extends AbstractDynamicCard {
+public class KSSmashP extends AbstractBrewmasterCard {
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(KSSmash.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");

@@ -19,7 +19,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class VolatileBrew extends AbstractDynamicCard {
+public class VolatileBrew extends AbstractBrewmasterCard {
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(VolatileBrew.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");

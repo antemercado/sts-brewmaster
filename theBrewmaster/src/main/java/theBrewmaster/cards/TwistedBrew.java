@@ -19,7 +19,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class TwistedBrew extends AbstractDynamicCard {
+public class TwistedBrew extends AbstractBrewmasterCard {
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(TwistedBrew.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");

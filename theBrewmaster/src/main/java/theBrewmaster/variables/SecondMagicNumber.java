@@ -1,7 +1,7 @@
 package theBrewmaster.variables;
 
 import basemod.abstracts.DynamicVariable;
-import theBrewmaster.cards.AbstractDefaultCard;
+import theBrewmaster.cards.AbstractBrewmasterCard;
 
 import static theBrewmaster.BrewmasterMod.makeID;
 
@@ -21,22 +21,22 @@ public class SecondMagicNumber extends DynamicVariable {
 
     @Override
     public boolean isModified(AbstractCard card) {
-        return ((AbstractDefaultCard) card).isMagicNumber2Modified;
+        return ((AbstractBrewmasterCard) card).isMagicNumber2Modified;
 
     }
 
     @Override
     public int value(AbstractCard card) {
-        return ((AbstractDefaultCard) card).magicNumber2;
+        return ((AbstractBrewmasterCard) card).magicNumber2;
     }
 
     @Override
     public int baseValue(AbstractCard card) {
-        return ((AbstractDefaultCard) card).baseMagicNumber2;
+        return ((AbstractBrewmasterCard) card).baseMagicNumber2;
     }
 
     @Override
     public boolean upgraded(AbstractCard card) {
-        return ((AbstractDefaultCard) card).upgradedMagicNumber2;
+        return ((AbstractBrewmasterCard) card).upgradedMagicNumber2;
     }
 }

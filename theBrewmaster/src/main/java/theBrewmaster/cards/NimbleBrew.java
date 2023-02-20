@@ -20,7 +20,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.LoseDexterityPower;
 
-public class NimbleBrew extends AbstractDynamicCard {
+public class NimbleBrew extends AbstractBrewmasterCard {
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(NimbleBrew.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");

@@ -5,6 +5,11 @@
         "Gain 50 Intoxication."
       ]
     },
+    "theBrewmaster:BrewDescriptors": {
+      "TEXT": [
+        "Brew"
+      ]
+    },
     "theBrewmaster:FormulationAction": {
       "TEXT": [
         " exhaust."
