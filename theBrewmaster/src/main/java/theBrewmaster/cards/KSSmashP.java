@@ -36,9 +36,9 @@ public class KSSmashP extends AbstractDynamicCard {
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
 
     private static final int COST = 2;
+    private static final int UPGRADED_COST = 1;
 
-    private static final int DAMAGE = 15;
-    private static final int UPGRADE_PLUS_DAMAGE = 8;
+    private static final int DAMAGE = 16;
 
     public KSSmashP() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -57,7 +57,7 @@ public class KSSmashP extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DAMAGE);
+            upgradeBaseCost(UPGRADED_COST);
             rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

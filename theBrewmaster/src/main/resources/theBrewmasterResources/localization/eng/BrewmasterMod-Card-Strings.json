@@ -170,8 +170,8 @@
     "NAME": "Twisted Brew",
     "DESCRIPTION": "Transform a random card in your hand."
   },
-  "theBrewmaster:StoneBrew": {
-    "NAME": "Stone Brew",
+  "theBrewmaster:TurtleBrew": {
+    "NAME": "Turtle Brew",
     "DESCRIPTION": "Double your current block.",
     "UPGRADE_DESCRIPTION": "Retain. NL Double your current block."
   },

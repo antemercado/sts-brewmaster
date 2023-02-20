@@ -14,7 +14,8 @@
   "theBrewmaster:FluidMotionPower": {
     "NAME": "Fluid Motion",
     "DESCRIPTIONS": [
-      "Whenever you lose Intoxication, gain that much Block."
+      "At the end of your turn, gain ",
+      "% of your Intoxication as block."
     ]
   },
   "theBrewmaster:PocketFlaskPower": {

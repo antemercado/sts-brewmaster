@@ -30,11 +30,13 @@ public class StormStomp extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
 
+    private static final int COST = -1;
+
     private static final int DAMAGE = 8;
     private static final int UPGRADE_PLUS_DMG = 3;
 
     public StormStomp() { 
-        super(ID, IMG, -1, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
     }
     // Actions the card should do.

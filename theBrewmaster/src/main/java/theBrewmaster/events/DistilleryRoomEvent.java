@@ -25,7 +25,7 @@ import theBrewmaster.cards.AdmiralsBrew;
 import theBrewmaster.cards.CinderBrew;
 import theBrewmaster.cards.PerplexingBrew;
 import theBrewmaster.cards.PurifyingBrew;
-import theBrewmaster.cards.StoneBrew;
+import theBrewmaster.cards.TurtleBrew;
 import theBrewmaster.cards.TwistedBrew;
 import theBrewmaster.cards.VolatileBrew;
 import theBrewmaster.characters.BrewmasterCharacter;
@@ -83,7 +83,7 @@ public class DistilleryRoomEvent extends AbstractImageEvent{
                         brews.addToBottom(cb);
                         brews.addToBottom(new TwistedBrew());
                         brews.addToBottom(new VolatileBrew());
-                        brews.addToBottom(new StoneBrew());
+                        brews.addToBottom(new TurtleBrew());
                         brews.addToBottom(new PurifyingBrew());
                         brews.addToBottom(new PerplexingBrew());
                         brews.addToBottom(new AdmiralsBrew());

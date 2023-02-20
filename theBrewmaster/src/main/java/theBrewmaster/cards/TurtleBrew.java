@@ -17,9 +17,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class StoneBrew extends AbstractDynamicCard {
+public class TurtleBrew extends AbstractDynamicCard {
     // TEXT DECLARATION
-    public static final String ID = BrewmasterMod.makeID(StoneBrew.class.getSimpleName());
+    public static final String ID = BrewmasterMod.makeID(TurtleBrew.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -32,11 +32,11 @@ public class StoneBrew extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
 
-    private static final int COST = 2;
+    private static final int COST = 1;
 
     private static final int MAGIC = 2;
 
-    public StoneBrew() { 
+    public TurtleBrew() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseMagicNumber = this.magicNumber = MAGIC;
 

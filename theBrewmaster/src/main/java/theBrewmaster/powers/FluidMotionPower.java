@@ -57,10 +57,19 @@ public class FluidMotionPower extends AbstractPower{
         updateDescription();
     }
 
+    @Override
+    public void atEndOfTurn(final boolean isPlayer) {
+        if (!this.owner.hasPower(IntoxicationPower.POWER_ID))
+            return;
+        flash();
+        float block = this.owner.getPower(IntoxicationPower.POWER_ID).amount * this.amount / 100;
+        addToBot(new GainBlockAction(this.owner, this.source, (int)block));
+    }
+
     // Update the description when intoxicated.
     @Override
     public void updateDescription() {
-        description = DESCRIPTIONS[0];
+        description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
     }
 
 }
