@@ -36,7 +36,7 @@
   },
   "theBrewmaster:FluidMotion": {
     "NAME": "Fluid Motion",
-    "DESCRIPTION": "Whenever you lose thebrewmaster:Intoxication, gain that much Block."
+    "DESCRIPTION": "At the end of your turn, gain !M! % of your thebrewmaster:Intoxication as Block."
   },
   "theBrewmaster:Chug": {
     "NAME": "Chug",
