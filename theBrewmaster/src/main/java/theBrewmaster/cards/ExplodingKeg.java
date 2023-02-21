@@ -19,23 +19,24 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class ExplodingKeg extends AbstractBrewmasterCard {
-    // TEXT DECLARATION
-    public static final String ID = BrewmasterMod.makeID(ExplodingKeg.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
-
+    
     // STAT DECLARATION
-
+    
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
-
+    
     private static final int COST = 2;
 
     private static final int DAMAGE = 20;
     private static final int MAGIC = 5;
     private static final int UPGRADE_PLUS_DMG = 5;
-
+    
+    // TEXT DECLARATION
+    public static final String ID = BrewmasterMod.makeID(ExplodingKeg.class.getSimpleName());
+    public static final String IMG = makeCardPath(ExplodingKeg.class.getSimpleName(), TYPE);
+    
     public ExplodingKeg() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseDamage = this.damage = DAMAGE;

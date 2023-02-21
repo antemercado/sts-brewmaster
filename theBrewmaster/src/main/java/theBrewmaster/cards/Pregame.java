@@ -19,22 +19,23 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Pregame extends AbstractBrewmasterCard {
-    // TEXT DECLARATION
-    public static final String ID = BrewmasterMod.makeID(Pregame.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
-
+    
     // STAT DECLARATION
-
+    
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
-
+    
     private static final int COST = 0;
-
+    
     private static final int MAGIC = 15;
     private static final int UPGRADE_PLUS_MAGIC = 10;
-
+    
+    // TEXT DECLARATION
+    public static final String ID = BrewmasterMod.makeID(Pregame.class.getSimpleName());
+    public static final String IMG = makeCardPath(Pregame.class.getSimpleName(), TYPE);
+    
     public Pregame() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseMagicNumber = this.magicNumber = MAGIC;

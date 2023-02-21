@@ -21,22 +21,23 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.ConfusionPower;
 
 public class CranialBash extends AbstractBrewmasterCard {
-    // TEXT DECLARATION
-    public static final String ID = BrewmasterMod.makeID(CranialBash.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
-
+    
     // STAT DECLARATION
-
+    
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
-
+    
     private static final int COST = 3;
-
+    
     private static final int DAMAGE = 25;
     private static final int UPGRADE_PLUS_DAMAGE = 10;
-
+    
+    // TEXT DECLARATION
+    public static final String ID = BrewmasterMod.makeID(CranialBash.class.getSimpleName());
+    public static final String IMG = makeCardPath(CranialBash.class.getSimpleName(), TYPE);
+    
     public CranialBash() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;

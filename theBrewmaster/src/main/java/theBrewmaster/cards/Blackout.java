@@ -22,25 +22,25 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Blackout extends AbstractBrewmasterCard {
-    // TEXT DECLARATION
-    public static final String ID = BrewmasterMod.makeID(Blackout.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
-
+    
     // STAT DECLARATION
-
+    
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
-
+    
     private static final int COST = 0;
-
+    
     private static final int MAGIC = 3;
     private static final int UPGRADE_PLUS_MAGIC = -1;
-
+    
     private static final int MAGIC2 = 100;
 
-
+    // TEXT DECLARATION
+    public static final String ID = BrewmasterMod.makeID(Blackout.class.getSimpleName());
+    public static final String IMG = makeCardPath(Blackout.class.getSimpleName(), TYPE);
+    
     public Blackout() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseMagicNumber = this.magicNumber = MAGIC;

@@ -21,22 +21,23 @@ import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.LoseDexterityPower;
 
 public class NimbleBrew extends AbstractBrewmasterCard {
-    // TEXT DECLARATION
-    public static final String ID = BrewmasterMod.makeID(NimbleBrew.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
-
+    
     // STAT DECLARATION
-
+    
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
-
+    
     private static final int COST = 1;
-
+    
     private static final int MAGIC = 4;
     private static final int UPGRADE_MAGIC_BLOCK = 2;
-
+    
+    // TEXT DECLARATION
+    public static final String ID = BrewmasterMod.makeID(NimbleBrew.class.getSimpleName());
+    public static final String IMG = makeCardPath(NimbleBrew.class.getSimpleName(), TYPE);
+    
     public NimbleBrew() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseMagicNumber = this.magicNumber = MAGIC;

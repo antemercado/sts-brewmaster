@@ -20,26 +20,27 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class VolatileBrew extends AbstractBrewmasterCard {
-    // TEXT DECLARATION
-    public static final String ID = BrewmasterMod.makeID(VolatileBrew.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
-
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-
+    
     // STAT DECLARATION
-
+    
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
-
+    
     private static final int COST = 2;
-
+    
     public static final int[] DAMAGES = {8,12,20};
     public static final int[] UPGRADED_DAMAGES = {12,20,36};
     private int[] damageArray;
+    
+    // TEXT DECLARATION
+    public static final String ID = BrewmasterMod.makeID(VolatileBrew.class.getSimpleName());
+    public static final String IMG = makeCardPath(VolatileBrew.class.getSimpleName(), TYPE);
 
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+    
     public VolatileBrew() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseDamage = this.damage = 12;

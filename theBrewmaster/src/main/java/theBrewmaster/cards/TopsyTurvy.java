@@ -20,26 +20,27 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class TopsyTurvy extends AbstractBrewmasterCard {
-    // TEXT DECLARATION
-    public static final String ID = BrewmasterMod.makeID(TopsyTurvy.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
-
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-
+    
     // STAT DECLARATION
-
+    
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
-
+    
     private static final int COST = 1;
-
+    
     private static final int DAMAGE = 12;
     private static final int UPGRADE_PLUS_DAMAGE = 5;
-
+    
     private static final int MAGIC = 1;
+    
+    // TEXT DECLARATION
+    public static final String ID = BrewmasterMod.makeID(TopsyTurvy.class.getSimpleName());
+    public static final String IMG = makeCardPath(TopsyTurvy.class.getSimpleName(), TYPE);
+
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     public TopsyTurvy() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

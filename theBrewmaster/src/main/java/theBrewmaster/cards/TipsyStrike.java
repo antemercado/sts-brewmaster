@@ -22,23 +22,24 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class TipsyStrike extends AbstractBrewmasterCard {
-    // TEXT DECLARATION
-    public static final String ID = BrewmasterMod.makeID(TipsyStrike.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
-
+    
     // STAT DECLARATION
-
+    
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
-
+    
     private static final int COST = 1;
-
+    
     private static final int DAMAGE = 8;
     private static final int UPGRADE_PLUS_DMG = 3;
-
+    
     private static final int MAGIC = 10;
+    
+    // TEXT DECLARATION
+    public static final String ID = BrewmasterMod.makeID(TipsyStrike.class.getSimpleName());
+    public static final String IMG = makeCardPath(TipsyStrike.class.getSimpleName(), TYPE);
 
     public TipsyStrike() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

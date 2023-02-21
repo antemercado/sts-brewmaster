@@ -20,25 +20,26 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.WeakPower;
 
 public class BodySlam extends AbstractBrewmasterCard {
-    // TEXT DECLARATION
-    public static final String ID = BrewmasterMod.makeID(BodySlam.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
-
+    
     // STAT DECLARATION
-
+    
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
-
+    
     private static final int COST = 2;
-
+    
     private static final int DAMAGE = 14;
     private static final int UPGRADE_PLUS_DMG = 2;
-
+    
     private static final int MAGIC = 2;
     private static final int UPGRADE_PLUS_MAGIC = 1;
-
+    
+    // TEXT DECLARATION
+    public static final String ID = BrewmasterMod.makeID(BodySlam.class.getSimpleName());
+    public static final String IMG = makeCardPath(BodySlam.class.getSimpleName(), TYPE);
+    
     public BodySlam() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseDamage = this.damage = DAMAGE;

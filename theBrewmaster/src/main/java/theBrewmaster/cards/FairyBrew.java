@@ -23,25 +23,25 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.RegenPower;
 
 public class FairyBrew extends AbstractBrewmasterCard {
-    // TEXT DECLARATION
-    public static final String ID = BrewmasterMod.makeID(FairyBrew.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
-
+    
     // STAT DECLARATION
-
+    
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
-
+    
     private static final int COST = 1;
-
+    
     private static final int MAGIC = 3;
     private static final int UPGRADE_PLUS_MAGIC = 1;
     
     private static final int MAGIC2 = 6;
     private static final int UPGRADE_PLUS_MAGIC2 = 4;
-
+    
+    // TEXT DECLARATION
+    public static final String ID = BrewmasterMod.makeID(FairyBrew.class.getSimpleName());
+    public static final String IMG = makeCardPath(FairyBrew.class.getSimpleName(), TYPE);
 
     public FairyBrew() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

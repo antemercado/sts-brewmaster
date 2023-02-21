@@ -22,25 +22,26 @@ import com.megacrit.cardcrawl.powers.DrawCardNextTurnPower;
 import com.megacrit.cardcrawl.powers.EnergizedPower;
 
 public class StimulatingBrew extends AbstractBrewmasterCard {
-    // TEXT DECLARATION
-    public static final String ID = BrewmasterMod.makeID(StimulatingBrew.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
-
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-
+    
     // STAT DECLARATION
-
+    
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
-
+    
     private static final int COST = 1;
-
+    
     private static final int MAGIC = 1;
     private static final int UPGRADE_PLUS_MAGIC = 1;
+    
+    // TEXT DECLARATION
+    public static final String ID = BrewmasterMod.makeID(StimulatingBrew.class.getSimpleName());
+    public static final String IMG = makeCardPath(StimulatingBrew.class.getSimpleName(), TYPE);
 
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+    
     public StimulatingBrew() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseMagicNumber = this.magicNumber = MAGIC;

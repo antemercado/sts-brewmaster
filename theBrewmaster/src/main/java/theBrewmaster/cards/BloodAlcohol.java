@@ -19,23 +19,24 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 
 public class BloodAlcohol extends AbstractBrewmasterCard {
-    // TEXT DECLARATION
-    public static final String ID = BrewmasterMod.makeID(BloodAlcohol.class.getSimpleName());
-    public static final String IMG = makeCardPath("Power.png");
-
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-
+    
     // STAT DECLARATION
-
+    
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
-
+    
     private static final int COST = 2;
     private static final int UPGRADED_COST = 1;
+    
+    // TEXT DECLARATION
+    public static final String ID = BrewmasterMod.makeID(BloodAlcohol.class.getSimpleName());
+    public static final String IMG = makeCardPath(BloodAlcohol.class.getSimpleName(), TYPE);
 
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+    
     public BloodAlcohol() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
     }

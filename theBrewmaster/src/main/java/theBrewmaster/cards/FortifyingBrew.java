@@ -20,22 +20,23 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class FortifyingBrew extends AbstractBrewmasterCard {
-    // TEXT DECLARATION
-    public static final String ID = BrewmasterMod.makeID(FortifyingBrew.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
-
+    
     // STAT DECLARATION
-
+    
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
-
+    
     private static final int COST = 1;
-
+    
     private static final int BLOCK = 8;
     private static final int UPGRADE_PLUS_BLOCK = 3;
-
+    
+    // TEXT DECLARATION
+    public static final String ID = BrewmasterMod.makeID(FortifyingBrew.class.getSimpleName());
+    public static final String IMG = makeCardPath(FortifyingBrew.class.getSimpleName(), TYPE);
+    
     public FortifyingBrew() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseBlock = BLOCK;

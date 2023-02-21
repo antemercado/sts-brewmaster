@@ -22,22 +22,23 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class SoberUp extends AbstractBrewmasterCard {
-    // TEXT DECLARATION
-    public static final String ID = BrewmasterMod.makeID(SoberUp.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
-
+    
     // STAT DECLARATION
-
+    
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
-
+    
     private static final int COST = 0;
-
+    
     private static final int MAGIC = 25;
     private static final int UPGRADE_MAGIC = 20;
-
+    
+    // TEXT DECLARATION
+    public static final String ID = BrewmasterMod.makeID(SoberUp.class.getSimpleName());
+    public static final String IMG = makeCardPath(SoberUp.class.getSimpleName(), TYPE);
+    
     public SoberUp() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseMagicNumber = this.magicNumber = MAGIC;

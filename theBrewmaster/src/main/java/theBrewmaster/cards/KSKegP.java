@@ -26,24 +26,25 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 @AutoAdd.Ignore
 public class KSKegP extends AbstractBrewmasterCard {
-    // TEXT DECLARATION
-    public static final String ID = BrewmasterMod.makeID(KSKeg.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
-
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-
+    
     // STAT DECLARATION
-
+    
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
-
+    
     private static final int COST = 1;
 
     private static final int POWER = 20;
+    
+    // TEXT DECLARATION
+    public static final String ID = BrewmasterMod.makeID(KSKeg.class.getSimpleName());
+    public static final String IMG = makeCardPath(KSKegP.class.getSimpleName(), TYPE);
 
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+    
     public KSKegP() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseMagicNumber = this.magicNumber = POWER;

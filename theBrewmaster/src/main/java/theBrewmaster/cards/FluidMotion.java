@@ -19,22 +19,23 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 
 public class FluidMotion extends AbstractBrewmasterCard {
-    // TEXT DECLARATION
-    public static final String ID = BrewmasterMod.makeID(FluidMotion.class.getSimpleName());
-    public static final String IMG = makeCardPath("Power.png");
-
+    
     // STAT DECLARATION
-
+    
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
-
+    
     private static final int COST = 2;
-
+    
     private static final int MAGIC = 10;
     private static final int UPGRADE_PLUS_MAGIC = 5;
-
+    
+    // TEXT DECLARATION
+    public static final String ID = BrewmasterMod.makeID(FluidMotion.class.getSimpleName());
+    public static final String IMG = makeCardPath(FluidMotion.class.getSimpleName(), TYPE);
+    
     public FluidMotion() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;

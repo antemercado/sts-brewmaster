@@ -19,25 +19,26 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Chaser extends AbstractBrewmasterCard {
-    // TEXT DECLARATION
-    public static final String ID = BrewmasterMod.makeID(Chaser.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
-
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-
+    
     // STAT DECLARATION
-
+    
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
-
+    
     private static final int COST = 3;
-
+    
     private static final int BLOCK = 13;
     private static final int UPGRADE_PLUS_BLOCK = 4;
+    
+    // TEXT DECLARATION
+    public static final String ID = BrewmasterMod.makeID(Chaser.class.getSimpleName());
+    public static final String IMG = makeCardPath(Chaser.class.getSimpleName(), TYPE);
 
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    
     public Chaser() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseBlock = this.block = BLOCK;

@@ -36,6 +36,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.cards.AbstractCard.CardType;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -49,9 +50,13 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.io.File;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Properties;
 @SpireInitializer
 public class BrewmasterMod implements
@@ -112,8 +117,24 @@ public class BrewmasterMod implements
     
     // =============== MAKE IMAGE PATHS =================
     
-    public static String makeCardPath(String resourcePath) {
-        return getModID() + "Resources/images/cards/" + resourcePath;
+    public static String makeCardPath(String resourcePath, CardType type) {
+        String ret = getModID() + "Resources/images/cards/" + resourcePath;
+        Path path = Paths.get(ret);
+        if (!Files.exists(path)){
+            // logger.info("Cannot find " + resourcePath + "img. Selecting replacement.");
+            switch (type){
+                case ATTACK:
+                ret = getModID() + "Resources/images/cards/defaults/Attack.png";
+                break;
+                case POWER:
+                ret = getModID() + "Resources/images/cards/defaults/Power.png";
+                break;
+                default:
+                ret = getModID() + "Resources/images/cards/defaults/Skill.png";
+                break;
+            }
+        }
+        return ret; 
     }
     
     public static String makeRelicPath(String resourcePath) {

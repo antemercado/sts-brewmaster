@@ -23,26 +23,27 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Homebrew extends AbstractBrewmasterCard {
-    // TEXT DECLARATION
-    public static final String ID = BrewmasterMod.makeID(Homebrew.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
-
+    
     // STAT DECLARATION
-
+    
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
-
+    
     private static final int COST = 1;
 
+    // TEXT DECLARATION
+    public static final String ID = BrewmasterMod.makeID(Homebrew.class.getSimpleName());
+    public static final String IMG = makeCardPath(Homebrew.class.getSimpleName(), TYPE);
+    
     // Base Intoxication
     private static final int MISC = 0;
-
+    
     // Intoxication Increase
     private static final int MAGIC2 = 10;
     private static final int UPGRADE_PLUS_MAGIC2 = 5;
-
+    
     public Homebrew() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.misc = MISC;

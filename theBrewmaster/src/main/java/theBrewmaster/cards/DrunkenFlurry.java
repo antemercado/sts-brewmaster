@@ -19,24 +19,25 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class DrunkenFlurry extends AbstractBrewmasterCard {
-    // TEXT DECLARATION
-    public static final String ID = BrewmasterMod.makeID(DrunkenFlurry.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
-
+    
     // STAT DECLARATION
-
+    
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
-
+    
     private static final int COST = 1;
-
+    
     private static final int DAMAGE = 3;
     private static final int UPGRADE_PLUS_DMG = 1;
 
     public static final int MAGIC = 20;
-
+    
+    // TEXT DECLARATION
+    public static final String ID = BrewmasterMod.makeID(DrunkenFlurry.class.getSimpleName());
+    public static final String IMG = makeCardPath(DrunkenFlurry.class.getSimpleName(), TYPE);
+    
     public DrunkenFlurry() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseDamage = this.damage = DAMAGE;

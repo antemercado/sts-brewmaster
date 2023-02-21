@@ -25,24 +25,25 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Binge extends AbstractBrewmasterCard {
-    // TEXT DECLARATION
-    public static final String ID = BrewmasterMod.makeID(Binge.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
-
+    
     // STAT DECLARATION
-
+    
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
-
+    
     private static final int COST = 1;
-
+    
     private static final int BLOCK = 5;
     private static final int UPGRADE_PLUS_BLOCK = 2;
 
     private static final int MAGIC = 15;
     private static final int UPGRADE_PLUS_MAGIC = 7;
+    
+    // TEXT DECLARATION
+    public static final String ID = BrewmasterMod.makeID(Binge.class.getSimpleName());
+    public static final String IMG = makeCardPath(Binge.class.getSimpleName(), TYPE);
     
     public Binge() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

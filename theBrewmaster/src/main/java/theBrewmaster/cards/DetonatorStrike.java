@@ -21,22 +21,23 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class DetonatorStrike extends AbstractBrewmasterCard {
-    // TEXT DECLARATION
-    public static final String ID = BrewmasterMod.makeID(DetonatorStrike.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
-
+    
     // STAT DECLARATION
-
+    
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
-
+    
     private static final int COST = 1;
-
+    
     private static final int MAGIC = 4;
     private static final int UPGRADE_PLUS_MAGIC = 2;
-
+    
+    // TEXT DECLARATION
+    public static final String ID = BrewmasterMod.makeID(DetonatorStrike.class.getSimpleName());
+    public static final String IMG = makeCardPath(DetonatorStrike.class.getSimpleName(), TYPE);
+    
     public DetonatorStrike() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseMagicNumber = this.magicNumber = MAGIC;

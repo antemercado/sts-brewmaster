@@ -23,20 +23,21 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class DoubleFist extends AbstractBrewmasterCard {
-    // TEXT DECLARATION
-    public static final String ID = BrewmasterMod.makeID(DoubleFist.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
     
     // STAT DECLARATION
-
+    
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
-
+    
     private static final int COST = 1;
     private static final int UPGRADE_COST = 0;
-
+    
+    // TEXT DECLARATION
+    public static final String ID = BrewmasterMod.makeID(DoubleFist.class.getSimpleName());
+    public static final String IMG = makeCardPath(DoubleFist.class.getSimpleName(), TYPE);
+    
     public DoubleFist() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
     }

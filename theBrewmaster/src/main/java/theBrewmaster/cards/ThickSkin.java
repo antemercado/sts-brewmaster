@@ -19,21 +19,22 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class ThickSkin extends AbstractBrewmasterCard {
-    // TEXT DECLARATION
-    public static final String ID = BrewmasterMod.makeID(ThickSkin.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
-
+    
     // STAT DECLARATION
-
+    
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
-
+    
     private static final int COST = 1;
 
     private static final int BLOCK = 8;
     private static final int UPGRADE_PLUS_BLOCK = 4;
+    
+    // TEXT DECLARATION
+    public static final String ID = BrewmasterMod.makeID(ThickSkin.class.getSimpleName());
+    public static final String IMG = makeCardPath(ThickSkin.class.getSimpleName(), TYPE);
 
     public ThickSkin() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
