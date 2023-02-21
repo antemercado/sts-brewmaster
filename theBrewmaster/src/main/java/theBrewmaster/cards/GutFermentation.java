@@ -50,6 +50,20 @@ public class GutFermentation extends AbstractBrewmasterCard {
         addToBot(new GutFermentationAction(this, upgraded));
     }
 
+    public void applyPowers() {
+        super.applyPowers();
+        int intoxCheck = 0;
+        if (AbstractDungeon.player.hasPower(IntoxicationPower.POWER_ID)){
+            intoxCheck = AbstractDungeon.player.getPower(IntoxicationPower.POWER_ID).amount * 2;
+        }
+        if ((intoxCheck >= IntoxicationPower.INTOX_THRESHOLD || 
+            (intoxCheck >= IntoxicationPower.INTOX_THRESHOLD_RELIC && AbstractDungeon.player.hasRelic(LouseLiverRelic.ID)))) {
+                this.exhaust = true;
+        } else if (upgraded){
+            this.exhaust = false;
+        }
+    }
+
     // Glow when Intoxicated
     public void triggerOnGlowCheck() {
         this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();

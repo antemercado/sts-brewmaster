@@ -34,11 +34,11 @@ public class GutFermentationAction extends AbstractGameAction{
             this.isDone = true;
             return;
         }
-        int newIntox = intoxPower.amount * 2;
-        if (upgraded && (newIntox >= IntoxicationPower.INTOX_THRESHOLD || 
-            (newIntox >= IntoxicationPower.INTOX_THRESHOLD_RELIC && this.p.hasRelic(LouseLiverRelic.ID)))){
-                p.limbo.moveToExhaustPile(card);
-        }
+        // int newIntox = intoxPower.amount * 2;
+        // if (upgraded && (newIntox >= IntoxicationPower.INTOX_THRESHOLD || 
+        //     (newIntox >= IntoxicationPower.INTOX_THRESHOLD_RELIC && this.p.hasRelic(LouseLiverRelic.ID)))){
+        //         p.limbo.moveToExhaustPile(card);
+        // }
         this.isDone = true;
     }
     

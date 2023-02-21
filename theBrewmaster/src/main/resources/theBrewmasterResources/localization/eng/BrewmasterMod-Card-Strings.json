@@ -248,7 +248,7 @@
   "theBrewmaster:GutFermentation": {
     "NAME": "Gut Fermentation",
     "DESCRIPTION": "Double your thebrewmaster:Intoxication. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Double your thebrewmaster:Intoxication. NL Exhaust if thebrewmaster:Intoxicated."
+    "UPGRADE_DESCRIPTION": "Double your thebrewmaster:Intoxication. NL Exhaust if you become thebrewmaster:Intoxicated."
   },
   "theBrewmaster:Impulse": {
     "NAME": "Impulsivity",

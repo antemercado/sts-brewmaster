@@ -76,7 +76,7 @@ public class Microbrew extends AbstractBrewmasterCard {
             if (CardCrawlGame.dungeon != null && AbstractDungeon.player != null){
                 logger.info("Dungeon and Player exist");
 
-                newCard = BrewmasterCharacter.getBrews().getRandomCard(AbstractDungeon.cardRng, AbstractCard.CardRarity.COMMON);
+                newCard = BrewmasterMod.getBrews().getRandomCard(AbstractDungeon.cardRng, AbstractCard.CardRarity.COMMON);
                 newCard.upgrade();
                 logger.info("New card created: " + newCard.cardID);
                 

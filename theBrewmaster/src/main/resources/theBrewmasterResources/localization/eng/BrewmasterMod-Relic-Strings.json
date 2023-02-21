@@ -40,5 +40,19 @@
     "DESCRIPTIONS": [
       "Enemies with Drenched take an additional 10% more damage from attacks per stack."
     ]
+  },
+  "theBrewmaster:OctarineCupRelic": {
+    "NAME": "Octarine Cup",
+    "FLAVOR": "A staple at Spire Parties.",
+    "DESCRIPTIONS": [
+      "Whenever you gain Intoxication for the first time each turn, gain [E]"
+    ]
+  },
+  "theBrewmaster:MiniFridgeRelic": {
+    "NAME": "Mini Fridge",
+    "FLAVOR": "The Merchant will settle the bill at the end of your time in the Spire.",
+    "DESCRIPTIONS": [
+      "25% of the time, when you play a Brew card, create a random 0-cost Brew card with Exhaust in your hand."
+    ]
   }
 }

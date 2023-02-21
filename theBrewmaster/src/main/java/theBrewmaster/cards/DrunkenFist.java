@@ -33,7 +33,7 @@ public class DrunkenFist extends AbstractBrewmasterCard {
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
 
-    private static final int COST = 1;
+    private static final int COST = 0;
 
     private static final int MAGIC = 20;
     private static final int UPGRADE_PLUS_MAGIC = 5;

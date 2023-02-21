@@ -17,6 +17,8 @@ import theBrewmaster.relics.EthanolFlaskRelic;
 import theBrewmaster.relics.CozyBeerRelic;
 import theBrewmaster.relics.GiantKegRelic;
 import theBrewmaster.relics.LouseLiverRelic;
+import theBrewmaster.relics.MiniFridgeRelic;
+import theBrewmaster.relics.OctarineCupRelic;
 import theBrewmaster.relics.SpiritHelmetRelic;
 import theBrewmaster.stances.IntoxicatedStance;
 import theBrewmaster.util.IDCheckDontTouchPls;
@@ -33,6 +35,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -328,6 +331,8 @@ public class BrewmasterMod implements
         BaseMod.addRelicToCustomPool(new LouseLiverRelic(), BrewmasterCharacter.Enums.ORANGE);
         BaseMod.addRelicToCustomPool(new CozyBeerRelic(), BrewmasterCharacter.Enums.ORANGE);
         BaseMod.addRelicToCustomPool(new EthanolFlaskRelic(), BrewmasterCharacter.Enums.ORANGE);
+        BaseMod.addRelicToCustomPool(new OctarineCupRelic(), BrewmasterCharacter.Enums.ORANGE);
+        BaseMod.addRelicToCustomPool(new MiniFridgeRelic(), BrewmasterCharacter.Enums.ORANGE);
 
         
         // Mark starter relic as seen
@@ -488,5 +493,29 @@ public class BrewmasterMod implements
     @Override
     public void receiveOnPlayerTurnStart() {
         BrewmasterMod.brewCardsPlayedThisTurn = 0;
+    }
+
+    public static CardGroup getBrews(){
+        
+        CardGroup retVal = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+
+        retVal.addToTop(new AdmiralsBrew());
+        // retVal.addToTop(new CelestialBrew());
+        retVal.addToTop(new CinderBrew());
+        retVal.addToTop(new CozyBrew());
+        retVal.addToTop(new FairyBrew());
+        retVal.addToTop(new FortifyingBrew());
+        retVal.addToTop(new Homebrew());
+        retVal.addToTop(new ImportedBrew());
+        retVal.addToTop(new NimbleBrew());
+        retVal.addToTop(new PerplexingBrew());
+        retVal.addToTop(new PurifyingBrew());
+        retVal.addToTop(new StimulatingBrew());
+        retVal.addToTop(new TurtleBrew());
+        retVal.addToTop(new TwistedBrew());
+        retVal.addToTop(new VolatileBrew());
+        // retVal.addToTop(new Microbrew());
+
+        return retVal;
     }
 }

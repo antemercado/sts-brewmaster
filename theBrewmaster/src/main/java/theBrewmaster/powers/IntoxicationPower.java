@@ -34,6 +34,8 @@ import com.megacrit.cardcrawl.stances.AbstractStance;
 public class IntoxicationPower extends AbstractPower{
     public AbstractCreature source;
 
+    public boolean isRelic;
+
     public static final String POWER_ID = BrewmasterMod.makeID("Intoxication");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
@@ -59,6 +61,7 @@ public class IntoxicationPower extends AbstractPower{
         this.owner = owner;
         this.amount = amount;
         this.source = source;
+        this.isRelic = isBeerStein;
         
         type = PowerType.BUFF;
         isTurnBased = false;
@@ -82,7 +85,7 @@ public class IntoxicationPower extends AbstractPower{
             }
 
             // Multiply gain if has relic
-            if (AbstractDungeon.player.hasRelic(SpiritHelmetRelic.ID) && !isBeerStein)
+            if (AbstractDungeon.player.hasRelic(SpiritHelmetRelic.ID) && !this.isRelic)
                 this.amount *= SpiritHelmetRelic.MULTIPLIER;
     
             // If have enough stacks when gaining power, enter stance

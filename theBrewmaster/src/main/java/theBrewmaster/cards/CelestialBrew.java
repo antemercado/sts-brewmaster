@@ -20,6 +20,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+@AutoAdd.Ignore
 public class CelestialBrew extends AbstractBrewmasterCard {
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(CelestialBrew.class.getSimpleName());
@@ -35,9 +36,10 @@ public class CelestialBrew extends AbstractBrewmasterCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
 
-    private static final int COST = 2;
+    private static final int COST = 3;
+    private static final int UPGRADED_COST = 3;
 
-    private static final int MAGIC = 1;
+    private static final int MAGIC = 2;
 
     public CelestialBrew() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
