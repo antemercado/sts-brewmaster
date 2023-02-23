@@ -106,7 +106,7 @@ public class BrewmasterMod implements
     private static final String BREWMASTER_PORTRAIT = "theBrewmasterResources/images/charSelect/CharacterPortraitBG.png";
     public static final String BREWMASTER_SHOULDER_1 = "theBrewmasterResources/images/char/defaultCharacter/shoulder.png";
     public static final String BREWMASTER_SHOULDER_2 = "theBrewmasterResources/images/char/defaultCharacter/shoulder2.png";
-    public static final String BREWMASTER_CORPSE = "theBrewmasterResources/images/char/defaultCharacter/corpse.png";
+    public static final String BREWMASTER_CORPSE = "theBrewmasterResources/images/char/brewmasterAnimation/corpse.png";
     
     // Mod Badge - A small icon that appears in the mod settings menu next to your mod.
     public static final String BADGE_IMAGE = "theBrewmasterResources/images/Badge.png";
