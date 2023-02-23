@@ -1,6 +1,7 @@
 package theBrewmaster.characters;
 
 import basemod.abstracts.CustomPlayer;
+import basemod.animations.SpineAnimation;
 import basemod.animations.SpriterAnimation;
 import theBrewmaster.BrewmasterMod;
 import theBrewmaster.cards.*;
@@ -102,8 +103,9 @@ public class BrewmasterCharacter extends CustomPlayer {
     public BrewmasterCharacter(String name, PlayerClass setClass) {
         super(name, setClass, orbTextures,
                 "theBrewmasterResources/images/char/defaultCharacter/orb/vfx.png", null,
-                new SpriterAnimation(
-                        "theBrewmasterResources/images/char/defaultCharacter/Spriter/theDefaultAnimation.scml"));
+                new SpineAnimation(
+                        "theBrewmasterResources/images/char/brewmasterAnimation/brewmasterAnimation.atlas",
+                        "theBrewmasterResources/images/char/brewmasterAnimation/brewmasterAnimation.json", 1.0f));
 
 
         // =============== TEXTURES, ENERGY, LOADOUT =================  
@@ -124,7 +126,7 @@ public class BrewmasterCharacter extends CustomPlayer {
                 BREWMASTER_SKELETON_ATLAS,
                 BREWMASTER_SKELETON_JSON,
                 1.0f);
-        AnimationState.TrackEntry e = state.setAnimation(0, "animation", true);
+        AnimationState.TrackEntry e = state.setAnimation(0, "animtion0", true);
         e.setTime(e.getEndTime() * MathUtils.random());
 
         // =============== /ANIMATIONS/ =================
@@ -188,14 +190,14 @@ public class BrewmasterCharacter extends CustomPlayer {
     // character Select screen effect
     @Override
     public void doCharSelectScreenSelectEffect() {
-        CardCrawlGame.sound.playA("ATTACK_POISON1", 1.25f); // Sound Effect
+        CardCrawlGame.sound.playA("POTION_1", 2.25f); // Sound Effect
         CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.MED, ScreenShake.ShakeDur.SHORT, false); // Screen Effect
     }
 
     // character Select on-button-press sound effect
     @Override
     public String getCustomModeCharacterButtonSoundKey() {
-        return "ATTACK_POISON1";
+        return "POTION_1";
     }
 
     // Should return how much HP your maximum HP reduces by when starting a run at

@@ -102,8 +102,8 @@ public class BrewmasterMod implements
     private static final String ENERGY_ORB_BREWMASTER_ORANGE_PORTRAIT = "theBrewmasterResources/images/1024/card_default_orange_orb.png";
     
     // Character assets
-    private static final String BREWMASTER_BUTTON = "theBrewmasterResources/images/charSelect/DefaultCharacterButton.png";
-    private static final String BREWMASTER_PORTRAIT = "theBrewmasterResources/images/charSelect/DefaultCharacterPortraitBG.png";
+    private static final String BREWMASTER_BUTTON = "theBrewmasterResources/images/charSelect/CharacterButton.png";
+    private static final String BREWMASTER_PORTRAIT = "theBrewmasterResources/images/charSelect/CharacterPortraitBG.png";
     public static final String BREWMASTER_SHOULDER_1 = "theBrewmasterResources/images/char/defaultCharacter/shoulder.png";
     public static final String BREWMASTER_SHOULDER_2 = "theBrewmasterResources/images/char/defaultCharacter/shoulder2.png";
     public static final String BREWMASTER_CORPSE = "theBrewmasterResources/images/char/defaultCharacter/corpse.png";
@@ -112,8 +112,8 @@ public class BrewmasterMod implements
     public static final String BADGE_IMAGE = "theBrewmasterResources/images/Badge.png";
     
     // Atlas and JSON files for the Animations
-    public static final String BREWMASTER_SKELETON_ATLAS = "theBrewmasterResources/images/char/defaultCharacter/skeleton.atlas";
-    public static final String BREWMASTER_SKELETON_JSON = "theBrewmasterResources/images/char/defaultCharacter/skeleton.json";
+    public static final String BREWMASTER_SKELETON_ATLAS = "theBrewmasterResources/images/char/brewmasterAnimation/brewmasterAnimation.atlas";
+    public static final String BREWMASTER_SKELETON_JSON = "theBrewmasterResources/images/char/brewmasterAnimation/brewmasterAnimation.json";
     
     // =============== MAKE IMAGE PATHS =================
     
