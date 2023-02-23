@@ -20,8 +20,8 @@ public class BottleSmashAction extends AbstractGameAction{
 
     @Override
     public void update() {
-        addToBot(new DamageAction(this.target, this.info, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         addToBot(new ApplyIntoxicationPower(this.source, this.source, new IntoxicationPower(this.source, this.source, this.amount), this.amount));
+        addToBot(new DamageAction(this.target, this.info, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         this.isDone = true;
     }
     

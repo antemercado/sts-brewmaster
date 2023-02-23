@@ -31,10 +31,10 @@ public class QuickSip extends AbstractBrewmasterCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
     
-    private static final int COST = 1;
-    private static final int UPGRADED_COST = 0;
+    private static final int COST = 0;
     
     private static final int MAGIC = 15;
+    private static final int UPGRADE_PLUS_MAGIC = 10;
     private static final int CARD_DRAW = 1;
     
     // TEXT DECLARATION
@@ -70,7 +70,7 @@ public class QuickSip extends AbstractBrewmasterCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(UPGRADED_COST);
+            upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
             initializeDescription();
         }
     }

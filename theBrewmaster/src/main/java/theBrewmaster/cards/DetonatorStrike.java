@@ -31,8 +31,9 @@ public class DetonatorStrike extends AbstractBrewmasterCard {
     
     private static final int COST = 1;
     
-    private static final int MAGIC = 4;
-    private static final int UPGRADE_PLUS_MAGIC = 2;
+    private static final int DAMAGE = 6;
+    private static final int MAGIC = 2;
+    private static final int UPGRADE_PLUS_MAGIC = 1;
     
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(DetonatorStrike.class.getSimpleName());
@@ -41,15 +42,15 @@ public class DetonatorStrike extends AbstractBrewmasterCard {
     public DetonatorStrike() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseMagicNumber = this.magicNumber = MAGIC;
+        this.baseDamage = this.damage = DAMAGE;
 
         this.tags.add(CardTags.STRIKE);
     }
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.damage = 0;
         if (m.hasPower(DrenchedPower.POWER_ID)){
-            this.damage = m.getPower(DrenchedPower.POWER_ID).amount * magicNumber;
+            this.damage += m.getPower(DrenchedPower.POWER_ID).amount * magicNumber;
         }
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
     }

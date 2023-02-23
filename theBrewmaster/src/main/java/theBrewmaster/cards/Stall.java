@@ -20,6 +20,7 @@ import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 
+@AutoAdd.Ignore
 public class Stall extends AbstractBrewmasterCard {
     
     // STAT DECLARATION

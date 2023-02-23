@@ -124,10 +124,6 @@ public class IntoxicationPower extends AbstractPower{
     
     // Remove Intoxicated when losing enough stacks
     public void reducePower(int reduceAmount){
-        // Add block if you have Fluid Motion active
-        if (owner.hasPower(FluidMotionPower.POWER_ID)){
-            addToBot(new GainBlockAction(owner, owner, reduceAmount));
-        }
         super.reducePower(reduceAmount);
         if (this.amount < INTOX_THRESHOLD && AbstractDungeon.player.stance.ID.equals(IntoxicatedStance.STANCE_ID))
             AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction("Neutral"));

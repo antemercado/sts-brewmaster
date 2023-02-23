@@ -48,8 +48,8 @@ public class CozyBrew extends AbstractBrewmasterCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainBlockAction(p, p, block));
         addToBot(new ApplyIntoxicationPower(p, p, new IntoxicationPower(p, p, magicNumber)));
+        addToBot(new GainBlockAction(p, p, block));
     }
     // Upgraded stats.
     @Override

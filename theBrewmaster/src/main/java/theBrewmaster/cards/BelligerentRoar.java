@@ -46,7 +46,7 @@ public class BelligerentRoar extends AbstractBrewmasterCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (AbstractDungeon.player.stance.ID.equals(IntoxicatedStance.STANCE_ID)){
             for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters){
-                addToBot(new StunMonsterAction(m, m));
+                addToBot(new StunMonsterAction(mo, mo));
             }
         } else {
             addToBot(new StunMonsterAction(m, m));

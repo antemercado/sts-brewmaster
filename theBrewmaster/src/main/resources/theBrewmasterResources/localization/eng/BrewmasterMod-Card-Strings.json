@@ -19,7 +19,7 @@
   },
   "theBrewmaster:CozyBrew": {
     "NAME": "Cozy Brew",
-    "DESCRIPTION": "Gain !B! Block and !M! thebrewmaster:Intoxication."
+    "DESCRIPTION": "Gain !M! thebrewmaster:Intoxication. NL Gain !B! Block."
   },
   "theBrewmaster:QuickSip": {
     "NAME": "Quick Sip",
@@ -44,7 +44,7 @@
   },
   "theBrewmaster:BottleSmash": {
     "NAME": "Bottle Smash",
-    "DESCRIPTION": "Deal !D! damage. NL Gain !M! thebrewmaster:Intoxication."
+    "DESCRIPTION": "Gain !M! thebrewmaster:Intoxication. NL Deal !D! damage. "
   },
   "theBrewmaster:Homebrew": {
     "NAME": "Homebrew",
@@ -140,8 +140,8 @@
     "NAME": "Exploding Keg",
     "DESCRIPTION": "Deal !D! damage to an enemy and !M! damage to the rest."
   },
-  "theBrewmaster:StormStomp": {
-    "NAME": "Storm Stomp",
+  "theBrewmaster:BeserkerBarrage": {
+    "NAME": "Beserker Barrage",
     "DESCRIPTION": "Deal !D! damage to a random enemy X times."
   },
   "theBrewmaster:Vasoimmolation": {
@@ -157,8 +157,8 @@
     "NAME": "Drunken Flurry",
     "DESCRIPTION": "Deal !D! damage to an enemy. Repeat for each !M! thebrewmaster:Intoxication you have."
   },
-  "theBrewmaster:ThickSkin": {
-    "NAME": "Thick Skin",
+  "theBrewmaster:SlipperyCoat": {
+    "NAME": "Slippery Coat",
     "DESCRIPTION": "Gain !B! Block. Gain thebrewmaster:Intoxication equal to remaining block at the start of your next turn."
   },
   "theBrewmaster:Temperance": {
@@ -261,7 +261,7 @@
   },
   "theBrewmaster:DetonatorStrike": {
     "NAME": "Detonator Strike",
-    "DESCRIPTION": "Deal !M! times the amount of thebrewmaster:Drenched as damage."
+    "DESCRIPTION": "Deal !D! plus enemy's thebrewmaster:Drenched times !M! as damage."
   },
   "theBrewmaster:DrunkenBrawler": {
     "NAME": "Drunken Brawler",
