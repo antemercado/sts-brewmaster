@@ -10,7 +10,7 @@ import theBrewmaster.cards.status.WoozyStatus;
 import theBrewmaster.characters.BrewmasterCharacter;
 import theBrewmaster.powers.IntoxicationPower;
 
-import static theBrewmaster.BrewmasterMod.makeCardPath;
+import static theBrewmaster.BrewmasterMod.makeDefaultCardPath;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -39,7 +39,7 @@ public class Blackout extends AbstractBrewmasterCard {
 
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(Blackout.class.getSimpleName());
-    public static final String IMG = makeCardPath(Blackout.class.getSimpleName(), TYPE);
+    public static final String IMG = makeDefaultCardPath(Blackout.class.getSimpleName(), TYPE);
     
     public Blackout() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

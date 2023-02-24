@@ -9,7 +9,7 @@ import theBrewmaster.characters.BrewmasterCharacter;
 import theBrewmaster.enums.CustomTags;
 import theBrewmaster.powers.IntoxicationPower;
 
-import static theBrewmaster.BrewmasterMod.makeCardPath;
+import static theBrewmaster.BrewmasterMod.makeDefaultCardPath;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -36,7 +36,7 @@ public class CozyBrew extends AbstractBrewmasterCard {
     
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(CozyBrew.class.getSimpleName());
-    public static final String IMG = makeCardPath(CozyBrew.class.getSimpleName(), TYPE);
+    public static final String IMG = makeDefaultCardPath(CozyBrew.class.getSimpleName(), TYPE);
     
     public CozyBrew() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

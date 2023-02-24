@@ -7,7 +7,7 @@ import theBrewmaster.BrewmasterMod;
 import theBrewmaster.characters.BrewmasterCharacter;
 import theBrewmaster.enums.CustomTags;
 
-import static theBrewmaster.BrewmasterMod.makeCardPath;
+import static theBrewmaster.BrewmasterMod.makeDefaultCardPath;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -36,7 +36,7 @@ public class NimbleBrew extends AbstractBrewmasterCard {
     
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(NimbleBrew.class.getSimpleName());
-    public static final String IMG = makeCardPath(NimbleBrew.class.getSimpleName(), TYPE);
+    public static final String IMG = makeDefaultCardPath(NimbleBrew.class.getSimpleName(), TYPE);
     
     public NimbleBrew() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

@@ -108,8 +108,7 @@
   },
   "theBrewmaster:Binge": {
     "NAME": "Binge",
-    "DESCRIPTION": "Gain !B! Block and !M! thebrewmaster:Intoxication. Add a copy of this card with Ethereal and Exhaust to your hand.",
-    "EXTENDED_DESCRIPTION": ["Gain !B! Block and !M! thebrewmaster:Intoxication. Add a copy of this card to your hand."]
+    "DESCRIPTION": "Gain !B! Block and !M! thebrewmaster:Intoxication X times."
   },
   "theBrewmaster:HappyHour": {
     "NAME": "Happy Hour",

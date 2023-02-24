@@ -7,7 +7,7 @@ import theBrewmaster.BrewmasterMod;
 import theBrewmaster.characters.BrewmasterCharacter;
 import theBrewmaster.powers.FluidMotionPower;
 
-import static theBrewmaster.BrewmasterMod.makeCardPath;
+import static theBrewmaster.BrewmasterMod.makeDefaultCardPath;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -34,7 +34,7 @@ public class FluidMotion extends AbstractBrewmasterCard {
     
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(FluidMotion.class.getSimpleName());
-    public static final String IMG = makeCardPath(FluidMotion.class.getSimpleName(), TYPE);
+    public static final String IMG = makeDefaultCardPath(FluidMotion.class.getSimpleName(), TYPE);
     
     public FluidMotion() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

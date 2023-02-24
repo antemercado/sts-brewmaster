@@ -8,7 +8,7 @@ import theBrewmaster.cards.AbstractBrewmasterCard;
 import theBrewmaster.characters.BrewmasterCharacter;
 import theBrewmaster.enums.CustomTags;
 
-import static theBrewmaster.BrewmasterMod.makeCardPath;
+import static theBrewmaster.BrewmasterMod.makeDefaultCardPath;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -37,7 +37,7 @@ public class CelestialBrew extends AbstractBrewmasterCard {
     
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(CelestialBrew.class.getSimpleName());
-    public static final String IMG = makeCardPath(CelestialBrew.class.getSimpleName(), TYPE);
+    public static final String IMG = makeDefaultCardPath(CelestialBrew.class.getSimpleName(), TYPE);
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;

@@ -6,7 +6,7 @@ import basemod.helpers.BaseModCardTags;
 import theBrewmaster.BrewmasterMod;
 import theBrewmaster.characters.BrewmasterCharacter;
 
-import static theBrewmaster.BrewmasterMod.makeCardPath;
+import static theBrewmaster.BrewmasterMod.makeDefaultCardPath;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
@@ -41,7 +41,7 @@ public class BarrelThrough extends AbstractBrewmasterCard {
     
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(BarrelThrough.class.getSimpleName());
-    public static final String IMG = makeCardPath(BarrelThrough.class.getSimpleName(), TYPE);
+    public static final String IMG = makeDefaultCardPath(BarrelThrough.class.getSimpleName(), TYPE);
     
     public BarrelThrough() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

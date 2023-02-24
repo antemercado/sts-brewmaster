@@ -10,7 +10,7 @@ import theBrewmaster.cards.AbstractBrewmasterCard;
 import theBrewmaster.characters.BrewmasterCharacter;
 import theBrewmaster.powers.IntoxicationPower;
 
-import static theBrewmaster.BrewmasterMod.makeCardPath;
+import static theBrewmaster.BrewmasterMod.makeDefaultCardPath;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -41,7 +41,7 @@ public class BottleSmash extends AbstractBrewmasterCard {
     
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(BottleSmash.class.getSimpleName());
-    public static final String IMG = makeCardPath(BottleSmash.class.getSimpleName(), TYPE);
+    public static final String IMG = makeDefaultCardPath(BottleSmash.class.getSimpleName(), TYPE);
     
     public BottleSmash() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

@@ -7,7 +7,7 @@ import theBrewmaster.BrewmasterMod;
 import theBrewmaster.actions.ImpulseFollowUpAction;
 import theBrewmaster.characters.BrewmasterCharacter;
 
-import static theBrewmaster.BrewmasterMod.makeCardPath;
+import static theBrewmaster.BrewmasterMod.makeDefaultCardPath;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
@@ -34,7 +34,7 @@ public class Impulse extends AbstractBrewmasterCard {
     
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(Impulse.class.getSimpleName());
-    public static final String IMG = makeCardPath(Impulse.class.getSimpleName(), TYPE);
+    public static final String IMG = makeDefaultCardPath(Impulse.class.getSimpleName(), TYPE);
     
     public Impulse() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

@@ -3,7 +3,7 @@
     "NAME": "Beer Stein",
     "FLAVOR": "I've never heard of one drinks too many.",
     "DESCRIPTIONS": [
-      "Keep 75% of your #yIntoxication between floors and acts."
+      "Keep #b75% of your #yIntoxication between floors and acts."
     ]
   },
   "theBrewmaster:GiantKegRelic": {
@@ -24,7 +24,7 @@
     "NAME": "Louse Liver",
     "FLAVOR": "Much more efficient than the stock model.",
     "DESCRIPTIONS": [
-      "You become Intoxicated at 75 #yIntoxication instead of 100."
+      "You become Intoxicated at #b75 #yIntoxication instead of #b100."
     ]
   },
   "theBrewmaster:CozyBeerRelic": {
@@ -45,7 +45,7 @@
     "NAME": "Octarine Cup",
     "FLAVOR": "A staple at Spire Parties.",
     "DESCRIPTIONS": [
-      "Whenever you gain #yIntoxication for the first time each turn, gain [E]"
+      "Whenever you gain #yIntoxication for the first time each combat, gain [E]"
     ]
   },
   "theBrewmaster:MiniFridgeRelic": {

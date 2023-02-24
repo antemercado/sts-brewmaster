@@ -12,7 +12,7 @@ import theBrewmaster.characters.BrewmasterCharacter;
 import theBrewmaster.enums.CustomTags;
 import theBrewmaster.powers.IntoxicationPower;
 
-import static theBrewmaster.BrewmasterMod.makeCardPath;
+import static theBrewmaster.BrewmasterMod.makeDefaultCardPath;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -40,7 +40,7 @@ public class KSKegP extends AbstractBrewmasterCard {
     
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(KSKeg.class.getSimpleName());
-    public static final String IMG = makeCardPath(KSKegP.class.getSimpleName(), TYPE);
+    public static final String IMG = makeDefaultCardPath(KSKegP.class.getSimpleName(), TYPE);
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;

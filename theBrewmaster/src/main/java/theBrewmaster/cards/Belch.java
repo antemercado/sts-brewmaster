@@ -7,7 +7,7 @@ import theBrewmaster.BrewmasterMod;
 import theBrewmaster.characters.BrewmasterCharacter;
 import theBrewmaster.stances.IntoxicatedStance;
 
-import static theBrewmaster.BrewmasterMod.makeCardPath;
+import static theBrewmaster.BrewmasterMod.makeDefaultCardPath;
 
 import com.evacipated.cardcrawl.mod.stslib.actions.common.StunMonsterAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -39,7 +39,7 @@ public class Belch extends AbstractBrewmasterCard {
     
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(Belch.class.getSimpleName());
-    public static final String IMG = makeCardPath(Belch.class.getSimpleName(), TYPE);
+    public static final String IMG = makeDefaultCardPath(Belch.class.getSimpleName(), TYPE);
     
     public Belch() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

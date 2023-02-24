@@ -7,7 +7,7 @@ import theBrewmaster.BrewmasterMod;
 import theBrewmaster.characters.BrewmasterCharacter;
 import theBrewmaster.powers.PocketFlaskPower;
 
-import static theBrewmaster.BrewmasterMod.makeCardPath;
+import static theBrewmaster.BrewmasterMod.makeDefaultCardPath;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -34,7 +34,7 @@ public class PocketFlask extends AbstractBrewmasterCard {
     
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(PocketFlask.class.getSimpleName());
-    public static final String IMG = makeCardPath(PocketFlask.class.getSimpleName(), TYPE);
+    public static final String IMG = makeDefaultCardPath(PocketFlask.class.getSimpleName(), TYPE);
     
     public PocketFlask() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

@@ -117,24 +117,12 @@ public class BrewmasterMod implements
     
     // =============== MAKE IMAGE PATHS =================
     
+    public static String makeDefaultCardPath(String resourcePath, CardType type) {
+        return getModID() + "Resources/images/cards/" + type.toString().toLowerCase() + "/" + type.toString().toLowerCase() + ".png";
+    }
+
     public static String makeCardPath(String resourcePath, CardType type) {
-        String ret = getModID() + "Resources/images/cards/" + resourcePath;
-        Path path = Paths.get(ret);
-        if (!Files.exists(path)){
-            // logger.info("Cannot find " + resourcePath + "img. Selecting replacement.");
-            switch (type){
-                case ATTACK:
-                ret = getModID() + "Resources/images/cards/defaults/Attack.png";
-                break;
-                case POWER:
-                ret = getModID() + "Resources/images/cards/defaults/Power.png";
-                break;
-                default:
-                ret = getModID() + "Resources/images/cards/defaults/Skill.png";
-                break;
-            }
-        }
-        return ret; 
+        return getModID() + "Resources/images/cards/" + type.toString().toLowerCase() + "/" + resourcePath + ".png";
     }
     
     public static String makeRelicPath(String resourcePath) {

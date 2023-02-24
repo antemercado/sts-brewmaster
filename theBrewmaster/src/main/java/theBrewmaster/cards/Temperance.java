@@ -8,7 +8,7 @@ import theBrewmaster.characters.BrewmasterCharacter;
 import theBrewmaster.powers.NoIntoxicationPower;
 import theBrewmaster.powers.TemperancePower;
 
-import static theBrewmaster.BrewmasterMod.makeCardPath;
+import static theBrewmaster.BrewmasterMod.makeDefaultCardPath;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -34,7 +34,7 @@ public class Temperance extends AbstractBrewmasterCard {
     
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(Temperance.class.getSimpleName());
-    public static final String IMG = makeCardPath(Temperance.class.getSimpleName(), TYPE);
+    public static final String IMG = makeDefaultCardPath(Temperance.class.getSimpleName(), TYPE);
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;

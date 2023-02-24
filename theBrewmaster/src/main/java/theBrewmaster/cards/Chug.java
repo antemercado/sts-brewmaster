@@ -10,7 +10,7 @@ import theBrewmaster.characters.BrewmasterCharacter;
 import theBrewmaster.enums.CustomTags;
 import theBrewmaster.powers.IntoxicationPower;
 
-import static theBrewmaster.BrewmasterMod.makeCardPath;
+import static theBrewmaster.BrewmasterMod.makeDefaultCardPath;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -36,7 +36,7 @@ public class Chug extends AbstractBrewmasterCard {
     
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(Chug.class.getSimpleName());
-    public static final String IMG = makeCardPath(Chug.class.getSimpleName(), TYPE);
+    public static final String IMG = makeDefaultCardPath(Chug.class.getSimpleName(), TYPE);
     
     public Chug() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

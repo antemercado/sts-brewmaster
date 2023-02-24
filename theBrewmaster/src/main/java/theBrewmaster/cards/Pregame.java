@@ -8,7 +8,7 @@ import theBrewmaster.actions.ApplyIntoxicationPower;
 import theBrewmaster.characters.BrewmasterCharacter;
 import theBrewmaster.powers.IntoxicationPower;
 
-import static theBrewmaster.BrewmasterMod.makeCardPath;
+import static theBrewmaster.BrewmasterMod.makeDefaultCardPath;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -34,7 +34,7 @@ public class Pregame extends AbstractBrewmasterCard {
     
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(Pregame.class.getSimpleName());
-    public static final String IMG = makeCardPath(Pregame.class.getSimpleName(), TYPE);
+    public static final String IMG = makeDefaultCardPath(Pregame.class.getSimpleName(), TYPE);
     
     public Pregame() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

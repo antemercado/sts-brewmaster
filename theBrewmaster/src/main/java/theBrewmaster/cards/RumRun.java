@@ -6,7 +6,7 @@ import basemod.helpers.BaseModCardTags;
 import theBrewmaster.BrewmasterMod;
 import theBrewmaster.characters.BrewmasterCharacter;
 
-import static theBrewmaster.BrewmasterMod.makeCardPath;
+import static theBrewmaster.BrewmasterMod.makeDefaultCardPath;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -34,7 +34,7 @@ public class RumRun extends AbstractBrewmasterCard {
     
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(RumRun.class.getSimpleName());
-    public static final String IMG = makeCardPath(RumRun.class.getSimpleName(), TYPE);
+    public static final String IMG = makeDefaultCardPath(RumRun.class.getSimpleName(), TYPE);
     
     public RumRun() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

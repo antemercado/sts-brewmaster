@@ -8,7 +8,7 @@ import theBrewmaster.actions.PurifyingBrewAction;
 import theBrewmaster.characters.BrewmasterCharacter;
 import theBrewmaster.enums.CustomTags;
 
-import static theBrewmaster.BrewmasterMod.makeCardPath;
+import static theBrewmaster.BrewmasterMod.makeDefaultCardPath;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DiscardAction;
@@ -37,7 +37,7 @@ public class PurifyingBrew extends AbstractBrewmasterCard {
     
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(PurifyingBrew.class.getSimpleName());
-    public static final String IMG = makeCardPath(PurifyingBrew.class.getSimpleName(), TYPE);
+    public static final String IMG = makeDefaultCardPath(PurifyingBrew.class.getSimpleName(), TYPE);
     
     public PurifyingBrew() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

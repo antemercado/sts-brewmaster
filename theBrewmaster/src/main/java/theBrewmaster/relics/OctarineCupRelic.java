@@ -21,18 +21,19 @@ public class OctarineCupRelic extends CustomRelic implements OnReceivePowerRelic
     
     public static final String ID = BrewmasterMod.makeID("OctarineCupRelic");
     
-    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("placeholder_relic.png"));
-    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic.png"));
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("octarine_cup.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("octarine_cup.png"));
     
-    private boolean triggeredThisTurn = false;
+    private boolean triggeredThisCombat = false;
     
     public OctarineCupRelic() {
         super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.FLAT);
     }
 
+
     @Override
-    public void atTurnStart() {
-        this.triggeredThisTurn = false;
+    public void atBattleStart() {
+        this.triggeredThisCombat = false;
     }
 
     @Override
@@ -43,11 +44,11 @@ public class OctarineCupRelic extends CustomRelic implements OnReceivePowerRelic
         if (((IntoxicationPower)power).isRelic){
             return true;
         }
-        if (!triggeredThisTurn){
+        if (!triggeredThisCombat){
             flash();
             addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
             addToBot(new GainEnergyAction(1));
-            triggeredThisTurn = true;
+            triggeredThisCombat = true;
         }
         return true;
     }

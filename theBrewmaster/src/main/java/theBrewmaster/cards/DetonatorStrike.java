@@ -8,7 +8,7 @@ import theBrewmaster.characters.BrewmasterCharacter;
 import theBrewmaster.enums.CustomTags;
 import theBrewmaster.powers.DrenchedPower;
 
-import static theBrewmaster.BrewmasterMod.makeCardPath;
+import static theBrewmaster.BrewmasterMod.makeDefaultCardPath;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -37,7 +37,7 @@ public class DetonatorStrike extends AbstractBrewmasterCard {
     
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(DetonatorStrike.class.getSimpleName());
-    public static final String IMG = makeCardPath(DetonatorStrike.class.getSimpleName(), TYPE);
+    public static final String IMG = makeDefaultCardPath(DetonatorStrike.class.getSimpleName(), TYPE);
     
     public DetonatorStrike() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
