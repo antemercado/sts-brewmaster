@@ -43,7 +43,7 @@ public class BeserkerBarrage extends AbstractBrewmasterCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ThunderClapAction(p, this.damage, this.energyOnUse));
+        addToBot(new ThunderClapAction(p, this.damage, this.energyOnUse, this.freeToPlayOnce));
     }
     // Upgraded stats.
     @Override

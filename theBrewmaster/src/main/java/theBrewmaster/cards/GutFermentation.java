@@ -27,7 +27,7 @@ public class GutFermentation extends AbstractBrewmasterCard {
     
     // STAT DECLARATION
     
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
@@ -67,6 +67,9 @@ public class GutFermentation extends AbstractBrewmasterCard {
 
     // Glow when Intoxicated
     public void triggerOnGlowCheck() {
+        if (!upgraded){
+            return;
+        }
         this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
         int intoxCheck = 0;
         if (AbstractDungeon.player.hasPower(IntoxicationPower.POWER_ID)){

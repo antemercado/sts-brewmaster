@@ -7,7 +7,7 @@ import theBrewmaster.BrewmasterMod;
 import theBrewmaster.characters.BrewmasterCharacter;
 import theBrewmaster.powers.DrunkenBrawlerPower;
 
-import static theBrewmaster.BrewmasterMod.makeDefaultCardPath;
+import static theBrewmaster.BrewmasterMod.makeCardPath;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -27,14 +27,14 @@ public class DrunkenBrawler extends AbstractBrewmasterCard {
     private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
     
-    private static final int COST = 1;
+    private static final int COST = 2;
     
-    private static final int MAGIC = 5;
+    private static final int MAGIC = 10;
     private static final int UPGRADE_PLUS_MAGIC = 5;
     
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(DrunkenBrawler.class.getSimpleName());
-    public static final String IMG = makeDefaultCardPath(DrunkenBrawler.class.getSimpleName(), TYPE);
+    public static final String IMG = makeCardPath(DrunkenBrawler.class.getSimpleName(), TYPE);
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;

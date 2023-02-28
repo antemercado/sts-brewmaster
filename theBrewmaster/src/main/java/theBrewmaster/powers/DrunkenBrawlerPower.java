@@ -9,6 +9,7 @@ import static theBrewmaster.BrewmasterMod.makePowerPath;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.OnReceivePowerPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
@@ -23,7 +24,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 
-public class DrunkenBrawlerPower extends AbstractPower{
+public class DrunkenBrawlerPower extends AbstractPower implements OnReceivePowerPower{
     public AbstractCreature source;
 
     public static final String POWER_ID = BrewmasterMod.makeID("DrunkenBrawlerPower");
@@ -59,20 +60,29 @@ public class DrunkenBrawlerPower extends AbstractPower{
         updateDescription();
     }
 
-    public void onPlayCard(AbstractCard card, AbstractMonster m) {
-        if (!this.owner.hasPower(IntoxicationPower.POWER_ID)){
-            return;
+
+    @Override
+    public boolean onReceivePower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
+        if (power.ID.equals(IntoxicationPower.POWER_ID)){
+            addToBot(new ApplyPowerAction(this.owner, this.source, new VigorPower(this.owner, (int)Math.ceil(this.amount / 100.0f * power.amount))));
         }
-        if (card.type.equals(CardType.ATTACK)){
-            addToBot(new ApplyPowerAction(this.owner, this.owner, new VigorPower(this.owner,
-                this.owner.getPower(IntoxicationPower.POWER_ID).amount * this.amount / 100)));
-        }
+        return true;
     }
+    // public void onPlayCard(AbstractCard card, AbstractMonster m) {
+    //     if (!this.owner.hasPower(IntoxicationPower.POWER_ID)){
+    //         return;
+    //     }
+    //     if (card.type.equals(CardType.ATTACK)){
+    //         addToBot(new ApplyPowerAction(this.owner, this.owner, new VigorPower(this.owner,
+    //             this.owner.getPower(IntoxicationPower.POWER_ID).amount * this.amount / 100)));
+    //     }
+    // }
 
     // Update the description
     @Override
     public void updateDescription() {
         description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
     }
+
 
 }

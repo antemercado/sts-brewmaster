@@ -7,7 +7,7 @@ import theBrewmaster.BrewmasterMod;
 import theBrewmaster.actions.FormulationAction;
 import theBrewmaster.characters.BrewmasterCharacter;
 
-import static theBrewmaster.BrewmasterMod.makeDefaultCardPath;
+import static theBrewmaster.BrewmasterMod.makeCardPath;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -32,7 +32,7 @@ public class Formulation extends AbstractBrewmasterCard {
     
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(Formulation.class.getSimpleName());
-    public static final String IMG = makeDefaultCardPath(Formulation.class.getSimpleName(), TYPE);
+    public static final String IMG = makeCardPath(Formulation.class.getSimpleName(), TYPE);
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
@@ -46,14 +46,13 @@ public class Formulation extends AbstractBrewmasterCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new FormulationAction(p, this.magicNumber));
+        addToBot(new FormulationAction(p, this.magicNumber, upgraded));
     }
     // Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.retain = true;
             rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

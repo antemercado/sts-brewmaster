@@ -20,7 +20,7 @@ public class GiantKegRelic extends CustomRelic {
 
     public static final String ID = BrewmasterMod.makeID("GiantKegRelic");
 
-    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("beer_stein.png"));
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("beer_stein_upgrade.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("beer_stein.png"));
 
     public GiantKegRelic() {

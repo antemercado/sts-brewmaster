@@ -7,7 +7,7 @@ import theBrewmaster.BrewmasterMod;
 import theBrewmaster.characters.BrewmasterCharacter;
 import theBrewmaster.powers.DrenchedPower;
 
-import static theBrewmaster.BrewmasterMod.makeDefaultCardPath;
+import static theBrewmaster.BrewmasterMod.makeCardPath;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -34,7 +34,7 @@ public class BeerShower extends AbstractBrewmasterCard {
     
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(BeerShower.class.getSimpleName());
-    public static final String IMG = makeDefaultCardPath(BeerShower.class.getSimpleName(), TYPE);
+    public static final String IMG = makeCardPath(BeerShower.class.getSimpleName(), TYPE);
     
     public BeerShower() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

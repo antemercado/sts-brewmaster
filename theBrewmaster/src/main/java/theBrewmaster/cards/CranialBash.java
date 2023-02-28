@@ -32,15 +32,18 @@ public class CranialBash extends AbstractBrewmasterCard {
     private static final int COST = 3;
     
     private static final int DAMAGE = 25;
-    private static final int UPGRADE_PLUS_DAMAGE = 10;
     
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(CranialBash.class.getSimpleName());
     public static final String IMG = makeDefaultCardPath(CranialBash.class.getSimpleName(), TYPE);
+
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     
     public CranialBash() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = DAMAGE;
+        this.baseDamage = this.damage = DAMAGE;
+        this.exhaust = true;
     }
     // Actions the card should do.
     @Override
@@ -53,7 +56,8 @@ public class CranialBash extends AbstractBrewmasterCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DAMAGE);
+            this.exhaust = false;
+            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

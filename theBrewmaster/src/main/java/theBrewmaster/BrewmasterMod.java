@@ -104,8 +104,8 @@ public class BrewmasterMod implements
     // Character assets
     private static final String BREWMASTER_BUTTON = "theBrewmasterResources/images/charSelect/CharacterButton.png";
     private static final String BREWMASTER_PORTRAIT = "theBrewmasterResources/images/charSelect/CharacterPortraitBG.png";
-    public static final String BREWMASTER_SHOULDER_1 = "theBrewmasterResources/images/char/defaultCharacter/shoulder.png";
-    public static final String BREWMASTER_SHOULDER_2 = "theBrewmasterResources/images/char/defaultCharacter/shoulder2.png";
+    public static final String BREWMASTER_SHOULDER_1 = "theBrewmasterResources/images/char/brewmasterAnimation/shoulder.png";
+    public static final String BREWMASTER_SHOULDER_2 = "theBrewmasterResources/images/char/brewmasterAnimation/shoulder2.png";
     public static final String BREWMASTER_CORPSE = "theBrewmasterResources/images/char/brewmasterAnimation/corpse.png";
     
     // Mod Badge - A small icon that appears in the mod settings menu next to your mod.
@@ -118,7 +118,7 @@ public class BrewmasterMod implements
     // =============== MAKE IMAGE PATHS =================
     
     public static String makeDefaultCardPath(String resourcePath, CardType type) {
-        return getModID() + "Resources/images/cards/" + type.toString().toLowerCase() + "/" + type.toString().toLowerCase() + ".png";
+        return getModID() + "Resources/images/cards/" + type.toString().toLowerCase() + "/default.png";
     }
 
     public static String makeCardPath(String resourcePath, CardType type) {

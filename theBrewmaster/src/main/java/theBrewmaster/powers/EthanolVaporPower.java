@@ -9,6 +9,7 @@ import static theBrewmaster.BrewmasterMod.makePowerPath;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.OnReceivePowerPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerToRandomEnemyAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
@@ -22,7 +23,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class EthanolVaporPower extends AbstractPower{
+public class EthanolVaporPower extends AbstractPower implements OnReceivePowerPower{
     public AbstractCreature source;
 
     public static final String POWER_ID = BrewmasterMod.makeID("EthanolVaporPower");
@@ -53,6 +54,16 @@ public class EthanolVaporPower extends AbstractPower{
         updateDescription();
     }
 
+    @Override
+    public boolean onReceivePower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
+        if (power.ID.equals(IntoxicationPower.POWER_ID)){
+            if (!AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()){
+                addToBot(new ApplyPowerToRandomEnemyAction(this.source, new DrenchedPower(null, this.source, this.amount), this.amount));
+            }
+        }
+        return true;
+    }
+
     // public void onPlayCard(AbstractCard card, AbstractMonster m) {
     //     if (card.hasTag(CustomTags.BREW)){
     //         if (!AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()){
@@ -72,5 +83,6 @@ public class EthanolVaporPower extends AbstractPower{
     public void updateDescription() {
         description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
     }
+
 
 }

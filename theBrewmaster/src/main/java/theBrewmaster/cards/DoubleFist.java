@@ -9,7 +9,7 @@ import theBrewmaster.powers.DoubleFistPower;
 import theBrewmaster.powers.IntoxicationPower;
 import theBrewmaster.stances.IntoxicatedStance;
 
-import static theBrewmaster.BrewmasterMod.makeDefaultCardPath;
+import static theBrewmaster.BrewmasterMod.makeCardPath;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -36,7 +36,7 @@ public class DoubleFist extends AbstractBrewmasterCard {
     
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(DoubleFist.class.getSimpleName());
-    public static final String IMG = makeDefaultCardPath(DoubleFist.class.getSimpleName(), TYPE);
+    public static final String IMG = makeCardPath(DoubleFist.class.getSimpleName(), TYPE);
     
     public DoubleFist() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

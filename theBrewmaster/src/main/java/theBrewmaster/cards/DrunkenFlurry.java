@@ -7,7 +7,7 @@ import theBrewmaster.BrewmasterMod;
 import theBrewmaster.characters.BrewmasterCharacter;
 import theBrewmaster.powers.IntoxicationPower;
 
-import static theBrewmaster.BrewmasterMod.makeDefaultCardPath;
+import static theBrewmaster.BrewmasterMod.makeCardPath;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -30,13 +30,13 @@ public class DrunkenFlurry extends AbstractBrewmasterCard {
     private static final int COST = 1;
     
     private static final int DAMAGE = 3;
-    private static final int UPGRADE_PLUS_DMG = 1;
 
-    public static final int MAGIC = 20;
+    public static final int MAGIC = 25;
+    public static final int UPGRADE_PLUS_MAGIC = -5;
     
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(DrunkenFlurry.class.getSimpleName());
-    public static final String IMG = makeDefaultCardPath(DrunkenFlurry.class.getSimpleName(), TYPE);
+    public static final String IMG = makeCardPath(DrunkenFlurry.class.getSimpleName(), TYPE);
     
     public DrunkenFlurry() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -59,7 +59,7 @@ public class DrunkenFlurry extends AbstractBrewmasterCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DMG);
+            upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
             initializeDescription();
         }
     }

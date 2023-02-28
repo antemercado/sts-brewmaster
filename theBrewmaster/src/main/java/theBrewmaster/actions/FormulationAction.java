@@ -24,12 +24,15 @@ public class FormulationAction extends AbstractGameAction{
 
     private AbstractPlayer p;
 
-    public FormulationAction(AbstractPlayer p, int discardAmount) {
+    private boolean upgraded;
+
+    public FormulationAction(AbstractPlayer p, int discardAmount, boolean upgraded) {
         this.source = p;
         this.target = p;
         this.p = p;
         this.amount = discardAmount;
         this.duration = Settings.ACTION_DUR_FAST;
+        this.upgraded = upgraded;
     }
 
     @Override
@@ -41,7 +44,11 @@ public class FormulationAction extends AbstractGameAction{
             }
     
             if (this.p.hand.size() == 1) {
-                this.p.hand.moveToExhaustPile(this.p.hand.getBottomCard());
+                if (this.upgraded){
+                    this.p.hand.moveToDiscardPile(this.p.hand.getBottomCard());
+                } else {
+                    this.p.hand.moveToExhaustPile(this.p.hand.getBottomCard());
+                }
                 tickDuration();
                 return;
             }
@@ -56,7 +63,11 @@ public class FormulationAction extends AbstractGameAction{
                 if (c.hasTag(CustomTags.BREW)){
                     addToTop(new ObtainPotionAction(AbstractDungeon.returnRandomPotion(true)));
                 }
-                this.p.hand.moveToExhaustPile(c);
+                if (this.upgraded){
+                    this.p.hand.moveToDiscardPile(c);
+                } else {
+                    this.p.hand.moveToExhaustPile(c);
+                }
             }
             AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;
             AbstractDungeon.handCardSelectScreen.selectedCards.group.clear();

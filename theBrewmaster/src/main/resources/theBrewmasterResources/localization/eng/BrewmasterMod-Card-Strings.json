@@ -150,11 +150,11 @@
   "theBrewmaster:Formulation": {
     "NAME": "Formulation",
     "DESCRIPTION": "Exhaust a Brew card. Obtain a random potion. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Retain NL Exhaust a Brew card. Obtain a random potion. NL Exhaust."
+    "UPGRADE_DESCRIPTION": "Discard a Brew card. Obtain a random potion. NL Exhaust."
   },
   "theBrewmaster:DrunkenFlurry": {
     "NAME": "Drunken Flurry",
-    "DESCRIPTION": "Deal !D! damage to an enemy. Repeat for each !M! thebrewmaster:Intoxication you have."
+    "DESCRIPTION": "Deal !D! damage. Repeat for each !M! thebrewmaster:Intoxication you have."
   },
   "theBrewmaster:SlipperyCoat": {
     "NAME": "Slippery Coat",
@@ -185,7 +185,8 @@
   },
   "theBrewmaster:CranialBash": {
     "NAME": "Cranial Bash",
-    "DESCRIPTION": "Deal !D! damage to an enemy. Randomize the costs of cards in your hand for the rest of the combat."
+    "DESCRIPTION": "Deal !D! damage to an enemy. Randomize the costs of cards in your hand for the rest of the combat. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage to an enemy. Randomize the costs of cards in your hand for the rest of the combat."
   },
   "theBrewmaster:DionysianForm": {
     "NAME": "Dionysian Form",
@@ -247,7 +248,7 @@
   "theBrewmaster:GutFermentation": {
     "NAME": "Gut Fermentation",
     "DESCRIPTION": "Double your thebrewmaster:Intoxication. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Double your thebrewmaster:Intoxication. NL Exhaust if you become thebrewmaster:Intoxicated."
+    "UPGRADE_DESCRIPTION": "Double your thebrewmaster:Intoxication. NL Exhaust if you are thebrewmaster:Intoxicated."
   },
   "theBrewmaster:Impulse": {
     "NAME": "Impulsivity",
@@ -264,7 +265,7 @@
   },
   "theBrewmaster:DrunkenBrawler": {
     "NAME": "Drunken Brawler",
-    "DESCRIPTION": "Whenever you play an Attack card, your next Attack does !M! % of your thebrewmaster:Intoxication as bonus damage."
+    "DESCRIPTION": "Whenever you gain thebrewmaster:Intoxication, your next Attack does !M! % of that amount as bonus damage."
   },
   "theBrewmaster:TopsyTurvy": {
     "NAME": "Topsy Turvy",

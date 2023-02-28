@@ -27,6 +27,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.RegenPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 import com.megacrit.cardcrawl.stances.AbstractStance;
 
 //Gain 1 dex for the turn for each card played.
@@ -74,18 +75,10 @@ public class IntoxicationPower extends AbstractPower{
         if (this.owner.hasPower(TemperancePower.POWER_ID)){
             int temperanceAmount = this.owner.getPower(TemperancePower.POWER_ID).amount;
             addToBot(new ApplyPowerAction(this.owner, this.source, new StrengthPower(this.owner, temperanceAmount), temperanceAmount));
-        } else {
+        } else if (!this.isRelic){
 
-            // Ethanol Vapor
-            if (AbstractDungeon.player.hasPower(EthanolVaporPower.POWER_ID)){
-                int ethanolVaporAmount = AbstractDungeon.player.getPower(EthanolVaporPower.POWER_ID).amount;
-                if (!AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()){
-                    addToBot(new ApplyPowerToRandomEnemyAction(this.source, new DrenchedPower(null, this.source, ethanolVaporAmount), ethanolVaporAmount));
-                }
-            }
-
-            // Multiply gain if has relic
-            if (AbstractDungeon.player.hasRelic(SpiritHelmetRelic.ID) && !this.isRelic)
+            // Multiply gain if has Helmet relic
+            if (AbstractDungeon.player.hasRelic(SpiritHelmetRelic.ID))
                 this.amount *= SpiritHelmetRelic.MULTIPLIER;
     
             // If have enough stacks when gaining power, enter stance
@@ -103,7 +96,13 @@ public class IntoxicationPower extends AbstractPower{
         if (AbstractDungeon.player.hasPower(NoIntoxicationPower.POWER_ID)){
             return;
         }
+        
         super.stackPower(stackAmount);
+
+        if (this.amount > 999){
+            this.amount = 999;
+        }
+
         if (this.amount >= INTOX_THRESHOLD || (this.amount >= INTOX_THRESHOLD_RELIC && AbstractDungeon.player.hasRelic(LouseLiverRelic.ID))) {
             AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new IntoxicatedStance()));
         }
@@ -148,10 +147,14 @@ public class IntoxicationPower extends AbstractPower{
     // Update the description when intoxicated.
     @Override
     public void updateDescription() {
-        if (this.amount < INTOX_THRESHOLD) {
+        int reduceAmount = this.amount/INTOX_DECAY_RATE;
+        if (reduceAmount <= 0)
+            reduceAmount = 1;
+
+        if (this.amount >= INTOX_THRESHOLD || (this.amount >= INTOX_THRESHOLD_RELIC && AbstractDungeon.player.hasRelic(LouseLiverRelic.ID))){
             description = DESCRIPTIONS[0];
-        } else if (this.amount >= INTOX_THRESHOLD) {
-            description = DESCRIPTIONS[1];
+        } else {
+            description = DESCRIPTIONS[0] + DESCRIPTIONS[1] + reduceAmount + DESCRIPTIONS[2];
         }
     }
 

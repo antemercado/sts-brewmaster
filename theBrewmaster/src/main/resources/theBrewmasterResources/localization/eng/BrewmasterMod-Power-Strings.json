@@ -1,7 +1,7 @@
 {
 "theBrewmaster:Intoxication": {
     "NAME": "Intoxication",
-    "DESCRIPTIONS": ["You have had a few drinks.", "You are intoxicated."]
+    "DESCRIPTIONS": ["Certain cards have bonuses when Intoxicated.", " You'll lose ", " Intoxication at the end of your turn."]
   },
   "theBrewmaster:DoubleFistPower": {
     "NAME": "Double Fist",

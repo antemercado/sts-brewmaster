@@ -7,11 +7,12 @@ import basemod.helpers.BaseModCardTags;
 import basemod.helpers.CardModifierManager;
 import theBrewmaster.BrewmasterMod;
 import theBrewmaster.actions.ApplyIntoxicationPower;
+import theBrewmaster.actions.BingeAction;
 import theBrewmaster.cardmodifiers.BingeModifier;
 import theBrewmaster.characters.BrewmasterCharacter;
 import theBrewmaster.powers.IntoxicationPower;
 
-import static theBrewmaster.BrewmasterMod.makeDefaultCardPath;
+import static theBrewmaster.BrewmasterMod.makeCardPath;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -23,6 +24,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 public class Binge extends AbstractBrewmasterCard {
     
@@ -43,7 +45,7 @@ public class Binge extends AbstractBrewmasterCard {
     
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(Binge.class.getSimpleName());
-    public static final String IMG = makeDefaultCardPath(Binge.class.getSimpleName(), TYPE);
+    public static final String IMG = makeCardPath(Binge.class.getSimpleName(), TYPE);
     
     public Binge() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -54,11 +56,14 @@ public class Binge extends AbstractBrewmasterCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+
+        addToBot(new BingeAction(p, this.block, this.magicNumber, this.energyOnUse, this.freeToPlayOnce));
         
-        for (int i = 0; i < this.energyOnUse; i++){
-            addToBot(new ApplyIntoxicationPower(p, p, new IntoxicationPower(p, p, magicNumber)));
-            addToBot(new GainBlockAction(p, p, block));
-        }
+        // for (int i = 0; i < this.energyOnUse; i++){
+        //     addToBot(new ApplyIntoxicationPower(p, p, new IntoxicationPower(p, p, magicNumber)));
+        //     addToBot(new GainBlockAction(p, p, block));
+        // }
+        // p.energy.use(EnergyPanel.totalCount);
 
         // AbstractCard tmp = new Binge();
         // if (this.upgraded)
