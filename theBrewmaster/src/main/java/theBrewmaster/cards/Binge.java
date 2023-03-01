@@ -40,8 +40,8 @@ public class Binge extends AbstractBrewmasterCard {
     private static final int BLOCK = 5;
     private static final int UPGRADE_PLUS_BLOCK = 2;
 
-    private static final int MAGIC = 15;
-    private static final int UPGRADE_PLUS_MAGIC = 6;
+    private static final int MAGIC = 10;
+    private static final int UPGRADE_PLUS_MAGIC = 5;
     
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(Binge.class.getSimpleName());
