@@ -2,6 +2,7 @@ package theBrewmaster.actions;
 
 import com.evacipated.cardcrawl.mod.stslib.actions.common.MoveCardsAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -20,9 +21,9 @@ public class MisplaceAction extends AbstractGameAction{
     private boolean upgraded;
     private AbstractPlayer p = AbstractDungeon.player;
 
-    public MisplaceAction(boolean isUpgraded) {
-        this.upgraded = isUpgraded;
+    public MisplaceAction() {
         this.duration = Settings.ACTION_DUR_FAST;
+        this.amount = 0;
     }
 
     @Override
@@ -36,15 +37,12 @@ public class MisplaceAction extends AbstractGameAction{
                 addToTop(new MoveCardsAction(null, null));
                 this.p.hand.moveToDeck(this.p.hand.getBottomCard(), true);;
                 p.drawPile.shuffle();
+                addToTop(new DrawCardAction(1));
                 tickDuration();
                 return;
             }
 
-            if (upgraded){
-                AbstractDungeon.handCardSelectScreen.open(TEXT[0], 99, true, true);
-            } else {
-                AbstractDungeon.handCardSelectScreen.open(TEXT[0], 1, false);
-            }
+            AbstractDungeon.handCardSelectScreen.open(TEXT[0], 99, true, true);
             tickDuration();
 
             return;
@@ -52,7 +50,9 @@ public class MisplaceAction extends AbstractGameAction{
         if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved){
             for (AbstractCard c: AbstractDungeon.handCardSelectScreen.selectedCards.group){
                 this.p.hand.moveToDeck(c, true);
+                this.amount += 1;
             }
+            addToTop(new DrawCardAction(this.amount));
             AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;
             AbstractDungeon.handCardSelectScreen.selectedCards.group.clear();
         }

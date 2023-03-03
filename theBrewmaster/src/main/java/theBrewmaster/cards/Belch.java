@@ -7,7 +7,7 @@ import theBrewmaster.BrewmasterMod;
 import theBrewmaster.characters.BrewmasterCharacter;
 import theBrewmaster.stances.IntoxicatedStance;
 
-import static theBrewmaster.BrewmasterMod.makeDefaultCardPath;
+import static theBrewmaster.BrewmasterMod.makeCardPath;
 
 import com.evacipated.cardcrawl.mod.stslib.actions.common.StunMonsterAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -33,13 +33,13 @@ public class Belch extends AbstractBrewmasterCard {
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
     
     private static final int COST = 1;
+    private static final int UPGRADE_COST = 0;
     
-    private static final int MAGIC = 1;
-    private static final int UPGRADE_PLUS_MAGIC = 1;
+    private static final int MAGIC = 2;
     
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(Belch.class.getSimpleName());
-    public static final String IMG = makeDefaultCardPath(Belch.class.getSimpleName(), TYPE);
+    public static final String IMG = makeCardPath(Belch.class.getSimpleName(), TYPE);
     
     public Belch() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -70,7 +70,7 @@ public class Belch extends AbstractBrewmasterCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
+            upgradeBaseCost(UPGRADE_COST);
             initializeDescription();
         }
     }

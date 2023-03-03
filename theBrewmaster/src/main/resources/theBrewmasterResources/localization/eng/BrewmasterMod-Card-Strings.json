@@ -242,8 +242,8 @@
   },
   "theBrewmaster:Misplace": {
     "NAME": "Misplace",
-    "DESCRIPTION": "Shuffle a card from your hand into your draw pile.",
-    "UPGRADE_DESCRIPTION": "Shuffle any number of cards from your hand into your draw pile."
+    "DESCRIPTION": "Shuffle any number of cards from your hand into your draw pile. Draw that many cards. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Shuffle any number of cards from your hand into your draw pile. Draw that many cards."
   },
   "theBrewmaster:GutFermentation": {
     "NAME": "Gut Fermentation",
@@ -323,7 +323,15 @@
   },
   "theBrewmaster:TableFlip": {
     "NAME": "Table Flip",
-    "DESCRIPTION": "Deal damage equal to the total cost of cards in hand times !M!.",
+    "DESCRIPTION": "Deal damage equal to the total cost of cards in hand times !M!. Discard your hand.",
     "EXTENDED_DESCRIPTION": [" NL (Deals !D! damage.)"]
+  },
+  "theBrewmaster:Prowl": {
+    "NAME": "Prowl",
+    "DESCRIPTION": "Gain !B! Block. NL The first Attack you play next turn costs 0."
+  },
+  "theBrewmaster:CatScratch": {
+    "NAME": "Cat Scratch",
+    "DESCRIPTION": "Deal !D! damage. Double this card's damage and increase it's cost by 1 this combat."
   }
 }

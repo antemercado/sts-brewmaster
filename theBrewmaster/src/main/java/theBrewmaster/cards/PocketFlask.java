@@ -18,6 +18,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 
+@AutoAdd.Ignore
 public class PocketFlask extends AbstractBrewmasterCard {
     
     // STAT DECLARATION

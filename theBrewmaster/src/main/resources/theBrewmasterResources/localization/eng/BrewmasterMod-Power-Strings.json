@@ -101,5 +101,13 @@
       " Stength and lose ",
       " Dexterity."
     ]
+  },
+  "theBrewmaster:ProwlPower": {
+    "NAME": "Prowl",
+    "DESCRIPTIONS": [
+      "At the start of your next turn, the first ",
+      "Attack you play costs 0.",
+      " Attacks you play costs 0."
+    ]
   }
 }
