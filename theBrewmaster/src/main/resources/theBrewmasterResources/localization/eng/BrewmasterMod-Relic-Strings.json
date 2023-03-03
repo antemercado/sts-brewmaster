@@ -3,14 +3,14 @@
     "NAME": "Beer Stein",
     "FLAVOR": "I've never heard of one drinks too many.",
     "DESCRIPTIONS": [
-      "Keep #b75% of your #yIntoxication between floors and acts."
+      "Keep up to #b75 #yIntoxication between floors and acts."
     ]
   },
   "theBrewmaster:GiantKegRelic": {
     "NAME": "Bottomless Stein",
     "FLAVOR": "I've had one drinks too many.",
     "DESCRIPTIONS": [
-      "Your #yIntoxication doesn't reset between floors and acts."
+      "Keep up to #b150 #yIntoxication between floors and acts."
     ]
   },
   "theBrewmaster:SpiritHelmetRelic": {
@@ -22,7 +22,7 @@
   },
   "theBrewmaster:LouseLiverRelic": {
     "NAME": "Louse Liver",
-    "FLAVOR": "Much more efficient than the stock model.",
+    "FLAVOR": "It's really just a bunch of them stuck together.",
     "DESCRIPTIONS": [
       "You become Intoxicated at #b75 #yIntoxication instead of #b100."
     ]
@@ -43,14 +43,14 @@
   },
   "theBrewmaster:OctarineCupRelic": {
     "NAME": "Octarine Cup",
-    "FLAVOR": "A staple at Spire Parties.",
+    "FLAVOR": "A staple at Spire parties.",
     "DESCRIPTIONS": [
       "Whenever you gain #yIntoxication for the first time each combat, gain [E]"
     ]
   },
   "theBrewmaster:MiniFridgeRelic": {
     "NAME": "Mini Fridge",
-    "FLAVOR": "The Merchant will settle the bill at the end of your time in the Spire.",
+    "FLAVOR": "The Merchant will settle your bill at the end of your time in the Spire.",
     "DESCRIPTIONS": [
       "25% of the time, when you play a Brew card, create a random 0-cost Brew card with Exhaust in your hand."
     ]

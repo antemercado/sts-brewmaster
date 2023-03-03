@@ -23,6 +23,8 @@ public class GiantKegRelic extends CustomRelic {
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("beer_stein_upgrade.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("beer_stein.png"));
 
+    private static int RETAIN = 150;
+
     public GiantKegRelic() {
         super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.CLINK);
         this.counter = 0;
@@ -62,7 +64,11 @@ public class GiantKegRelic extends CustomRelic {
             this.counter = 0;
             return;
         }
-        this.counter = p.getPower(IntoxicationPower.POWER_ID).amount;
+        if (p.getPower(IntoxicationPower.POWER_ID).amount > RETAIN){
+            this.counter = RETAIN;
+        } else {
+            this.counter = p.getPower(IntoxicationPower.POWER_ID).amount;
+        }
     }
 
     public boolean canSpawn() {
