@@ -247,8 +247,8 @@
   },
   "theBrewmaster:GutFermentation": {
     "NAME": "Gut Fermentation",
-    "DESCRIPTION": "Double your thebrewmaster:Intoxication. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Double your thebrewmaster:Intoxication. NL Exhaust if you are thebrewmaster:Intoxicated."
+    "DESCRIPTION": "Ethereal. NL Double your thebrewmaster:Intoxication. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Double your thebrewmaster:Intoxication. NL Exhaust."
   },
   "theBrewmaster:Impulse": {
     "NAME": "Impulsivity",
@@ -302,7 +302,7 @@
   },
   "theBrewmaster:Blackout": {
     "NAME": "Blackout",
-    "DESCRIPTION": "Become thebrewmaster:Intoxicated. Shuffle !M! Woozy cards into your discard pile. NL Exhaust."
+    "DESCRIPTION": "{@@}Become thebrewmaster:Intoxicated. Shuffle !M! Woozy card{!M!|>1=s} into your discard pile. NL Exhaust."
   },
   "theBrewmaster:WoozyStatus": {
     "NAME": "Woozy",

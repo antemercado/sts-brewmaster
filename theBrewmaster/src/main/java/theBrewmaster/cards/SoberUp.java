@@ -6,6 +6,7 @@ import basemod.helpers.BaseModCardTags;
 import theBrewmaster.BrewmasterMod;
 import theBrewmaster.characters.BrewmasterCharacter;
 import theBrewmaster.powers.IntoxicationPower;
+import theBrewmaster.stances.IntoxicatedStance;
 
 import static theBrewmaster.BrewmasterMod.makeDefaultCardPath;
 
@@ -13,7 +14,9 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -51,9 +54,12 @@ public class SoberUp extends AbstractBrewmasterCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (p.hasPower(IntoxicationPower.POWER_ID)){
             AbstractPower intoxication = p.getPower(IntoxicationPower.POWER_ID);
-            AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(intoxication.amount / this.magicNumber));
-            AbstractDungeon.actionManager.addToBottom(new DrawCardAction(intoxication.amount / this.magicNumber));
-            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, intoxication));
+            addToBot(new GainEnergyAction(intoxication.amount / this.magicNumber));
+            addToBot(new DrawCardAction(intoxication.amount / this.magicNumber));
+            addToBot(new RemoveSpecificPowerAction(p, p, intoxication));
+            if (p.stance.ID.equals(IntoxicatedStance.STANCE_ID)){
+                addToBot(new ChangeStanceAction("Neutral"));
+            }
         }
     }
     // Upgraded stats.

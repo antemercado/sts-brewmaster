@@ -21,7 +21,7 @@ public class BeerSteinRelic extends CustomRelic {
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("beer_stein.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("beer_stein.png"));
 
-    private static int RETAIN = 75;
+    private static int RETAIN = 50;
 
     public BeerSteinRelic() {
         super(ID, IMG, OUTLINE, RelicTier.STARTER, LandingSound.CLINK);

@@ -41,7 +41,7 @@ public class CatScratch extends AbstractBrewmasterCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        addToBot(new ModifyDamageAction(this.uuid, this.damage));
+        addToBot(new ModifyDamageAction(this.uuid, this.baseDamage));
         this.modifyCostForCombat(1);
     }
     // Upgraded stats.

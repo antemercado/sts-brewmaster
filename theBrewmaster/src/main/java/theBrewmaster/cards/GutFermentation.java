@@ -44,6 +44,7 @@ public class GutFermentation extends AbstractBrewmasterCard {
     public GutFermentation() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.exhaust = true;
+        this.isEthereal = true;
     }
     // Actions the card should do.
     @Override
@@ -66,27 +67,27 @@ public class GutFermentation extends AbstractBrewmasterCard {
     }
 
     // Glow when Intoxicated
-    public void triggerOnGlowCheck() {
-        if (!upgraded){
-            return;
-        }
-        this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
-        int intoxCheck = 0;
-        if (AbstractDungeon.player.hasPower(IntoxicationPower.POWER_ID)){
-            intoxCheck = AbstractDungeon.player.getPower(IntoxicationPower.POWER_ID).amount * 2;
-        }
-        if ((intoxCheck >= IntoxicationPower.INTOX_THRESHOLD || 
-        (intoxCheck >= IntoxicationPower.INTOX_THRESHOLD_RELIC && AbstractDungeon.player.hasRelic(LouseLiverRelic.ID)))) {
-            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
-        }
-    }
+    // public void triggerOnGlowCheck() {
+    //     if (!upgraded){
+    //         return;
+    //     }
+    //     this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+    //     int intoxCheck = 0;
+    //     if (AbstractDungeon.player.hasPower(IntoxicationPower.POWER_ID)){
+    //         intoxCheck = AbstractDungeon.player.getPower(IntoxicationPower.POWER_ID).amount * 2;
+    //     }
+    //     if ((intoxCheck >= IntoxicationPower.INTOX_THRESHOLD || 
+    //     (intoxCheck >= IntoxicationPower.INTOX_THRESHOLD_RELIC && AbstractDungeon.player.hasRelic(LouseLiverRelic.ID)))) {
+    //         this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+    //     }
+    // }
 
     // Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.exhaust = false;
+            this.isEthereal = false;
             rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

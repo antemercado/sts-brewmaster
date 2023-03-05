@@ -6,7 +6,7 @@ import basemod.helpers.BaseModCardTags;
 import theBrewmaster.BrewmasterMod;
 import theBrewmaster.characters.BrewmasterCharacter;
 
-import static theBrewmaster.BrewmasterMod.makeDefaultCardPath;
+import static theBrewmaster.BrewmasterMod.makeCardPath;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.BetterDiscardPileToHandAction;
@@ -34,7 +34,7 @@ public class TrickShot extends AbstractBrewmasterCard {
     
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(TrickShot.class.getSimpleName());
-    public static final String IMG = makeDefaultCardPath(TrickShot.class.getSimpleName(), TYPE);
+    public static final String IMG = makeCardPath(TrickShot.class.getSimpleName(), TYPE);
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;

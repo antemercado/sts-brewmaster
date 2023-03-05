@@ -23,7 +23,7 @@ public class GiantKegRelic extends CustomRelic {
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("beer_stein_upgrade.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("beer_stein.png"));
 
-    private static int RETAIN = 150;
+    private static int RETAIN = 200;
 
     public GiantKegRelic() {
         super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.CLINK);

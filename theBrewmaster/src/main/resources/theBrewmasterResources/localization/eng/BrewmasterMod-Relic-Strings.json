@@ -3,14 +3,14 @@
     "NAME": "Beer Stein",
     "FLAVOR": "I've never heard of one drinks too many.",
     "DESCRIPTIONS": [
-      "Keep up to #b75 #yIntoxication between floors and acts."
+      "Keep up to #b50 #yIntoxication between floors and acts."
     ]
   },
   "theBrewmaster:GiantKegRelic": {
     "NAME": "Bottomless Stein",
     "FLAVOR": "I've had one drinks too many.",
     "DESCRIPTIONS": [
-      "Keep up to #b150 #yIntoxication between floors and acts."
+      "Keep up to #b200 #yIntoxication between floors and acts."
     ]
   },
   "theBrewmaster:SpiritHelmetRelic": {
