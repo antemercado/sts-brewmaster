@@ -259,8 +259,8 @@
     "DESCRIPTION": "Deal !D! damage. NL thebrewmaster:Intoxicated: Deal twice that amount instead.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage. NL thebrewmaster:Intoxicated: Deal three times that amount instead."
   },
-  "theBrewmaster:DetonatorStrike": {
-    "NAME": "Detonator Strike",
+  "theBrewmaster:ScaldingStrike": {
+    "NAME": "Scalding Strike",
     "DESCRIPTION": "Deal !D! plus enemy's thebrewmaster:Drenched times !M! as damage."
   },
   "theBrewmaster:DrunkenBrawler": {
@@ -333,5 +333,13 @@
   "theBrewmaster:CatScratch": {
     "NAME": "Cat Scratch",
     "DESCRIPTION": "Deal !D! damage. Double this card's damage and increase it's cost by 1 this combat."
+  },
+  "theBrewmaster:Hairball": {
+    "NAME": "Hairball",
+    "DESCRIPTION": "Apply !M! Weak."
+  },
+  "theBrewmaster:Feint": {
+    "NAME": "Feint",
+    "DESCRIPTION": "Deal !D! damage. NL Weak increases this card's damage instead of decreasing it."
   }
 }
