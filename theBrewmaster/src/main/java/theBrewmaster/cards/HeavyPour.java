@@ -7,7 +7,7 @@ import theBrewmaster.BrewmasterMod;
 import theBrewmaster.characters.BrewmasterCharacter;
 import theBrewmaster.powers.DrenchedPower;
 
-import static theBrewmaster.BrewmasterMod.makeDefaultCardPath;
+import static theBrewmaster.BrewmasterMod.makeCardPath;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -38,7 +38,7 @@ public class HeavyPour extends AbstractBrewmasterCard {
     
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(HeavyPour.class.getSimpleName());
-    public static final String IMG = makeDefaultCardPath(HeavyPour.class.getSimpleName(), TYPE);
+    public static final String IMG = makeCardPath(HeavyPour.class.getSimpleName(), TYPE);
     
     public HeavyPour() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

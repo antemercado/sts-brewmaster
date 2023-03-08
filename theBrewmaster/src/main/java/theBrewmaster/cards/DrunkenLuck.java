@@ -29,7 +29,7 @@ public class DrunkenLuck extends AbstractBrewmasterCard {
     
     private static final int COST = -2;
     
-    private static final int MAGIC = 10;
+    private static final int MAGIC = 15;
     private static final int UPGRADE_PLUS_MAGIC = 5;
     
     // TEXT DECLARATION

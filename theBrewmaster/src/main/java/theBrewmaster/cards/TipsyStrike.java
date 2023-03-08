@@ -7,7 +7,7 @@ import theBrewmaster.BrewmasterMod;
 import theBrewmaster.characters.BrewmasterCharacter;
 import theBrewmaster.powers.IntoxicationPower;
 
-import static theBrewmaster.BrewmasterMod.makeDefaultCardPath;
+import static theBrewmaster.BrewmasterMod.makeCardPath;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -39,7 +39,7 @@ public class TipsyStrike extends AbstractBrewmasterCard {
     
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(TipsyStrike.class.getSimpleName());
-    public static final String IMG = makeDefaultCardPath(TipsyStrike.class.getSimpleName(), TYPE);
+    public static final String IMG = makeCardPath(TipsyStrike.class.getSimpleName(), TYPE);
 
     public TipsyStrike() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

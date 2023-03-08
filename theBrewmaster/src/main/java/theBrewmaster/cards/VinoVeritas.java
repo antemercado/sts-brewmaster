@@ -8,7 +8,7 @@ import theBrewmaster.characters.BrewmasterCharacter;
 import theBrewmaster.powers.IntoxicationPower;
 import theBrewmaster.stances.IntoxicatedStance;
 
-import static theBrewmaster.BrewmasterMod.makeDefaultCardPath;
+import static theBrewmaster.BrewmasterMod.makeCardPath;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DiscardAction;
@@ -37,7 +37,7 @@ public class VinoVeritas extends AbstractBrewmasterCard {
     
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(VinoVeritas.class.getSimpleName());
-    public static final String IMG = makeDefaultCardPath(VinoVeritas.class.getSimpleName(), TYPE);
+    public static final String IMG = makeCardPath(VinoVeritas.class.getSimpleName(), TYPE);
     
     public VinoVeritas() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

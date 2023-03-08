@@ -7,7 +7,7 @@ import theBrewmaster.BrewmasterMod;
 import theBrewmaster.characters.BrewmasterCharacter;
 import theBrewmaster.powers.StallPower;
 
-import static theBrewmaster.BrewmasterMod.makeDefaultCardPath;
+import static theBrewmaster.BrewmasterMod.makeCardPath;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -20,7 +20,6 @@ import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 
-@AutoAdd.Ignore
 public class Stall extends AbstractBrewmasterCard {
     
     // STAT DECLARATION
@@ -31,15 +30,15 @@ public class Stall extends AbstractBrewmasterCard {
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
     
     private static final int COST = 2;
+    private static final int UPGRADED_COST = 1;
     
-    private static final int MAGIC2 = 4;
+    private static final int MAGIC2 = 5;
     
     private static final int MAGIC = 1;
-    private static final int UPGRADE_MAGIC = 1;
     
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(Stall.class.getSimpleName());
-    public static final String IMG = makeDefaultCardPath(Stall.class.getSimpleName(), TYPE);
+    public static final String IMG = makeCardPath(Stall.class.getSimpleName(), TYPE);
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
@@ -61,7 +60,7 @@ public class Stall extends AbstractBrewmasterCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_MAGIC);
+            upgradeBaseCost(UPGRADED_COST);
             initializeDescription();
         }
     }
