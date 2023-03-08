@@ -23,15 +23,15 @@ public class VolatileBrew extends AbstractBrewmasterCard {
     
     // STAT DECLARATION
     
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
     
-    private static final int COST = 2;
+    private static final int COST = 1;
     
-    public static final int[] DAMAGES = {8,12,20};
-    public static final int[] UPGRADED_DAMAGES = {12,20,36};
+    public static final int[] DAMAGES = {8,12,16};
+    public static final int[] UPGRADED_DAMAGES = {12,16,20};
     private int[] damageArray;
     
     // TEXT DECLARATION
@@ -44,16 +44,22 @@ public class VolatileBrew extends AbstractBrewmasterCard {
     public VolatileBrew() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseDamage = this.damage = 12;
+        this.baseMagicNumber = this.magicNumber = 1;
         this.damageArray = DAMAGES;
         if (CardCrawlGame.dungeon != null && AbstractDungeon.player != null){
-            this.baseDamage = this.damage = damageArray[AbstractDungeon.cardRandomRng.random(2)];
+            this.magicNumber = AbstractDungeon.cardRandomRng.random(2);
         }
         
         tags.add(CustomTags.BREW);
     }
     @Override
     public void triggerWhenDrawn() {
-        this.baseDamage = this.damage = damageArray[AbstractDungeon.cardRandomRng.random(2)];
+        this.magicNumber = AbstractDungeon.cardRandomRng.random(2);
+    }
+
+    @Override
+    public void applyPowers() {
+        this.baseDamage = this.damage = damageArray[this.magicNumber];
     }
     // Actions the card should do.
     @Override

@@ -341,5 +341,9 @@
   "theBrewmaster:Feint": {
     "NAME": "Feint",
     "DESCRIPTION": "Deal !D! damage. NL Weak increases this card's damage instead of decreasing it."
+  },
+  "theBrewmaster:BeerBelly": {
+    "NAME": "Beer Belly",
+    "DESCRIPTION": "{@@}Gain !B! Block. Shuffle !M! Woozy card{!M!|>1=s} into your draw pile."
   }
 }
