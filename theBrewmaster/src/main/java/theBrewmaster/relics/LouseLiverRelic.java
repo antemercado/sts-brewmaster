@@ -17,7 +17,7 @@ public class LouseLiverRelic extends CustomRelic {
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic.png"));
 
     public LouseLiverRelic() {
-        super(ID, IMG, OUTLINE, RelicTier.RARE, LandingSound.CLINK);
+        super(ID, IMG, OUTLINE, RelicTier.COMMON, LandingSound.CLINK);
     }
 
     public void atBattleStartPreDraw() {

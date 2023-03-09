@@ -150,12 +150,7 @@ public class IntoxicationPower extends AbstractPower{
         int reduceAmount = this.amount/INTOX_DECAY_RATE;
         if (reduceAmount <= 0)
             reduceAmount = 1;
-
-        if (this.amount >= INTOX_THRESHOLD || (this.amount >= INTOX_THRESHOLD_RELIC && AbstractDungeon.player.hasRelic(LouseLiverRelic.ID))){
-            description = DESCRIPTIONS[0];
-        } else {
-            description = DESCRIPTIONS[0] + DESCRIPTIONS[1] + reduceAmount + DESCRIPTIONS[2];
-        }
+        description = DESCRIPTIONS[0] + DESCRIPTIONS[1] + reduceAmount + DESCRIPTIONS[2];
     }
 
 }

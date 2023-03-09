@@ -19,7 +19,7 @@ public class SpiritHelmetRelic extends CustomRelic {
     public static final float MULTIPLIER = 1.5f;
 
     public SpiritHelmetRelic() {
-        super(ID, IMG, OUTLINE, RelicTier.SHOP, LandingSound.CLINK);
+        super(ID, IMG, OUTLINE, RelicTier.RARE, LandingSound.CLINK);
     }
 
     // Description

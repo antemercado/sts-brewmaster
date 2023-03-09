@@ -345,5 +345,9 @@
   "theBrewmaster:BeerBelly": {
     "NAME": "Beer Belly",
     "DESCRIPTION": "{@@}Gain !B! Block. Shuffle !M! Woozy card{!M!|>1=s} into your draw pile."
+  },
+  "theBrewmaster:Numbness": {
+    "NAME": "Numbness",
+    "DESCRIPTION": "If you're thebrewmaster:Intoxicated, reduce each of your debuffs by !M! at the end of your turn."
   }
 }

@@ -1,113 +1,124 @@
 {
 "theBrewmaster:Intoxication": {
     "NAME": "Intoxication",
-    "DESCRIPTIONS": ["Certain cards have bonuses when Intoxicated.", " You'll lose ", " Intoxication at the end of your turn."]
+    "DESCRIPTIONS": [
+      "Certain cards have bonuses when #yIntoxicated.",
+      " You'll lose #b",
+      " #yIntoxication at the end of your turn."
+    ]
   },
   "theBrewmaster:DoubleFistPower": {
     "NAME": "Double Fist",
     "DESCRIPTIONS": [
       "Your next #yBrew card is played twice this turn.",
-      "Your next ",
+      "Your next #b",
       " #yBrew cards are played twice this turn."
     ]
   },
   "theBrewmaster:FluidMotionPower": {
     "NAME": "Fluid Motion",
     "DESCRIPTIONS": [
-      "At the end of your turn, gain ",
-      "% of your Intoxication as block."
+      "At the end of your turn, gain #b",
+      "% of your #yIntoxication as block."
     ]
   },
   "theBrewmaster:PocketFlaskPower": {
     "NAME": "Pocket Flask",
     "DESCRIPTIONS": [
-      "Gain ",
-      " Intoxication whenever you play a brew card."
+      "Gain #b",
+      " #yIntoxication whenever you play a brew card."
     ]
   },
   "theBrewmaster:AdmiralsBrewPower": {
     "NAME": "Admiral's Brew",
     "DESCRIPTIONS": [
-      "Reducing unblocked damage by half. Taking ",
-      " damage in ",
+      "Reducing unblocked damage by half. Taking #b",
+      " damage in #b",
       " turns."
     ]
   },
   "theBrewmaster:VasoimmolationPower": {
     "NAME": "Vasoimmolation",
     "DESCRIPTIONS": [
-      "Each enemy takes ",
-      "% of you Intoxication as damage at the end of your turn."
+      "Each enemy takes #b",
+      "% of you #yIntoxication as damage at the end of your turn."
     ]
   },
   "theBrewmaster:ThickSkinPower": {
     "NAME": "Thick Skin",
     "DESCRIPTIONS": [
-      "Gain Intoxication equal to your remaining block at the start of your turn."
+      "Gain #yIntoxication equal to your remaining block at the start of your turn."
     ]
   },
   "theBrewmaster:TemperancePower": {
     "NAME": "Temperance",
     "DESCRIPTIONS": [
-      "If you would gain Intoxication, gain ",
-      " Strength instead."
+      "If you would gain #yIntoxication, gain #b",
+      " #yStrength instead."
     ]
   },
   "theBrewmaster:DionysianFormPower": {
     "NAME": "Dionysian Form",
     "DESCRIPTIONS": [
-      "Whenever you play a Brew card, play a copy of each brew card you played before it this turn.",
-      "Whenever you play a Brew card, play ",
-      " copy of each brew card you played before it this turn."
+      "Whenever you play a #yBrew card, play a copy of each #yBrew card you played before it this turn.",
+      "Whenever you play a #yBrew card, play #b",
+      " copies of each #yBrew card you played before it this turn."
     ]
   },
   "theBrewmaster:DrenchedPower": {
     "NAME": "Drenched",
     "DESCRIPTIONS": [
-      "When damaged, all enemies take ",
+      "When damaged, all enemies take #b",
       " damage."
     ]
   },
   "theBrewmaster:EthanolVaporPower": {
     "NAME": "Ethanol Vapor",
     "DESCRIPTIONS": [
-      "Whenever you play a Brew card, apply ",
-      " Drenched to a random enemy."
+      "Whenever you gain #yIntoxication, apply #b",
+      " #yDrenched to a random enemy."
     ]
   },
   "theBrewmaster:BloodAlcoholPower": {
     "NAME": "Blood Alcohol",
     "DESCRIPTIONS": [
-      "Whenever you lose life, gain that much Intoxication."
+      "Whenever you lose life, gain that much #yIntoxication."
     ]
   },
   "theBrewmaster:DrunkenBrawlerPower": {
     "NAME": "Drunken Brawler",
     "DESCRIPTIONS": [
-      "Whenever you play an Attack card, your next attack deals ",
-      "% of your Intoxication as bonus damage."
+      "Whenever you play an Attack card, your next attack deals #b",
+      "% of your #yIntoxication as bonus damage."
     ]
   },
   "theBrewmaster:NoIntoxicationPower": {
     "NAME": "No Intoxication",
     "DESCRIPTIONS": [
-      "You can't gain Intoxication."
+      "You can't gain #yIntoxication."
     ]
   },
   "theBrewmaster:StallPower": {
     "NAME": "Stall",
     "DESCRIPTIONS": [
-      "At the start of your turn, gain ",
-      " Stength and lose ",
-      " Dexterity."
+      "At the start of your turn, gain #b",
+      " #yStength and lose #b",
+      " #yDexterity."
     ]
   },
   "theBrewmaster:ProwlPower": {
     "NAME": "Prowl",
     "DESCRIPTIONS": [
       "At the start of your next turn, the first ",
-      "Attack you play costs 0.",
-      " Attacks you play costs 0."
+      "Attack you play costs #b0.",
+      " Attacks you play costs #b0."
+    ]
+  },
+  "theBrewmaster:NumbnessPower": {
+    "NAME": "Numbness",
+    "DESCRIPTIONS": [
+      "At the end of your turn, if you're #yIntoxicated, reduce each of your debuffs by #b",
+      "."
     ]
   }
 }
