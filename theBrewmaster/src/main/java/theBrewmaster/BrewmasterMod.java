@@ -19,6 +19,7 @@ import theBrewmaster.relics.GiantKegRelic;
 import theBrewmaster.relics.LouseLiverRelic;
 import theBrewmaster.relics.MiniFridgeRelic;
 import theBrewmaster.relics.OctarineCupRelic;
+import theBrewmaster.relics.SickBagRelic;
 import theBrewmaster.relics.SpiritHelmetRelic;
 import theBrewmaster.stances.IntoxicatedStance;
 import theBrewmaster.util.IDCheckDontTouchPls;
@@ -342,6 +343,7 @@ public class BrewmasterMod implements
         BaseMod.addRelicToCustomPool(new EthanolFlaskRelic(), BrewmasterCharacter.Enums.ORANGE);
         BaseMod.addRelicToCustomPool(new OctarineCupRelic(), BrewmasterCharacter.Enums.ORANGE);
         BaseMod.addRelicToCustomPool(new MiniFridgeRelic(), BrewmasterCharacter.Enums.ORANGE);
+        BaseMod.addRelicToCustomPool(new SickBagRelic(), BrewmasterCharacter.Enums.ORANGE);
 
         
         // Mark starter relic as seen
