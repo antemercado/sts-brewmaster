@@ -6,6 +6,7 @@ import basemod.helpers.BaseModCardTags;
 import theBrewmaster.BrewmasterMod;
 import theBrewmaster.characters.BrewmasterCharacter;
 import theBrewmaster.enums.CustomTags;
+import theBrewmaster.powers.EnergizedOrangePower;
 import theBrewmaster.powers.IntoxicationPower;
 
 import static theBrewmaster.BrewmasterMod.makeCardPath;
@@ -19,7 +20,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DrawCardNextTurnPower;
-import com.megacrit.cardcrawl.powers.EnergizedPower;
 
 public class StimulatingBrew extends AbstractBrewmasterCard {
     
@@ -51,7 +51,7 @@ public class StimulatingBrew extends AbstractBrewmasterCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new EnergizedPower(p, this.magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new EnergizedOrangePower(p, this.magicNumber)));
         addToBot(new ApplyPowerAction(p, p, new DrawCardNextTurnPower(p, 1)));
     }
     // Upgraded stats.

@@ -120,5 +120,13 @@
       "At the end of your turn, if you're #yIntoxicated, reduce each of your debuffs by #b",
       "."
     ]
+  },
+  "theBrewmaster:EnergizedOrangePower": {
+    "NAME": "Energized",
+    "DESCRIPTIONS": [
+      "Gain #b",
+      " additional [E] next turn.",
+      " additional [E] next turn."
+    ]
   }
 }
