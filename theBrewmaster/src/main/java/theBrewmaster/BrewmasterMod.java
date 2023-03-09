@@ -75,12 +75,12 @@ public class BrewmasterMod implements
     // Mod-settings settings. This is if you want an on/off savable button
     public static Properties theBrewmasterDefaultSettings = new Properties();
     public static final String ENABLE_PLACEHOLDER_SETTINGS = "enablePlaceholder";
-    public static boolean enablePlaceholder = true; // The boolean we'll be setting on/off (true/false)
+    public static boolean enablePlaceholder = false; // The boolean we'll be setting on/off (true/false)
 
     //This is for the in-game mod settings panel.
     private static final String MODNAME = "The Brewmaster";
-    private static final String AUTHOR = "Gremious"; // And pretty soon - You!
-    private static final String DESCRIPTION = "A base for Slay the Spire to start your own mod from, feat. the Default.";
+    private static final String AUTHOR = "Coda";
+    private static final String DESCRIPTION = "The Brewmaster Character Mod";
     
     // =============== INPUT TEXTURE LOCATION =================
     
