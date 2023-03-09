@@ -57,7 +57,9 @@ public class TableFlip extends AbstractBrewmasterCard {
     public void applyPowers() {
         int totalCost = 0;
         for (AbstractCard c: AbstractDungeon.player.hand.group){
-            totalCost += c.costForTurn;
+            if (c.costForTurn > 0){
+                totalCost += c.costForTurn;
+            }
         }
         this.baseDamage = totalCost * this.magicNumber;
         super.applyPowers();
