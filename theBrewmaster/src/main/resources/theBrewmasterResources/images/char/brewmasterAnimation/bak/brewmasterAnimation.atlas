@@ -1,0 +1,41 @@
+
+brewmasterAnimation.png
+size: 512,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+brewmaster_base_no_mask/Tail
+  rotate: false
+  xy: 180, 1
+  size: 109, 169
+  orig: 109, 169
+  offset: 0, 0
+  index: -1
+brewmaster_base_no_mask/Legs
+  rotate: false
+  xy: 180, 172
+  size: 127, 72
+  orig: 127, 72
+  offset: 0, 0
+  index: -1
+brewmaster_base_no_mask/L_Paw
+  rotate: false
+  xy: 1, 228
+  size: 18, 22
+  orig: 18, 22
+  offset: 0, 0
+  index: -1
+brewmaster_base_no_mask/Head
+  rotate: false
+  xy: 309, 172
+  size: 71, 65
+  orig: 71, 65
+  offset: 0, 0
+  index: -1
+brewmaster_base_no_mask/Body
+  rotate: false
+  xy: 1, 1
+  size: 177, 225
+  orig: 177, 225
+  offset: 0, 0
+  index: -1

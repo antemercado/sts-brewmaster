@@ -6,8 +6,17 @@
 
 *.xlsx
 
-theBrewmaster/src/main/resources/theBrewmasterResources/images/
+*.bak
+
+#theBrewmaster/src/main/resources/theBrewmasterResources/images/
+
+## Images
 *.psd
+theBrewmaster/src/main/resources/theBrewmasterResources/images/cards/defaults
+theBrewmaster/src/main/resources/theBrewmasterResources/images/char/library
+theBrewmaster/src/main/resources/theBrewmasterResources/images/char/defaultCharacter
+
+
 
 # IntelliJ
 .idea/
