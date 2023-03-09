@@ -44,7 +44,7 @@ public class IntoxicationPower extends AbstractPower{
 
     public static final int INTOX_THRESHOLD = 100;
     public static final int INTOX_THRESHOLD_RELIC = 75;
-    public static final int INTOX_DECAY_RATE = 5;
+    public static final float INTOX_DECAY_RATE = 0.20f;
 
     // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
     // There's a fallback "missing texture" image, so the game shouldn't crash if you accidentally put a non-existent file.
@@ -113,7 +113,7 @@ public class IntoxicationPower extends AbstractPower{
     @Override
     public void atEndOfTurn(final boolean isPlayer) {
         flash();
-        int reduceAmount = this.amount/INTOX_DECAY_RATE;
+        int reduceAmount = (int)(this.amount * INTOX_DECAY_RATE);
         if (reduceAmount <= 0)
             reduceAmount = 1;
         reducePower(reduceAmount);
@@ -147,7 +147,7 @@ public class IntoxicationPower extends AbstractPower{
     // Update the description when intoxicated.
     @Override
     public void updateDescription() {
-        int reduceAmount = this.amount/INTOX_DECAY_RATE;
+        int reduceAmount = (int)(this.amount * INTOX_DECAY_RATE);
         if (reduceAmount <= 0)
             reduceAmount = 1;
         description = DESCRIPTIONS[0] + DESCRIPTIONS[1] + reduceAmount + DESCRIPTIONS[2];
