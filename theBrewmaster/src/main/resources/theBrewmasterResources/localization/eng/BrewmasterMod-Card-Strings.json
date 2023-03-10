@@ -216,8 +216,8 @@
   },
   "theBrewmaster:VolatileBrew": {
     "NAME": "Volatile Brew",
-    "DESCRIPTION": "{@@}Deal {!Location!|@= !D! damage.|>0,<0=8, 12, or 20 damage, chosen at random when drawn.}",
-    "UPGRADE_DESCRIPTION": "{@@}Deal {!Location!|@= !D! damage.|>0,<0=12, 20, or 36 damage, chosen at random when drawn.}"
+    "DESCRIPTION": "{@@}Deal {!Location!|@= !D! damage.|>0,<0=8, 12, or 16 damage, chosen at random when drawn.}",
+    "UPGRADE_DESCRIPTION": "{@@}Deal {!Location!|@= !D! damage.|>0,<0=12, 16, or 20 damage, chosen at random when drawn.}"
   },
   "theBrewmaster:ImportedBrew": {
     "NAME": "Imported Brew",
