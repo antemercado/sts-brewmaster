@@ -5,14 +5,7 @@
       "intoxication",
       "intoxicated"
     ],
-    "DESCRIPTION": "Brewmaster cards have certain bonuses at when intoxicated. You lose 25% of intoxication each turn."
-  },
-  {
-    "PROPER_NAME": "Intoxicated",
-    "NAMES": [
-      "intoxicated"
-    ],
-    "DESCRIPTION": "Brewmaster cards have certain bonuses at when intoxicated. You lose 25% of intoxication each turn."
+    "DESCRIPTION": "Certain cards have bonuses at when #yIntoxicated. You lose #b20% of your #yIntoxication at the end of each turn. You become #yIntoxicated at #b100 #yIntoxication."
   },
   {
     "PROPER_NAME": "Drenched",
