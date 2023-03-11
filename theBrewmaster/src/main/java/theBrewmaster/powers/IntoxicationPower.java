@@ -124,7 +124,11 @@ public class IntoxicationPower extends AbstractPower{
     // Remove Intoxicated when losing enough stacks
     public void reducePower(int reduceAmount){
         super.reducePower(reduceAmount);
-        if (this.amount < INTOX_THRESHOLD && AbstractDungeon.player.stance.ID.equals(IntoxicatedStance.STANCE_ID))
+        int intoxThreshold = INTOX_THRESHOLD;
+        if (AbstractDungeon.player.hasRelic(LouseLiverRelic.ID)){
+            intoxThreshold = INTOX_THRESHOLD_RELIC;
+        }
+        if (this.amount < intoxThreshold && AbstractDungeon.player.stance.ID.equals(IntoxicatedStance.STANCE_ID))
             AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction("Neutral"));
         if (this.amount <= 0)
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
