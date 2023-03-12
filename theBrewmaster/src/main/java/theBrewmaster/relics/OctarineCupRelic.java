@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.relics.OnReceivePowerRelic;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -14,9 +15,10 @@ import static theBrewmaster.BrewmasterMod.makeRelicPath;
 import basemod.abstracts.CustomRelic;
 import theBrewmaster.BrewmasterMod;
 import theBrewmaster.powers.IntoxicationPower;
+import theBrewmaster.stances.IntoxicatedStance;
 import theBrewmaster.util.TextureLoader;
 
-public class OctarineCupRelic extends CustomRelic implements OnReceivePowerRelic{
+public class OctarineCupRelic extends CustomRelic{
 
     
     public static final String ID = BrewmasterMod.makeID("OctarineCupRelic");
@@ -24,33 +26,18 @@ public class OctarineCupRelic extends CustomRelic implements OnReceivePowerRelic
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("octarine_cup.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("octarine_cup.png"));
     
-    private boolean triggeredThisCombat = false;
-    
     public OctarineCupRelic() {
         super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.FLAT);
     }
 
-
     @Override
-    public void atBattleStart() {
-        this.triggeredThisCombat = false;
-    }
+    public void atTurnStart() {
+        AbstractPlayer p = AbstractDungeon.player;
 
-    @Override
-    public boolean onReceivePower(AbstractPower power, AbstractCreature p) {
-        if (!power.ID.equals(IntoxicationPower.POWER_ID)){
-            return true;
-        }
-        if (((IntoxicationPower)power).isRelic){
-            return true;
-        }
-        if (!triggeredThisCombat){
+        if (p.stance.ID.equals(IntoxicatedStance.STANCE_ID)){
             flash();
-            addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-            addToBot(new GainEnergyAction(1));
-            triggeredThisCombat = true;
+            addToTop(new GainEnergyAction(1));
         }
-        return true;
     }
 
     @Override

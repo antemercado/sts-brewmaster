@@ -45,7 +45,7 @@
     "NAME": "Octarine Cup",
     "FLAVOR": "A staple at Spire parties.",
     "DESCRIPTIONS": [
-      "Whenever you gain #yIntoxication for the first time each combat, gain [E]"
+      "If you are #yIntoxicated at the start of your turn, gain [E]"
     ]
   },
   "theBrewmaster:MiniFridgeRelic": {
@@ -59,7 +59,7 @@
     "NAME": "Sick Bag",
     "FLAVOR": "The Spire gives it's weakest stomachs its strongest bags.",
     "DESCRIPTIONS": [
-      "Start each combat with 1 Weak. At the start of combat, apply 1 Vulnerable to ALL enemies."
+      "Whenever you gain Weak, apply that much Weak to ALL enemies."
     ]
   }
 }
