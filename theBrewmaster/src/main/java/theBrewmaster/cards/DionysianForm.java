@@ -41,6 +41,7 @@ public class DionysianForm extends AbstractBrewmasterCard {
     public DionysianForm() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
+        isEthereal = true;
     }
     // Actions the card should do.
     @Override
@@ -53,7 +54,7 @@ public class DionysianForm extends AbstractBrewmasterCard {
         if (!upgraded) {
             upgradeName();
             rawDescription = UPGRADE_DESCRIPTION;
-            this.isInnate = true;
+            isEthereal = false;
             initializeDescription();
         }
     }

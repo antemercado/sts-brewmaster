@@ -137,7 +137,7 @@
   },
   "theBrewmaster:ExplodingKeg": {
     "NAME": "Exploding Keg",
-    "DESCRIPTION": "Deal !D! damage to an enemy and !M! damage to the rest."
+    "DESCRIPTION": "Deal !M! damage to an enemy and !D! damage to the rest."
   },
   "theBrewmaster:BeserkerBarrage": {
     "NAME": "Beserker Barrage",
@@ -190,8 +190,8 @@
   },
   "theBrewmaster:DionysianForm": {
     "NAME": "Dionysian Form",
-    "DESCRIPTION": "Whenever you play a Brew card, play a copy of each brew card you played before it this turn.",
-    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you play a Brew card, play a copy of each brew card you played before it this turn."
+    "DESCRIPTION": "Ethereal. NL Whenever you play a Brew card, play a copy of each brew card you played before it this turn.",
+    "UPGRADE_DESCRIPTION": "Whenever you play a Brew card, play a copy of each brew card you played before it this turn."
   },
   "theBrewmaster:DrunkenRage": {
     "NAME": "Drunken Rage",
@@ -349,5 +349,13 @@
   "theBrewmaster:Numbness": {
     "NAME": "Numbness",
     "DESCRIPTION": "If you're thebrewmaster:Intoxicated, reduce each of your debuffs by !M! at the end of your turn."
+  },
+  "theBrewmaster:FlailAbout": {
+    "NAME": "Flail About",
+    "DESCRIPTION": "Deal !D! to each enemy. NL Weak increases this card's damage instead of decreasing it."
+  },
+  "theBrewmaster:OpenTab": {
+    "NAME": "Open Tab",
+    "DESCRIPTION": "{@@}Whenever you play a Brew card, draw !M! Brew card{!M!|>1=s}"
   }
 }

@@ -29,8 +29,8 @@ public class ExplodingKeg extends AbstractBrewmasterCard {
     
     private static final int COST = 2;
 
-    private static final int DAMAGE = 20;
-    private static final int MAGIC = 5;
+    private static final int MAGIC = 15;
+    private static final int DAMAGE = 5;
     private static final int UPGRADE_PLUS_DMG = 5;
     
     // TEXT DECLARATION
@@ -41,15 +41,44 @@ public class ExplodingKeg extends AbstractBrewmasterCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseDamage = this.damage = DAMAGE;
         this.baseMagicNumber = this.magicNumber = MAGIC;
+        this.isMultiDamage = true;
     }
+
+    // Thanks Alchyr
+    @Override
+    public void applyPowers() {
+        this.isMultiDamage = false;
+        int aoeDmg = this.baseDamage;
+        this.baseDamage = this.baseMagicNumber;
+        super.applyPowers();
+        this.magicNumber = damage;
+        isMagicNumberModified = isDamageModified;
+
+        this.baseDamage = aoeDmg;
+        isMultiDamage = true;
+        super.applyPowers();
+    }
+
+    // Thanks Alchyr
+    @Override
+    public void calculateCardDamage(AbstractMonster mo) {
+        this.isMultiDamage = false;
+        int aoeDmg = this.baseDamage;
+        this.baseDamage = this.baseMagicNumber;
+        super.calculateCardDamage(mo);
+        this.magicNumber = damage;
+        isMagicNumberModified = isDamageModified;
+
+        this.baseDamage = aoeDmg;
+        isMultiDamage = true;
+        super.calculateCardDamage(mo);
+    }
+
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
-        for (AbstractMonster mon : AbstractDungeon.getCurrRoom().monsters.monsters){
-            if (!mon.equals(m))
-                addToBot(new DamageAction(mon, new DamageInfo(p, magicNumber, damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
-        }
+        addToBot(new DamageAction(m, new DamageInfo(p, magicNumber, damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
+        addToBot(new DamageAllButOneEnemyAction(p, m, multiDamage, damageType, AbstractGameAction.AttackEffect.FIRE));
     }
     // Upgraded stats.
     @Override

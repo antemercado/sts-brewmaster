@@ -128,5 +128,13 @@
       " additional [E] next turn.",
       " additional [E] next turn."
     ]
+  },
+  "theBrewmaster:OpenTabPower": {
+    "NAME": "Open Tab",
+    "DESCRIPTIONS": [
+      "Whenever you play a #yBrew card, draw #b",
+      " #yBrew card.",
+      " #yBrew cards."
+    ]
   }
 }
