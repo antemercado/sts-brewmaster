@@ -52,7 +52,7 @@
     "NAME": "Mini Fridge",
     "FLAVOR": "The Merchant will settle your bill at the end of your time in the Spire.",
     "DESCRIPTIONS": [
-      "At the start of each combat, add 2 #yMicrobrews to your hand."
+      "At the start of each combat, add 2 random #yMicrobrew cards to your hand."
     ]
   },
   "theBrewmaster:SickBagRelic": {

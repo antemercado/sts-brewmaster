@@ -210,8 +210,8 @@
   },
   "theBrewmaster:DionysianForm": {
     "NAME": "Dionysian Form",
-    "DESCRIPTION": "Ethereal. NL Whenever you play a Brew card, play a copy of each brew card you played before it this turn.",
-    "UPGRADE_DESCRIPTION": "Whenever you play a Brew card, play a copy of each brew card you played before it this turn."
+    "DESCRIPTION": "Ethereal. NL Whenever you play a Brew card, play a copy of each Brew card you played before it this turn.",
+    "UPGRADE_DESCRIPTION": "Whenever you play a Brew card, play a copy of each Brew card you played before it this turn."
   },
   "theBrewmaster:DrunkenRage": {
     "NAME": "Drunken Rage",
@@ -380,11 +380,11 @@
   },
   "theBrewmaster:BottomShelf": {
     "NAME": "Bottom Shelf",
-    "DESCRIPTION": "{@@}Gain !B! Block. Add !M! Microbrew card{!M!|>1=s} to your hand."
+    "DESCRIPTION": "{@@}Gain !B! Block. Add !M! random Microbrew card{!M!|>1=s} to your hand."
   },
   "theBrewmaster:PartyFavors": {
     "NAME": "Party Favors",
-    "DESCRIPTION": "Add X Upgraded Microbrew cards to your hand. Exhaust.",
-    "UPGRADE_DESCRIPTION": "Add X+1 Upgraded Microbrew cards to your hand. Exhaust."
+    "DESCRIPTION": "Add X random Upgraded Microbrew cards to your hand. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Add X+1 random Upgraded Microbrew cards to your hand. Exhaust."
   }
 }
