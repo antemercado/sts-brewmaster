@@ -307,13 +307,13 @@ public class BrewmasterMod implements
 
         // Create a new event builder
         // Since this is a builder these method calls (outside of create()) can be skipped/added as necessary
-        AddEventParams eventParams = new AddEventParams.Builder(IdentityCrisisEvent.ID, IdentityCrisisEvent.class) // for this specific event
-            .dungeonID(TheCity.ID) // The dungeon (act) this event will appear in
-            .playerClass(BrewmasterCharacter.Enums.BREWMASTER) // Character specific event
-            .create();
+        // AddEventParams eventParams = new AddEventParams.Builder(IdentityCrisisEvent.ID, IdentityCrisisEvent.class) // for this specific event
+        //     .dungeonID(TheCity.ID) // The dungeon (act) this event will appear in
+        //     .playerClass(BrewmasterCharacter.Enums.BREWMASTER) // Character specific event
+        //     .create();
 
         // Add the event
-        BaseMod.addEvent(eventParams);
+        // BaseMod.addEvent(eventParams);
 
         // =============== /EVENTS/ =================
         logger.info("Done loading badge Image and mod options");
