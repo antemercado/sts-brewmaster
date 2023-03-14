@@ -14,6 +14,7 @@ import static theBrewmaster.BrewmasterMod.makeRelicPath;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.common.ReduceCostAction;
+import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -25,26 +26,16 @@ public class MiniFridgeRelic extends CustomRelic {
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("placeholder_relic.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic.png"));
 
-    private static final int CHANCE = 50;
 
     public MiniFridgeRelic() {
         super(ID, IMG, OUTLINE, RelicTier.SHOP, LandingSound.MAGICAL);
     }
 
     @Override
-    public void onUseCard(AbstractCard targetCard, UseCardAction useCardAction) {
-        if (!targetCard.hasTag(CustomTags.BREW)){
-            return;
-        }
-        int rand = AbstractDungeon.relicRng.random(99);
-        if (rand > CHANCE - 1){
-            return;
-        }
-        flash();
-        AbstractCard newBrew = BrewmasterMod.getBrews().getRandomCard(true);
-        CardModifierManager.addModifier(newBrew, new ExhaustMod());
-        newBrew.modifyCostForCombat(-99);
-        addToBot(new MakeTempCardInHandAction(newBrew));
+    public void atBattleStartPreDraw() {
+        addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+        addToBot(new MakeTempCardInHandAction(BrewmasterMod.getMicrobrews().getRandomCard(true)));
+        addToBot(new MakeTempCardInHandAction(BrewmasterMod.getMicrobrews().getRandomCard(true)));
     }
 
     @Override

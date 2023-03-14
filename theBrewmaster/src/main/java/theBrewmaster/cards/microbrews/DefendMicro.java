@@ -1,15 +1,18 @@
-package theBrewmaster.cards;
+package theBrewmaster.cards.microbrews;
 
 import basemod.AutoAdd;
 import basemod.abstracts.CustomCard;
 import basemod.helpers.BaseModCardTags;
 import theBrewmaster.BrewmasterMod;
+import theBrewmaster.cards.AbstractBrewmasterCard;
 import theBrewmaster.characters.BrewmasterCharacter;
 import theBrewmaster.enums.CustomTags;
+import theBrewmaster.powers.AdmiralsBrewPower;
 
 import static theBrewmaster.BrewmasterMod.makeCardPath;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -18,46 +21,48 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 @AutoAdd.Ignore
-public class TurtleBrew extends AbstractBrewmasterCard {
+public class DefendMicro extends AbstractBrewmasterCard {
     
     // STAT DECLARATION
-    
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+
+    private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
-    public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
+    public static final CardColor COLOR = CardColor.COLORLESS;
     
-    private static final int COST = 1;
+    private static final int COST = 0;
     
-    private static final int MAGIC = 2;
+    private static final int BLOCK = 4;
+    private static final int UPGRADE_PLUS_BLOCK = 2;
     
     // TEXT DECLARATION
-    public static final String ID = BrewmasterMod.makeID(TurtleBrew.class.getSimpleName());
-    public static final String IMG = makeCardPath(TurtleBrew.class.getSimpleName(), TYPE);
+    public static final String ID = BrewmasterMod.makeID(DefendMicro.class.getSimpleName());
+    public static final String IMG = makeCardPath(DefendMicro.class.getSimpleName(), TYPE);
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    
-    public TurtleBrew() { 
+
+    public DefendMicro() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.baseMagicNumber = this.magicNumber = MAGIC;
+
+        this.baseBlock = this.block = BLOCK;
+        this.exhaust = true;
+        this.selfRetain = true;
 
         tags.add(CustomTags.BREW);
-
     }
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int amount = p.currentBlock * (magicNumber - 1);
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, amount));
+        addToBot(new GainBlockAction(p, m, this.block));
     }
+
     // Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.selfRetain = true;
-            rawDescription = UPGRADE_DESCRIPTION;
+            upgradeBlock(UPGRADE_PLUS_BLOCK);
             initializeDescription();
         }
     }

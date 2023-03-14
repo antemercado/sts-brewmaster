@@ -6,6 +6,11 @@ import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.DynamicTextBlocks;
 import theBrewmaster.cards.*;
+import theBrewmaster.cards.microbrews.DefendMicro;
+import theBrewmaster.cards.microbrews.CinderMicro;
+import theBrewmaster.cards.microbrews.VolatileMicro;
+import theBrewmaster.cards.microbrews.IntoxMicro;
+import theBrewmaster.cards.microbrews.MedicalMicro;
 import theBrewmaster.characters.BrewmasterCharacter;
 import theBrewmaster.enums.CustomTags;
 import theBrewmaster.events.IdentityCrisisEvent;
@@ -525,7 +530,18 @@ public class BrewmasterMod implements
         retVal.addToTop(new TurtleBrew());
         retVal.addToTop(new TwistedBrew());
         retVal.addToTop(new VolatileBrew());
-        // retVal.addToTop(new Microbrew());
+
+        return retVal;
+    }
+
+    public static CardGroup getMicrobrews(){
+        CardGroup retVal = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+
+        retVal.addToTop(new DefendMicro());
+        retVal.addToTop(new CinderMicro());
+        retVal.addToTop(new VolatileMicro());
+        retVal.addToTop(new IntoxMicro());
+        retVal.addToTop(new MedicalMicro());
 
         return retVal;
     }

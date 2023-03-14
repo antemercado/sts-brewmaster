@@ -52,7 +52,7 @@
     "NAME": "Mini Fridge",
     "FLAVOR": "The Merchant will settle your bill at the end of your time in the Spire.",
     "DESCRIPTIONS": [
-      "25% of the time, when you play a Brew card, create a random 0-cost Brew card with Exhaust in your hand."
+      "At the start of each combat, add 2 #yMicrobrews to your hand."
     ]
   },
   "theBrewmaster:SickBagRelic": {
