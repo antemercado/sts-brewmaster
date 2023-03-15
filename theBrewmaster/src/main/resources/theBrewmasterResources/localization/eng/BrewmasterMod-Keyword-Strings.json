@@ -12,6 +12,6 @@
     "NAMES": [
       "drenched"
     ],
-    "DESCRIPTION": "When Drenched enemies take attack damage, all enemies take bonus damage."
+    "DESCRIPTION": "When Drenched enemies take damage, ALL enemies take bonus damage."
   }
 ]

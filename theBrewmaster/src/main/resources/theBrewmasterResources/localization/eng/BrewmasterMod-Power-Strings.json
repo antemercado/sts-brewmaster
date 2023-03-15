@@ -68,7 +68,7 @@
   "theBrewmaster:DrenchedPower": {
     "NAME": "Drenched",
     "DESCRIPTIONS": [
-      "When damaged, all enemies take #b",
+      "When this enemy is damaged, remove all Drenched stacks and ALL enemies take #b",
       " damage."
     ]
   },
