@@ -28,7 +28,7 @@ public class InertIncendiary extends AbstractPotion{
     public static final PotionColor COLOR = PotionColor.NONE;
     public static final Color LIQUID_COLOR = CardHelper.getColor(100.0f, 160.0f, 70.0f); //RGB
     public static final Color HYBRID_COLOR = LIQUID_COLOR; //RGB
-    public static final Color SPOTS_COLOR = CardHelper.getColor(120.0f, 140.0f, 48.0f);
+    public static final Color SPOTS_COLOR = CardHelper.getColor(50.0f, 55.0f, 30.0f);
 
 
     public InertIncendiary() {
