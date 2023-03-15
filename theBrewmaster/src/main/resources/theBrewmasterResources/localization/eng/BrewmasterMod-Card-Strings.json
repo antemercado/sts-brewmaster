@@ -232,7 +232,7 @@
   },
   "theBrewmaster:BarrelThrough": {
     "NAME": "Barrel Through",
-    "DESCRIPTION": "Deal !D! damage to each enemy. NL Gain !B! Block."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Gain !B! Block."
   },
   "theBrewmaster:VolatileBrew": {
     "NAME": "Volatile Brew",
@@ -246,7 +246,7 @@
   },
   "theBrewmaster:BeerShower": {
     "NAME": "Beer Shower",
-    "DESCRIPTION": "Apply !M! thebrewmaster:Drenched to each enemy."
+    "DESCRIPTION": "Apply !M! thebrewmaster:Drenched to ALL enemies."
   },
   "theBrewmaster:EthanolVapors": {
     "NAME": "Ethanol Vapors",
@@ -305,8 +305,8 @@
   },
   "theBrewmaster:BelligerentRoar": {
     "NAME": "Belligerent Roar",
-    "DESCRIPTION": "Stun an enemy. NL thebrewmaster:Intoxicated: Stun each enemy. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Stun an enemy. NL thebrewmaster:Intoxicated: Stun each enemy."
+    "DESCRIPTION": "Stun an enemy. NL thebrewmaster:Intoxicated: Stun ALL enemies instead. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Stun an enemy. NL thebrewmaster:Intoxicated: Stun ALL enemies instead."
   },
   "theBrewmaster:HeavyDrink": {
     "NAME": "Heavy Drink",
@@ -372,7 +372,7 @@
   },
   "theBrewmaster:FlailAbout": {
     "NAME": "Flail About",
-    "DESCRIPTION": "Deal !D! to each enemy. NL Weak increases this card's damage instead of decreasing it."
+    "DESCRIPTION": "Deal !D! to ALL enemies. NL Weak increases this card's damage instead of decreasing it."
   },
   "theBrewmaster:OpenTab": {
     "NAME": "Open Tab",
