@@ -72,7 +72,6 @@ public class BrewmasterMod implements
         EditKeywordsSubscriber,
         EditCharactersSubscriber,
         PostInitializeSubscriber,
-        OnStartBattleSubscriber,
         OnCardUseSubscriber,
         OnPlayerTurnStartSubscriber {
     public static final Logger logger = LogManager.getLogger(BrewmasterMod.class.getName());
@@ -490,12 +489,6 @@ public class BrewmasterMod implements
     }
 
     // Implement Subscribers
-
-    @Override
-    public void receiveOnBattleStart(AbstractRoom room) {
-        AbstractDungeon.player.potions.stream().filter(p -> p instanceof ShiftingAle).forEach(p -> ((ShiftingAle) p).onBattleStart(room));
-        BrewmasterMod.brewCardsPlayedThisCombat = 0;
-    }
 
     @Override
     public void receiveCardUsed(AbstractCard card) {
