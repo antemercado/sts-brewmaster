@@ -43,7 +43,6 @@ public class AdmiralsBrew extends AbstractBrewmasterCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
         this.baseMagicNumber = this.magicNumber = MAGIC;
-        this.exhaust = true;
 
         tags.add(CustomTags.BREW);
     }

@@ -34,7 +34,7 @@
     "DESCRIPTIONS": [
       "Reducing unblocked damage by half. Taking #b",
       " damage in #b",
-      " turns."
+      " turns. This damage cannot lower your HP below #b1."
     ]
   },
   "theBrewmaster:VasoimmolationPower": {
