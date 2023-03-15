@@ -24,7 +24,7 @@ public class AdmiralsBrew extends AbstractBrewmasterCard {
 
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
-    private static final CardType TYPE = CardType.SKILL;
+    private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
     
     private static final int COST = 2;
