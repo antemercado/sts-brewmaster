@@ -7,7 +7,7 @@
         "NAME": "Inert Incendiary",
         "DESCRIPTIONS": ["Apply ", " Drenched."]
     },
-    "theBrewmaster:ShiftingAle": {
+    "theBrewmaster:ShiftingAleOld": {
         "NAME": "Shifting Spirit",
         "DESCRIPTIONS": [
             "Apply ",
@@ -16,6 +16,14 @@
             " Strength.",
             "Shifting",
             "This potion's effect is chosen at random between Stength and Dexterity at the start of each combat."
+        ]
+    },
+    "theBrewmaster:ShiftingAle": {
+        "NAME": "Shifting Spirit",
+        "DESCRIPTIONS": [
+            "Add ",
+            "random Microbrew card into your hand.",
+            "random Microbrew cards into your hand."
         ]
     }
 }
