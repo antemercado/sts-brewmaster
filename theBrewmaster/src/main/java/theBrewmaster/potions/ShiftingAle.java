@@ -2,6 +2,7 @@ package theBrewmaster.potions;
 
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -22,7 +23,7 @@ public class ShiftingAle extends AbstractPotion{
     public static final String[] DESCRIPTIONS = potionStrings.DESCRIPTIONS;
     private static final String NAME = potionStrings.NAME;
 
-    private static final PotionRarity RARITY = PotionRarity.COMMON;
+    private static final PotionRarity RARITY = PotionRarity.UNCOMMON;
     private static final PotionSize SIZE = PotionSize.S;
     public static final PotionColor COLOR = PotionColor.NONE;
     public static final Color LIQUID_COLOR = CardHelper.getColor(230.0f, 210.0f, 15.0f); //RGB
@@ -53,7 +54,9 @@ public class ShiftingAle extends AbstractPotion{
     
     public void use(AbstractCreature target) {
         for (int i = 0; i < this.potency; i++){
-            addToBot(new MakeTempCardInHandAction(BrewmasterMod.getMicrobrews().getRandomCard(true)));
+            AbstractCard c = BrewmasterMod.getMicrobrews().getRandomCard(true);
+            c.upgrade();
+            addToBot(new MakeTempCardInHandAction(c));
         }
     }
     

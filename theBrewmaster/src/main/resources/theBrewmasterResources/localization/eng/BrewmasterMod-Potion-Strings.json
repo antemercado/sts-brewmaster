@@ -1,11 +1,11 @@
 {
     "theBrewmaster:FermentedTea": {
         "NAME": "Fermented Tea",
-        "DESCRIPTIONS": ["Gain ", " Intoxication."]
+        "DESCRIPTIONS": ["Gain #b", " Intoxication."]
     },
     "theBrewmaster:InertIncendiary": {
         "NAME": "Inert Incendiary",
-        "DESCRIPTIONS": ["Apply ", " Drenched."]
+        "DESCRIPTIONS": ["Apply #b", " Drenched."]
     },
     "theBrewmaster:ShiftingAleOld": {
         "NAME": "Shifting Spirit",
@@ -21,9 +21,9 @@
     "theBrewmaster:ShiftingAle": {
         "NAME": "Shifting Spirit",
         "DESCRIPTIONS": [
-            "Add ",
-            "random Microbrew card into your hand.",
-            "random Microbrew cards into your hand."
+            "Add #b",
+            " random Upgraded Microbrew card into your hand.",
+            " random Upgraded Microbrew cards into your hand."
         ]
     }
 }
