@@ -541,7 +541,7 @@ public class BrewmasterMod implements
         retVal.addToTop(new CinderMicro());
         retVal.addToTop(new VolatileMicro());
         retVal.addToTop(new IntoxMicro());
-        retVal.addToTop(new MedicalMicro());
+        // retVal.addToTop(new MedicalMicro());
 
         return retVal;
     }
