@@ -19,7 +19,7 @@
     "NAME": "Fluid Motion",
     "DESCRIPTIONS": [
       "At the end of your turn, gain #b",
-      "% of your #yIntoxication as block."
+      "Block for each 25 #yIntoxication you have."
     ]
   },
   "theBrewmaster:PocketFlaskPower": {

@@ -34,6 +34,8 @@ public class FluidMotionPower extends AbstractPower{
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
 
+    public static final int DENOMINATOR = 25;
+
     public FluidMotionPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         name = NAME;
         ID = POWER_ID;
@@ -62,7 +64,8 @@ public class FluidMotionPower extends AbstractPower{
         if (!this.owner.hasPower(IntoxicationPower.POWER_ID))
             return;
         flash();
-        float block = this.owner.getPower(IntoxicationPower.POWER_ID).amount * this.amount / 100;
+        int intoxAmount = this.owner.getPower(IntoxicationPower.POWER_ID).amount;
+        int block = (int)Math.ceil(intoxAmount / DENOMINATOR) * this.amount;
         addToBot(new GainBlockAction(this.owner, this.source, (int)block));
     }
 

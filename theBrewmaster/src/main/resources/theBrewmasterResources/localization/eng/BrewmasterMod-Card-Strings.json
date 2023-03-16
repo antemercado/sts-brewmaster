@@ -56,7 +56,7 @@
   },
   "theBrewmaster:FluidMotion": {
     "NAME": "Fluid Motion",
-    "DESCRIPTION": "At the end of your turn, gain !M! % of your thebrewmaster:Intoxication as Block."
+    "DESCRIPTION": "At the end of your turn, gain !M! Block for every 25 thebrewmaster:Intoxication you have."
   },
   "theBrewmaster:Chug": {
     "NAME": "Chug",
