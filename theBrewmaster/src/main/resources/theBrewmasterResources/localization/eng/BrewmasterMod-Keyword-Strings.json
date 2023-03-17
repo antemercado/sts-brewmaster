@@ -12,6 +12,6 @@
     "NAMES": [
       "drenched"
     ],
-    "DESCRIPTION": "When Drenched enemies take damage, ALL enemies take bonus damage."
+    "DESCRIPTION": "Whenever a Drenched enemy take damage, remove all Drenched stacks and ALL enemies take bonus damage."
   }
 ]
