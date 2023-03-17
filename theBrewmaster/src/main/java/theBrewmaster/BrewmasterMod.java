@@ -72,6 +72,7 @@ public class BrewmasterMod implements
         EditKeywordsSubscriber,
         EditCharactersSubscriber,
         PostInitializeSubscriber,
+        OnStartBattleSubscriber,
         OnCardUseSubscriber,
         OnPlayerTurnStartSubscriber {
     public static final Logger logger = LogManager.getLogger(BrewmasterMod.class.getName());
@@ -497,6 +498,11 @@ public class BrewmasterMod implements
             BrewmasterMod.brewCardsPlayedThisTurn++;
         }
         
+    }
+
+    @Override
+    public void receiveOnBattleStart(AbstractRoom room) {
+        BrewmasterMod.brewCardsPlayedThisCombat = 0;
     }
 
     @Override
