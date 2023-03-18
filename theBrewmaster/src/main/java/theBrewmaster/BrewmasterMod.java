@@ -510,29 +510,6 @@ public class BrewmasterMod implements
         BrewmasterMod.brewCardsPlayedThisTurn = 0;
     }
 
-    public static CardGroup getBrews(){
-        
-        CardGroup retVal = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-
-        retVal.addToTop(new AdmiralsBrew());
-        // retVal.addToTop(new CelestialBrew());
-        retVal.addToTop(new CinderBrew());
-        retVal.addToTop(new CozyBrew());
-        retVal.addToTop(new FairyBrew());
-        retVal.addToTop(new FortifyingBrew());
-        retVal.addToTop(new Homebrew());
-        retVal.addToTop(new ImportedBrew());
-        retVal.addToTop(new NimbleBrew());
-        retVal.addToTop(new PerplexingBrew());
-        retVal.addToTop(new PurifyingBrew());
-        retVal.addToTop(new StimulatingBrew());
-        retVal.addToTop(new TurtleBrew());
-        retVal.addToTop(new TwistedBrew());
-        retVal.addToTop(new VolatileBrew());
-
-        return retVal;
-    }
-
     public static CardGroup getMicrobrews(){
         CardGroup retVal = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
 
