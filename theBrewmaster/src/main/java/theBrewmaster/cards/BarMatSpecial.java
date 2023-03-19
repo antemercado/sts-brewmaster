@@ -26,9 +26,9 @@ public class BarMatSpecial extends AbstractBrewmasterCard {
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
     
-    private static final int COST = 1;
+    private static final int COST = 2;
     
-    private static final int DAMAGE = 6;
+    private static final int DAMAGE = 8;
     
     private static final int MAGIC = 1;
     private static final int UPGRADE_PLUS_MAGIC = 1;

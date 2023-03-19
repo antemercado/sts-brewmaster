@@ -205,8 +205,8 @@
   },
   "theBrewmaster:CranialBash": {
     "NAME": "Cranial Bash",
-    "DESCRIPTION": "Deal !D! damage to an enemy. Randomize the costs of cards in your hand for the rest of the combat. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage to an enemy. Randomize the costs of cards in your hand for the rest of the combat."
+    "DESCRIPTION": "Deal !D! damage. Randomize the costs of cards in your hand for the rest of the combat. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. Randomize the costs of cards in your hand for the rest of the combat."
   },
   "theBrewmaster:DionysianForm": {
     "NAME": "Dionysian Form",
@@ -246,7 +246,7 @@
   },
   "theBrewmaster:BeerShower": {
     "NAME": "Beer Shower",
-    "DESCRIPTION": "Apply !M! thebrewmaster:Drenched to ALL enemies."
+    "DESCRIPTION": "Apply !M! thebrewmaster:Drenched and !theBrewmaster:M2! Vulnerable to ALL enemies. NL Exhaust."
   },
   "theBrewmaster:EthanolVapors": {
     "NAME": "Ethanol Vapors",
@@ -390,5 +390,9 @@
   "theBrewmaster:SearingChain": {
     "NAME": "Searing Chain",
     "DESCRIPTION": "Apply !M! thebrewmaster:Drenched. Damage doesn't remove thebrewmaster:Drenched from this enemy this turn."
+  },
+  "theBrewmaster:ChampagneHose": {
+    "NAME": "Champagne Hose",
+    "DESCRIPTION": "At the start of your turn, apply !M! thebrewmaster:Drenched to ALL enemies."
   }
 }

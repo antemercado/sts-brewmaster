@@ -142,5 +142,12 @@
     "DESCRIPTIONS": [
       "#yDrenched isn't removed when this enemy takes damage."
     ]
+  },
+  "theBrewmaster:ChampagneHosePower": {
+    "NAME": "Champagne Hose",
+    "DESCRIPTIONS": [
+      "At the start of your turn, apply #b",
+      " #yDrenched to ALL enemies."
+    ]
   }
 }

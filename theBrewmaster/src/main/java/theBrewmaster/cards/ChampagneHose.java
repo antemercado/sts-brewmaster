@@ -5,13 +5,12 @@ import basemod.abstracts.CustomCard;
 import basemod.helpers.BaseModCardTags;
 import theBrewmaster.BrewmasterMod;
 import theBrewmaster.characters.BrewmasterCharacter;
-import theBrewmaster.powers.DrenchedPower;
+import theBrewmaster.powers.ChampagneHosePower;
 
 import static theBrewmaster.BrewmasterMod.makeCardPath;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -19,47 +18,42 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 
-public class BeerShower extends AbstractBrewmasterCard {
+public class ChampagneHose extends AbstractBrewmasterCard {
     
     // STAT DECLARATION
     
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
-    private static final CardType TYPE = CardType.SKILL;
+    private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
     
-    private static final int COST = 2;
+    private static final int COST = 1;
     
-    private static final int MAGIC = 4;
-    private static final int MAGIC2 = 1;
-    private static final int UPGRADE_PLUS_MAGIC = 2;
-    private static final int UPGRADE_PLUS_MAGIC2 = 1;
+    private static final int MAGIC = 1;
+    private static final int UPGRADE_MAGIC = 1;
     
     // TEXT DECLARATION
-    public static final String ID = BrewmasterMod.makeID(BeerShower.class.getSimpleName());
-    public static final String IMG = makeCardPath(BeerShower.class.getSimpleName(), TYPE);
+    public static final String ID = BrewmasterMod.makeID(ChampagneHose.class.getSimpleName());
+    public static final String IMG = makeCardPath(ChampagneHose.class.getSimpleName(), TYPE);
     
-    public BeerShower() { 
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+
+    public ChampagneHose() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.baseMagicNumber = this.magicNumber = MAGIC;
-        this.baseMagicNumber2 = this.magicNumber2 = MAGIC2;
-        this.exhaust = true;
+        magicNumber = baseMagicNumber = MAGIC;
     }
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        for (AbstractMonster mo: AbstractDungeon.getMonsters().monsters){
-            addToBot(new ApplyPowerAction(mo, p, new DrenchedPower(mo, p, magicNumber), this.magicNumber));
-            addToBot(new ApplyPowerAction(mo, p, new VulnerablePower(mo, magicNumber2, false), this.magicNumber2));
-        }
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ChampagneHosePower(p, magicNumber), magicNumber));
     }
     // Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
-            upgradeMagicNumber2(UPGRADE_PLUS_MAGIC2);
+            upgradeMagicNumber(UPGRADE_MAGIC);
             initializeDescription();
         }
     }
