@@ -2,34 +2,27 @@ package theBrewmaster.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
 import theBrewmaster.BrewmasterMod;
-import theBrewmaster.enums.CustomDamageTypes;
-import theBrewmaster.relics.EthanolFlaskRelic;
 import theBrewmaster.util.TextureLoader;
 
 import static theBrewmaster.BrewmasterMod.makePowerPath;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.cards.DamageInfo.DamageType;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class DrenchedPower extends AbstractPower{
+public class SearingChainPower extends AbstractPower{
     public AbstractCreature source;
 
-    public static final String POWER_ID = BrewmasterMod.makeID("DrenchedPower");
+    public static final String POWER_ID = BrewmasterMod.makeID("SearingChainPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
@@ -39,7 +32,7 @@ public class DrenchedPower extends AbstractPower{
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
 
-    public DrenchedPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
+    public SearingChainPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         name = NAME;
         ID = POWER_ID;
 
@@ -48,7 +41,7 @@ public class DrenchedPower extends AbstractPower{
         this.source = source;
 
         type = PowerType.DEBUFF;
-        isTurnBased = false;
+        isTurnBased = true;
 
         // We load those txtures here.
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
@@ -62,35 +55,18 @@ public class DrenchedPower extends AbstractPower{
         updateDescription();
     }
 
-    public int onAttacked(DamageInfo info, int damageAmount) {
-        int damage = this.amount;
-        DamageType type = CustomDamageTypes.DRENCHED;
-
-        if (info.type.equals(CustomDamageTypes.MATCH)){
-            damage *= 2;
-            type = CustomDamageTypes.MATCH;
+    @Override
+    public void atEndOfRound() {
+        this.reducePower(1);
+        if (this.amount == 0){
+            addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this));
         }
-
-        addToTop(new DamageAllEnemiesAction(null, damage, type, AttackEffect.FIRE));
-        addToTop(new RemoveSpecificPowerAction(owner, info.owner, this));
-        
-        if (this.owner.hasPower(SearingChainPower.POWER_ID)){
-            addToBot(new ApplyPowerAction(this.owner, this.source, new DrenchedPower(this.owner, this.source, this.amount), this.amount));
-        }
-        return damageAmount;
-    }
-
-    public float atDamageReceive(float damage, DamageType damageType) {
-        if (damageType.equals(DamageType.NORMAL) && AbstractDungeon.player.hasRelic(EthanolFlaskRelic.ID)){
-            return damage * (1.0f + this.amount * 0.1f);
-        }
-        return damage;
     }
 
     // Update the description
     @Override
     public void updateDescription() {
-        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+        description = DESCRIPTIONS[0];
     }
 
 }

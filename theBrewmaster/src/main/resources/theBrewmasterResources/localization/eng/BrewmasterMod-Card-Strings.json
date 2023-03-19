@@ -386,5 +386,9 @@
     "NAME": "Party Favors",
     "DESCRIPTION": "Add X random Upgraded Microbrew cards to your hand. Exhaust.",
     "UPGRADE_DESCRIPTION": "Add X+1 random Upgraded Microbrew cards to your hand. Exhaust."
+  },
+  "theBrewmaster:SearingChain": {
+    "NAME": "Searing Chain",
+    "DESCRIPTION": "Apply !M! thebrewmaster:Drenched. Damage doesn't remove thebrewmaster:Drenched from this enemy this turn."
   }
 }
