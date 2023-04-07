@@ -50,6 +50,7 @@ public class OpenTabAction extends AbstractGameAction{
                         this.p.createHandIsFullDialog();
                     } else {
                         int cardIndex = this.p.drawPile.group.indexOf(c);
+                        tmp.removeCard(c);
                         this.p.drawPile.removeCard(c);
                         this.p.drawPile.addToTop(c);
                         this.addToTop(new OpenTabSubAction(c, this.p.drawPile, cardIndex));

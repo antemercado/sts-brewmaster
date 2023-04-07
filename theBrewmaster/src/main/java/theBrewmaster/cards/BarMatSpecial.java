@@ -9,6 +9,7 @@ import theBrewmaster.characters.BrewmasterCharacter;
 import static theBrewmaster.BrewmasterMod.makeCardPath;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -28,9 +29,9 @@ public class BarMatSpecial extends AbstractBrewmasterCard {
     
     private static final int COST = 2;
     
-    private static final int DAMAGE = 8;
+    private static final int DAMAGE = 0;
     
-    private static final int MAGIC = 1;
+    private static final int MAGIC = 2;
     private static final int UPGRADE_PLUS_MAGIC = 1;
     
     // TEXT DECLARATION
@@ -49,14 +50,22 @@ public class BarMatSpecial extends AbstractBrewmasterCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int finalDamage = this.damage + BrewmasterMod.brewCardsPlayedThisCombat;
-        addToBot(new DamageAction(m, new DamageInfo(p, finalDamage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+
+        AttackEffect effect = AbstractGameAction.AttackEffect.BLUNT_LIGHT;
+
+        if (BrewmasterMod.brewCardsPlayedThisCombat > 10){
+            effect = AbstractGameAction.AttackEffect.BLUNT_HEAVY;
+        }
+        addToBot(new DamageAction(m, new DamageInfo(p, this.baseDamage, damageTypeForTurn), effect));
     }
 
     public void applyPowers() {
-        super.applyPowers();
-        this.rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0] + BrewmasterMod.brewCardsPlayedThisCombat + EXTENDED_DESCRIPTION[1];
-        initializeDescription();
+        if (BrewmasterMod.brewCardsPlayedThisCombat > 0){
+            this.baseDamage = BrewmasterMod.brewCardsPlayedThisCombat * this.magicNumber;
+            super.applyPowers();
+            this.rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0];
+            initializeDescription();
+        }
     }
     // Upgraded stats.
     @Override

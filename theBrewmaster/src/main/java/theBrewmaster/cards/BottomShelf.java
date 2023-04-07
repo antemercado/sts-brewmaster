@@ -7,7 +7,7 @@ import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.MultiCardPrevie
 import theBrewmaster.BrewmasterMod;
 import theBrewmaster.characters.BrewmasterCharacter;
 
-import static theBrewmaster.BrewmasterMod.makeDefaultCardPath;
+import static theBrewmaster.BrewmasterMod.makeCardPath;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -37,7 +37,7 @@ public class BottomShelf extends AbstractBrewmasterCard{
 
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(BottomShelf.class.getSimpleName());
-    public static final String IMG = makeDefaultCardPath(BottomShelf.class.getSimpleName(), TYPE);
+    public static final String IMG = makeCardPath(BottomShelf.class.getSimpleName(), TYPE);
 
     public BottomShelf() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

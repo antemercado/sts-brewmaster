@@ -149,5 +149,21 @@
       "At the start of your turn, apply #b",
       " #yDrenched to ALL enemies."
     ]
+  },
+  "theBrewmaster:DistilleryPower": {
+    "NAME": "Distillery",
+    "DESCRIPTIONS": [
+      "Whenever you draw a #yStatus card, exhaust it and add #b",
+      " random #yMicrobrew card to your hand.",
+      " random #yMicrobrew cards to your hand."
+    ]
+  },
+  "theBrewmaster:DistilleryCursePower": {
+    "NAME": "Enhanced Distillery",
+    "DESCRIPTIONS": [
+      "Whenever you draw a #yStatus or #y Curse card, exhaust it and add #b",
+      " random #yMicrobrew card to your hand.",
+      " random #yMicrobrew cards to your hand."
+    ]
   }
 }

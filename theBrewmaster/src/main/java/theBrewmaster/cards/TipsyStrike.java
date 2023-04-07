@@ -32,10 +32,10 @@ public class TipsyStrike extends AbstractBrewmasterCard {
     
     private static final int COST = 1;
     
-    private static final int DAMAGE = 8;
-    private static final int UPGRADE_PLUS_DMG = 3;
+    private static final int DAMAGE = 9;
     
     private static final int MAGIC = 10;
+    private static final int UPGRADE_PLUS_MAGIC = 5;
     
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(TipsyStrike.class.getSimpleName());
@@ -62,7 +62,7 @@ public class TipsyStrike extends AbstractBrewmasterCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DMG);
+            upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
             initializeDescription();
         }
     }

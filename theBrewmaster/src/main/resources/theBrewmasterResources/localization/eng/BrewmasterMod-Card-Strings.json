@@ -314,10 +314,9 @@
   },
   "theBrewmaster:BarMatSpecial": {
     "NAME": "Bar Mat Special",
-    "DESCRIPTION": "Deal !D! damage plus !M! additional damage for each Brew card played.",
+    "DESCRIPTION": "Deal damage equal to !M! times the number of Brew cards played this combat.",
     "EXTENDED_DESCRIPTION": [
-      " NL (",
-      " Brews played this combat.)"
+      " NL (Deals !D! damage.)"
     ]
   },
   "theBrewmaster:Blackout": {
@@ -394,5 +393,10 @@
   "theBrewmaster:ChampagneHose": {
     "NAME": "Champagne Hose",
     "DESCRIPTION": "At the start of your turn, apply !M! thebrewmaster:Drenched to ALL enemies."
+  },
+  "theBrewmaster:Distillery": {
+    "NAME": "Distillery",
+    "DESCRIPTION": "{@@}Whenever you draw a Status card, exhaust it and add !M! random Microbrew card{!M!|>1=s} to your hand.",
+    "UPGRADE_DESCRIPTION": "{@@}Whenever you draw a Status or Curse card, exhaust it and add !M! random Microbrew card{!M!|>1=s} to your hand."
   }
 }
