@@ -33,11 +33,11 @@ public class FairyBrew extends AbstractBrewmasterCard {
     
     private static final int COST = 1;
     
-    private static final int MAGIC = 3;
-    private static final int UPGRADE_PLUS_MAGIC = 1;
+    private static final int MAGIC = 4;
+    private static final int UPGRADE_PLUS_MAGIC = 3;
     
-    private static final int MAGIC2 = 6;
-    private static final int UPGRADE_PLUS_MAGIC2 = 4;
+    private static final int MAGIC2 = 7;
+    private static final int UPGRADE_PLUS_MAGIC2 = 3;
     
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(FairyBrew.class.getSimpleName());
@@ -59,7 +59,7 @@ public class FairyBrew extends AbstractBrewmasterCard {
         boolean intoxicated = AbstractDungeon.player.stance.ID.equals(IntoxicatedStance.STANCE_ID);
 
         if (!intoxicated)
-            addToBot(new ApplyPowerAction(p, p, new RegenPower(p, magicNumber)));
+            addToBot(new HealAction(p, p, magicNumber));
         if (intoxicated)
             addToBot(new HealAction(p, p, magicNumber2));
     }

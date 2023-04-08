@@ -27,7 +27,7 @@ public class FluidMotion extends AbstractBrewmasterCard {
     private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
     
-    private static final int COST = 2;
+    private static final int COST = 1;
     
     private static final int MAGIC = 1;
     private static final int UPGRADE_PLUS_MAGIC = 1;

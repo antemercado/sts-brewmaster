@@ -153,7 +153,7 @@
   },
   "theBrewmaster:FairyBrew": {
     "NAME": "Fairy Brew",
-    "DESCRIPTION": "Gain !M! Regen. NL thebrewmaster:Intoxicated: Heal !theBrewmaster:M2! HP instead. NL Exhaust."
+    "DESCRIPTION": "Heal !M! HP. NL thebrewmaster:Intoxicated: Heal !theBrewmaster:M2! HP instead. NL Exhaust."
   },
   "theBrewmaster:ExplodingKeg": {
     "NAME": "Exploding Keg",

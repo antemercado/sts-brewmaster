@@ -34,7 +34,6 @@ public class MisplaceAction extends AbstractGameAction{
                 return;
             }
             if (this.p.hand.size() == 1){
-                addToTop(new MoveCardsAction(null, null));
                 this.p.hand.moveToDeck(this.p.hand.getBottomCard(), true);;
                 p.drawPile.shuffle();
                 addToTop(new DrawCardAction(1));
