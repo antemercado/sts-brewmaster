@@ -5,6 +5,7 @@ import basemod.abstracts.CustomCard;
 import basemod.helpers.BaseModCardTags;
 import theBrewmaster.BrewmasterMod;
 import theBrewmaster.characters.BrewmasterCharacter;
+import theBrewmaster.powers.IntoxicationPower;
 
 import static theBrewmaster.BrewmasterMod.makeCardPath;
 
@@ -30,6 +31,7 @@ public class DrunkenLuck extends AbstractBrewmasterCard {
     private static final int COST = -2;
     
     private static final int MAGIC = 15;
+    private static final int MAGIC2 = 25;
     private static final int UPGRADE_PLUS_MAGIC = 5;
     
     // TEXT DECLARATION
@@ -42,6 +44,7 @@ public class DrunkenLuck extends AbstractBrewmasterCard {
     public DrunkenLuck() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseMagicNumber = this.magicNumber = MAGIC;
+        this.baseMagicNumber2 = this.magicNumber2 = MAGIC2;
 
         this.isEthereal = true;
     }
@@ -61,10 +64,14 @@ public class DrunkenLuck extends AbstractBrewmasterCard {
 
     @Override
     public void triggerOnExhaust() {
-        super.triggerOnExhaust();
         AbstractPlayer p = AbstractDungeon.player;
-        p.gainGold(this.magicNumber);
-        for (int i = 0; i < this.magicNumber; i++){
+        int goldGain = this.magicNumber;
+        if (!p.hasPower(IntoxicationPower.POWER_ID)){
+            goldGain = this.magicNumber2;
+        }
+        super.triggerOnExhaust();
+        p.gainGold(goldGain);
+        for (int i = 0; i < goldGain; i++){
             AbstractDungeon.effectList.add(new GainPennyEffect(p, p.hb.cX, p.hb.cY, p.hb.cX, p.hb.cY, true));
         }
     }
@@ -75,6 +82,7 @@ public class DrunkenLuck extends AbstractBrewmasterCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
+            upgradeMagicNumber2(UPGRADE_PLUS_MAGIC);
             initializeDescription();
         }
     }

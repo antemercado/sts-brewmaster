@@ -200,7 +200,7 @@
   },
   "theBrewmaster:DrunkenLuck": {
     "NAME": "Drunkard's Luck",
-    "DESCRIPTION": "Unplayable. NL Ethereal. NL When this card is exhausted, gain !M! Gold.",
+    "DESCRIPTION": "Unplayable. NL Ethereal. NL When this card is exhausted, gain !M! Gold. NL thebrewmaster:Intoxicated: Gain !theBrewmaster:M2! gold instead.",
     "EXTENDED_DESCRIPTION": ["I can't play this card."]
   },
   "theBrewmaster:CranialBash": {
