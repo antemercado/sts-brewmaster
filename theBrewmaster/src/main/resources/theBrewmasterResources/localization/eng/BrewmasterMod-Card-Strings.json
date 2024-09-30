@@ -314,9 +314,9 @@
   },
   "theBrewmaster:BarMatSpecial": {
     "NAME": "Bar Mat Special",
-    "DESCRIPTION": "Deal damage equal to !M! times the number of Brew cards played this combat.",
+    "DESCRIPTION": "Deal !D! damage for each time you've played a Brew card this turn.",
     "EXTENDED_DESCRIPTION": [
-      " NL (Deals !D! damage.)"
+      " NL (!M! Brews played)"
     ]
   },
   "theBrewmaster:Blackout": {
