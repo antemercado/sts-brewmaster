@@ -29,10 +29,10 @@ public class DrunkenFlurry extends AbstractBrewmasterCard {
     
     private static final int COST = 1;
     
-    private static final int DAMAGE = 3;
+    private static final int DAMAGE = 2;
+    private static final int UPGRADE_PLUS_DAMAGE = 1;
 
-    public static final int MAGIC = 25;
-    public static final int UPGRADE_PLUS_MAGIC = -5;
+    public static final int MAGIC = 10;
     
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(DrunkenFlurry.class.getSimpleName());
@@ -59,7 +59,7 @@ public class DrunkenFlurry extends AbstractBrewmasterCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
+            upgradeDamage(UPGRADE_PLUS_DAMAGE);
             initializeDescription();
         }
     }
