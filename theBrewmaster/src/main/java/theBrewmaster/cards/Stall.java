@@ -32,7 +32,7 @@ public class Stall extends AbstractBrewmasterCard {
     private static final int COST = 2;
     private static final int UPGRADED_COST = 1;
     
-    private static final int MAGIC2 = 5;
+    private static final int MAGIC2 = 4;
     
     private static final int MAGIC = 1;
     

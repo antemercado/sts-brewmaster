@@ -32,7 +32,7 @@ public class BeerBelly extends AbstractBrewmasterCard {
     private static final int BLOCK = 12;
     private static final int UPGRADE_PLUS_BLOCK = 4;
 
-    private static final int MAGIC = 2;
+    private static final int MAGIC = 1;
 
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(BeerBelly.class.getSimpleName());

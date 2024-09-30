@@ -68,7 +68,7 @@
   },
   "theBrewmaster:Homebrew": {
     "NAME": "Homebrew",
-    "DESCRIPTION": "Gain !M! thebrewmaster:Intoxication. This card gains !theBrewmaster:M2! thebrewmaster:Intoxication when drawn until played."
+    "DESCRIPTION": "Gain !M! thebrewmaster:Intoxication. NL At the start of each combat permanently increase this card's thebrewmaster:Intoxication by !theBrewmaster:M2!."
   },
   "theBrewmaster:Belch": {
     "NAME": "Belch",
@@ -363,7 +363,7 @@
   },
   "theBrewmaster:BeerBelly": {
     "NAME": "Beer Belly",
-    "DESCRIPTION": "{@@}Gain !B! Block. Shuffle !M! Woozy card{!M!|>1=s} into your draw pile."
+    "DESCRIPTION": "{@@}Gain !B! Block. NL Shuffle !M! Woozy card{!M!|>1=s} into your draw pile."
   },
   "theBrewmaster:Numbness": {
     "NAME": "Numbness",

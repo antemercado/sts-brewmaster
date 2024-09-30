@@ -32,7 +32,7 @@ public class Chug extends AbstractBrewmasterCard {
     private static final int COST = 1;
     
     private static final int MAGIC = 30;
-    private static final int UPGRADE_PLUS_MAGIC = 10;
+    private static final int UPGRADE_PLUS_MAGIC = 20;
     
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(Chug.class.getSimpleName());

@@ -21,12 +21,13 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 public class Homebrew extends AbstractBrewmasterCard {
     
     // STAT DECLARATION
     
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
@@ -38,11 +39,11 @@ public class Homebrew extends AbstractBrewmasterCard {
     public static final String IMG = makeCardPath(Homebrew.class.getSimpleName(), TYPE);
     
     // Base Intoxication
-    private static final int MISC = 0;
+    private static final int MISC = 8;
     
     // Intoxication Increase
-    private static final int MAGIC2 = 10;
-    private static final int UPGRADE_PLUS_MAGIC2 = 5;
+    private static final int MAGIC2 = 2;
+    private static final int UPGRADE_PLUS_MAGIC2 = 2;
     
     public Homebrew() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -52,18 +53,21 @@ public class Homebrew extends AbstractBrewmasterCard {
 
         tags.add(CustomTags.BREW);
     }
-    // Increase when drawn
-    public void triggerWhenDrawn(){
+
+    // public void triggerWhenDrawn(){
+    //     AbstractDungeon.actionManager.addToBottom(new HomebrewAction(this.uuid, this.magicNumber2));
+    //     // this.magicNumber += this.magicNumber2;
+    //     // applyPowers();
+    // }
+
+    public void onBattleStart(AbstractRoom room) {
         AbstractDungeon.actionManager.addToBottom(new HomebrewAction(this.uuid, this.magicNumber2));
-        // this.magicNumber += this.magicNumber2;
-        // applyPowers();
     }
     
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
             AbstractDungeon.actionManager.addToBottom(new ApplyIntoxicationPower(p, p, new IntoxicationPower(p, p, this.baseMagicNumber)));
-            AbstractDungeon.actionManager.addToBottom(new HomebrewAction(this.uuid, MISC, true));
         }
 
     public void applyPowers(){

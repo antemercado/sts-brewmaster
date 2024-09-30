@@ -97,17 +97,19 @@ public class ImportedBrewAction extends AbstractGameAction{
             CardGroup anyCard = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
             for (AbstractCard c: charCards){
                 if (c.rarity == cardRarity && !c.hasTag(CardTags.HEALING) && c.type != CardType.CURSE && c.type != CardType.STATUS && !UnlockTracker.isCardLocked(c.cardID)){
-                    anyCard.addToBottom(c);
+                    anyCard.addToTop(c);
                 }
             }
             
             // Return card.
-            anyCard.shuffle(AbstractDungeon.cardRandomRng);
-            AbstractCard retCard = anyCard.getRandomCard(true);
-            if (this.upgraded){
-                retCard.upgrade();
+            if (anyCard.size() > 0){
+                anyCard.shuffle(AbstractDungeon.cardRandomRng);
+                AbstractCard retCard = anyCard.getRandomCard(true);
+                if (this.upgraded){
+                    retCard.upgrade();
+                }
+                ret.add(retCard);
             }
-            ret.add(retCard);
             
             // No longer need the character in the HashMap
             cards.remove(charKey);

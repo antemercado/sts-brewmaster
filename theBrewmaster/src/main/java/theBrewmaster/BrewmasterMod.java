@@ -502,6 +502,7 @@ public class BrewmasterMod implements
 
     @Override
     public void receiveOnBattleStart(AbstractRoom room) {
+        AbstractDungeon.player.masterDeck.group.stream().filter(c -> c instanceof Homebrew).forEach(c -> ((Homebrew) c).onBattleStart(room));
         BrewmasterMod.brewCardsPlayedThisCombat = 0;
     }
 
