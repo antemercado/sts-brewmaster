@@ -34,7 +34,7 @@ public class FluidMotionPower extends AbstractPower{
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
 
-    public static final int DENOMINATOR = 25;
+    public static final int DENOMINATOR = 10;
 
     public FluidMotionPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         name = NAME;

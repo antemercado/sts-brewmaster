@@ -28,9 +28,9 @@ public class FluidMotion extends AbstractBrewmasterCard {
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
     
     private static final int COST = 1;
+    private static final int UPGRADE_COST = 0;
     
     private static final int MAGIC = 1;
-    private static final int UPGRADE_PLUS_MAGIC = 1;
     
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(FluidMotion.class.getSimpleName());
@@ -51,7 +51,7 @@ public class FluidMotion extends AbstractBrewmasterCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
+            upgradeBaseCost(UPGRADE_COST);
             initializeDescription();
         }
     }
