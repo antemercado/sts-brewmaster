@@ -3,8 +3,8 @@
     "NAME": "Intoxication",
     "DESCRIPTIONS": [
       "Certain cards have bonuses when #yIntoxicated.",
-      " You'll lose 15% #yIntoxication at the end of your turn (#b",
-      " #yIntoxication)."
+      " You'll lose 15% #yIntoxication at the end of your turn ( #b",
+      " #yIntoxication )."
     ]
   },
   "theBrewmaster:DoubleFistPower": {
