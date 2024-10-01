@@ -3,8 +3,8 @@
     "NAME": "Intoxication",
     "DESCRIPTIONS": [
       "Certain cards have bonuses when #yIntoxicated.",
-      " You'll lose #b",
-      " #yIntoxication at the end of your turn."
+      " You'll lose 15% #yIntoxication at the end of your turn (#b",
+      " #yIntoxication)."
     ]
   },
   "theBrewmaster:DoubleFistPower": {
@@ -19,7 +19,7 @@
     "NAME": "Fluid Motion",
     "DESCRIPTIONS": [
       "At the end of your turn, gain #b",
-      "Block for each 25 #yIntoxication you have."
+      "Block for each 10 #yIntoxication you have."
     ]
   },
   "theBrewmaster:PocketFlaskPower": {
