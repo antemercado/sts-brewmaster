@@ -43,13 +43,14 @@ public class IntoxicationPower extends AbstractPower{
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
     public static final int INTOX_THRESHOLD = 100;
-    public static final int INTOX_THRESHOLD_RELIC = 75;
     public static final float INTOX_DECAY_RATE = 0.20f;
 
     // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
     // There's a fallback "missing texture" image, so the game shouldn't crash if you accidentally put a non-existent file.
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("intoxication84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("intoxication32.png"));
+
+    public int intoxThreshold = INTOX_THRESHOLD;
 
     public IntoxicationPower(final AbstractCreature owner, final AbstractCreature source, final int amount){
         this(owner,source,amount,false);
@@ -66,6 +67,11 @@ public class IntoxicationPower extends AbstractPower{
         
         type = PowerType.BUFF;
         isTurnBased = false;
+
+        // Has Louse Liver
+        if (AbstractDungeon.player.hasRelic(LouseLiverRelic.ID)){
+            intoxThreshold = LouseLiverRelic.INTOX_THRESHOLD;
+        }
         
         // We load those txtures here.
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
@@ -82,7 +88,7 @@ public class IntoxicationPower extends AbstractPower{
                 this.amount *= SpiritHelmetRelic.MULTIPLIER;
     
             // If have enough stacks when gaining power, enter stance
-            if (this.amount >= INTOX_THRESHOLD || (this.amount >= INTOX_THRESHOLD_RELIC && AbstractDungeon.player.hasRelic(LouseLiverRelic.ID))){
+            if (this.amount >= intoxThreshold){
                 addToBot(new ChangeStanceAction(new IntoxicatedStance()));
             }
         }
@@ -103,7 +109,12 @@ public class IntoxicationPower extends AbstractPower{
             this.amount = 999;
         }
 
-        if (this.amount >= INTOX_THRESHOLD || (this.amount >= INTOX_THRESHOLD_RELIC && AbstractDungeon.player.hasRelic(LouseLiverRelic.ID))) {
+        // Has Louse Liver
+        if (AbstractDungeon.player.hasRelic(LouseLiverRelic.ID)){
+            intoxThreshold = LouseLiverRelic.INTOX_THRESHOLD;
+        }
+
+        if (this.amount >= intoxThreshold) {
             AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new IntoxicatedStance()));
         }
         updateDescription();
@@ -124,11 +135,10 @@ public class IntoxicationPower extends AbstractPower{
     // Remove Intoxicated when losing enough stacks
     public void reducePower(int reduceAmount){
         super.reducePower(reduceAmount);
-        int intoxThreshold = INTOX_THRESHOLD;
         if (AbstractDungeon.player.hasRelic(LouseLiverRelic.ID)){
-            intoxThreshold = INTOX_THRESHOLD_RELIC;
+            this.intoxThreshold = LouseLiverRelic.INTOX_THRESHOLD;
         }
-        if (this.amount < intoxThreshold && AbstractDungeon.player.stance.ID.equals(IntoxicatedStance.STANCE_ID))
+        if (this.amount < this.intoxThreshold && AbstractDungeon.player.stance.ID.equals(IntoxicatedStance.STANCE_ID))
             AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction("Neutral"));
         if (this.amount <= 0)
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
