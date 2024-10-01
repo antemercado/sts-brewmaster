@@ -71,11 +71,12 @@ public class DrenchedPower extends AbstractPower{
             type = CustomDamageTypes.MATCH;
         }
 
-        addToTop(new DamageAllEnemiesAction(null, damage, type, AttackEffect.FIRE));
-        addToTop(new RemoveSpecificPowerAction(owner, info.owner, this));
+        //addToTop(new DamageAllEnemiesAction(null, damage, type, AttackEffect.FIRE));
+        addToTop(new DamageAllEnemiesAction(AbstractDungeon.player,
+             DamageInfo.createDamageMatrix(damage, true), type, AttackEffect.FIRE));
         
-        if (this.owner.hasPower(SearingChainPower.POWER_ID)){
-            addToBot(new ApplyPowerAction(this.owner, this.source, new DrenchedPower(this.owner, this.source, this.amount), this.amount));
+        if (!this.owner.hasPower(SearingChainPower.POWER_ID)){
+            addToTop(new RemoveSpecificPowerAction(owner, info.owner, this));
         }
         return damageAmount;
     }
