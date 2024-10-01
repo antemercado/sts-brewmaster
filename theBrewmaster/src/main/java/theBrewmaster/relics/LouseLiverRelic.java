@@ -16,7 +16,7 @@ public class LouseLiverRelic extends CustomRelic {
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("placeholder_relic.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic.png"));
 
-    public static final int INTOX_THRESHOLD = 75;
+    public static final int INTOX_THRESHOLD = 50;
 
     public LouseLiverRelic() {
         super(ID, IMG, OUTLINE, RelicTier.COMMON, LandingSound.CLINK);

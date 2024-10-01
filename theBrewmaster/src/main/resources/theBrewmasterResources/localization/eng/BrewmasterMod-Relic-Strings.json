@@ -3,14 +3,14 @@
     "NAME": "Beer Stein",
     "FLAVOR": "I've never heard of one drinks too many.",
     "DESCRIPTIONS": [
-      "Keep up to #b50 #yIntoxication between floors and acts."
+      "Keep up to #b75 #yIntoxication between floors and acts."
     ]
   },
   "theBrewmaster:GiantKegRelic": {
     "NAME": "Bottomless Stein",
     "FLAVOR": "I've had one drinks too many.",
     "DESCRIPTIONS": [
-      "Keep up to #b200 #yIntoxication between floors and acts."
+      "Keep up to #b150 #yIntoxication between floors and acts."
     ]
   },
   "theBrewmaster:SpiritHelmetRelic": {
@@ -24,7 +24,7 @@
     "NAME": "Louse Liver",
     "FLAVOR": "It's really just a bunch lice glued together.",
     "DESCRIPTIONS": [
-      "You become Intoxicated at #b75 #yIntoxication instead of #b100."
+      "You become Intoxicated at #b50 #yIntoxication."
     ]
   },
   "theBrewmaster:CozyBeerRelic": {
@@ -45,7 +45,7 @@
     "NAME": "Octarine Cup",
     "FLAVOR": "A staple at Spire parties.",
     "DESCRIPTIONS": [
-      "If you are #yIntoxicated at the start of your turn, gain [E]"
+      "If you are #yIntoxicated at the start of your turn, gain [E] and draw a card."
     ]
   },
   "theBrewmaster:MiniFridgeRelic": {
