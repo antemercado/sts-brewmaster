@@ -23,17 +23,17 @@ public class BarMatSpecial extends AbstractBrewmasterCard {
     
     // STAT DECLARATION
     
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
     
-    private static final int COST = 1;
+    private static final int COST = 2;
+    private static final int UPGRADED_COST = 1;
     
-    private static final int DAMAGE = 5;
-    private static final int UPGRADE_PLUS_DAMAGE = 3;
+    private static final int DAMAGE = 7;
 
-    private static final int MAGIC = 0;
+    private static final int MAGIC = 1;
 
     
     // TEXT DECLARATION
@@ -47,7 +47,7 @@ public class BarMatSpecial extends AbstractBrewmasterCard {
     public BarMatSpecial() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseDamage = this.damage = DAMAGE;
-        this.baseMagicNumber = 0;
+        this.baseMagicNumber = this.magicNumber = MAGIC;
     }
     // Actions the card should do.
     @Override
@@ -55,7 +55,7 @@ public class BarMatSpecial extends AbstractBrewmasterCard {
 
         AttackEffect effect = AbstractGameAction.AttackEffect.BLUNT_LIGHT;
 
-        for (int i = 0; i < BrewmasterMod.brewCardsPlayedThisTurn; i++){
+        for (int i = 0; i < this.magicNumber; i++){
             addToBot(new DamageAction(m, new DamageInfo(p, this.baseDamage, damageTypeForTurn), effect));
         }
 
@@ -72,9 +72,9 @@ public class BarMatSpecial extends AbstractBrewmasterCard {
 
     public void applyPowers() {
         if (BrewmasterMod.brewCardsPlayedThisTurn > 0){
-            this.magicNumber = BrewmasterMod.brewCardsPlayedThisTurn;
+            this.magicNumber = BrewmasterMod.brewCardsPlayedThisTurn + 1;
             super.applyPowers();
-            this.rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0];
+            this.rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0] + BrewmasterMod.brewCardsPlayedThisTurn + EXTENDED_DESCRIPTION[1];
             initializeDescription();
         }
     }
@@ -92,7 +92,7 @@ public class BarMatSpecial extends AbstractBrewmasterCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DAMAGE);
+            upgradeBaseCost(UPGRADED_COST);
             initializeDescription();
         }
     }

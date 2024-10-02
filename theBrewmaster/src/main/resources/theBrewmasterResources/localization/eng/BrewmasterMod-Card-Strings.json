@@ -56,7 +56,7 @@
   },
   "theBrewmaster:FluidMotion": {
     "NAME": "Fluid Motion",
-    "DESCRIPTION": "At the end of your turn, gain !M! Block for every 25 thebrewmaster:Intoxication you have."
+    "DESCRIPTION": "At the end of your turn, gain !M! Block for every 10 thebrewmaster:Intoxication you have."
   },
   "theBrewmaster:Chug": {
     "NAME": "Chug",
@@ -313,9 +313,10 @@
   },
   "theBrewmaster:BarMatSpecial": {
     "NAME": "Bar Mat Special",
-    "DESCRIPTION": "Deal !D! damage for each time you've played a Brew card this turn.",
+    "DESCRIPTION": "Deal !D! damage. Repeat for each time you've played a Brew card this turn.",
     "EXTENDED_DESCRIPTION": [
-      " NL (!M! Brews played)"
+      " NL (",
+      " Brews played)"
     ]
   },
   "theBrewmaster:Blackout": {
