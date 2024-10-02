@@ -32,14 +32,14 @@ public class GutFermentation extends AbstractBrewmasterCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
     
-    private static final int COST = 0;
+    private static final int COST = 1;
+    private static final int UPGRADED_COST = 0;
     
     // TEXT DECLARATION
     public static final String ID = BrewmasterMod.makeID(GutFermentation.class.getSimpleName());
     public static final String IMG = makeCardPath(GutFermentation.class.getSimpleName(), TYPE);
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     
     public GutFermentation() { 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -55,14 +55,13 @@ public class GutFermentation extends AbstractBrewmasterCard {
     public void applyPowers() {
         super.applyPowers();
         int intoxCheck = 0;
+        int intoxThreshold = BrewmasterMod.intoxThreshAmount;
         if (AbstractDungeon.player.hasPower(IntoxicationPower.POWER_ID)){
             intoxCheck = AbstractDungeon.player.getPower(IntoxicationPower.POWER_ID).amount * 2;
         }
         if ((intoxCheck >= intoxThreshold || 
             (intoxCheck >= LouseLiverRelic.INTOX_THRESHOLD && AbstractDungeon.player.hasRelic(LouseLiverRelic.ID)))) {
                 this.exhaust = true;
-        } else if (upgraded){
-            this.exhaust = false;
         }
     }
 
@@ -87,8 +86,7 @@ public class GutFermentation extends AbstractBrewmasterCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.isEthereal = false;
-            rawDescription = UPGRADE_DESCRIPTION;
+            upgradeBaseCost(UPGRADED_COST);
             initializeDescription();
         }
     }

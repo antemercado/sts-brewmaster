@@ -267,8 +267,7 @@
   },
   "theBrewmaster:GutFermentation": {
     "NAME": "Gut Fermentation",
-    "DESCRIPTION": "Ethereal. NL Double your thebrewmaster:Intoxication. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Double your thebrewmaster:Intoxication. NL Exhaust."
+    "DESCRIPTION": "Ethereal. NL Double your thebrewmaster:Intoxication. NL Exhaust."
   },
   "theBrewmaster:Impulse": {
     "NAME": "Impulsivity",
