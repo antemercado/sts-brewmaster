@@ -57,6 +57,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.File;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
@@ -71,7 +72,6 @@ public class BrewmasterMod implements
         EditStringsSubscriber,
         EditKeywordsSubscriber,
         EditCharactersSubscriber,
-        PostInitializeSubscriber,
         OnStartBattleSubscriber,
         OnCardUseSubscriber,
         OnPlayerTurnStartSubscriber {
@@ -83,11 +83,10 @@ public class BrewmasterMod implements
     public static final String ENABLE_PLACEHOLDER_SETTINGS = "enablePlaceholder";
     public static boolean enablePlaceholder = false; // The boolean we'll be setting on/off (true/false)
 
-    //This is for the in-game mod settings panel.
-    private static final String MODNAME = "The Brewmaster";
-    private static final String AUTHOR = "Coda";
-    private static final String DESCRIPTION = "The Brewmaster Character Mod";
-    
+    public static int beerSteinAmount = 75;
+    public static int intoxDecayAmount = 15;
+    public static int intoxThreshAmount = 100;
+
     // =============== INPUT TEXTURE LOCATION =================
     
     // Colors (RGB)
@@ -115,7 +114,6 @@ public class BrewmasterMod implements
     public static final String BREWMASTER_CORPSE = "theBrewmasterResources/images/char/brewmasterAnimation/corpse.png";
     
     // Mod Badge - A small icon that appears in the mod settings menu next to your mod.
-    public static final String BADGE_IMAGE = "theBrewmasterResources/images/Badge.png";
     
     // Atlas and JSON files for the Animations
     public static final String BREWMASTER_SKELETON_ATLAS = "theBrewmasterResources/images/char/brewmasterAnimation/brewmasterAnimation.atlas";
@@ -170,6 +168,7 @@ public class BrewmasterMod implements
         logger.info("Subscribe to BaseMod hooks");
         
         BaseMod.subscribe(this);
+        BaseMod.subscribe(new BrewmasterSettingsMenu());
       
         setModID("theBrewmaster");
         
@@ -185,22 +184,52 @@ public class BrewmasterMod implements
         
         logger.info("Done creating the color");
         
-        logger.info("Adding mod settings");
-        // This loads the mod settings.
-        // The actual mod Button is added below in receivePostInitialize()
-        theBrewmasterDefaultSettings.setProperty(ENABLE_PLACEHOLDER_SETTINGS, "FALSE"); // This is the default setting. It's actually set...
-        try {
-            SpireConfig config = new SpireConfig("theBrewmaster", "theBrewmasterConfig", theBrewmasterDefaultSettings); // ...right here
-            // the "fileName" parameter is the name of the file MTS will create where it will save our setting.
-            config.load(); // Load the setting and set the boolean to equal it
-            enablePlaceholder = config.getBool(ENABLE_PLACEHOLDER_SETTINGS);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        logger.info("Done adding mod settings");
+        // logger.info("Adding mod settings");
+        // // This loads the mod settings.
+        // // The actual mod Button is added below in receivePostInitialize()
+        // theBrewmasterDefaultSettings.setProperty(ENABLE_PLACEHOLDER_SETTINGS, "FALSE"); // This is the default setting. It's actually set...
+        // try {
+        //     SpireConfig config = new SpireConfig("theBrewmaster", "theBrewmasterConfig", theBrewmasterDefaultSettings); // ...right here
+        //     // the "fileName" parameter is the name of the file MTS will create where it will save our setting.
+        //     config.load(); // Load the setting and set the boolean to equal it
+        //     enablePlaceholder = config.getBool(ENABLE_PLACEHOLDER_SETTINGS);
+        // } catch (Exception e) {
+        //     e.printStackTrace();
+        // }
+        // logger.info("Done adding mod settings");
         
     }
-    
+    // ========= Save and Load =========
+    public static void save(){
+        try {
+            SpireConfig config = new SpireConfig(modID, "settings");
+            config.setInt("beerSteinAmount", beerSteinAmount);
+            config.setInt("intoxDecayAmount", intoxDecayAmount);
+            config.setInt("intoxThreshAmount", intoxThreshAmount);
+            config.save();
+        } catch (IOException | NumberFormatException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void load(){
+        try {
+            SpireConfig config = new SpireConfig(modID, "settings");
+            config.load();
+            if (config.has("beerSteinAmount")){
+                beerSteinAmount = config.getInt("beerSteinAmount");
+            }
+            if (config.has("intoxDecayAmount")){
+                intoxDecayAmount = config.getInt("intoxDecayAmount");
+            }
+            if (config.has("intoxThreshAmount")){
+                intoxThreshAmount = config.getInt("intoxThreshAmount");
+            }
+        } catch (IOException | NumberFormatException e) {
+            e.printStackTrace();
+        }
+
+    }
     // ====== Mod Standardization ======
     
     public static void setModID(String ID) { 
@@ -256,70 +285,7 @@ public class BrewmasterMod implements
         receiveEditPotions();
         logger.info("Added " + BrewmasterCharacter.Enums.BREWMASTER.toString());
     }
-    
-    // =============== POST-INITIALIZE =================
-    
-    @Override
-    public void receivePostInitialize() {
-        logger.info("Loading badge image and mod options");
-        
-        // Load the Mod Badge
-        Texture badgeTexture = TextureLoader.getTexture(BADGE_IMAGE);
-        
-        // Create the Mod Menu
-        ModPanel settingsPanel = new ModPanel();
-        
-        // Create the on/off button:
-        ModLabeledToggleButton enableNormalsButton = new ModLabeledToggleButton("This is the text which goes next to the checkbox.",
-                350.0f, 700.0f, Settings.CREAM_COLOR, FontHelper.charDescFont, // Position (trial and error it), color, font
-                enablePlaceholder, // Boolean it uses
-                settingsPanel, // The mod panel in which this button will be in
-                (label) -> {}, // thing??????? idk
-                (button) -> { // The actual button:
-            
-            enablePlaceholder = button.enabled; // The boolean true/false will be whether the button is enabled or not
-            try {
-                // And based on that boolean, set the settings and save them
-                SpireConfig config = new SpireConfig("theBrewmaster", "theBrewmasterConfig", theBrewmasterDefaultSettings);
-                config.setBool(ENABLE_PLACEHOLDER_SETTINGS, enablePlaceholder);
-                config.save();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        });
-        
-        settingsPanel.addUIElement(enableNormalsButton); // Add the button to the settings panel. Button is a go.
-        
-        BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
-
-        
-        // =============== EVENTS =================
-        // https://github.com/daviscook477/BaseMod/wiki/Custom-Events
-
-        // You can add the event like so:
-        // BaseMod.addEvent(IdentityCrisisEvent.ID, IdentityCrisisEvent.class, TheCity.ID);
-        // Then, this event will be exclusive to the City (act 2), and will show up for all characters.
-        // If you want an event that's present at any part of the game, simply don't include the dungeon ID
-
-        // If you want to have more specific event spawning (e.g. character-specific or so)
-        // deffo take a look at that basemod wiki link as well, as it explains things very in-depth
-        // btw if you don't provide event type, normal is assumed by default
-
-        // Create a new event builder
-        // Since this is a builder these method calls (outside of create()) can be skipped/added as necessary
-        // AddEventParams eventParams = new AddEventParams.Builder(IdentityCrisisEvent.ID, IdentityCrisisEvent.class) // for this specific event
-        //     .dungeonID(TheCity.ID) // The dungeon (act) this event will appear in
-        //     .playerClass(BrewmasterCharacter.Enums.BREWMASTER) // Character specific event
-        //     .create();
-
-        // Add the event
-        // BaseMod.addEvent(eventParams);
-
-        // =============== /EVENTS/ =================
-        logger.info("Done loading badge Image and mod options");
-    }
-    
-    
+  
     // ================ ADD POTIONS ===================
     
     public void receiveEditPotions() {

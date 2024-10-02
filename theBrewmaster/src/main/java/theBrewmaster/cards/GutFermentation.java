@@ -58,7 +58,7 @@ public class GutFermentation extends AbstractBrewmasterCard {
         if (AbstractDungeon.player.hasPower(IntoxicationPower.POWER_ID)){
             intoxCheck = AbstractDungeon.player.getPower(IntoxicationPower.POWER_ID).amount * 2;
         }
-        if ((intoxCheck >= IntoxicationPower.INTOX_THRESHOLD || 
+        if ((intoxCheck >= intoxThreshold || 
             (intoxCheck >= LouseLiverRelic.INTOX_THRESHOLD && AbstractDungeon.player.hasRelic(LouseLiverRelic.ID)))) {
                 this.exhaust = true;
         } else if (upgraded){

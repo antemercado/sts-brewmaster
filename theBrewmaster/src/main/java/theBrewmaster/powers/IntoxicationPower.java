@@ -42,15 +42,15 @@ public class IntoxicationPower extends AbstractPower{
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    public static final int INTOX_THRESHOLD = 100;
-    public static final float INTOX_DECAY_RATE = 0.15f;
+    //public static final int INTOX_THRESHOLD = BrewmasterMod.intoxThreshAmount;
+    public static final float INTOX_DECAY_RATE = (BrewmasterMod.intoxDecayAmount / 100.0f);
 
     // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
     // There's a fallback "missing texture" image, so the game shouldn't crash if you accidentally put a non-existent file.
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("intoxication84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("intoxication32.png"));
 
-    public int intoxThreshold = INTOX_THRESHOLD;
+    public int intoxThreshold = BrewmasterMod.intoxThreshAmount;
 
     public IntoxicationPower(final AbstractCreature owner, final AbstractCreature source, final int amount){
         this(owner,source,amount,false);
@@ -111,7 +111,7 @@ public class IntoxicationPower extends AbstractPower{
 
         // Has Louse Liver
         if (AbstractDungeon.player.hasRelic(LouseLiverRelic.ID)){
-            intoxThreshold = LouseLiverRelic.INTOX_THRESHOLD;
+            this.intoxThreshold = LouseLiverRelic.INTOX_THRESHOLD;
         }
 
         if (this.amount >= intoxThreshold) {
@@ -147,14 +147,14 @@ public class IntoxicationPower extends AbstractPower{
     // If entering Neutral stance & has enough stacks, enter intoxication stance.
     // Useful if you end up entering any of the Watcher stances. When you leave, if you're intoxicated you'll re-enter Intoxicated.
     public void onChangeStance(AbstractStance oldStance, AbstractStance newStance) {
-        if (newStance.ID.equals("Neutral") && this.amount >= INTOX_THRESHOLD)
+        if (newStance.ID.equals("Neutral") && this.amount >= this.intoxThreshold)
             AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new IntoxicatedStance()));
     }
 
     // When starting turn, if have enough stacks and are in Neutral, enter intoxication stance.
     // This is not meant to pull you out of Watcher stances.
     public void atStartOfTurn() {
-        if (AbstractDungeon.player.stance.ID.equals("Neutral") && this.amount >= INTOX_THRESHOLD)
+        if (AbstractDungeon.player.stance.ID.equals("Neutral") && this.amount >= this.intoxThreshold)
             AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new IntoxicatedStance()));
     }
 

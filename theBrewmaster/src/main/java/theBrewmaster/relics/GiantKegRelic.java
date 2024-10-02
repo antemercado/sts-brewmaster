@@ -23,8 +23,6 @@ public class GiantKegRelic extends CustomRelic {
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("beer_stein_upgrade.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("beer_stein.png"));
 
-    private static int RETAIN = 150;
-
     public GiantKegRelic() {
         super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.CLINK);
         this.counter = 0;
@@ -59,13 +57,18 @@ public class GiantKegRelic extends CustomRelic {
     }
 
     public void onVictory(){
+        int retain = BrewmasterMod.beerSteinAmount * 2;
+        if (retain >= 1000){
+            retain = 999;
+        }
+
         AbstractPlayer p = AbstractDungeon.player;
         if (!p.hasPower(IntoxicationPower.POWER_ID)){
             this.counter = 0;
             return;
         }
-        if (p.getPower(IntoxicationPower.POWER_ID).amount > RETAIN){
-            this.counter = RETAIN;
+        if (p.getPower(IntoxicationPower.POWER_ID).amount > retain){
+            this.counter = retain;
         } else {
             this.counter = p.getPower(IntoxicationPower.POWER_ID).amount;
         }
