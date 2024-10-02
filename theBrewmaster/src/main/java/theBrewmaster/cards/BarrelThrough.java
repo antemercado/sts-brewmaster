@@ -22,6 +22,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+@AutoAdd.Ignore
 public class BarrelThrough extends AbstractBrewmasterCard {
     
     // STAT DECLARATION

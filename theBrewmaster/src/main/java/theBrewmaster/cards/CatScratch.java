@@ -16,6 +16,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+@AutoAdd.Ignore
 public class CatScratch extends AbstractBrewmasterCard {
     
     // STAT DECLARATION
