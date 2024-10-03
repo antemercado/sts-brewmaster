@@ -22,7 +22,7 @@ public class DrunkenFlurry extends AbstractBrewmasterCard {
     
     // STAT DECLARATION
     
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = BrewmasterCharacter.Enums.ORANGE;
@@ -46,7 +46,6 @@ public class DrunkenFlurry extends AbstractBrewmasterCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAction(m, new DamageInfo(p, damage), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         if (!p.hasPower(IntoxicationPower.POWER_ID))
             return;
         int repeat = p.getPower(IntoxicationPower.POWER_ID).amount / magicNumber;

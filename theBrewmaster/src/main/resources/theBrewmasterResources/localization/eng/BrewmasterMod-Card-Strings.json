@@ -174,7 +174,7 @@
   },
   "theBrewmaster:DrunkenFlurry": {
     "NAME": "Drunken Flurry",
-    "DESCRIPTION": "Deal !D! damage. Repeat for each !M! thebrewmaster:Intoxication you have."
+    "DESCRIPTION": "Deal !D! damage for each !M! thebrewmaster:Intoxication you have."
   },
   "theBrewmaster:SlipperyCoat": {
     "NAME": "Slippery Coat",
