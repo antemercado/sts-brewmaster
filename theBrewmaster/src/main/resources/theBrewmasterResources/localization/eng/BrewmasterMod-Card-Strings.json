@@ -398,5 +398,10 @@
     "NAME": "Distillery",
     "DESCRIPTION": "{@@}Whenever you draw a Status card, exhaust it and add !M! random Microbrew card{!M!|>1=s} to your hand.",
     "UPGRADE_DESCRIPTION": "{@@}Whenever you draw a Status or Curse card, exhaust it and add !M! random Microbrew card{!M!|>1=s} to your hand."
+  },
+  "theBrewmaster:Shots": {
+    "NAME": "Shots",
+    "DESCRIPTION": "{@@}Draw !M! card{!M!|>1=s}. If it's a Brew card, play and exhaust it.",
+    "UPGRADE_DESCRIPTION": "{@@}Draw !M! card{!M!|>1=s}. If it's a Brew card, play it."
   }
 }
